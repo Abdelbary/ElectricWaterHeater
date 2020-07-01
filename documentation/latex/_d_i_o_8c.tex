@@ -1,0 +1,163 @@
+\hypertarget{_d_i_o_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+M\+C\+A\+L/\+D\+I\+O/\+D\+IO.c File Reference}
+\label{_d_i_o_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c}}
+{\ttfamily \#include \char`\"{}D\+I\+O.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}D\+I\+O\+\_\+\+Cfg.\+h\char`\"{}}\newline
+Include dependency graph for D\+I\+O.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{_d_i_o_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}{D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET}}~0x80
+\item 
+\#define \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}~0x05
+\item 
+\#define \mbox{\hyperlink{_d_i_o_8c_a93d43db8a4edb54eec662981d4096fac}{P\+O\+R\+T\+\_\+\+N\+UM}}~5
+\item 
+\#define \mbox{\hyperlink{_d_i_o_8c_a2a963fc98ee917de5e5a3a4126990ce4}{P\+I\+N\+\_\+\+R\+EG}}(P\+O\+R\+T\+\_\+\+ID)~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))
+\item 
+\#define \mbox{\hyperlink{_d_i_o_8c_a385e2325c189fd893c02fb4b2c75c97b}{P\+O\+R\+T\+\_\+\+R\+EG}}(P\+O\+R\+T\+\_\+\+ID)~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))
+\item 
+\#define \mbox{\hyperlink{_d_i_o_8c_a8819467696caf94ae442a7215fb68af6}{D\+D\+R\+\_\+\+R\+EG}}(P\+O\+R\+T\+\_\+\+ID)~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} + \mbox{\hyperlink{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}{D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873}{D\+I\+O\+\_\+\+Write}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Data)
+\item 
+void \mbox{\hyperlink{_d_i_o_8c_a3bb016dad54e04d6e0fe0120e496e6e3}{D\+I\+O\+\_\+\+Read}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$u8p\+\_\+\+Data\+Ptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_d_i_o_8c_a8819467696caf94ae442a7215fb68af6}\label{_d_i_o_8c_a8819467696caf94ae442a7215fb68af6}} 
+\index{DIO.c@{DIO.c}!DDR\_REG@{DDR\_REG}}
+\index{DDR\_REG@{DDR\_REG}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{DDR\_REG}{DDR\_REG}}
+{\footnotesize\ttfamily \#define D\+D\+R\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{P\+O\+R\+T\+\_\+\+ID }\end{DoxyParamCaption})~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} + \mbox{\hyperlink{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}{D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET}}))}
+
+
+
+Definition at line 16 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}\label{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}} 
+\index{DIO.c@{DIO.c}!DDR\_REG\_OFFSET@{DDR\_REG\_OFFSET}}
+\index{DDR\_REG\_OFFSET@{DDR\_REG\_OFFSET}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{DDR\_REG\_OFFSET}{DDR\_REG\_OFFSET}}
+{\footnotesize\ttfamily \#define D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET~0x80}
+
+
+
+Definition at line 11 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8c_a2a963fc98ee917de5e5a3a4126990ce4}\label{_d_i_o_8c_a2a963fc98ee917de5e5a3a4126990ce4}} 
+\index{DIO.c@{DIO.c}!PIN\_REG@{PIN\_REG}}
+\index{PIN\_REG@{PIN\_REG}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{PIN\_REG}{PIN\_REG}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{P\+O\+R\+T\+\_\+\+ID }\end{DoxyParamCaption})~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))}
+
+
+
+Definition at line 14 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8c_a93d43db8a4edb54eec662981d4096fac}\label{_d_i_o_8c_a93d43db8a4edb54eec662981d4096fac}} 
+\index{DIO.c@{DIO.c}!PORT\_NUM@{PORT\_NUM}}
+\index{PORT\_NUM@{PORT\_NUM}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{PORT\_NUM}{PORT\_NUM}}
+{\footnotesize\ttfamily \#define P\+O\+R\+T\+\_\+\+N\+UM~5}
+
+
+
+Definition at line 13 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8c_a385e2325c189fd893c02fb4b2c75c97b}\label{_d_i_o_8c_a385e2325c189fd893c02fb4b2c75c97b}} 
+\index{DIO.c@{DIO.c}!PORT\_REG@{PORT\_REG}}
+\index{PORT\_REG@{PORT\_REG}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{PORT\_REG}{PORT\_REG}}
+{\footnotesize\ttfamily \#define P\+O\+R\+T\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{P\+O\+R\+T\+\_\+\+ID }\end{DoxyParamCaption})~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))}
+
+
+
+Definition at line 15 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}\label{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}} 
+\index{DIO.c@{DIO.c}!PORT\_SUBSYSTEM\_BASE\_ADDRESS@{PORT\_SUBSYSTEM\_BASE\_ADDRESS}}
+\index{PORT\_SUBSYSTEM\_BASE\_ADDRESS@{PORT\_SUBSYSTEM\_BASE\_ADDRESS}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{PORT\_SUBSYSTEM\_BASE\_ADDRESS}{PORT\_SUBSYSTEM\_BASE\_ADDRESS}}
+{\footnotesize\ttfamily \#define P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS~0x05}
+
+
+
+Definition at line 12 of file D\+I\+O.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f}\label{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f}} 
+\index{DIO.c@{DIO.c}!DIO\_Init@{DIO\_Init}}
+\index{DIO\_Init@{DIO\_Init}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{DIO\_Init()}{DIO\_Init()}}
+{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: void \mbox{\hyperlink{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init(void)}}}}
+
+{\bfseries{Summary\+: initalize all project pins for init values}}
+
+{\bfseries{Description\+: loop through the array of pin confegration and configure each pin as specified}}
+
+{\bfseries{Precondition\+:}} No preconditions required
+
+{\bfseries{Parameters\+:}} void 
+
+{\bfseries{Returns\+:}} void 
+
+{\bfseries{Example\+:}} \mbox{\hyperlink{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init()}}
+
+{\ttfamily }
+
+{\ttfamily }
+
+{\bfseries{Remarks\+:}}
+
+Definition at line 20 of file D\+I\+O.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_d_i_o_8c_a3bb016dad54e04d6e0fe0120e496e6e3}\label{_d_i_o_8c_a3bb016dad54e04d6e0fe0120e496e6e3}} 
+\index{DIO.c@{DIO.c}!DIO\_Read@{DIO\_Read}}
+\index{DIO\_Read@{DIO\_Read}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{DIO\_Read()}{DIO\_Read()}}
+{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$}]{u8p\+\_\+\+Data\+Ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873}\label{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873}} 
+\index{DIO.c@{DIO.c}!DIO\_Write@{DIO\_Write}}
+\index{DIO\_Write@{DIO\_Write}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{DIO\_Write()}{DIO\_Write()}}
+{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file D\+I\+O.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873_icgraph}
+\end{center}
+\end{figure}
