@@ -58,6 +58,7 @@ typedef struct
  */
 void DIO_Init(void);
 void DIO_Write(uint8_t GroupId, uint8_t Data);
+void DIO_Toggle(uint8_t u8_GroupId);
 void DIO_Read(uint8_t GroupId, uint8_t * DataPtr);
 
 

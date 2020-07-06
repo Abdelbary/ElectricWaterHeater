@@ -1,0 +1,148 @@
+\hypertarget{7seg_8h}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+H\+A\+L/7\+S\+E\+G/7seg.h File Reference}
+\label{7seg_8h}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.h@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.h}}
+{\ttfamily \#include \char`\"{}../../\+Service\+Layer/std\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Service\+Layer/\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+M\+C\+A\+L/\+D\+I\+O/\+D\+I\+O.\+h\char`\"{}}\newline
+Include dependency graph for 7seg.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{7seg_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{7seg_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structseven_seg_config_struct}{seven\+Seg\+Config\+Struct}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{7seg_8h_ac210c019f9605690297623eeb5faa1e6}{S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+O\+NE}}~0
+\item 
+\#define \mbox{\hyperlink{7seg_8h_a9a990f67a958c09e3aa10cf6d190c52a}{S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+T\+WO}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8h_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init}} (void)
+\item 
+\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8h_ae89a46a801483d679b68d653efd31267}{seven\+Seg\+Send\+Char}} (const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+value, const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+S\+S\+D\+\_\+selector)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{7seg_8h_ac210c019f9605690297623eeb5faa1e6}\label{7seg_8h_ac210c019f9605690297623eeb5faa1e6}} 
+\index{7seg.h@{7seg.h}!SEVEN\_SEG\_ONE@{SEVEN\_SEG\_ONE}}
+\index{SEVEN\_SEG\_ONE@{SEVEN\_SEG\_ONE}!7seg.h@{7seg.h}}
+\doxysubsubsection{\texorpdfstring{SEVEN\_SEG\_ONE}{SEVEN\_SEG\_ONE}}
+{\footnotesize\ttfamily \#define S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+O\+NE~0}
+
+
+
+Definition at line 9 of file 7seg.\+h.
+
+\mbox{\Hypertarget{7seg_8h_a9a990f67a958c09e3aa10cf6d190c52a}\label{7seg_8h_a9a990f67a958c09e3aa10cf6d190c52a}} 
+\index{7seg.h@{7seg.h}!SEVEN\_SEG\_TWO@{SEVEN\_SEG\_TWO}}
+\index{SEVEN\_SEG\_TWO@{SEVEN\_SEG\_TWO}!7seg.h@{7seg.h}}
+\doxysubsubsection{\texorpdfstring{SEVEN\_SEG\_TWO}{SEVEN\_SEG\_TWO}}
+{\footnotesize\ttfamily \#define S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+T\+WO~1}
+
+
+
+Definition at line 10 of file 7seg.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{7seg_8h_a60579fecccc40e10b8ecca856466d540}\label{7seg_8h_a60579fecccc40e10b8ecca856466d540}} 
+\index{7seg.h@{7seg.h}!sevenSegInit@{sevenSegInit}}
+\index{sevenSegInit@{sevenSegInit}!7seg.h@{7seg.h}}
+\doxysubsubsection{\texorpdfstring{sevenSegInit()}{sevenSegInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: void \mbox{\hyperlink{7seg_8h_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init(void)}} }}
+
+{\bfseries{Summary\+: initalize 7 S\+EG}}
+
+{\bfseries{Description\+: init 7 segmet based on linking configration paramters}}
+
+{\bfseries{Precondition\+:}} No preconditions required
+
+{\bfseries{Parameters\+:}} void 
+
+{\bfseries{Returns\+:}} E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\} 
+
+{\bfseries{Example\+:}} \mbox{\hyperlink{7seg_8h_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init()}}
+
+{\ttfamily }
+
+{\ttfamily }
+
+{\bfseries{Remarks\+:}}S\+ET S\+E\+V\+EN S\+EG D\+I\+S\+P\+L\+AY P\+O\+RT TO 0
+
+M\+O\+D\+U\+LE S\+T\+A\+TE I\+N\+IT
+
+Definition at line 26 of file 7seg.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{7seg_8h_a60579fecccc40e10b8ecca856466d540_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{7seg_8h_a60579fecccc40e10b8ecca856466d540_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{7seg_8h_ae89a46a801483d679b68d653efd31267}\label{7seg_8h_ae89a46a801483d679b68d653efd31267}} 
+\index{7seg.h@{7seg.h}!sevenSegSendChar@{sevenSegSendChar}}
+\index{sevenSegSendChar@{sevenSegSendChar}!7seg.h@{7seg.h}}
+\doxysubsubsection{\texorpdfstring{sevenSegSendChar()}{sevenSegSendChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Send\+Char (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+value,  }\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+S\+S\+D\+\_\+selector }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: void seven\+Seg\+Send\+Char(const uint8\+\_\+t value) }}
+
+{\bfseries{Summary\+: write to 7 S\+EG}}
+
+{\bfseries{Description\+:write w digit value to twi 7 segment display}}
+
+{\bfseries{Precondition\+:}} 7 segment must be initalized
+
+{\bfseries{Parameters\+:}} const uint8\+\_\+t value 
+
+{\bfseries{Returns\+:}} E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\} 
+
+{\bfseries{Example\+:}} seven\+Seg\+Send\+Char(15)
+
+{\ttfamily }
+
+{\ttfamily }
+
+{\bfseries{Remarks\+:}}
+
+Definition at line 54 of file 7seg.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{7seg_8h_ae89a46a801483d679b68d653efd31267_icgraph}
+\end{center}
+\end{figure}

@@ -127,16 +127,31 @@ $(document).ready(function(){initNavTree('_config_8h_source.html',''); initResiz
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled)</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR enabled)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#pragma config LVP = OFF         // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3/PGM pin has PGM function; low-voltage programming enabled)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#pragma config LVP = OFF        // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3/PGM pin has PGM function; low-voltage programming enabled)</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//projects pins</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="_config_8h.html#a4888a24924b52872cee174a5454cc659">   47</a></span>&#160;<span class="preprocessor">#define MODULE_UNINTIALIZED    -1</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//PROJECT MODULES ERROR NUM _should be moved to error handling module_</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="_config_8h.html#afcf6c7525d9fef2a099bfe0c1c5bb59f">   51</a></span>&#160;<span class="preprocessor">#define SEVENSEG_MOUDLE_ERROR_NUM           -100</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="_config_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">   53</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="_config_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a>=0,<a class="code" href="_config_8h.html#a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</a>=-1}<a class="code" href="_config_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//projects pins</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="_config_8h.html#a7519550068ef9aeb68ba5bfe04b127f8">   57</a></span>&#160;<span class="preprocessor">#define SEVEN_SEG_ONE_SELECTOR  0</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="_config_8h.html#a607e61fb62795b2ad868382cbf567586">   58</a></span>&#160;<span class="preprocessor">#define SEVEN_SEG_TWO_SELECTOR  1</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="_config_8h.html#af869528dc445bb2bf2319a06e28c5223">   59</a></span>&#160;<span class="preprocessor">#define SEVEN_SEG_CONGIF        2</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="a_config_8h_html_a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59"><div class="ttname"><a href="_config_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition:</b> <a href="_config_8h_source.html#l00053">Config.h:53</a></div></div>
+<div class="ttc" id="a_config_8h_html_a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6"><div class="ttname"><a href="_config_8h.html#a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</a></div><div class="ttdeci">@ NOK</div><div class="ttdef"><b>Definition:</b> <a href="_config_8h_source.html#l00053">Config.h:53</a></div></div>
+<div class="ttc" id="a_config_8h_html_a37f868640e72b2740019c30ecca6e8dc"><div class="ttname"><a href="_config_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a></div><div class="ttdeci">ERROR_STATE</div><div class="ttdef"><b>Definition:</b> <a href="_config_8h_source.html#l00053">Config.h:53</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

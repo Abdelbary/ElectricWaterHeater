@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ledpin_119',['LEDPIN',['../main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481',1,'main.c']]],
-  ['low_120',['LOW',['../std__types_8h.html#ab811d8c6ff3a505312d3276590444289',1,'std_types.h']]]
+  ['highl_237',['HIGHL',['../std__types_8h.html#ac9e4ec633cc86953e8fcf174cfa82524',1,'std_types.h']]]
 ];

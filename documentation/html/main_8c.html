@@ -93,19 +93,26 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
 <div class="textblock"><code>#include &quot;<a class="el" href="_registers_8h_source.html">../MCAL/Registers.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="std__types_8h_source.html">../ServiceLayer/std_types.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_config_8h_source.html">../ServiceLayer/Config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="7seg_8h_source.html">../HAL/7SEG/7seg.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_d_i_o_8h_source.html">../MCAL/DIO/DIO.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="7seg__test_8h_source.html">../HAL/7SEG/unitTest/7seg_test.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="btn__test_8h_source.html">../HAL/BTN/unit test/btn_test.h</a>&quot;</code><br />
 <code>#include &lt;xc.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c__incl.png" border="0" usemap="#_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_application_2main_8c" alt=""/></div>
 <map name="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_application_2main_8c" id="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_application_2main_8c">
-<area shape="rect" title=" " alt="" coords="198,5,377,61"/>
-<area shape="rect" href="_registers_8h.html" title=" " alt="" coords="5,109,145,136"/>
-<area shape="rect" href="std__types_8h.html" title=" " alt="" coords="118,184,249,225"/>
-<area shape="rect" href="_config_8h.html" title=" " alt="" coords="379,109,537,136"/>
-<area shape="rect" title=" " alt="" coords="493,191,540,218"/>
-<area shape="rect" href="_d_i_o_8h.html" title=" " alt="" coords="221,109,354,136"/>
+<area shape="rect" title=" " alt="" coords="340,5,519,61"/>
+<area shape="rect" href="_registers_8h.html" title=" " alt="" coords="25,199,165,225"/>
+<area shape="rect" href="std__types_8h.html" title=" " alt="" coords="112,273,243,315"/>
+<area shape="rect" href="_config_8h.html" title=" " alt="" coords="410,199,569,225"/>
+<area shape="rect" title=" " alt="" coords="609,281,655,307"/>
+<area shape="rect" href="7seg_8h.html" title=" " alt="" coords="304,117,445,143"/>
+<area shape="rect" href="_d_i_o_8h.html" title=" " alt="" coords="189,199,334,225"/>
+<area shape="rect" href="7seg__test_8h.html" title=" " alt="" coords="583,109,731,151"/>
+<area shape="rect" href="btn__test_8h.html" title=" " alt="" coords="756,109,895,151"/>
+<area shape="rect" href="common__maccro_8h.html" title=" " alt="" coords="111,363,244,389"/>
 </map>
 </div>
 </div>
@@ -134,7 +141,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00013">13</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00016">16</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -155,15 +162,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00014">14</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00019">19</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph.png" border="0" usemap="#main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph" alt=""/></div>
 <map name="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph" id="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,56,57"/>
-<area shape="rect" href="_d_i_o_8c.html#ac3727fdc804578b1fcb4f389164b178f" title=" " alt="" coords="111,5,179,32"/>
-<area shape="rect" href="_d_i_o_8c.html#a99a13d06fded688bc6c67bd20b8bf873" title=" " alt="" coords="104,56,187,83"/>
+<area shape="rect" title=" " alt="" coords="5,132,56,159"/>
+<area shape="rect" href="btn__test_8c.html#acb4e2fd533a33ef73e0a50eede86d7be" title=" " alt="" coords="104,132,231,159"/>
+<area shape="rect" href="btn_8c.html#a5aeeef57fe3d8638de39db5ed01efaef" title=" " alt="" coords="293,5,399,32"/>
+<area shape="rect" href="btn_8c.html#a4d8709c705e4850882d44e4b68681421" title=" " alt="" coords="311,56,381,83"/>
+<area shape="rect" href="btn_8c.html#af9d0881c43b0ff77296a25abd27b5929" title=" " alt="" coords="294,107,398,133"/>
+<area shape="rect" href="_d_i_o_8c.html#ac3727fdc804578b1fcb4f389164b178f" title=" " alt="" coords="312,157,380,184"/>
+<area shape="rect" href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="299,208,393,235"/>
+<area shape="rect" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267" title=" " alt="" coords="279,259,413,285"/>
+<area shape="rect" href="_d_i_o_8c.html#a99a13d06fded688bc6c67bd20b8bf873" title=" " alt="" coords="461,208,544,235"/>
 </map>
 </div>
 

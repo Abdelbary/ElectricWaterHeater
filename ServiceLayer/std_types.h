@@ -31,28 +31,40 @@
 #ifndef STD_TYPES_H
 #define	STD_TYPES_H
 
+#include "common_macros.h"
 /* Boolean Data Type */
 typedef unsigned char bool;
 
 /* Boolean Values */
 #ifndef FALSE
-#define FALSE       (0u)
+#define FALSE           (0u)
 #endif
 
 #ifndef TRUE
-#define TRUE        (1u)
+#define TRUE            (1u)
 #endif
 
-#define HIGH        (0xFF)
-#define LOW         (0x00)
+#define HIGHL            (0xFF)
+#define LOWL             (0x00)
 
-#define INPUT          (0xFF)
-#define OUTPUT         (0x00)
 
+#define HIGH_BIT        (1u)
+#define LOW_BIT         (0u)
+
+
+#define INPUT           (0xFF)
+#define OUTPUT          (0x00)
+
+#define ALL_PORT_MASK   (0xFF)
+
+#define PULL_UP         (0xFF)
+#define PULL_DOWN       (0xFF)
+
+#define STATIC   static
 typedef unsigned char         uint8_t;          /*           0 .. 255             */
 typedef signed char           sint8_t;          /*        -128 .. +127            */
-typedef unsigned short        uint16_t;         /*           0 .. 65535           */
-typedef signed short          sint16_t;         /*      -32768 .. +32767          */
+typedef unsigned int           uint16_t;         /*           0 .. 65535           */
+typedef signed int            sint16_t;         /*      -32768 .. +32767          */
 typedef unsigned long         uint32_t;         /*           0 .. 4294967295      */
 typedef signed long           sint32_t;         /* -2147483648 .. +2147483647     */
 typedef unsigned long long    uint64_t;         /*       0..18446744073709551615  */

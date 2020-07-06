@@ -96,32 +96,24 @@ $(document).ready(function(){initNavTree('main_8c_source.html',''); initResizabl
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../MCAL/Registers.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../ServiceLayer/std_types.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../ServiceLayer/Config.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../MCAL/DIO/DIO.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481">   13</a></span>&#160;<span class="preprocessor">#define LEDPIN 0</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">main</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="_d_i_o_8c.html#ac3727fdc804578b1fcb4f389164b178f">DIO_Init</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">while</span>(1)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="_d_i_o_8c.html#a99a13d06fded688bc6c67bd20b8bf873">DIO_Write</a>(<a class="code" href="main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481">LEDPIN</a>,<a class="code" href="std__types_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        __delay_ms(10);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="_d_i_o_8c.html#a99a13d06fded688bc6c67bd20b8bf873">DIO_Write</a>(<a class="code" href="main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481">LEDPIN</a>,<a class="code" href="std__types_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;         __delay_ms(10);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//PORTB_REG = 0x00;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../HAL/7SEG/7seg.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../MCAL/DIO/DIO.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../HAL/7SEG/unitTest/7seg_test.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../HAL/BTN/unit test/btn_test.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481">   16</a></span>&#160;<span class="preprocessor">#define LEDPIN 0</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="btn__test_8c.html#acb4e2fd533a33ef73e0a50eede86d7be">btnSimulationTest</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="amain_8c_html_a2b3671e090b0831bfba7d12cfcf2d481"><div class="ttname"><a href="main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481">LEDPIN</a></div><div class="ttdeci">#define LEDPIN</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00013">main.c:13</a></div></div>
-<div class="ttc" id="a_d_i_o_8c_html_a99a13d06fded688bc6c67bd20b8bf873"><div class="ttname"><a href="_d_i_o_8c.html#a99a13d06fded688bc6c67bd20b8bf873">DIO_Write</a></div><div class="ttdeci">void DIO_Write(uint8_t u8_GroupId, uint8_t u8_Data)</div><div class="ttdef"><b>Definition:</b> <a href="_d_i_o_8c_source.html#l00033">DIO.c:33</a></div></div>
-<div class="ttc" id="amain_8c_html_a6288eba0f8e8ad3ab1544ad731eb7667"><div class="ttname"><a href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">main</a></div><div class="ttdeci">void main(void)</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00014">main.c:14</a></div></div>
-<div class="ttc" id="a_d_i_o_8c_html_ac3727fdc804578b1fcb4f389164b178f"><div class="ttname"><a href="_d_i_o_8c.html#ac3727fdc804578b1fcb4f389164b178f">DIO_Init</a></div><div class="ttdeci">void DIO_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="_d_i_o_8c_source.html#l00020">DIO.c:20</a></div></div>
-<div class="ttc" id="astd__types_8h_html_ab811d8c6ff3a505312d3276590444289"><div class="ttname"><a href="std__types_8h.html#ab811d8c6ff3a505312d3276590444289">LOW</a></div><div class="ttdeci">#define LOW</div><div class="ttdef"><b>Definition:</b> <a href="std__types_8h_source.html#l00047">std_types.h:47</a></div></div>
-<div class="ttc" id="astd__types_8h_html_a5bb885982ff66a2e0a0a45a8ee9c35e2"><div class="ttname"><a href="std__types_8h.html#a5bb885982ff66a2e0a0a45a8ee9c35e2">HIGH</a></div><div class="ttdeci">#define HIGH</div><div class="ttdef"><b>Definition:</b> <a href="std__types_8h_source.html#l00046">std_types.h:46</a></div></div>
+<div class="ttc" id="amain_8c_html_a6288eba0f8e8ad3ab1544ad731eb7667"><div class="ttname"><a href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">main</a></div><div class="ttdeci">void main(void)</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00019">main.c:19</a></div></div>
+<div class="ttc" id="abtn__test_8c_html_acb4e2fd533a33ef73e0a50eede86d7be"><div class="ttname"><a href="btn__test_8c.html#acb4e2fd533a33ef73e0a50eede86d7be">btnSimulationTest</a></div><div class="ttdeci">void btnSimulationTest(void)</div><div class="ttdef"><b>Definition:</b> <a href="btn__test_8c_source.html#l00017">btn_test.c:17</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

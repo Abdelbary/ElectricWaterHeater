@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bool_1',['bool',['../std__types_8h.html#a97a80ca1602ebf2303258971a2c938e2',1,'std_types.h']]]
+  ['_5fxtal_5ffreq_6',['_XTAL_FREQ',['../_config_8h.html#a024148e99a7143db044a48216664d03d',1,'Config.h']]]
 ];

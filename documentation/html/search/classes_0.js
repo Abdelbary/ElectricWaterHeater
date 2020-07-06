@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dioconfigparamtype_76',['DioConfigParamType',['../struct_dio_config_param_type.html',1,'']]]
+  ['btnconfigtype_147',['BtnConfigType',['../struct_btn_config_type.html',1,'']]]
 ];

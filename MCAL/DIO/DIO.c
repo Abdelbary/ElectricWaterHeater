@@ -1,6 +1,6 @@
 /*
  * File:   DIO.c
- * Author: mahmo
+ * Author: Mahmoud Abdelbary
  *
  * Created on June 29, 2020, 4:21 PM
  */
@@ -36,6 +36,15 @@ void DIO_Write(uint8_t u8_GroupId, uint8_t u8_Data)
 	u8_TempData = PORT_REG(DIO_ConfigParam[u8_GroupId].Port);
 	u8_TempData &= ~(DIO_ConfigParam[u8_GroupId].Mask);
 	u8_TempData |= (DIO_ConfigParam[u8_GroupId].Mask & u8_Data);
+	PORT_REG(DIO_ConfigParam[u8_GroupId].Port) = u8_TempData;
+}
+
+void DIO_Toggle(uint8_t u8_GroupId)
+{
+	uint8_t  u8_TempData;
+	u8_TempData = PORT_REG(DIO_ConfigParam[u8_GroupId].Port);
+	u8_TempData ^= (DIO_ConfigParam[u8_GroupId].Mask);
+	
 	PORT_REG(DIO_ConfigParam[u8_GroupId].Port) = u8_TempData;
 }
 void DIO_Read(uint8_t u8_GroupId,uint8_t * u8p_DataPtr)

@@ -1,0 +1,212 @@
+\hypertarget{7seg_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+H\+A\+L/7\+S\+E\+G/7seg.c File Reference}
+\label{7seg_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.c}}
+{\ttfamily \#include \char`\"{}7seg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}7seg\+\_\+\+Cfg.\+h\char`\"{}}\newline
+Include dependency graph for 7seg.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{7seg_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{7seg_8c_a6b5489be1fa4dd1cfb83274bdc9f6ebb}{D\+I\+O\+\_\+\+N\+U\+M\+\_\+\+O\+F\+\_\+\+G\+R\+O\+U\+PS}}~3
+\item 
+\#define \mbox{\hyperlink{7seg_8c_a5daf262b148dc3be43f13f23f61f5a45}{S\+E\+V\+E\+N\+S\+E\+G\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+N\+I\+N\+T\+A\+L\+I\+Z\+ED}}~0
+\item 
+\#define \mbox{\hyperlink{7seg_8c_ab9b683a224b84db066df42f53a953f89}{S\+E\+V\+E\+N\+S\+E\+G\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+IT}}~1
+\item 
+\#define \mbox{\hyperlink{7seg_8c_a94d4f7a629d6a37608ef4cc7376dce1d}{N\+U\+M\+\_\+\+O\+F\+\_\+\+D\+I\+S\+P\+\_\+\+V\+A\+L\+U\+ES}}~10
+\item 
+\#define \mbox{\hyperlink{7seg_8c_a20031d73742853a1039640da76920e06}{I\+S\+\_\+\+V\+I\+S\+I\+A\+B\+L\+E\+\_\+\+V\+A\+L\+UE}}(x)~(x $<$ 10)
+\item 
+\#define \mbox{\hyperlink{7seg_8c_a0246bb0231d9a57cef86643cae33a5ba}{S\+I\+N\+G\+L\+E\+\_\+\+D\+I\+G\+I\+T\+\_\+\+V\+A\+L\+UE}}(x)~(x$<$10)
+\item 
+\#define \mbox{\hyperlink{7seg_8c_aa8383a9007610eb7b3ed4dfdb47e2781}{I\+S\+\_\+\+V\+A\+L\+I\+D\+\_\+\+D\+I\+S\+P\+L\+AY}}(x)~(x == \mbox{\hyperlink{7seg_8h_ac210c019f9605690297623eeb5faa1e6}{S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+O\+NE}} $\vert$$\vert$ x == \mbox{\hyperlink{7seg_8h_a9a990f67a958c09e3aa10cf6d190c52a}{S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+T\+WO}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8c_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init}} (void)
+\item 
+\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8c_ae89a46a801483d679b68d653efd31267}{seven\+Seg\+Send\+Char}} (const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+value, const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+S\+S\+D\+\_\+selector)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{7seg_8c_ab1cc4325f1de25fd504ba72a19659cdd}{gcau8\+\_\+seven\+Segment\+\_\+value\+Table}} \mbox{[}\mbox{\hyperlink{7seg_8c_a94d4f7a629d6a37608ef4cc7376dce1d}{N\+U\+M\+\_\+\+O\+F\+\_\+\+D\+I\+S\+P\+\_\+\+V\+A\+L\+U\+ES}}\mbox{]} =\{0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{7seg_8c_a6b5489be1fa4dd1cfb83274bdc9f6ebb}\label{7seg_8c_a6b5489be1fa4dd1cfb83274bdc9f6ebb}} 
+\index{7seg.c@{7seg.c}!DIO\_NUM\_OF\_GROUPS@{DIO\_NUM\_OF\_GROUPS}}
+\index{DIO\_NUM\_OF\_GROUPS@{DIO\_NUM\_OF\_GROUPS}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{DIO\_NUM\_OF\_GROUPS}{DIO\_NUM\_OF\_GROUPS}}
+{\footnotesize\ttfamily \#define D\+I\+O\+\_\+\+N\+U\+M\+\_\+\+O\+F\+\_\+\+G\+R\+O\+U\+PS~3}
+
+
+
+Definition at line 14 of file 7seg.\+c.
+
+\mbox{\Hypertarget{7seg_8c_aa8383a9007610eb7b3ed4dfdb47e2781}\label{7seg_8c_aa8383a9007610eb7b3ed4dfdb47e2781}} 
+\index{7seg.c@{7seg.c}!IS\_VALID\_DISPLAY@{IS\_VALID\_DISPLAY}}
+\index{IS\_VALID\_DISPLAY@{IS\_VALID\_DISPLAY}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{IS\_VALID\_DISPLAY}{IS\_VALID\_DISPLAY}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+V\+A\+L\+I\+D\+\_\+\+D\+I\+S\+P\+L\+AY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x == \mbox{\hyperlink{7seg_8h_ac210c019f9605690297623eeb5faa1e6}{S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+O\+NE}} $\vert$$\vert$ x == \mbox{\hyperlink{7seg_8h_a9a990f67a958c09e3aa10cf6d190c52a}{S\+E\+V\+E\+N\+\_\+\+S\+E\+G\+\_\+\+T\+WO}})}
+
+
+
+Definition at line 20 of file 7seg.\+c.
+
+\mbox{\Hypertarget{7seg_8c_a20031d73742853a1039640da76920e06}\label{7seg_8c_a20031d73742853a1039640da76920e06}} 
+\index{7seg.c@{7seg.c}!IS\_VISIABLE\_VALUE@{IS\_VISIABLE\_VALUE}}
+\index{IS\_VISIABLE\_VALUE@{IS\_VISIABLE\_VALUE}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{IS\_VISIABLE\_VALUE}{IS\_VISIABLE\_VALUE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+V\+I\+S\+I\+A\+B\+L\+E\+\_\+\+V\+A\+L\+UE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x $<$ 10)}
+
+
+
+Definition at line 18 of file 7seg.\+c.
+
+\mbox{\Hypertarget{7seg_8c_a94d4f7a629d6a37608ef4cc7376dce1d}\label{7seg_8c_a94d4f7a629d6a37608ef4cc7376dce1d}} 
+\index{7seg.c@{7seg.c}!NUM\_OF\_DISP\_VALUES@{NUM\_OF\_DISP\_VALUES}}
+\index{NUM\_OF\_DISP\_VALUES@{NUM\_OF\_DISP\_VALUES}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_OF\_DISP\_VALUES}{NUM\_OF\_DISP\_VALUES}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+O\+F\+\_\+\+D\+I\+S\+P\+\_\+\+V\+A\+L\+U\+ES~10}
+
+
+
+Definition at line 17 of file 7seg.\+c.
+
+\mbox{\Hypertarget{7seg_8c_ab9b683a224b84db066df42f53a953f89}\label{7seg_8c_ab9b683a224b84db066df42f53a953f89}} 
+\index{7seg.c@{7seg.c}!SEVENSEG\_MODULE\_INIT@{SEVENSEG\_MODULE\_INIT}}
+\index{SEVENSEG\_MODULE\_INIT@{SEVENSEG\_MODULE\_INIT}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{SEVENSEG\_MODULE\_INIT}{SEVENSEG\_MODULE\_INIT}}
+{\footnotesize\ttfamily \#define S\+E\+V\+E\+N\+S\+E\+G\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+I\+N\+IT~1}
+
+
+
+Definition at line 16 of file 7seg.\+c.
+
+\mbox{\Hypertarget{7seg_8c_a5daf262b148dc3be43f13f23f61f5a45}\label{7seg_8c_a5daf262b148dc3be43f13f23f61f5a45}} 
+\index{7seg.c@{7seg.c}!SEVENSEG\_MODULE\_UNINTALIZED@{SEVENSEG\_MODULE\_UNINTALIZED}}
+\index{SEVENSEG\_MODULE\_UNINTALIZED@{SEVENSEG\_MODULE\_UNINTALIZED}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{SEVENSEG\_MODULE\_UNINTALIZED}{SEVENSEG\_MODULE\_UNINTALIZED}}
+{\footnotesize\ttfamily \#define S\+E\+V\+E\+N\+S\+E\+G\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+N\+I\+N\+T\+A\+L\+I\+Z\+ED~0}
+
+
+
+Definition at line 15 of file 7seg.\+c.
+
+\mbox{\Hypertarget{7seg_8c_a0246bb0231d9a57cef86643cae33a5ba}\label{7seg_8c_a0246bb0231d9a57cef86643cae33a5ba}} 
+\index{7seg.c@{7seg.c}!SINGLE\_DIGIT\_VALUE@{SINGLE\_DIGIT\_VALUE}}
+\index{SINGLE\_DIGIT\_VALUE@{SINGLE\_DIGIT\_VALUE}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{SINGLE\_DIGIT\_VALUE}{SINGLE\_DIGIT\_VALUE}}
+{\footnotesize\ttfamily \#define S\+I\+N\+G\+L\+E\+\_\+\+D\+I\+G\+I\+T\+\_\+\+V\+A\+L\+UE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x$<$10)}
+
+
+
+Definition at line 19 of file 7seg.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{7seg_8c_a60579fecccc40e10b8ecca856466d540}\label{7seg_8c_a60579fecccc40e10b8ecca856466d540}} 
+\index{7seg.c@{7seg.c}!sevenSegInit@{sevenSegInit}}
+\index{sevenSegInit@{sevenSegInit}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{sevenSegInit()}{sevenSegInit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: void \mbox{\hyperlink{7seg_8h_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init(void)}} }}
+
+{\bfseries{Summary\+: initalize 7 S\+EG}}
+
+{\bfseries{Description\+: init 7 segmet based on linking configration paramters}}
+
+{\bfseries{Precondition\+:}} No preconditions required
+
+{\bfseries{Parameters\+:}} void 
+
+{\bfseries{Returns\+:}} E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\} 
+
+{\bfseries{Example\+:}} \mbox{\hyperlink{7seg_8h_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init()}}
+
+{\ttfamily }
+
+{\ttfamily }
+
+{\bfseries{Remarks\+:}}S\+ET S\+E\+V\+EN S\+EG D\+I\+S\+P\+L\+AY P\+O\+RT TO 0
+
+M\+O\+D\+U\+LE S\+T\+A\+TE I\+N\+IT
+
+Definition at line 26 of file 7seg.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{7seg_8c_a60579fecccc40e10b8ecca856466d540_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{7seg_8c_a60579fecccc40e10b8ecca856466d540_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{7seg_8c_ae89a46a801483d679b68d653efd31267}\label{7seg_8c_ae89a46a801483d679b68d653efd31267}} 
+\index{7seg.c@{7seg.c}!sevenSegSendChar@{sevenSegSendChar}}
+\index{sevenSegSendChar@{sevenSegSendChar}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{sevenSegSendChar()}{sevenSegSendChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Send\+Char (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+value,  }\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+S\+S\+D\+\_\+selector }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: void seven\+Seg\+Send\+Char(const uint8\+\_\+t value) }}
+
+{\bfseries{Summary\+: write to 7 S\+EG}}
+
+{\bfseries{Description\+:write w digit value to twi 7 segment display}}
+
+{\bfseries{Precondition\+:}} 7 segment must be initalized
+
+{\bfseries{Parameters\+:}} const uint8\+\_\+t value 
+
+{\bfseries{Returns\+:}} E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\} 
+
+{\bfseries{Example\+:}} seven\+Seg\+Send\+Char(15)
+
+{\ttfamily }
+
+{\ttfamily }
+
+{\bfseries{Remarks\+:}}
+
+Definition at line 54 of file 7seg.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{7seg_8c_ae89a46a801483d679b68d653efd31267_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{7seg_8c_ab1cc4325f1de25fd504ba72a19659cdd}\label{7seg_8c_ab1cc4325f1de25fd504ba72a19659cdd}} 
+\index{7seg.c@{7seg.c}!gcau8\_sevenSegment\_valueTable@{gcau8\_sevenSegment\_valueTable}}
+\index{gcau8\_sevenSegment\_valueTable@{gcau8\_sevenSegment\_valueTable}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{gcau8\_sevenSegment\_valueTable}{gcau8\_sevenSegment\_valueTable}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} gcau8\+\_\+seven\+Segment\+\_\+value\+Table\mbox{[}\mbox{\hyperlink{7seg_8c_a94d4f7a629d6a37608ef4cc7376dce1d}{N\+U\+M\+\_\+\+O\+F\+\_\+\+D\+I\+S\+P\+\_\+\+V\+A\+L\+U\+ES}}\mbox{]} =\{0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F\}}
+
+
+
+Definition at line 24 of file 7seg.\+c.
+

@@ -1,0 +1,160 @@
+\hypertarget{btn_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+H\+A\+L/\+B\+T\+N/btn.c File Reference}
+\label{btn_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/btn.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/btn.c}}
+{\ttfamily \#include \char`\"{}btn.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}btn\+\_\+\+Cfg.\+h\char`\"{}}\newline
+Include dependency graph for btn.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{btn_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{btn_8c_a9c21a7caee326d7803b94ae1952b27ca}{I\+D\+LE}}~0
+\item 
+\#define \mbox{\hyperlink{btn_8c_ab5889105dcd019008c9448dff61323f6}{I\+N\+IT}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{btn_8c_a4d8709c705e4850882d44e4b68681421}{B\+T\+N\+\_\+\+Init}} (void)
+\item 
+\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{btn_8c_a5aeeef57fe3d8638de39db5ed01efaef}{B\+T\+N\+\_\+\+Get\+State}} (\mbox{\hyperlink{btn_8h_a5c54de8c0efd647f4fb3d55269f661b3}{Btn\+State\+Type}} $\ast$ep\+\_\+\+Btn\+State\+Ptr, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Btn\+Id)
+\item 
+\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{btn_8c_af9d0881c43b0ff77296a25abd27b5929}{B\+T\+N\+\_\+\+Manager}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{btn_8c_a9c21a7caee326d7803b94ae1952b27ca}\label{btn_8c_a9c21a7caee326d7803b94ae1952b27ca}} 
+\index{btn.c@{btn.c}!IDLE@{IDLE}}
+\index{IDLE@{IDLE}!btn.c@{btn.c}}
+\doxysubsubsection{\texorpdfstring{IDLE}{IDLE}}
+{\footnotesize\ttfamily \#define I\+D\+LE~0}
+
+
+
+Definition at line 3 of file btn.\+c.
+
+\mbox{\Hypertarget{btn_8c_ab5889105dcd019008c9448dff61323f6}\label{btn_8c_ab5889105dcd019008c9448dff61323f6}} 
+\index{btn.c@{btn.c}!INIT@{INIT}}
+\index{INIT@{INIT}!btn.c@{btn.c}}
+\doxysubsubsection{\texorpdfstring{INIT}{INIT}}
+{\footnotesize\ttfamily \#define I\+N\+IT~1}
+
+
+
+Definition at line 4 of file btn.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{btn_8c_a5aeeef57fe3d8638de39db5ed01efaef}\label{btn_8c_a5aeeef57fe3d8638de39db5ed01efaef}} 
+\index{btn.c@{btn.c}!BTN\_GetState@{BTN\_GetState}}
+\index{BTN\_GetState@{BTN\_GetState}!btn.c@{btn.c}}
+\doxysubsubsection{\texorpdfstring{BTN\_GetState()}{BTN\_GetState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} B\+T\+N\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{btn_8h_a5c54de8c0efd647f4fb3d55269f661b3}{Btn\+State\+Type}} $\ast$}]{ep\+\_\+\+Btn\+State\+Ptr,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Btn\+Id }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE \mbox{\hyperlink{btn_8h_abe04b6a91662822c158e165bcea18f0b}{B\+T\+N\+\_\+\+Get\+State(\+Btn\+State\+Type $\ast$ep\+\_\+\+Btn\+State\+Ptr, uint8\+\_\+t u8\+\_\+\+Btn\+Id)}} }}
+
+{\bfseries{Summary\+: get specified btn state }}
+
+{\bfseries{Description\+: return the specified btn as an output paramter pointer}}
+
+{\bfseries{Precondition\+:}} Module must be initalized through \mbox{\hyperlink{btn_8h_a4d8709c705e4850882d44e4b68681421}{B\+T\+N\+\_\+\+Init()}} function
+
+{\bfseries{Parameters\+:}} Btn\+State\+Type $\ast$\+: pointer to an enum of type Btn\+Statetype uint8\+\_\+t \+: btn group id in the D\+IO configeration struct
+
+{\bfseries{Returns\+:}} E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\} 
+
+{\bfseries{Example\+:}} B\+T\+N\+\_\+\+Get\+State(\&u8\+\_\+on\+\_\+off\+\_\+btn\+\_\+status,\+B\+T\+N0) 
+
+{\ttfamily }
+
+{\ttfamily } report error
+
+report error
+
+Definition at line 29 of file btn.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{btn_8c_a5aeeef57fe3d8638de39db5ed01efaef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{btn_8c_a4d8709c705e4850882d44e4b68681421}\label{btn_8c_a4d8709c705e4850882d44e4b68681421}} 
+\index{btn.c@{btn.c}!BTN\_Init@{BTN\_Init}}
+\index{BTN\_Init@{BTN\_Init}!btn.c@{btn.c}}
+\doxysubsubsection{\texorpdfstring{BTN\_Init()}{BTN\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} B\+T\+N\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: void \mbox{\hyperlink{btn_8h_a4d8709c705e4850882d44e4b68681421}{B\+T\+N\+\_\+\+Init(void)}} }}
+
+{\bfseries{Summary\+: initalize btns }}
+
+{\bfseries{Description\+: init configured btns to it\textquotesingle{}s initial state as O\+FF}}
+
+{\bfseries{Precondition\+:}} No preconditions required
+
+{\bfseries{Parameters\+:}} void 
+
+{\bfseries{Returns\+:}} E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\} 
+
+{\bfseries{Example\+:}} \mbox{\hyperlink{btn_8h_a4d8709c705e4850882d44e4b68681421}{B\+T\+N\+\_\+\+Init()}}
+
+{\ttfamily }
+
+{\ttfamily }
+
+{\bfseries{Remarks\+:}}
+
+Definition at line 7 of file btn.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{btn_8c_a4d8709c705e4850882d44e4b68681421_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{btn_8c_af9d0881c43b0ff77296a25abd27b5929}\label{btn_8c_af9d0881c43b0ff77296a25abd27b5929}} 
+\index{btn.c@{btn.c}!BTN\_Manager@{BTN\_Manager}}
+\index{BTN\_Manager@{BTN\_Manager}!btn.c@{btn.c}}
+\doxysubsubsection{\texorpdfstring{BTN\_Manager()}{BTN\_Manager()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} B\+T\+N\+\_\+\+Manager (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Function prototype\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE \mbox{\hyperlink{btn_8h_af9d0881c43b0ff77296a25abd27b5929}{B\+T\+N\+\_\+\+Manager(void)}} }}
+
+{\bfseries{Summary\+: serves as the btn dispatcher }}
+
+{\bfseries{Description\+: periodic function that update the state of each btn, recommended call time 50ms }}
+
+{\bfseries{Precondition\+:}} Module must be initalized through \mbox{\hyperlink{btn_8h_a4d8709c705e4850882d44e4b68681421}{B\+T\+N\+\_\+\+Init()}} function
+
+{\bfseries{Parameters\+:}} void 
+
+{\bfseries{Returns\+:}} E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\} 
+
+{\bfseries{Example\+:}} \mbox{\hyperlink{btn_8h_af9d0881c43b0ff77296a25abd27b5929}{B\+T\+N\+\_\+\+Manager()}};
+
+{\ttfamily }
+
+{\ttfamily } report error
+
+Definition at line 49 of file btn.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{btn_8c_af9d0881c43b0ff77296a25abd27b5929_icgraph}
+\end{center}
+\end{figure}
