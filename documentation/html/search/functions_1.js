@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['dio_5finit_178',['DIO_Init',['../_d_i_o_8c.html#ac3727fdc804578b1fcb4f389164b178f',1,'DIO_Init(void):&#160;DIO.c'],['../_d_i_o_8h.html#ac3727fdc804578b1fcb4f389164b178f',1,'DIO_Init(void):&#160;DIO.c']]],
-  ['dio_5fread_179',['DIO_Read',['../_d_i_o_8c.html#a3bb016dad54e04d6e0fe0120e496e6e3',1,'DIO_Read(uint8_t u8_GroupId, uint8_t *u8p_DataPtr):&#160;DIO.c'],['../_d_i_o_8h.html#a7dcf6c01176be2bbbeac4c0d328ceeed',1,'DIO_Read(uint8_t GroupId, uint8_t *DataPtr):&#160;DIO.c']]],
-  ['dio_5fwrite_180',['DIO_Write',['../_d_i_o_8c.html#a99a13d06fded688bc6c67bd20b8bf873',1,'DIO_Write(uint8_t u8_GroupId, uint8_t u8_Data):&#160;DIO.c'],['../_d_i_o_8h.html#a4acd193ad3ba76d4f8c23d03e39d30ca',1,'DIO_Write(uint8_t GroupId, uint8_t Data):&#160;DIO.c']]]
+  ['adc_5finit_315',['ADC_Init',['../adc_8c.html#ab63839ae7368b215a9e0e3381427d76a',1,'ADC_Init(void):&#160;adc.c'],['../adc_8h.html#ab63839ae7368b215a9e0e3381427d76a',1,'ADC_Init(void):&#160;adc.c']]],
+  ['adc_5fupdatevalue_316',['ADC_UpdateValue',['../adc_8c.html#a14db941c6084462d6d9c2ae29a1cce98',1,'ADC_UpdateValue(uint8_t u8_canal):&#160;adc.c'],['../adc_8h.html#a14db941c6084462d6d9c2ae29a1cce98',1,'ADC_UpdateValue(uint8_t u8_canal):&#160;adc.c']]],
+  ['appinit_317',['appInit',['../main_8c.html#ab90881fea8078c203ba2c8538c00593a',1,'main.c']]]
 ];

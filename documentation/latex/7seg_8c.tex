@@ -2,12 +2,11 @@
 \label{7seg_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.c}}
 {\ttfamily \#include \char`\"{}7seg.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}7seg\+\_\+\+Cfg.\+h\char`\"{}}\newline
-Include dependency graph for 7seg.\+c\+:
-\nopagebreak
+Include dependency graph for 7seg.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=335pt]{7seg_8c__incl}
+\includegraphics[width=344pt]{7seg_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Macros}
@@ -30,9 +29,11 @@ Include dependency graph for 7seg.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8c_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init}} (void)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8c_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init}} (void)
 \item 
-\mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8c_ae89a46a801483d679b68d653efd31267}{seven\+Seg\+Send\+Char}} (const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+value, const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+S\+S\+D\+\_\+selector)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8c_a15964358587a33b34d3b9b973be0243f}{disable\+Seven\+Seg}} ()
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{7seg_8c_ae89a46a801483d679b68d653efd31267}{seven\+Seg\+Send\+Char}} (const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+value, const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+S\+S\+D\+\_\+selector)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -115,11 +116,35 @@ Definition at line 19 of file 7seg.\+c.
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{7seg_8c_a15964358587a33b34d3b9b973be0243f}\label{7seg_8c_a15964358587a33b34d3b9b973be0243f}} 
+\index{7seg.c@{7seg.c}!disableSevenSeg@{disableSevenSeg}}
+\index{disableSevenSeg@{disableSevenSeg}!7seg.c@{7seg.c}}
+\doxysubsubsection{\texorpdfstring{disableSevenSeg()}{disableSevenSeg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} disable\+Seven\+Seg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file 7seg.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{7seg_8c_a15964358587a33b34d3b9b973be0243f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{7seg_8c_a15964358587a33b34d3b9b973be0243f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{7seg_8c_a60579fecccc40e10b8ecca856466d540}\label{7seg_8c_a60579fecccc40e10b8ecca856466d540}} 
 \index{7seg.c@{7seg.c}!sevenSegInit@{sevenSegInit}}
 \index{sevenSegInit@{sevenSegInit}!7seg.c@{7seg.c}}
 \doxysubsubsection{\texorpdfstring{sevenSegInit()}{sevenSegInit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 {\bfseries{Function prototype\+: void \mbox{\hyperlink{7seg_8h_a60579fecccc40e10b8ecca856466d540}{seven\+Seg\+Init(void)}} }}
 
@@ -145,16 +170,14 @@ M\+O\+D\+U\+LE S\+T\+A\+TE I\+N\+IT
 
 Definition at line 26 of file 7seg.\+c.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=249pt]{7seg_8c_a60579fecccc40e10b8ecca856466d540_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -165,7 +188,7 @@ Here is the caller graph for this function\+:
 \index{7seg.c@{7seg.c}!sevenSegSendChar@{sevenSegSendChar}}
 \index{sevenSegSendChar@{sevenSegSendChar}!7seg.c@{7seg.c}}
 \doxysubsubsection{\texorpdfstring{sevenSegSendChar()}{sevenSegSendChar()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_config_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Send\+Char (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+value,  }\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+S\+S\+D\+\_\+selector }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} seven\+Seg\+Send\+Char (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+value,  }\item[{const \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+S\+S\+D\+\_\+selector }\end{DoxyParamCaption})}
 
 {\bfseries{Function prototype\+: void seven\+Seg\+Send\+Char(const uint8\+\_\+t value) }}
 
@@ -187,10 +210,9 @@ Here is the caller graph for this function\+:
 
 {\bfseries{Remarks\+:}}
 
-Definition at line 54 of file 7seg.\+c.
+Definition at line 58 of file 7seg.\+c.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -2,12 +2,11 @@
 \label{_d_i_o_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c}}
 {\ttfamily \#include \char`\"{}D\+I\+O.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}D\+I\+O\+\_\+\+Cfg.\+h\char`\"{}}\newline
-Include dependency graph for D\+I\+O.\+c\+:
-\nopagebreak
+Include dependency graph for D\+I\+O.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=231pt]{_d_i_o_8c__incl}
+\includegraphics[width=306pt]{_d_i_o_8c__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Macros}
@@ -28,11 +27,13 @@ Include dependency graph for D\+I\+O.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init}} (void)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8c_afcc83c805035d83c6834e8fcfd83e2b1}{D\+I\+O\+\_\+\+Init}} (void)
 \item 
-void \mbox{\hyperlink{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873}{D\+I\+O\+\_\+\+Write}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Data)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0}{D\+I\+O\+\_\+\+Write}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Data)
 \item 
-void \mbox{\hyperlink{_d_i_o_8c_a3bb016dad54e04d6e0fe0120e496e6e3}{D\+I\+O\+\_\+\+Read}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$u8p\+\_\+\+Data\+Ptr)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8c_aeaaeb5ff489bac3f6da33bfa3e8e083f}{D\+I\+O\+\_\+\+Toggle}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8c_a1547f3be3586279bb415ce4e4c131df2}{D\+I\+O\+\_\+\+Read}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$u8p\+\_\+\+Data\+Ptr)
 \end{DoxyCompactItemize}
 
 
@@ -100,13 +101,13 @@ Definition at line 12 of file D\+I\+O.\+c.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f}\label{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f}} 
+\mbox{\Hypertarget{_d_i_o_8c_afcc83c805035d83c6834e8fcfd83e2b1}\label{_d_i_o_8c_afcc83c805035d83c6834e8fcfd83e2b1}} 
 \index{DIO.c@{DIO.c}!DIO\_Init@{DIO\_Init}}
 \index{DIO\_Init@{DIO\_Init}!DIO.c@{DIO.c}}
 \doxysubsubsection{\texorpdfstring{DIO\_Init()}{DIO\_Init()}}
-{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-{\bfseries{Function prototype\+: void \mbox{\hyperlink{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init(void)}}}}
+{\bfseries{Function prototype\+: void \mbox{\hyperlink{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}{D\+I\+O\+\_\+\+Init(void)}}}}
 
 {\bfseries{Summary\+: initalize all project pins for init values}}
 
@@ -118,7 +119,7 @@ Definition at line 12 of file D\+I\+O.\+c.
 
 {\bfseries{Returns\+:}} void 
 
-{\bfseries{Example\+:}} \mbox{\hyperlink{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init()}}
+{\bfseries{Example\+:}} \mbox{\hyperlink{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}{D\+I\+O\+\_\+\+Init()}}
 
 {\ttfamily }
 
@@ -128,39 +129,47 @@ Definition at line 12 of file D\+I\+O.\+c.
 
 Definition at line 20 of file D\+I\+O.\+c.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{_d_i_o_8c_ac3727fdc804578b1fcb4f389164b178f_icgraph}
+\includegraphics[width=350pt]{_d_i_o_8c_afcc83c805035d83c6834e8fcfd83e2b1_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{_d_i_o_8c_a3bb016dad54e04d6e0fe0120e496e6e3}\label{_d_i_o_8c_a3bb016dad54e04d6e0fe0120e496e6e3}} 
+\mbox{\Hypertarget{_d_i_o_8c_a1547f3be3586279bb415ce4e4c131df2}\label{_d_i_o_8c_a1547f3be3586279bb415ce4e4c131df2}} 
 \index{DIO.c@{DIO.c}!DIO\_Read@{DIO\_Read}}
 \index{DIO\_Read@{DIO\_Read}!DIO.c@{DIO.c}}
 \doxysubsubsection{\texorpdfstring{DIO\_Read()}{DIO\_Read()}}
-{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$}]{u8p\+\_\+\+Data\+Ptr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$}]{u8p\+\_\+\+Data\+Ptr }\end{DoxyParamCaption})}
 
 
 
-Definition at line 41 of file D\+I\+O.\+c.
+Definition at line 50 of file D\+I\+O.\+c.
 
-\mbox{\Hypertarget{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873}\label{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873}} 
+\mbox{\Hypertarget{_d_i_o_8c_aeaaeb5ff489bac3f6da33bfa3e8e083f}\label{_d_i_o_8c_aeaaeb5ff489bac3f6da33bfa3e8e083f}} 
+\index{DIO.c@{DIO.c}!DIO\_Toggle@{DIO\_Toggle}}
+\index{DIO\_Toggle@{DIO\_Toggle}!DIO.c@{DIO.c}}
+\doxysubsubsection{\texorpdfstring{DIO\_Toggle()}{DIO\_Toggle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0}\label{_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0}} 
 \index{DIO.c@{DIO.c}!DIO\_Write@{DIO\_Write}}
 \index{DIO\_Write@{DIO\_Write}!DIO.c@{DIO.c}}
 \doxysubsubsection{\texorpdfstring{DIO\_Write()}{DIO\_Write()}}
-{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Data }\end{DoxyParamCaption})}
 
 
 
 Definition at line 33 of file D\+I\+O.\+c.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{_d_i_o_8c_a99a13d06fded688bc6c67bd20b8bf873_icgraph}
+\includegraphics[width=350pt]{_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0_icgraph}
 \end{center}
 \end{figure}

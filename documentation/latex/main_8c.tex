@@ -7,9 +7,14 @@
 {\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+D\+I\+O/\+D\+I\+O.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../\+H\+A\+L/7\+S\+E\+G/unit\+Test/7seg\+\_\+test.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../\+H\+A\+L/\+B\+T\+N/unit test/btn\+\_\+test.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+H\+A\+L/\+B\+T\+N/btn.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+H\+A\+L/eeprom\+\_\+ext/eeprom\+\_\+ext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+A\+D\+C/adc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+I\+S\+R/isr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+T\+I\+M\+E\+R/timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Service\+Layer/\+S\+O\+S/\+S\+O\+S.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$xc.\+h$>$}\newline
-Include dependency graph for main.\+c\+:
-\nopagebreak
+Include dependency graph for main.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,15 +25,56 @@ Include dependency graph for main.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{main_8c_a2b3671e090b0831bfba7d12cfcf2d481}{L\+E\+D\+P\+IN}}~0
+\item 
+\#define \mbox{\hyperlink{main_8c_a6b7df4043e1413150b5b151637df70fd}{O\+N\+\_\+\+O\+F\+F\+\_\+\+B\+TN}}~0
+\item 
+\#define \mbox{\hyperlink{main_8c_a2a8461454ac6747c1ebdd30f3ffc1851}{U\+P\+\_\+\+B\+TN}}~1
+\item 
+\#define \mbox{\hyperlink{main_8c_abcd7e0ec0066ae19628c726fd47ecbe2}{D\+O\+W\+N\+\_\+\+B\+TN}}~2
+\item 
+\#define \mbox{\hyperlink{main_8c_a9435522a8da2a4c941013971ce83b553}{U\+S\+E\+D\+\_\+\+P\+A\+T\+T\+E\+RN}}~(0x3D)
+\item 
+\#define \mbox{\hyperlink{main_8c_a56eb5efdeca4cd6cdecc9c518dd867d2}{T\+E\+M\+P\+\_\+\+V\+L\+A\+U\+ES}}~10
+\item 
+\#define \mbox{\hyperlink{main_8c_a8e9b7c13dca2d5b64ae1ae4d65472f69}{S\+S\+D\+\_\+\+F\+L\+A\+S\+H\+I\+N\+G\+\_\+\+C\+Y\+C\+LE}}~20
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_8c_ac5cc1393a3907945816f4b7e09049732}{operation\+Mode\+\_\+t}} \{ \mbox{\hyperlink{main_8c_ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3}{T\+E\+M\+P\+\_\+\+S\+E\+T\+\_\+\+M\+O\+DE}}, 
+\mbox{\hyperlink{main_8c_ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a}{N\+O\+R\+M\+\_\+\+M\+O\+DE}}
+ \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_aabcbdc9715896bcbf677585867fd734c}{temp\+Control\+Task}} ()
+\item 
+void \mbox{\hyperlink{main_8c_aa3704144322ffcbb82cc88ee36f1a9da}{button\+Task}} ()
+\item 
+void \mbox{\hyperlink{main_8c_ac1e5ea28aae6331165f91deabb3a7101}{seven\+Seg\+Task}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a4e7c6b5809aef7a48e6ff16156c907b5}{temp\+Task}} ()
+\item 
+void \mbox{\hyperlink{main_8c_ab90881fea8078c203ba2c8538c00593a}{app\+Init}} ()
+\item 
+void \mbox{\hyperlink{main_8c_abf7e98ccf36d8f640a03030aad64c7f2}{check\+O\+N\+Btn\+Status}} ()
 \item 
 void \mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_abcd7e0ec0066ae19628c726fd47ecbe2}\label{main_8c_abcd7e0ec0066ae19628c726fd47ecbe2}} 
+\index{main.c@{main.c}!DOWN\_BTN@{DOWN\_BTN}}
+\index{DOWN\_BTN@{DOWN\_BTN}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DOWN\_BTN}{DOWN\_BTN}}
+{\footnotesize\ttfamily \#define D\+O\+W\+N\+\_\+\+B\+TN~2}
+
+
+
+Definition at line 27 of file main.\+c.
+
 \mbox{\Hypertarget{main_8c_a2b3671e090b0831bfba7d12cfcf2d481}\label{main_8c_a2b3671e090b0831bfba7d12cfcf2d481}} 
 \index{main.c@{main.c}!LEDPIN@{LEDPIN}}
 \index{LEDPIN@{LEDPIN}!main.c@{main.c}}
@@ -37,11 +83,150 @@ void \mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
 
 
 
-Definition at line 16 of file main.\+c.
+Definition at line 24 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a6b7df4043e1413150b5b151637df70fd}\label{main_8c_a6b7df4043e1413150b5b151637df70fd}} 
+\index{main.c@{main.c}!ON\_OFF\_BTN@{ON\_OFF\_BTN}}
+\index{ON\_OFF\_BTN@{ON\_OFF\_BTN}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ON\_OFF\_BTN}{ON\_OFF\_BTN}}
+{\footnotesize\ttfamily \#define O\+N\+\_\+\+O\+F\+F\+\_\+\+B\+TN~0}
+
+
+
+Definition at line 25 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a8e9b7c13dca2d5b64ae1ae4d65472f69}\label{main_8c_a8e9b7c13dca2d5b64ae1ae4d65472f69}} 
+\index{main.c@{main.c}!SSD\_FLASHING\_CYCLE@{SSD\_FLASHING\_CYCLE}}
+\index{SSD\_FLASHING\_CYCLE@{SSD\_FLASHING\_CYCLE}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SSD\_FLASHING\_CYCLE}{SSD\_FLASHING\_CYCLE}}
+{\footnotesize\ttfamily \#define S\+S\+D\+\_\+\+F\+L\+A\+S\+H\+I\+N\+G\+\_\+\+C\+Y\+C\+LE~20}
+
+
+
+Definition at line 30 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a56eb5efdeca4cd6cdecc9c518dd867d2}\label{main_8c_a56eb5efdeca4cd6cdecc9c518dd867d2}} 
+\index{main.c@{main.c}!TEMP\_VLAUES@{TEMP\_VLAUES}}
+\index{TEMP\_VLAUES@{TEMP\_VLAUES}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{TEMP\_VLAUES}{TEMP\_VLAUES}}
+{\footnotesize\ttfamily \#define T\+E\+M\+P\+\_\+\+V\+L\+A\+U\+ES~10}
+
+
+
+Definition at line 29 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a2a8461454ac6747c1ebdd30f3ffc1851}\label{main_8c_a2a8461454ac6747c1ebdd30f3ffc1851}} 
+\index{main.c@{main.c}!UP\_BTN@{UP\_BTN}}
+\index{UP\_BTN@{UP\_BTN}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{UP\_BTN}{UP\_BTN}}
+{\footnotesize\ttfamily \#define U\+P\+\_\+\+B\+TN~1}
+
+
+
+Definition at line 26 of file main.\+c.
+
+\mbox{\Hypertarget{main_8c_a9435522a8da2a4c941013971ce83b553}\label{main_8c_a9435522a8da2a4c941013971ce83b553}} 
+\index{main.c@{main.c}!USED\_PATTERN@{USED\_PATTERN}}
+\index{USED\_PATTERN@{USED\_PATTERN}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{USED\_PATTERN}{USED\_PATTERN}}
+{\footnotesize\ttfamily \#define U\+S\+E\+D\+\_\+\+P\+A\+T\+T\+E\+RN~(0x3D)}
+
+
+
+Definition at line 28 of file main.\+c.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{main_8c_ac5cc1393a3907945816f4b7e09049732}\label{main_8c_ac5cc1393a3907945816f4b7e09049732}} 
+\index{main.c@{main.c}!operationMode\_t@{operationMode\_t}}
+\index{operationMode\_t@{operationMode\_t}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{operationMode\_t}{operationMode\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_8c_ac5cc1393a3907945816f4b7e09049732}{operation\+Mode\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEMP\_SET\_MODE@{TEMP\_SET\_MODE}!main.c@{main.c}}\index{main.c@{main.c}!TEMP\_SET\_MODE@{TEMP\_SET\_MODE}}}\mbox{\Hypertarget{main_8c_ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3}\label{main_8c_ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3}} 
+T\+E\+M\+P\+\_\+\+S\+E\+T\+\_\+\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORM\_MODE@{NORM\_MODE}!main.c@{main.c}}\index{main.c@{main.c}!NORM\_MODE@{NORM\_MODE}}}\mbox{\Hypertarget{main_8c_ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a}\label{main_8c_ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a}} 
+N\+O\+R\+M\+\_\+\+M\+O\+DE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 31 of file main.\+c.
 
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ab90881fea8078c203ba2c8538c00593a}\label{main_8c_ab90881fea8078c203ba2c8538c00593a}} 
+\index{main.c@{main.c}!appInit@{appInit}}
+\index{appInit@{appInit}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{appInit()}{appInit()}}
+{\footnotesize\ttfamily void app\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+init temp control element to zero
+
+Definition at line 236 of file main.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ab90881fea8078c203ba2c8538c00593a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{main_8c_ab90881fea8078c203ba2c8538c00593a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_aa3704144322ffcbb82cc88ee36f1a9da}\label{main_8c_aa3704144322ffcbb82cc88ee36f1a9da}} 
+\index{main.c@{main.c}!buttonTask@{buttonTask}}
+\index{buttonTask@{buttonTask}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{buttonTask()}{buttonTask()}}
+{\footnotesize\ttfamily void button\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 112 of file main.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{main_8c_aa3704144322ffcbb82cc88ee36f1a9da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{main_8c_aa3704144322ffcbb82cc88ee36f1a9da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_abf7e98ccf36d8f640a03030aad64c7f2}\label{main_8c_abf7e98ccf36d8f640a03030aad64c7f2}} 
+\index{main.c@{main.c}!checkONBtnStatus@{checkONBtnStatus}}
+\index{checkONBtnStatus@{checkONBtnStatus}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{checkONBtnStatus()}{checkONBtnStatus()}}
+{\footnotesize\ttfamily void check\+O\+N\+Btn\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 271 of file main.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{main_8c_abf7e98ccf36d8f640a03030aad64c7f2_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}\label{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}} 
 \index{main.c@{main.c}!main@{main}}
 \index{main@{main}!main.c@{main.c}}
@@ -50,7 +235,7 @@ Definition at line 16 of file main.\+c.
 
 
 
-Definition at line 19 of file main.\+c.
+Definition at line 282 of file main.\+c.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -58,5 +243,66 @@ Here is the call graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ac1e5ea28aae6331165f91deabb3a7101}\label{main_8c_ac1e5ea28aae6331165f91deabb3a7101}} 
+\index{main.c@{main.c}!sevenSegTask@{sevenSegTask}}
+\index{sevenSegTask@{sevenSegTask}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sevenSegTask()}{sevenSegTask()}}
+{\footnotesize\ttfamily void seven\+Seg\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 171 of file main.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{main_8c_ac1e5ea28aae6331165f91deabb3a7101_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_aabcbdc9715896bcbf677585867fd734c}\label{main_8c_aabcbdc9715896bcbf677585867fd734c}} 
+\index{main.c@{main.c}!tempControlTask@{tempControlTask}}
+\index{tempControlTask@{tempControlTask}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tempControlTask()}{tempControlTask()}}
+{\footnotesize\ttfamily void temp\+Control\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+turn on the heater
+
+turn on the heater
+
+Definition at line 44 of file main.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{main_8c_aabcbdc9715896bcbf677585867fd734c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a4e7c6b5809aef7a48e6ff16156c907b5}\label{main_8c_a4e7c6b5809aef7a48e6ff16156c907b5}} 
+\index{main.c@{main.c}!tempTask@{tempTask}}
+\index{tempTask@{tempTask}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tempTask()}{tempTask()}}
+{\footnotesize\ttfamily void temp\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 221 of file main.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph}
 \end{center}
 \end{figure}

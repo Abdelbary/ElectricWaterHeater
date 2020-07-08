@@ -17,7 +17,7 @@
 static const uint8_t gscu8_DIO_PortShift[PORT_NUM] = {0x00, 0x01, 0x02, 0x03 ,0x04};
 
 
-void DIO_Init(void)
+ERROR_STATE DIO_Init(void)
 {
 	uint8_t u8_loop;
 	for(u8_loop = 0; u8_loop < DIO_NUM_OF_GROUPS; u8_loop++)
@@ -30,7 +30,7 @@ void DIO_Init(void)
 }
 
 
-void DIO_Write(uint8_t u8_GroupId, uint8_t u8_Data)
+ERROR_STATE DIO_Write(uint8_t u8_GroupId, uint8_t u8_Data)
 {
 	uint8_t  u8_TempData;
 	u8_TempData = PORT_REG(DIO_ConfigParam[u8_GroupId].Port);
@@ -39,7 +39,7 @@ void DIO_Write(uint8_t u8_GroupId, uint8_t u8_Data)
 	PORT_REG(DIO_ConfigParam[u8_GroupId].Port) = u8_TempData;
 }
 
-void DIO_Toggle(uint8_t u8_GroupId)
+ERROR_STATE DIO_Toggle(uint8_t u8_GroupId)
 {
 	uint8_t  u8_TempData;
 	u8_TempData = PORT_REG(DIO_ConfigParam[u8_GroupId].Port);
@@ -47,7 +47,7 @@ void DIO_Toggle(uint8_t u8_GroupId)
 	
 	PORT_REG(DIO_ConfigParam[u8_GroupId].Port) = u8_TempData;
 }
-void DIO_Read(uint8_t u8_GroupId,uint8_t * u8p_DataPtr)
+ERROR_STATE DIO_Read(uint8_t u8_GroupId,uint8_t * u8p_DataPtr)
 {
 	*u8p_DataPtr = PIN_REG(DIO_ConfigParam[u8_GroupId].Port) & DIO_ConfigParam[u8_GroupId].Mask;
 }

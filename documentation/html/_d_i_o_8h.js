@@ -14,7 +14,8 @@ var _d_i_o_8h =
     [ "PORT_C", "_d_i_o_8h.html#a8b1f19a91c7a14a40f9633985d330e40", null ],
     [ "PORT_D", "_d_i_o_8h.html#ae256d5f69ef8fdfab967632ad7b753df", null ],
     [ "PORT_E", "_d_i_o_8h.html#a193fd9b28005073562257edd69a294e0", null ],
-    [ "DIO_Init", "_d_i_o_8h.html#ac3727fdc804578b1fcb4f389164b178f", null ],
-    [ "DIO_Read", "_d_i_o_8h.html#a7dcf6c01176be2bbbeac4c0d328ceeed", null ],
-    [ "DIO_Write", "_d_i_o_8h.html#a4acd193ad3ba76d4f8c23d03e39d30ca", null ]
+    [ "DIO_Init", "_d_i_o_8h.html#afcc83c805035d83c6834e8fcfd83e2b1", null ],
+    [ "DIO_Read", "_d_i_o_8h.html#ab97b3d3cdad467aa77fc700d44055442", null ],
+    [ "DIO_Toggle", "_d_i_o_8h.html#aeaaeb5ff489bac3f6da33bfa3e8e083f", null ],
+    [ "DIO_Write", "_d_i_o_8h.html#a3cbe9e47e1f77b43f455b35221392ade", null ]
 ];

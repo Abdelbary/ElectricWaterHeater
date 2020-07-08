@@ -1,0 +1,214 @@
+\hypertarget{_s_o_s_8h}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+Service\+Layer/\+S\+O\+S/\+S\+OS.h File Reference}
+\label{_s_o_s_8h}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.h@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.h}}
+{\ttfamily \#include \char`\"{}../std\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../common\+\_\+macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Error\+\_\+\+Handler/\+System\+Errors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+M\+C\+A\+L/\+T\+I\+M\+E\+R/timer.\+h\char`\"{}}\newline
+Include dependency graph for S\+O\+S.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_o_s_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_o_s_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+str}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_o_s_8h_a34d8d9fcacf2f587d785d29e51b4f057}{S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H0}}~0
+\item 
+\#define \mbox{\hyperlink{_s_o_s_8h_a64453ccfdbaf755fcf2882049ba4f374}{S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H1}}~1
+\item 
+\#define \mbox{\hyperlink{_s_o_s_8h_a2af4b730e5010efe7b829596ed1b6e67}{S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H2}}~2
+\item 
+\#define \mbox{\hyperlink{_s_o_s_8h_af36821ad7b93ab31dcfaaa25e134fdf0}{P\+E\+R\+I\+O\+D\+IC}}~0
+\item 
+\#define \mbox{\hyperlink{_s_o_s_8h_a1ef26b95b5aca86826119bcd68672028}{O\+N\+\_\+\+S\+H\+OT}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+str}} \mbox{\hyperlink{_s_o_s_8h_afcb1b7b451e3f428a5e38e271845b577}{gstr\+\_\+\+S\+O\+S\+\_\+cfg\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763}{S\+O\+S\+\_\+\+Init}} (void)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734}{S\+O\+S\+\_\+create\+Task}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Id, void($\ast$call\+B\+\_\+fun\+\_\+ptr)(void), \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} lap\+\_\+time, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} type)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981}{S\+O\+S\+\_\+delet\+Task}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Id)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67}{S\+O\+S\+\_\+run}} (void)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9}{S\+O\+S\+\_\+\+Deinit}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_o_s_8h_a1ef26b95b5aca86826119bcd68672028}\label{_s_o_s_8h_a1ef26b95b5aca86826119bcd68672028}} 
+\index{SOS.h@{SOS.h}!ON\_SHOT@{ON\_SHOT}}
+\index{ON\_SHOT@{ON\_SHOT}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{ON\_SHOT}{ON\_SHOT}}
+{\footnotesize\ttfamily \#define O\+N\+\_\+\+S\+H\+OT~1}
+
+
+
+Definition at line 24 of file S\+O\+S.\+h.
+
+\mbox{\Hypertarget{_s_o_s_8h_af36821ad7b93ab31dcfaaa25e134fdf0}\label{_s_o_s_8h_af36821ad7b93ab31dcfaaa25e134fdf0}} 
+\index{SOS.h@{SOS.h}!PERIODIC@{PERIODIC}}
+\index{PERIODIC@{PERIODIC}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{PERIODIC}{PERIODIC}}
+{\footnotesize\ttfamily \#define P\+E\+R\+I\+O\+D\+IC~0}
+
+
+
+Definition at line 23 of file S\+O\+S.\+h.
+
+\mbox{\Hypertarget{_s_o_s_8h_a34d8d9fcacf2f587d785d29e51b4f057}\label{_s_o_s_8h_a34d8d9fcacf2f587d785d29e51b4f057}} 
+\index{SOS.h@{SOS.h}!SOS\_TIMER\_CH0@{SOS\_TIMER\_CH0}}
+\index{SOS\_TIMER\_CH0@{SOS\_TIMER\_CH0}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_TIMER\_CH0}{SOS\_TIMER\_CH0}}
+{\footnotesize\ttfamily \#define S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H0~0}
+
+
+
+Definition at line 19 of file S\+O\+S.\+h.
+
+\mbox{\Hypertarget{_s_o_s_8h_a64453ccfdbaf755fcf2882049ba4f374}\label{_s_o_s_8h_a64453ccfdbaf755fcf2882049ba4f374}} 
+\index{SOS.h@{SOS.h}!SOS\_TIMER\_CH1@{SOS\_TIMER\_CH1}}
+\index{SOS\_TIMER\_CH1@{SOS\_TIMER\_CH1}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_TIMER\_CH1}{SOS\_TIMER\_CH1}}
+{\footnotesize\ttfamily \#define S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H1~1}
+
+
+
+Definition at line 20 of file S\+O\+S.\+h.
+
+\mbox{\Hypertarget{_s_o_s_8h_a2af4b730e5010efe7b829596ed1b6e67}\label{_s_o_s_8h_a2af4b730e5010efe7b829596ed1b6e67}} 
+\index{SOS.h@{SOS.h}!SOS\_TIMER\_CH2@{SOS\_TIMER\_CH2}}
+\index{SOS\_TIMER\_CH2@{SOS\_TIMER\_CH2}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_TIMER\_CH2}{SOS\_TIMER\_CH2}}
+{\footnotesize\ttfamily \#define S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H2~2}
+
+
+
+Definition at line 21 of file S\+O\+S.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_o_s_8h_afcb1b7b451e3f428a5e38e271845b577}\label{_s_o_s_8h_afcb1b7b451e3f428a5e38e271845b577}} 
+\index{SOS.h@{SOS.h}!gstr\_SOS\_cfg\_t@{gstr\_SOS\_cfg\_t}}
+\index{gstr\_SOS\_cfg\_t@{gstr\_SOS\_cfg\_t}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{gstr\_SOS\_cfg\_t}{gstr\_SOS\_cfg\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+str}} \mbox{\hyperlink{_s_o_s_8h_afcb1b7b451e3f428a5e38e271845b577}{gstr\+\_\+\+S\+O\+S\+\_\+cfg\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734}\label{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734}} 
+\index{SOS.h@{SOS.h}!SOS\_createTask@{SOS\_createTask}}
+\index{SOS\_createTask@{SOS\_createTask}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_createTask()}{SOS\_createTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+create\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Id,  }\item[{void($\ast$)(void)}]{call\+B\+\_\+fun\+\_\+ptr,  }\item[{\mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}}}]{lap\+\_\+time,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9}\label{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9}} 
+\index{SOS.h@{SOS.h}!SOS\_Deinit@{SOS\_Deinit}}
+\index{SOS\_Deinit@{SOS\_Deinit}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_Deinit()}{SOS\_Deinit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+\+Deinit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 229 of file S\+O\+S.\+c.
+
+\mbox{\Hypertarget{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981}\label{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981}} 
+\index{SOS.h@{SOS.h}!SOS\_deletTask@{SOS\_deletTask}}
+\index{SOS\_deletTask@{SOS\_deletTask}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_deletTask()}{SOS\_deletTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+delet\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file S\+O\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763}\label{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763}} 
+\index{SOS.h@{SOS.h}!SOS\_Init@{SOS\_Init}}
+\index{SOS\_Init@{SOS\_Init}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_Init()}{SOS\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67}\label{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67}} 
+\index{SOS.h@{SOS.h}!SOS\_run@{SOS\_run}}
+\index{SOS\_run@{SOS\_run}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_run()}{SOS\_run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 163 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67_cgraph}
+\end{center}
+\end{figure}

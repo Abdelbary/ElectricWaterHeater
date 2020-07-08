@@ -1,0 +1,187 @@
+\hypertarget{adc_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+M\+C\+A\+L/\+A\+D\+C/adc.c File Reference}
+\label{adc_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ADC/adc.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ADC/adc.c}}
+{\ttfamily \#include $<$xc.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+Include dependency graph for adc.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{adc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{adc_8c_af58e1f4242f28727323cdb99f73201d5}{A\+D\+C\+\_\+\+I\+D\+L\+E\+\_\+\+S\+T\+A\+TE}}~0
+\item 
+\#define \mbox{\hyperlink{adc_8c_a27123bf57bfb103bfe9b1089cb96f29b}{A\+D\+C\+\_\+\+I\+N\+I\+T\+\_\+\+S\+T\+A\+TE}}~1
+\item 
+\#define \mbox{\hyperlink{adc_8c_a209bcbc4430102a789f1c5d1881b835f}{M\+A\+X\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+C\+H\+A\+N\+AL}}~8
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{adc_8c_ab63839ae7368b215a9e0e3381427d76a}{A\+D\+C\+\_\+\+Init}} (void)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{adc_8c_a14db941c6084462d6d9c2ae29a1cce98}{A\+D\+C\+\_\+\+Update\+Value}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+canal)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} \mbox{\hyperlink{adc_8c_a5a326621cf2bed38aad87c1c9a06fa9b}{gu8\+\_\+\+A\+D\+C\+\_\+\+A\+D\+C\+Value}}
+\item 
+\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{adc_8c_a01787ad744451fdef348a05fc3fae533}{gu8\+\_\+\+A\+D\+C\+\_\+\+State}} =\mbox{\hyperlink{adc_8c_af58e1f4242f28727323cdb99f73201d5}{A\+D\+C\+\_\+\+I\+D\+L\+E\+\_\+\+S\+T\+A\+TE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{adc_8c_af58e1f4242f28727323cdb99f73201d5}\label{adc_8c_af58e1f4242f28727323cdb99f73201d5}} 
+\index{adc.c@{adc.c}!ADC\_IDLE\_STATE@{ADC\_IDLE\_STATE}}
+\index{ADC\_IDLE\_STATE@{ADC\_IDLE\_STATE}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_IDLE\_STATE}{ADC\_IDLE\_STATE}}
+{\footnotesize\ttfamily \#define A\+D\+C\+\_\+\+I\+D\+L\+E\+\_\+\+S\+T\+A\+TE~0}
+
+
+
+Definition at line 29 of file adc.\+c.
+
+\mbox{\Hypertarget{adc_8c_a27123bf57bfb103bfe9b1089cb96f29b}\label{adc_8c_a27123bf57bfb103bfe9b1089cb96f29b}} 
+\index{adc.c@{adc.c}!ADC\_INIT\_STATE@{ADC\_INIT\_STATE}}
+\index{ADC\_INIT\_STATE@{ADC\_INIT\_STATE}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_INIT\_STATE}{ADC\_INIT\_STATE}}
+{\footnotesize\ttfamily \#define A\+D\+C\+\_\+\+I\+N\+I\+T\+\_\+\+S\+T\+A\+TE~1}
+
+
+
+Definition at line 30 of file adc.\+c.
+
+\mbox{\Hypertarget{adc_8c_a209bcbc4430102a789f1c5d1881b835f}\label{adc_8c_a209bcbc4430102a789f1c5d1881b835f}} 
+\index{adc.c@{adc.c}!MAX\_SUPPORTED\_CHANAL@{MAX\_SUPPORTED\_CHANAL}}
+\index{MAX\_SUPPORTED\_CHANAL@{MAX\_SUPPORTED\_CHANAL}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_SUPPORTED\_CHANAL}{MAX\_SUPPORTED\_CHANAL}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+C\+H\+A\+N\+AL~8}
+
+
+
+Definition at line 31 of file adc.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{adc_8c_ab63839ae7368b215a9e0e3381427d76a}\label{adc_8c_ab63839ae7368b215a9e0e3381427d76a}} 
+\index{adc.c@{adc.c}!ADC\_Init@{ADC\_Init}}
+\index{ADC\_Init@{ADC\_Init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_Init()}{ADC\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} A\+D\+C\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} 
+
+This function is used to initialize the adc based on the configuration in adc\+\_\+cfg module.
+
+P\+R\+E-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+: Module must be idle {\itshape not initalized befor}, D\+IO must be intalized
+
+P\+O\+S\+T-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+:
+
+\begin{DoxyReturn}{Returns}
+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\}.
+\end{DoxyReturn}
+{\bfseries{Example}} Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{adc_8c_ab63839ae7368b215a9e0e3381427d76a}{ADC\_Init}}();}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+Dio\+\_\+\+Init 
+\end{DoxySeeAlso}
+
+
+Definition at line 61 of file adc.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{adc_8c_ab63839ae7368b215a9e0e3381427d76a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{adc_8c_ab63839ae7368b215a9e0e3381427d76a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{adc_8c_a14db941c6084462d6d9c2ae29a1cce98}\label{adc_8c_a14db941c6084462d6d9c2ae29a1cce98}} 
+\index{adc.c@{adc.c}!ADC\_UpdateValue@{ADC\_UpdateValue}}
+\index{ADC\_UpdateValue@{ADC\_UpdateValue}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_UpdateValue()}{ADC\_UpdateValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} A\+D\+C\+\_\+\+Update\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+canal }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} 
+
+This function is used to trigger adc on specified chanal
+
+P\+R\+E-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+: Module must be initalized, D\+IO must be intalized
+
+P\+O\+S\+T-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+:
+
+\begin{DoxyReturn}{Returns}
+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\}.
+\end{DoxyReturn}
+{\bfseries{Example}} Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{adc_8c_a14db941c6084462d6d9c2ae29a1cce98}{ADC\_UpdateValue}}(2);}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+Dio\+\_\+\+Init 
+
+\mbox{\hyperlink{adc_8c_ab63839ae7368b215a9e0e3381427d76a}{A\+D\+C\+\_\+\+Init}} 
+\end{DoxySeeAlso}
+
+
+Definition at line 110 of file adc.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{adc_8c_a14db941c6084462d6d9c2ae29a1cce98_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{adc_8c_a14db941c6084462d6d9c2ae29a1cce98_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{adc_8c_a5a326621cf2bed38aad87c1c9a06fa9b}\label{adc_8c_a5a326621cf2bed38aad87c1c9a06fa9b}} 
+\index{adc.c@{adc.c}!gu8\_ADC\_ADCValue@{gu8\_ADC\_ADCValue}}
+\index{gu8\_ADC\_ADCValue@{gu8\_ADC\_ADCValue}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{gu8\_ADC\_ADCValue}{gu8\_ADC\_ADCValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} gu8\+\_\+\+A\+D\+C\+\_\+\+A\+D\+C\+Value}
+
+
+
+Definition at line 32 of file adc.\+c.
+
+\mbox{\Hypertarget{adc_8c_a01787ad744451fdef348a05fc3fae533}\label{adc_8c_a01787ad744451fdef348a05fc3fae533}} 
+\index{adc.c@{adc.c}!gu8\_ADC\_State@{gu8\_ADC\_State}}
+\index{gu8\_ADC\_State@{gu8\_ADC\_State}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{gu8\_ADC\_State}{gu8\_ADC\_State}}
+{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} gu8\+\_\+\+A\+D\+C\+\_\+\+State =\mbox{\hyperlink{adc_8c_af58e1f4242f28727323cdb99f73201d5}{A\+D\+C\+\_\+\+I\+D\+L\+E\+\_\+\+S\+T\+A\+TE}}}
+
+
+
+Definition at line 33 of file adc.\+c.
+

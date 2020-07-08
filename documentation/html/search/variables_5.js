@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sevensegconfigparam_192',['sevenSegConfigParam',['../7seg___cfg_8c.html#a365ddb8f9ec6427b58e705704679c897',1,'sevenSegConfigParam():&#160;7seg_Cfg.c'],['../7seg___cfg_8h.html#a365ddb8f9ec6427b58e705704679c897',1,'sevenSegConfigParam():&#160;7seg_Cfg.c']]]
+  ['id_369',['Id',['../struct_s_o_s__obj__str.html#a8b9608f864d279decec9171a0a64daf4',1,'SOS_obj_str']]]
 ];

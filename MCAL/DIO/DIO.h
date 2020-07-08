@@ -56,10 +56,11 @@ typedef struct
 
     <p><b>Remarks:</b></p>
  */
-void DIO_Init(void);
-void DIO_Write(uint8_t GroupId, uint8_t Data);
-void DIO_Toggle(uint8_t u8_GroupId);
-void DIO_Read(uint8_t GroupId, uint8_t * DataPtr);
+#include "../../ServiceLayer/Config.h"
+ERROR_STATE DIO_Init(void);
+ERROR_STATE DIO_Write(uint8_t GroupId, uint8_t Data);
+ERROR_STATE DIO_Toggle(uint8_t u8_GroupId);
+ERROR_STATE DIO_Read(uint8_t GroupId, uint8_t * DataPtr);
 
 
 #endif

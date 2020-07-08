@@ -1,0 +1,189 @@
+\hypertarget{i2c_8h}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+M\+C\+A\+L/\+I2\+C/i2c.h File Reference}
+\label{i2c_8h}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/I2C/i2c.h@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/I2C/i2c.h}}
+{\ttfamily \#include $<$xc.\+h$>$}\newline
+Include dependency graph for i2c.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{i2c_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{i2c_8h_aa1d3fd2b76a6645792f8fba833877285}{I\+C\+LK}}~P\+O\+R\+T\+Cbits.\+R\+C3
+\item 
+\#define \mbox{\hyperlink{i2c_8h_a7c8a533470a033b7ef0386adaef50217}{I\+D\+AT}}~P\+O\+R\+T\+Cbits.\+R\+C4
+\item 
+\#define \mbox{\hyperlink{i2c_8h_a9ad43bdc446633043a0099b87c265902}{T\+I\+D\+AT}}~T\+R\+I\+S\+Cbits.\+T\+R\+I\+S\+C4
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{i2c_8h_a5730d9445429351b9f750084c5cb5aae}{i2c\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46}{i2c\+\_\+start}} (void)
+\item 
+void \mbox{\hyperlink{i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3}{i2c\+\_\+stop}} (void)
+\item 
+void \mbox{\hyperlink{i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0}{i2c\+\_\+wb}} (unsigned char val)
+\item 
+unsigned char \mbox{\hyperlink{i2c_8h_a48e41f42b8f700d21ddd025e68632ced}{i2c\+\_\+rb}} (unsigned char ack)
+\item 
+void \mbox{\hyperlink{i2c_8h_a2e2f32425bf460cc87f2cde1f9660efd}{i2c\+\_\+acktst}} (unsigned char val)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{i2c_8h_aa1d3fd2b76a6645792f8fba833877285}\label{i2c_8h_aa1d3fd2b76a6645792f8fba833877285}} 
+\index{i2c.h@{i2c.h}!ICLK@{ICLK}}
+\index{ICLK@{ICLK}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{ICLK}{ICLK}}
+{\footnotesize\ttfamily \#define I\+C\+LK~P\+O\+R\+T\+Cbits.\+R\+C3}
+
+
+
+Definition at line 28 of file i2c.\+h.
+
+\mbox{\Hypertarget{i2c_8h_a7c8a533470a033b7ef0386adaef50217}\label{i2c_8h_a7c8a533470a033b7ef0386adaef50217}} 
+\index{i2c.h@{i2c.h}!IDAT@{IDAT}}
+\index{IDAT@{IDAT}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{IDAT}{IDAT}}
+{\footnotesize\ttfamily \#define I\+D\+AT~P\+O\+R\+T\+Cbits.\+R\+C4}
+
+
+
+Definition at line 29 of file i2c.\+h.
+
+\mbox{\Hypertarget{i2c_8h_a9ad43bdc446633043a0099b87c265902}\label{i2c_8h_a9ad43bdc446633043a0099b87c265902}} 
+\index{i2c.h@{i2c.h}!TIDAT@{TIDAT}}
+\index{TIDAT@{TIDAT}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{TIDAT}{TIDAT}}
+{\footnotesize\ttfamily \#define T\+I\+D\+AT~T\+R\+I\+S\+Cbits.\+T\+R\+I\+S\+C4}
+
+
+
+Definition at line 30 of file i2c.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{i2c_8h_a2e2f32425bf460cc87f2cde1f9660efd}\label{i2c_8h_a2e2f32425bf460cc87f2cde1f9660efd}} 
+\index{i2c.h@{i2c.h}!i2c\_acktst@{i2c\_acktst}}
+\index{i2c\_acktst@{i2c\_acktst}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_acktst()}{i2c\_acktst()}}
+{\footnotesize\ttfamily void i2c\+\_\+acktst (\begin{DoxyParamCaption}\item[{unsigned char}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{i2c_8h_a5730d9445429351b9f750084c5cb5aae}\label{i2c_8h_a5730d9445429351b9f750084c5cb5aae}} 
+\index{i2c.h@{i2c.h}!i2c\_init@{i2c\_init}}
+\index{i2c\_init@{i2c\_init}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_init()}{i2c\_init()}}
+{\footnotesize\ttfamily void i2c\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file i2c.\+c.
+
+\mbox{\Hypertarget{i2c_8h_a48e41f42b8f700d21ddd025e68632ced}\label{i2c_8h_a48e41f42b8f700d21ddd025e68632ced}} 
+\index{i2c.h@{i2c.h}!i2c\_rb@{i2c\_rb}}
+\index{i2c\_rb@{i2c\_rb}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_rb()}{i2c\_rb()}}
+{\footnotesize\ttfamily unsigned char i2c\+\_\+rb (\begin{DoxyParamCaption}\item[{unsigned char}]{ack }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file i2c.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{i2c_8h_a48e41f42b8f700d21ddd025e68632ced_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{i2c_8h_a48e41f42b8f700d21ddd025e68632ced_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46}\label{i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46}} 
+\index{i2c.h@{i2c.h}!i2c\_start@{i2c\_start}}
+\index{i2c\_start@{i2c\_start}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_start()}{i2c\_start()}}
+{\footnotesize\ttfamily void i2c\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file i2c.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3}\label{i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3}} 
+\index{i2c.h@{i2c.h}!i2c\_stop@{i2c\_stop}}
+\index{i2c\_stop@{i2c\_stop}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_stop()}{i2c\_stop()}}
+{\footnotesize\ttfamily void i2c\+\_\+stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 58 of file i2c.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0}\label{i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0}} 
+\index{i2c.h@{i2c.h}!i2c\_wb@{i2c\_wb}}
+\index{i2c\_wb@{i2c\_wb}!i2c.h@{i2c.h}}
+\doxysubsubsection{\texorpdfstring{i2c\_wb()}{i2c\_wb()}}
+{\footnotesize\ttfamily void i2c\+\_\+wb (\begin{DoxyParamCaption}\item[{unsigned char}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file i2c.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0_icgraph}
+\end{center}
+\end{figure}

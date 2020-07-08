@@ -1,16 +1,14 @@
 \hypertarget{std__types_8h}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+Service\+Layer/std\+\_\+types.h File Reference}
 \label{std__types_8h}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/std\_types.h@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/std\_types.h}}
-{\ttfamily \#include \char`\"{}common\+\_\+maccro.\+h\char`\"{}}\newline
-Include dependency graph for std\+\_\+types.\+h\+:
-\nopagebreak
+{\ttfamily \#include \char`\"{}common\+\_\+macros.\+h\char`\"{}}\newline
+Include dependency graph for std\+\_\+types.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=214pt]{std__types_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,6 +26,10 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 \#define \mbox{\hyperlink{std__types_8h_a6b496b442aae24e5cb2b52663a2e93bd}{L\+O\+WL}}~(0x00)
 \item 
+\#define \mbox{\hyperlink{std__types_8h_a7250f4dc486f33ea6ddfefe47b8f1ed2}{H\+I\+G\+H\+\_\+\+B\+IT}}~(1u)
+\item 
+\#define \mbox{\hyperlink{std__types_8h_a05c187885dfead3f5a1f6aa488d8e185}{L\+O\+W\+\_\+\+B\+IT}}~(0u)
+\item 
 \#define \mbox{\hyperlink{std__types_8h_a1bb283bd7893b9855e2f23013891fc82}{I\+N\+P\+UT}}~(0x\+FF)
 \item 
 \#define \mbox{\hyperlink{std__types_8h_a61a3c9a18380aafb6e430e79bf596557}{O\+U\+T\+P\+UT}}~(0x00)
@@ -37,6 +39,8 @@ This graph shows which files directly or indirectly include this file\+:
 \#define \mbox{\hyperlink{std__types_8h_aca4f67c0077925f24ea1f6b26e313271}{P\+U\+L\+L\+\_\+\+UP}}~(0x\+FF)
 \item 
 \#define \mbox{\hyperlink{std__types_8h_ab47362632d6cd744f764880731de5704}{P\+U\+L\+L\+\_\+\+D\+O\+WN}}~(0x\+FF)
+\item 
+\#define \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}}~static
 \item 
 \#define \mbox{\hyperlink{std__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL}}~((void $\ast$)0)
 \end{DoxyCompactItemize}
@@ -49,9 +53,9 @@ typedef unsigned char \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced
 \item 
 typedef signed char \mbox{\hyperlink{std__types_8h_a54cceacffb6d6dff03bf69f786d431a9}{sint8\+\_\+t}}
 \item 
-typedef unsigned short \mbox{\hyperlink{std__types_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}
+typedef unsigned int \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}}
 \item 
-typedef signed short \mbox{\hyperlink{std__types_8h_a8b7579a6aaba6d7fa221becce63e85cd}{sint16\+\_\+t}}
+typedef signed int \mbox{\hyperlink{std__types_8h_ae4c9b951dbb7355563c313abca5e2e75}{sint16\+\_\+t}}
 \item 
 typedef unsigned long \mbox{\hyperlink{std__types_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}
 \item 
@@ -76,7 +80,7 @@ typedef double \mbox{\hyperlink{std__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}
 
 
 
-Definition at line 53 of file std\+\_\+types.\+h.
+Definition at line 58 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{std__types_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
 \index{std\_types.h@{std\_types.h}!FALSE@{FALSE}}
@@ -87,6 +91,16 @@ Definition at line 53 of file std\+\_\+types.\+h.
 
 
 Definition at line 40 of file std\+\_\+types.\+h.
+
+\mbox{\Hypertarget{std__types_8h_a7250f4dc486f33ea6ddfefe47b8f1ed2}\label{std__types_8h_a7250f4dc486f33ea6ddfefe47b8f1ed2}} 
+\index{std\_types.h@{std\_types.h}!HIGH\_BIT@{HIGH\_BIT}}
+\index{HIGH\_BIT@{HIGH\_BIT}!std\_types.h@{std\_types.h}}
+\doxysubsubsection{\texorpdfstring{HIGH\_BIT}{HIGH\_BIT}}
+{\footnotesize\ttfamily \#define H\+I\+G\+H\+\_\+\+B\+IT~(1u)}
+
+
+
+Definition at line 51 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_ac9e4ec633cc86953e8fcf174cfa82524}\label{std__types_8h_ac9e4ec633cc86953e8fcf174cfa82524}} 
 \index{std\_types.h@{std\_types.h}!HIGHL@{HIGHL}}
@@ -106,7 +120,17 @@ Definition at line 47 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 50 of file std\+\_\+types.\+h.
+Definition at line 55 of file std\+\_\+types.\+h.
+
+\mbox{\Hypertarget{std__types_8h_a05c187885dfead3f5a1f6aa488d8e185}\label{std__types_8h_a05c187885dfead3f5a1f6aa488d8e185}} 
+\index{std\_types.h@{std\_types.h}!LOW\_BIT@{LOW\_BIT}}
+\index{LOW\_BIT@{LOW\_BIT}!std\_types.h@{std\_types.h}}
+\doxysubsubsection{\texorpdfstring{LOW\_BIT}{LOW\_BIT}}
+{\footnotesize\ttfamily \#define L\+O\+W\+\_\+\+B\+IT~(0u)}
+
+
+
+Definition at line 52 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_a6b496b442aae24e5cb2b52663a2e93bd}\label{std__types_8h_a6b496b442aae24e5cb2b52663a2e93bd}} 
 \index{std\_types.h@{std\_types.h}!LOWL@{LOWL}}
@@ -126,7 +150,7 @@ Definition at line 48 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 69 of file std\+\_\+types.\+h.
+Definition at line 75 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_a61a3c9a18380aafb6e430e79bf596557}\label{std__types_8h_a61a3c9a18380aafb6e430e79bf596557}} 
 \index{std\_types.h@{std\_types.h}!OUTPUT@{OUTPUT}}
@@ -136,7 +160,7 @@ Definition at line 69 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 51 of file std\+\_\+types.\+h.
+Definition at line 56 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_ab47362632d6cd744f764880731de5704}\label{std__types_8h_ab47362632d6cd744f764880731de5704}} 
 \index{std\_types.h@{std\_types.h}!PULL\_DOWN@{PULL\_DOWN}}
@@ -146,7 +170,7 @@ Definition at line 51 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 56 of file std\+\_\+types.\+h.
+Definition at line 61 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_aca4f67c0077925f24ea1f6b26e313271}\label{std__types_8h_aca4f67c0077925f24ea1f6b26e313271}} 
 \index{std\_types.h@{std\_types.h}!PULL\_UP@{PULL\_UP}}
@@ -156,7 +180,17 @@ Definition at line 56 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 55 of file std\+\_\+types.\+h.
+Definition at line 60 of file std\+\_\+types.\+h.
+
+\mbox{\Hypertarget{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}\label{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}} 
+\index{std\_types.h@{std\_types.h}!STATIC@{STATIC}}
+\index{STATIC@{STATIC}!std\_types.h@{std\_types.h}}
+\doxysubsubsection{\texorpdfstring{STATIC}{STATIC}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+IC~static}
+
+
+
+Definition at line 63 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{std__types_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
 \index{std\_types.h@{std\_types.h}!TRUE@{TRUE}}
@@ -189,7 +223,7 @@ Definition at line 36 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 66 of file std\+\_\+types.\+h.
+Definition at line 72 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}\label{std__types_8h_ac55f3ae81b5bc9053760baacf57e47f4}} 
 \index{std\_types.h@{std\_types.h}!float64\_t@{float64\_t}}
@@ -199,17 +233,17 @@ Definition at line 66 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 67 of file std\+\_\+types.\+h.
+Definition at line 73 of file std\+\_\+types.\+h.
 
-\mbox{\Hypertarget{std__types_8h_a8b7579a6aaba6d7fa221becce63e85cd}\label{std__types_8h_a8b7579a6aaba6d7fa221becce63e85cd}} 
+\mbox{\Hypertarget{std__types_8h_ae4c9b951dbb7355563c313abca5e2e75}\label{std__types_8h_ae4c9b951dbb7355563c313abca5e2e75}} 
 \index{std\_types.h@{std\_types.h}!sint16\_t@{sint16\_t}}
 \index{sint16\_t@{sint16\_t}!std\_types.h@{std\_types.h}}
 \doxysubsubsection{\texorpdfstring{sint16\_t}{sint16\_t}}
-{\footnotesize\ttfamily typedef signed short \mbox{\hyperlink{std__types_8h_a8b7579a6aaba6d7fa221becce63e85cd}{sint16\+\_\+t}}}
+{\footnotesize\ttfamily typedef signed int \mbox{\hyperlink{std__types_8h_ae4c9b951dbb7355563c313abca5e2e75}{sint16\+\_\+t}}}
 
 
 
-Definition at line 61 of file std\+\_\+types.\+h.
+Definition at line 67 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_a73705d44e0ddde601ded7d759dd0eaed}\label{std__types_8h_a73705d44e0ddde601ded7d759dd0eaed}} 
 \index{std\_types.h@{std\_types.h}!sint32\_t@{sint32\_t}}
@@ -219,7 +253,7 @@ Definition at line 61 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 63 of file std\+\_\+types.\+h.
+Definition at line 69 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_a50f1081965dcc748269a971b74a60cc3}\label{std__types_8h_a50f1081965dcc748269a971b74a60cc3}} 
 \index{std\_types.h@{std\_types.h}!sint64\_t@{sint64\_t}}
@@ -229,7 +263,7 @@ Definition at line 63 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 65 of file std\+\_\+types.\+h.
+Definition at line 71 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_a54cceacffb6d6dff03bf69f786d431a9}\label{std__types_8h_a54cceacffb6d6dff03bf69f786d431a9}} 
 \index{std\_types.h@{std\_types.h}!sint8\_t@{sint8\_t}}
@@ -239,17 +273,17 @@ Definition at line 65 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 59 of file std\+\_\+types.\+h.
+Definition at line 65 of file std\+\_\+types.\+h.
 
-\mbox{\Hypertarget{std__types_8h_a273cf69d639a59973b6019625df33e30}\label{std__types_8h_a273cf69d639a59973b6019625df33e30}} 
+\mbox{\Hypertarget{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}\label{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}} 
 \index{std\_types.h@{std\_types.h}!uint16\_t@{uint16\_t}}
 \index{uint16\_t@{uint16\_t}!std\_types.h@{std\_types.h}}
 \doxysubsubsection{\texorpdfstring{uint16\_t}{uint16\_t}}
-{\footnotesize\ttfamily typedef unsigned short \mbox{\hyperlink{std__types_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}}}
 
 
 
-Definition at line 60 of file std\+\_\+types.\+h.
+Definition at line 66 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_a06896e8c53f721507066c079052171f8}\label{std__types_8h_a06896e8c53f721507066c079052171f8}} 
 \index{std\_types.h@{std\_types.h}!uint32\_t@{uint32\_t}}
@@ -259,7 +293,7 @@ Definition at line 60 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 62 of file std\+\_\+types.\+h.
+Definition at line 68 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_aaa5d1cd013383c889537491c3cfd9aad}\label{std__types_8h_aaa5d1cd013383c889537491c3cfd9aad}} 
 \index{std\_types.h@{std\_types.h}!uint64\_t@{uint64\_t}}
@@ -269,7 +303,7 @@ Definition at line 62 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 64 of file std\+\_\+types.\+h.
+Definition at line 70 of file std\+\_\+types.\+h.
 
 \mbox{\Hypertarget{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}\label{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}} 
 \index{std\_types.h@{std\_types.h}!uint8\_t@{uint8\_t}}
@@ -279,5 +313,5 @@ Definition at line 64 of file std\+\_\+types.\+h.
 
 
 
-Definition at line 58 of file std\+\_\+types.\+h.
+Definition at line 64 of file std\+\_\+types.\+h.
 

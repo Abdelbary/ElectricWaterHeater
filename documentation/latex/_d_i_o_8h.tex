@@ -1,16 +1,15 @@
 \hypertarget{_d_i_o_8h}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+M\+C\+A\+L/\+D\+I\+O/\+D\+IO.h File Reference}
 \label{_d_i_o_8h}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.h@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.h}}
 {\ttfamily \#include \char`\"{}../../\+Service\+Layer/std\+\_\+types.\+h\char`\"{}}\newline
-Include dependency graph for D\+I\+O.\+h\+:
-\nopagebreak
+{\ttfamily \#include \char`\"{}../../\+Service\+Layer/\+Config.\+h\char`\"{}}\newline
+Include dependency graph for D\+I\+O.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{_d_i_o_8h__incl}
+\includegraphics[width=340pt]{_d_i_o_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -54,11 +53,13 @@ struct \mbox{\hyperlink{struct_dio_config_param_type}{Dio\+Config\+Param\+Type}}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init}} (void)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}{D\+I\+O\+\_\+\+Init}} (void)
 \item 
-void \mbox{\hyperlink{_d_i_o_8h_a4acd193ad3ba76d4f8c23d03e39d30ca}{D\+I\+O\+\_\+\+Write}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Data)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8h_a3cbe9e47e1f77b43f455b35221392ade}{D\+I\+O\+\_\+\+Write}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Data)
 \item 
-void \mbox{\hyperlink{_d_i_o_8h_a7dcf6c01176be2bbbeac4c0d328ceeed}{D\+I\+O\+\_\+\+Read}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$Data\+Ptr)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8h_aeaaeb5ff489bac3f6da33bfa3e8e083f}{D\+I\+O\+\_\+\+Toggle}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u8\+\_\+\+Group\+Id)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_d_i_o_8h_ab97b3d3cdad467aa77fc700d44055442}{D\+I\+O\+\_\+\+Read}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Group\+Id, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$Data\+Ptr)
 \end{DoxyCompactItemize}
 
 
@@ -196,13 +197,13 @@ Definition at line 11 of file D\+I\+O.\+h.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}\label{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}} 
+\mbox{\Hypertarget{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}\label{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}} 
 \index{DIO.h@{DIO.h}!DIO\_Init@{DIO\_Init}}
 \index{DIO\_Init@{DIO\_Init}!DIO.h@{DIO.h}}
 \doxysubsubsection{\texorpdfstring{DIO\_Init()}{DIO\_Init()}}
-{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-{\bfseries{Function prototype\+: void \mbox{\hyperlink{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init(void)}}}}
+{\bfseries{Function prototype\+: void \mbox{\hyperlink{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}{D\+I\+O\+\_\+\+Init(void)}}}}
 
 {\bfseries{Summary\+: initalize all project pins for init values}}
 
@@ -214,7 +215,7 @@ Definition at line 11 of file D\+I\+O.\+h.
 
 {\bfseries{Returns\+:}} void 
 
-{\bfseries{Example\+:}} \mbox{\hyperlink{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f}{D\+I\+O\+\_\+\+Init()}}
+{\bfseries{Example\+:}} \mbox{\hyperlink{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}{D\+I\+O\+\_\+\+Init()}}
 
 {\ttfamily }
 
@@ -224,39 +225,47 @@ Definition at line 11 of file D\+I\+O.\+h.
 
 Definition at line 20 of file D\+I\+O.\+c.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{_d_i_o_8h_ac3727fdc804578b1fcb4f389164b178f_icgraph}
+\includegraphics[width=350pt]{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{_d_i_o_8h_a7dcf6c01176be2bbbeac4c0d328ceeed}\label{_d_i_o_8h_a7dcf6c01176be2bbbeac4c0d328ceeed}} 
+\mbox{\Hypertarget{_d_i_o_8h_ab97b3d3cdad467aa77fc700d44055442}\label{_d_i_o_8h_ab97b3d3cdad467aa77fc700d44055442}} 
 \index{DIO.h@{DIO.h}!DIO\_Read@{DIO\_Read}}
 \index{DIO\_Read@{DIO\_Read}!DIO.h@{DIO.h}}
 \doxysubsubsection{\texorpdfstring{DIO\_Read()}{DIO\_Read()}}
-{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$}]{Data\+Ptr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$}]{Data\+Ptr }\end{DoxyParamCaption})}
 
 
 
-Definition at line 41 of file D\+I\+O.\+c.
+Definition at line 50 of file D\+I\+O.\+c.
 
-\mbox{\Hypertarget{_d_i_o_8h_a4acd193ad3ba76d4f8c23d03e39d30ca}\label{_d_i_o_8h_a4acd193ad3ba76d4f8c23d03e39d30ca}} 
+\mbox{\Hypertarget{_d_i_o_8h_aeaaeb5ff489bac3f6da33bfa3e8e083f}\label{_d_i_o_8h_aeaaeb5ff489bac3f6da33bfa3e8e083f}} 
+\index{DIO.h@{DIO.h}!DIO\_Toggle@{DIO\_Toggle}}
+\index{DIO\_Toggle@{DIO\_Toggle}!DIO.h@{DIO.h}}
+\doxysubsubsection{\texorpdfstring{DIO\_Toggle()}{DIO\_Toggle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file D\+I\+O.\+c.
+
+\mbox{\Hypertarget{_d_i_o_8h_a3cbe9e47e1f77b43f455b35221392ade}\label{_d_i_o_8h_a3cbe9e47e1f77b43f455b35221392ade}} 
 \index{DIO.h@{DIO.h}!DIO\_Write@{DIO\_Write}}
 \index{DIO\_Write@{DIO\_Write}!DIO.h@{DIO.h}}
 \doxysubsubsection{\texorpdfstring{DIO\_Write()}{DIO\_Write()}}
-{\footnotesize\ttfamily void D\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Data }\end{DoxyParamCaption})}
 
 
 
 Definition at line 33 of file D\+I\+O.\+c.
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{_d_i_o_8h_a4acd193ad3ba76d4f8c23d03e39d30ca_icgraph}
+\includegraphics[width=350pt]{_d_i_o_8h_a3cbe9e47e1f77b43f455b35221392ade_icgraph}
 \end{center}
 \end{figure}

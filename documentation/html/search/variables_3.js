@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mask_190',['Mask',['../struct_dio_config_param_type.html#afc53a68522826d0f957f311a5a363555',1,'DioConfigParamType']]]
+  ['fire_5ftick_362',['fire_tick',['../struct_s_o_s__obj__str.html#a149595a801ffbe44332335cf758cdd9e',1,'SOS_obj_str']]]
 ];

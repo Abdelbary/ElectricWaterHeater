@@ -222,7 +222,7 @@ void tempTask()
 {
     static uint8_t u8_TempPos = 0;
     
-    adc_amostra(TEMP_ADC_CHNL);
+    ADC_UpdateValue(TEMP_ADC_CHNL);
     double clsius;
     clsius = (((gu8_ADC_ADCValue)*4.88)/(10.00));
     currentTemp = (int)clsius;
@@ -246,7 +246,7 @@ void appInit()
     interruptsInit();
     sevenSegInit();
     disableSevenSeg();
-    adc_init();
+    ADC_Init();
     SOS_Init();
     uint8_t u8_i = 0;
     for(; u8_i< TEMP_VLAUES ;u8_i++)

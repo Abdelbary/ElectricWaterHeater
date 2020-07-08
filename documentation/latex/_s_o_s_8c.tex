@@ -1,0 +1,234 @@
+\hypertarget{_s_o_s_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+Service\+Layer/\+S\+O\+S/\+S\+OS.c File Reference}
+\label{_s_o_s_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.c}}
+{\ttfamily \#include \char`\"{}S\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+O\+S\+\_\+cfg.\+h\char`\"{}}\newline
+Include dependency graph for S\+O\+S.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_s_o_s_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_o_s__obj__str}{S\+O\+S\+\_\+obj\+\_\+str}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_o_s_8c_a2d654b8b0f7e8c3912cf0a336ce224ed}{T\+A\+K\+EN}}~1
+\item 
+\#define \mbox{\hyperlink{_s_o_s_8c_adbf7773e48c947a9a25620dabd0b936e}{N\+O\+\_\+\+T\+A\+S\+KS}}~-\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_o_s__obj__str}{S\+O\+S\+\_\+obj\+\_\+str}} \mbox{\hyperlink{_s_o_s_8c_a6ed73736da1a92dc1c9b7ecd75ba5bb7}{gstr\+\_\+\+S\+O\+S\+\_\+obj}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8c_aa4a8a75bc8f33c7ff7c7072ec695b763}{S\+O\+S\+\_\+\+Init}} (void)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8c_a06bf665e6be18ac7fecc4c331fcf2734}{S\+O\+S\+\_\+create\+Task}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Id, void($\ast$call\+B\+\_\+fun\+\_\+ptr)(void), \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} lap\+\_\+time, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} type)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8c_a33f0b757ea5b9df0fff7cdcef7178981}{S\+O\+S\+\_\+delet\+Task}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Id)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8c_a8dd58b17a3ae907bda4c429f78883d67}{S\+O\+S\+\_\+run}} (void)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8c_a5d328c9cc7f2900d9ee68f8aab3231f9}{S\+O\+S\+\_\+\+Deinit}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_s_o_s_8c_ad096ca8a6bda79b2b7b1fb3d8ae70fb4}{S\+O\+S\+\_\+\+Init\+\_\+flag}} = \mbox{\hyperlink{std__types_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+SE}}
+\item 
+\mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_s_o_s_8c_a5049fcb0c2cbf382f8e9a7138572a312}{S\+O\+S\+\_\+\+Timer\+\_\+ch}}
+\item 
+\mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{_s_o_s_8c_a6ed73736da1a92dc1c9b7ecd75ba5bb7}{gstr\+\_\+\+S\+O\+S\+\_\+obj}} \mbox{\hyperlink{_s_o_s_8c_aeb22883a6bc1f6f51cfc37a789d56bb8}{gastr\+\_\+\+S\+O\+S\+\_\+\+Obj\+Buffer}} \mbox{[}\mbox{\hyperlink{_s_o_s__cfg_8h_a44c91df3eb8a89ba7e49d95db8d9d6a9}{S\+O\+S\+\_\+\+O\+B\+J\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+\mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_a54cceacffb6d6dff03bf69f786d431a9}{sint8\+\_\+t}} \mbox{\hyperlink{_s_o_s_8c_a611fb8b259ce92d756fef05c558724b0}{u8\+\_\+\+S\+O\+S\+\_\+obj\+Buffer\+Head}} = \mbox{\hyperlink{common__macros_8h_a706c70b0632018103bbfd969e749834b}{\+\_\+\+Z\+E\+RO}}-\/\mbox{\hyperlink{common__macros_8h_a394aec5519376182e6c366122376a5cc}{\+\_\+\+O\+NE}}
+\item 
+\mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_s_o_s_8c_a44ad5439f0740b8189ea7577961d93b9}{taken\+\_\+\+Ids}} \mbox{[}\mbox{\hyperlink{_s_o_s__cfg_8h_a44c91df3eb8a89ba7e49d95db8d9d6a9}{S\+O\+S\+\_\+\+O\+B\+J\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}+\mbox{\hyperlink{common__macros_8h_a394aec5519376182e6c366122376a5cc}{\+\_\+\+O\+NE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_o_s_8c_adbf7773e48c947a9a25620dabd0b936e}\label{_s_o_s_8c_adbf7773e48c947a9a25620dabd0b936e}} 
+\index{SOS.c@{SOS.c}!NO\_TASKS@{NO\_TASKS}}
+\index{NO\_TASKS@{NO\_TASKS}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{NO\_TASKS}{NO\_TASKS}}
+{\footnotesize\ttfamily \#define N\+O\+\_\+\+T\+A\+S\+KS~-\/1}
+
+
+
+Definition at line 11 of file S\+O\+S.\+c.
+
+\mbox{\Hypertarget{_s_o_s_8c_a2d654b8b0f7e8c3912cf0a336ce224ed}\label{_s_o_s_8c_a2d654b8b0f7e8c3912cf0a336ce224ed}} 
+\index{SOS.c@{SOS.c}!TAKEN@{TAKEN}}
+\index{TAKEN@{TAKEN}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{TAKEN}{TAKEN}}
+{\footnotesize\ttfamily \#define T\+A\+K\+EN~1}
+
+
+
+Definition at line 10 of file S\+O\+S.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_o_s_8c_a6ed73736da1a92dc1c9b7ecd75ba5bb7}\label{_s_o_s_8c_a6ed73736da1a92dc1c9b7ecd75ba5bb7}} 
+\index{SOS.c@{SOS.c}!gstr\_SOS\_obj@{gstr\_SOS\_obj}}
+\index{gstr\_SOS\_obj@{gstr\_SOS\_obj}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{gstr\_SOS\_obj}{gstr\_SOS\_obj}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_o_s__obj__str}{S\+O\+S\+\_\+obj\+\_\+str}} \mbox{\hyperlink{_s_o_s_8c_a6ed73736da1a92dc1c9b7ecd75ba5bb7}{gstr\+\_\+\+S\+O\+S\+\_\+obj}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_o_s_8c_a06bf665e6be18ac7fecc4c331fcf2734}\label{_s_o_s_8c_a06bf665e6be18ac7fecc4c331fcf2734}} 
+\index{SOS.c@{SOS.c}!SOS\_createTask@{SOS\_createTask}}
+\index{SOS\_createTask@{SOS\_createTask}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{SOS\_createTask()}{SOS\_createTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+create\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Id,  }\item[{void($\ast$)(void)}]{call\+B\+\_\+fun\+\_\+ptr,  }\item[{\mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}}}]{lap\+\_\+time,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{_s_o_s_8c_a06bf665e6be18ac7fecc4c331fcf2734_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{_s_o_s_8c_a06bf665e6be18ac7fecc4c331fcf2734_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_s_o_s_8c_a5d328c9cc7f2900d9ee68f8aab3231f9}\label{_s_o_s_8c_a5d328c9cc7f2900d9ee68f8aab3231f9}} 
+\index{SOS.c@{SOS.c}!SOS\_Deinit@{SOS\_Deinit}}
+\index{SOS\_Deinit@{SOS\_Deinit}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{SOS\_Deinit()}{SOS\_Deinit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+\+Deinit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 229 of file S\+O\+S.\+c.
+
+\mbox{\Hypertarget{_s_o_s_8c_a33f0b757ea5b9df0fff7cdcef7178981}\label{_s_o_s_8c_a33f0b757ea5b9df0fff7cdcef7178981}} 
+\index{SOS.c@{SOS.c}!SOS\_deletTask@{SOS\_deletTask}}
+\index{SOS\_deletTask@{SOS\_deletTask}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{SOS\_deletTask()}{SOS\_deletTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+delet\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file S\+O\+S.\+c.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_s_o_s_8c_a33f0b757ea5b9df0fff7cdcef7178981_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_s_o_s_8c_aa4a8a75bc8f33c7ff7c7072ec695b763}\label{_s_o_s_8c_aa4a8a75bc8f33c7ff7c7072ec695b763}} 
+\index{SOS.c@{SOS.c}!SOS\_Init@{SOS\_Init}}
+\index{SOS\_Init@{SOS\_Init}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{SOS\_Init()}{SOS\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{_s_o_s_8c_aa4a8a75bc8f33c7ff7c7072ec695b763_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{_s_o_s_8c_aa4a8a75bc8f33c7ff7c7072ec695b763_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_s_o_s_8c_a8dd58b17a3ae907bda4c429f78883d67}\label{_s_o_s_8c_a8dd58b17a3ae907bda4c429f78883d67}} 
+\index{SOS.c@{SOS.c}!SOS\_run@{SOS\_run}}
+\index{SOS\_run@{SOS\_run}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{SOS\_run()}{SOS\_run()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 163 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_s_o_s_8c_a8dd58b17a3ae907bda4c429f78883d67_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_s_o_s_8c_aeb22883a6bc1f6f51cfc37a789d56bb8}\label{_s_o_s_8c_aeb22883a6bc1f6f51cfc37a789d56bb8}} 
+\index{SOS.c@{SOS.c}!gastr\_SOS\_ObjBuffer@{gastr\_SOS\_ObjBuffer}}
+\index{gastr\_SOS\_ObjBuffer@{gastr\_SOS\_ObjBuffer}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{gastr\_SOS\_ObjBuffer}{gastr\_SOS\_ObjBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{_s_o_s_8c_a6ed73736da1a92dc1c9b7ecd75ba5bb7}{gstr\+\_\+\+S\+O\+S\+\_\+obj}} gastr\+\_\+\+S\+O\+S\+\_\+\+Obj\+Buffer\mbox{[}\mbox{\hyperlink{_s_o_s__cfg_8h_a44c91df3eb8a89ba7e49d95db8d9d6a9}{S\+O\+S\+\_\+\+O\+B\+J\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+
+
+Definition at line 25 of file S\+O\+S.\+c.
+
+\mbox{\Hypertarget{_s_o_s_8c_ad096ca8a6bda79b2b7b1fb3d8ae70fb4}\label{_s_o_s_8c_ad096ca8a6bda79b2b7b1fb3d8ae70fb4}} 
+\index{SOS.c@{SOS.c}!SOS\_Init\_flag@{SOS\_Init\_flag}}
+\index{SOS\_Init\_flag@{SOS\_Init\_flag}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{SOS\_Init\_flag}{SOS\_Init\_flag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} S\+O\+S\+\_\+\+Init\+\_\+flag = \mbox{\hyperlink{std__types_8h_aa93f0eb578d23995850d61f7d61c55c1}{F\+A\+L\+SE}}}
+
+
+
+Definition at line 23 of file S\+O\+S.\+c.
+
+\mbox{\Hypertarget{_s_o_s_8c_a5049fcb0c2cbf382f8e9a7138572a312}\label{_s_o_s_8c_a5049fcb0c2cbf382f8e9a7138572a312}} 
+\index{SOS.c@{SOS.c}!SOS\_Timer\_ch@{SOS\_Timer\_ch}}
+\index{SOS\_Timer\_ch@{SOS\_Timer\_ch}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{SOS\_Timer\_ch}{SOS\_Timer\_ch}}
+{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} S\+O\+S\+\_\+\+Timer\+\_\+ch}
+
+
+
+Definition at line 24 of file S\+O\+S.\+c.
+
+\mbox{\Hypertarget{_s_o_s_8c_a44ad5439f0740b8189ea7577961d93b9}\label{_s_o_s_8c_a44ad5439f0740b8189ea7577961d93b9}} 
+\index{SOS.c@{SOS.c}!taken\_Ids@{taken\_Ids}}
+\index{taken\_Ids@{taken\_Ids}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{taken\_Ids}{taken\_Ids}}
+{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} taken\+\_\+\+Ids\mbox{[}\mbox{\hyperlink{_s_o_s__cfg_8h_a44c91df3eb8a89ba7e49d95db8d9d6a9}{S\+O\+S\+\_\+\+O\+B\+J\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}+\mbox{\hyperlink{common__macros_8h_a394aec5519376182e6c366122376a5cc}{\+\_\+\+O\+NE}}\mbox{]}}
+
+
+
+Definition at line 27 of file S\+O\+S.\+c.
+
+\mbox{\Hypertarget{_s_o_s_8c_a611fb8b259ce92d756fef05c558724b0}\label{_s_o_s_8c_a611fb8b259ce92d756fef05c558724b0}} 
+\index{SOS.c@{SOS.c}!u8\_SOS\_objBufferHead@{u8\_SOS\_objBufferHead}}
+\index{u8\_SOS\_objBufferHead@{u8\_SOS\_objBufferHead}!SOS.c@{SOS.c}}
+\doxysubsubsection{\texorpdfstring{u8\_SOS\_objBufferHead}{u8\_SOS\_objBufferHead}}
+{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_a54cceacffb6d6dff03bf69f786d431a9}{sint8\+\_\+t}} u8\+\_\+\+S\+O\+S\+\_\+obj\+Buffer\+Head = \mbox{\hyperlink{common__macros_8h_a706c70b0632018103bbfd969e749834b}{\+\_\+\+Z\+E\+RO}}-\/\mbox{\hyperlink{common__macros_8h_a394aec5519376182e6c366122376a5cc}{\+\_\+\+O\+NE}}}
+
+
+
+Definition at line 26 of file S\+O\+S.\+c.
+

@@ -10,8 +10,10 @@
 #define SYSTEMERRORS_H_
 #include "..\common_macros.h"
 #include "../std_types.h"
-#define OK							     1
-#define	NULL_PTR_ERROR					-1
+
+#define DIO_MODULE_ERROR_NUM            -100
+#define SEVENSEG_MOUDLE_ERROR_NUM       -200
+#define ADC_MODULE_ERROR_NUM            -300
 #define	MODULE_NOT_INITALIZED			-2
 #define	MULTIPLE_INITALIZATION			-3
 #define	STOP_WITHOUT_START				-4
@@ -22,8 +24,11 @@
 #define INVALID_STATE					-9
 #define MODULE_NOT_EN					-10
 #define MULTIPLE_EN						-11
-#define NOK								 0
+#define	NULL_PTR_ERROR					-12
 #define ERROR_BUFFER_SIZE				10
+
+typedef enum {OK=0,NOK=-1}ERROR_STATE;
+
 
 void error_handler(sint16_t error_ID);
 

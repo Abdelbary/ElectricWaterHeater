@@ -32,6 +32,7 @@
 #define	CONFIG_H
 
 #include <xc.h>
+#include "Error_Handler/SystemErrors.h"
 #define _XTAL_FREQ 20000000
 
 #pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator)
@@ -47,10 +48,8 @@
 #define MODULE_UNINTIALIZED    -1
 
 
-//PROJECT MODULES ERROR NUM _should be moved to error handling module_
-#define SEVENSEG_MOUDLE_ERROR_NUM           -100
 
-typedef enum {OK=0,NOK=-1}ERROR_STATE;
+
 
 //projects pins
 
