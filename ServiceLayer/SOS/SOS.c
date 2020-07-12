@@ -27,11 +27,11 @@ STATIC uint8_t SOS_Timer_ch;
 STATIC gstr_SOS_obj_t gastr_SOS_ObjBuffer[SOS_OBJ_BUFFER_SIZE];
 STATIC sint8_t u8_SOS_objBufferHead;
 STATIC uint8_t taken_Ids[SOS_OBJ_BUFFER_SIZE+_ONE]; /*mark taken ids*/
-
+STATIC CBF      gp_OS_StartProc;
 ERROR_STATE SOS_Init(void)
 {
     ERROR_STATE e_funStatus = OK;
-	if(SOS_Init_flag || SOS_linkCfg.tick_reslution > SOS_MAX_TIMER_RESLUTION || SOS_linkCfg.timer_ch > SOS_TIMER_CH2 ) /*check for all errors*/
+	if(SOS_Init_flag || SOS_linkCfg.u8_tick_reslution > SOS_MAX_TIMER_RESLUTION || SOS_linkCfg.u8_timer_ch > SOS_TIMER_CH2 ) /*check for all errors*/
 	{
 		/************************************************************************ 
 		 *	-module initialized before                          
@@ -42,8 +42,8 @@ ERROR_STATE SOS_Init(void)
 			e_funStatus = NOK;
             error_handler(SOS_MODULE_ERROR_NUM+MULTIPLE_INITALIZATION);
 		}
-		else if (SOS_linkCfg.tick_reslution > SOS_MAX_TIMER_RESLUTION 
-				|| SOS_linkCfg.timer_ch > SOS_TIMER_CH2)
+		else if (SOS_linkCfg.u8_tick_reslution > SOS_MAX_TIMER_RESLUTION 
+				|| SOS_linkCfg.u8_timer_ch > SOS_TIMER_CH2)
 		{
             e_funStatus = NOK;
 			error_handler(SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
@@ -51,9 +51,9 @@ ERROR_STATE SOS_Init(void)
 	}
 	else
 	{
-		SOS_Timer_ch = SOS_linkCfg.timer_ch;
+		SOS_Timer_ch = SOS_linkCfg.u8_timer_ch;
         u8_SOS_objBufferHead = _ZERO-_ONE;
-		
+		gp_OS_StartProc = NULL;
         //enable timer 1
         system_timer_init();
         SOS_Init_flag = TRUE;
@@ -68,7 +68,7 @@ ERROR_STATE SOS_createTask(uint8_t Id,void (*callB_fun_ptr)(void),uint16_t lap_t
 	/*lot of condition but it centralize error checking*/
 	if(Id > SOS_OBJ_BUFFER_SIZE || callB_fun_ptr == NULL || lap_time > SOS_MAX_LAP_TIME
 	|| type > ON_SHOT || SOS_Init_flag == FALSE || taken_Ids[Id] == TAKEN
-	|| (lap_time%(SOS_linkCfg.tick_reslution)) != _ZERO /*lap_time not multiple of reslution*/
+	|| (lap_time%(SOS_linkCfg.u8_tick_reslution)) != _ZERO /*lap_time not multiple of reslution*/
 	|| u8_SOS_objBufferHead ==(SOS_OBJ_BUFFER_SIZE-_ONE) )
 	{
 		if ( SOS_Init_flag == FALSE)/*module unintalized*/
@@ -83,7 +83,7 @@ ERROR_STATE SOS_createTask(uint8_t Id,void (*callB_fun_ptr)(void),uint16_t lap_t
 		}
 		else if(Id > SOS_OBJ_BUFFER_SIZE  ||taken_Ids[Id]  == TAKEN
 		|| type > ON_SHOT  || lap_time > SOS_MAX_LAP_TIME
-		|| (lap_time%(SOS_linkCfg.tick_reslution))
+		|| (lap_time%(SOS_linkCfg.u8_tick_reslution))
 		|| u8_SOS_objBufferHead ==(SOS_OBJ_BUFFER_SIZE-_ONE))/*invalid parameter*/
 		{
             e_funStatus = NOK;
@@ -103,7 +103,7 @@ ERROR_STATE SOS_createTask(uint8_t Id,void (*callB_fun_ptr)(void),uint16_t lap_t
 		*
 		*/
 		/*set how many resolution time it takes to fire event*/
-		lap_time = (lap_time/(SOS_linkCfg.tick_reslution));
+		lap_time = (lap_time/(SOS_linkCfg.u8_tick_reslution));
 		
 		/*SOS_obj_str {id,callBack fun , ticks ,current_ticks,type[periodic,onshot]} */
 		gstr_SOS_obj_t tobj  = {Id,callB_fun_ptr,lap_time,ZERO,periority,type};
@@ -217,7 +217,7 @@ ERROR_STATE	SOS_run(void)
 			/*start timer*/
 			
 			start_system_timer();
-			
+			gp_OS_StartProc();
 			fun_frstTime_flag = TRUE;
 		}
 		/*
@@ -239,7 +239,7 @@ ERROR_STATE	SOS_run(void)
 		{
             current_ticks++;
 			gu8_timer_ticks = FALSE;
-			if (current_ticks == SOS_linkCfg.tick_reslution)
+			if (current_ticks == SOS_linkCfg.u8_tick_reslution)
 			{
 				current_ticks = _ZERO;
 				new_tick_flag = TRUE;
@@ -302,10 +302,32 @@ ERROR_STATE SOS_Deinit(void)
 		taken_Ids[u8_counter] = _ZERO;
 	}
 	/*set default paramter*/
-	SOS_linkCfg.tick_reslution = _ONE;
-	SOS_linkCfg.timer_ch = SOS_TIMER_CH0;
+	SOS_linkCfg.u8_tick_reslution = _ONE;
+	SOS_linkCfg.u8_timer_ch = SOS_TIMER_CH0;
 	
 	return e_funStatus;
 }
 
+
+ERROR_STATE SOS_StartProc(CBF callBackFun)
+{
+    ERROR_STATE e_funStatus = OK;
+	
+	if(SOS_Init_flag == FALSE)
+	{
+        e_funStatus = NOK;
+		/*report error*/
+		error_handler(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+	}
+    else if(callBackFun == NULL)
+    {
+         e_funStatus = NOK;
+		/*report error*/
+		error_handler(SOS_MODULE_ERROR_NUM+NULL_PTR_ERROR);
+    }
+    else
+    {
+       gp_OS_StartProc = callBackFun;
+    }
+}
 

@@ -45,7 +45,7 @@ static uint8_t gu8_deviceDisableFlag;
 
 void tempControlTask()
 {
-    /**
+     /**
      * if the desired temp have been set 
      *      get average temp from last 10 readings
      *      control the cooler/heater element based on themp
@@ -131,6 +131,7 @@ void tempControlTask()
         
     }
 }
+
 
 void buttonTask()
 {
@@ -305,7 +306,7 @@ void tempTask()
 
 void appInit()
 {
-    DIO_Init();
+    
     ///init temp control element to zero
     /**
      * call MCAL functions from application as it is necessary to 
@@ -313,6 +314,7 @@ void appInit()
      * and there is no module implemented for them case their functionality
      * are very simple and don't need to be structured necessary overhead_
      */
+    DIO_Init();
     DIO_Write(HEATER_ELEMENT,LOWL);
     DIO_Write(COOLER_ELEMENT,LOWL);
     //init temp control LED AS 0
@@ -364,6 +366,10 @@ void checkONBtnStatus()
         gu8_deviceDisableFlag = !gu8_deviceDisableFlag;
 }
 
+void OS_startFunction()
+{
+    tempTask();
+}
 
 void main(void){
     appInit();
@@ -376,7 +382,9 @@ void main(void){
     SOS_createTask(3,buttonTask,50,PERIODIC,2);
     SOS_createTask(4,tempControlTask,100,PERIODIC,3);
     SOS_createTask(2,sevenSegTask,50,PERIODIC,4);
-
+    
+    //set the CBF to call at the start of the os
+    SOS_StartProc(OS_startFunction);
     while(1)
     {
         /**

@@ -23,11 +23,12 @@
 #define PERIODIC    0
 #define ON_SHOT     1
 
+typedef void (*CBF)(void);
 
 typedef struct SOS_cfg_str
 {
-	uint8_t timer_ch;
-	uint8_t tick_reslution; /* in milesec */
+	uint8_t u8_timer_ch;
+	uint8_t u8_tick_reslution; /* in milesec */    
 }gstr_SOS_cfg_t;
 
 
@@ -85,5 +86,16 @@ ERROR_STATE	SOS_run(void);
 */
 ERROR_STATE	SOS_Deinit(void);
 
+
+/**
+*\b Description: SOS_StartProc run the start of os procedure
+* by calling the call back function pointer passed as a paramter
+* from the application
+* 
+* @param[in] CBF function to call at the start of the os
+* 
+* @return: ERROR_STATUS [OK,NOK]
+*/
+ERROR_STATE SOS_StartProc(CBF callBackFun);
 
 #endif /* SOS_H_ */
