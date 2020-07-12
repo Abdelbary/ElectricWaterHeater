@@ -35,7 +35,7 @@ order with highest pirority task [tempTask] and lowest proirty is [sevenSegTask]
 ...interact with user if up or down button pressed change the temp to set by 5 degrees above or blow the current temp based on the button pressed.
 ...Max temp 75 and Min temp to set is 35.
 
-##Task-TimeLine:
+## Task-TimeLine:
 * Project uses non-premative operating system with 50ms.
 * task peroidic time specified in the below graph.
 * project has five diffferent tasks {tempTask,ButtonTask,tempControlTask,sevenSegTask} thier pirority as thier listing 
@@ -43,9 +43,10 @@ order with highest pirority task [tempTask] and lowest proirty is [sevenSegTask]
 * the system repeat it's operation every 100ms _Major Cycle_.
 * os prehook runs tempTask once to be prepare current temp for seven segment display befor it's calling.
 * operation time of each task is neglicatable _no blocking for considerable amount of time_.
-![timeLine](picture/timeLine.png)
+
+<div style="text-align:center"><img src="picture/timeLine.png" /></div>
 
 ## Project Static Architecutre:
 _Note_: Application calls MCAL directly to inialize the state of LED, Heater and Cooler to off state as there is no 
 HAL driver for thoes peripheral_i saw that those peripheral logic is too simple to make a sperated driver for them_.
-![timeLine](picture/projectStaticArchitecture.png)
+<div style="text-align:center"><img src="projectStaticArchitecture.png" /></div>
