@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__d_i_o___cfg_8h_source">
+<title>DIO_Cfg.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO_Cfg.h</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#ifndef&#32;DIO_CFG_H</emphasis>
+00002 <emphasis role="preprocessor">#define&#32;DIO_CFG_H</emphasis>
+00003 
+00004 
+00005 <emphasis role="preprocessor">#define&#32;DIO_NUM_OF_GROUPS&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;13</emphasis>
+00006 
+00007 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_dio_config_param__t">DioConfigParam_t</link>&#32;<link linkend="__d_i_o___cfg_8h_1aeeda07a611e9eac80ed621e98ee8e151">gstr_DIO_ConfigParam</link>[DIO_NUM_OF_GROUPS];
+00008 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

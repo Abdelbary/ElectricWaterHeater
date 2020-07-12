@@ -64,7 +64,7 @@ ERROR_STATE ADC_Init(void)
 }
 
 
-ERROR_STATE ADC_UpdateValue(uint8_t u8_canal)
+ERROR_STATE ADC_trigger(uint8_t u8_canal)
 {
     /*check
      *  if the module is not  initlaized
@@ -99,6 +99,38 @@ ERROR_STATE ADC_UpdateValue(uint8_t u8_canal)
         }
     }
     
+    
+    return e_funStatus;
+}
+
+ERROR_STATE getADC_value(uint16_t* u16p_adcValue)
+{
+    
+    /*check
+     *  if the module is not  initlaized
+     *      then change function state to NOK  and report error
+     *  else if pointer is null
+     *      then change function state to NOK  and report error
+     *  else
+     *      update pointer value with last ADC data
+     */
+    
+    ERROR_STATE e_funStatus = OK;
+    
+    if(gu8_ADC_State == ADC_IDLE_STATE)
+    {
+        e_funStatus = NOK; 
+        error_handler(ADC_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+    }
+    else if(u16p_adcValue ==  NULL)
+    {
+        e_funStatus = NOK; 
+        error_handler(ADC_MODULE_ERROR_NUM+NULL_PTR_ERROR);
+    }
+     else
+    {
+         *u16p_adcValue = gu8_ADC_ADCValue;
+    }
     
     return e_funStatus;
 }

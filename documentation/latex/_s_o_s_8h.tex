@@ -1,41 +1,9 @@
 \hypertarget{_s_o_s_8h}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+Service\+Layer/\+S\+O\+S/\+S\+OS.h File Reference}
 \label{_s_o_s_8h}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.h@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.h}}
-{\ttfamily \#include \char`\"{}../std\+\_\+types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../common\+\_\+macros.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+Config.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+Error\+\_\+\+Handler/\+System\+Errors.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../../\+M\+C\+A\+L/\+T\+I\+M\+E\+R/timer.\+h\char`\"{}}\newline
-Include dependency graph for S\+O\+S.\+h\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{_s_o_s_8h__incl}
-\end{center}
-\end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{_s_o_s_8h__dep__incl}
-\end{center}
-\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+str}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{_s_o_s_8h_a34d8d9fcacf2f587d785d29e51b4f057}{S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H0}}~0
-\item 
-\#define \mbox{\hyperlink{_s_o_s_8h_a64453ccfdbaf755fcf2882049ba4f374}{S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H1}}~1
-\item 
-\#define \mbox{\hyperlink{_s_o_s_8h_a2af4b730e5010efe7b829596ed1b6e67}{S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H2}}~2
-\item 
-\#define \mbox{\hyperlink{_s_o_s_8h_af36821ad7b93ab31dcfaaa25e134fdf0}{P\+E\+R\+I\+O\+D\+IC}}~0
-\item 
-\#define \mbox{\hyperlink{_s_o_s_8h_a1ef26b95b5aca86826119bcd68672028}{O\+N\+\_\+\+S\+H\+OT}}~1
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -47,7 +15,7 @@ typedef struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+st
 \item 
 \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763}{S\+O\+S\+\_\+\+Init}} (void)
 \item 
-\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734}{S\+O\+S\+\_\+create\+Task}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Id, void($\ast$call\+B\+\_\+fun\+\_\+ptr)(void), \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} lap\+\_\+time, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} type)
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a085b92af3cd18aadc5f6c5c4979969fe}{S\+O\+S\+\_\+create\+Task}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Id, void($\ast$call\+B\+\_\+fun\+\_\+ptr)(void), \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} lap\+\_\+time, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} type, \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} periority)
 \item 
 \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981}{S\+O\+S\+\_\+delet\+Task}} (\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Id)
 \item 
@@ -55,59 +23,6 @@ typedef struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+st
 \item 
 \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9}{S\+O\+S\+\_\+\+Deinit}} (void)
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{_s_o_s_8h_a1ef26b95b5aca86826119bcd68672028}\label{_s_o_s_8h_a1ef26b95b5aca86826119bcd68672028}} 
-\index{SOS.h@{SOS.h}!ON\_SHOT@{ON\_SHOT}}
-\index{ON\_SHOT@{ON\_SHOT}!SOS.h@{SOS.h}}
-\doxysubsubsection{\texorpdfstring{ON\_SHOT}{ON\_SHOT}}
-{\footnotesize\ttfamily \#define O\+N\+\_\+\+S\+H\+OT~1}
-
-
-
-Definition at line 24 of file S\+O\+S.\+h.
-
-\mbox{\Hypertarget{_s_o_s_8h_af36821ad7b93ab31dcfaaa25e134fdf0}\label{_s_o_s_8h_af36821ad7b93ab31dcfaaa25e134fdf0}} 
-\index{SOS.h@{SOS.h}!PERIODIC@{PERIODIC}}
-\index{PERIODIC@{PERIODIC}!SOS.h@{SOS.h}}
-\doxysubsubsection{\texorpdfstring{PERIODIC}{PERIODIC}}
-{\footnotesize\ttfamily \#define P\+E\+R\+I\+O\+D\+IC~0}
-
-
-
-Definition at line 23 of file S\+O\+S.\+h.
-
-\mbox{\Hypertarget{_s_o_s_8h_a34d8d9fcacf2f587d785d29e51b4f057}\label{_s_o_s_8h_a34d8d9fcacf2f587d785d29e51b4f057}} 
-\index{SOS.h@{SOS.h}!SOS\_TIMER\_CH0@{SOS\_TIMER\_CH0}}
-\index{SOS\_TIMER\_CH0@{SOS\_TIMER\_CH0}!SOS.h@{SOS.h}}
-\doxysubsubsection{\texorpdfstring{SOS\_TIMER\_CH0}{SOS\_TIMER\_CH0}}
-{\footnotesize\ttfamily \#define S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H0~0}
-
-
-
-Definition at line 19 of file S\+O\+S.\+h.
-
-\mbox{\Hypertarget{_s_o_s_8h_a64453ccfdbaf755fcf2882049ba4f374}\label{_s_o_s_8h_a64453ccfdbaf755fcf2882049ba4f374}} 
-\index{SOS.h@{SOS.h}!SOS\_TIMER\_CH1@{SOS\_TIMER\_CH1}}
-\index{SOS\_TIMER\_CH1@{SOS\_TIMER\_CH1}!SOS.h@{SOS.h}}
-\doxysubsubsection{\texorpdfstring{SOS\_TIMER\_CH1}{SOS\_TIMER\_CH1}}
-{\footnotesize\ttfamily \#define S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H1~1}
-
-
-
-Definition at line 20 of file S\+O\+S.\+h.
-
-\mbox{\Hypertarget{_s_o_s_8h_a2af4b730e5010efe7b829596ed1b6e67}\label{_s_o_s_8h_a2af4b730e5010efe7b829596ed1b6e67}} 
-\index{SOS.h@{SOS.h}!SOS\_TIMER\_CH2@{SOS\_TIMER\_CH2}}
-\index{SOS\_TIMER\_CH2@{SOS\_TIMER\_CH2}!SOS.h@{SOS.h}}
-\doxysubsubsection{\texorpdfstring{SOS\_TIMER\_CH2}{SOS\_TIMER\_CH2}}
-{\footnotesize\ttfamily \#define S\+O\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+C\+H2~2}
-
-
-
-Definition at line 21 of file S\+O\+S.\+h.
-
 
 
 \doxysubsection{Typedef Documentation}
@@ -120,28 +35,45 @@ Definition at line 21 of file S\+O\+S.\+h.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734}\label{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734}} 
+\mbox{\Hypertarget{_s_o_s_8h_a085b92af3cd18aadc5f6c5c4979969fe}\label{_s_o_s_8h_a085b92af3cd18aadc5f6c5c4979969fe}} 
 \index{SOS.h@{SOS.h}!SOS\_createTask@{SOS\_createTask}}
 \index{SOS\_createTask@{SOS\_createTask}!SOS.h@{SOS.h}}
 \doxysubsubsection{\texorpdfstring{SOS\_createTask()}{SOS\_createTask()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+create\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Id,  }\item[{void($\ast$)(void)}]{call\+B\+\_\+fun\+\_\+ptr,  }\item[{\mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}}}]{lap\+\_\+time,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+create\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Id,  }\item[{void($\ast$)(void)}]{call\+B\+\_\+fun\+\_\+ptr,  }\item[{\mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}}}]{lap\+\_\+time,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{type,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{periority }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} S\+O\+S\+\_\+start add new S\+O\+S\+\_\+object to be served on periodic time
 
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & from 0 to S\+O\+S\+\_\+\+O\+B\+J\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE. \\
+\hline
+\mbox{\texttt{ in}}  & {\em call\+B\+\_\+fun\+\_\+ptr} & addresss of the rotuen to be called. \\
+\hline
+\mbox{\texttt{ in}}  & {\em lap\+\_\+time} & form 0 to S\+O\+S\+\_\+\+M\+A\+X\+\_\+\+L\+A\+P\+\_\+\+T\+I\+ME \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & \mbox{[}P\+E\+R\+I\+O\+D\+IC,O\+N\+E\+\_\+\+S\+H\+OT\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \mbox{[}OK,N\+OK\mbox{]} 
+\end{DoxyReturn}
 
-Definition at line 59 of file S\+O\+S.\+c.
 
-Here is the call graph for this function\+:\nopagebreak
+Definition at line 65 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734_cgraph}
+\includegraphics[width=280pt]{_s_o_s_8h_a085b92af3cd18aadc5f6c5c4979969fe_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=245pt]{_s_o_s_8h_a06bf665e6be18ac7fecc4c331fcf2734_icgraph}
+\includegraphics[width=245pt]{_s_o_s_8h_a085b92af3cd18aadc5f6c5c4979969fe_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9}\label{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9}} 
@@ -150,20 +82,53 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{SOS\_Deinit()}{SOS\_Deinit()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+\+Deinit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+{\bfseries{Description\+:}} S\+O\+S\+\_\+\+De\+Init Danit S\+OS.
 
 
-Definition at line 229 of file S\+O\+S.\+c.
+\begin{DoxyParams}{Parameters}
+{\em } & void\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \mbox{[}OK,N\+OK\mbox{]} 
+\end{DoxyReturn}
 
+
+Definition at line 276 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981}\label{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981}} 
 \index{SOS.h@{SOS.h}!SOS\_deletTask@{SOS\_deletTask}}
 \index{SOS\_deletTask@{SOS\_deletTask}!SOS.h@{SOS.h}}
 \doxysubsubsection{\texorpdfstring{SOS\_deletTask()}{SOS\_deletTask()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+delet\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Id }\end{DoxyParamCaption})}
 
+{\bfseries{Description\+:}} S\+O\+S\+\_\+stop delete task with specified id number by removing it from S\+OS Buffer. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Id} & id of the task to be removed from S\+OS buffer~\newline
+ 0$<$=id$<$S\+O\+S\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+M\+A\+X\+\_\+\+S\+I\+ZE \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \mbox{[}OK,N\+OK\mbox{]} 
+\end{DoxyReturn}
 
 
-Definition at line 123 of file S\+O\+S.\+c.
+Definition at line 156 of file S\+O\+S.\+c.
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{_s_o_s_8h_a33f0b757ea5b9df0fff7cdcef7178981_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -177,15 +142,28 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{SOS\_Init()}{SOS\_Init()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+{\bfseries{Description\+:}} S\+O\+S\+\_\+init initialize S\+OS module with timer canal specified and and time tick reslution as multiple of timer tick. 
+\begin{DoxyParams}{Parameters}
+{\em } & void ~\newline
+ {\bfseries{ N\+O\+TE\+: use linking configuration of sruct S\+O\+S\+\_\+cfg }} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \{OK,N\+OK\}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+S\+O\+S\+\_\+cfg in \mbox{\hyperlink{_s_o_s__cfg_8c}{S\+O\+S\+\_\+\+Cfg.\+c}} 
+\end{DoxySeeAlso}
 
 
-Definition at line 29 of file S\+O\+S.\+c.
+Definition at line 31 of file S\+O\+S.\+c.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763_cgraph}
+\includegraphics[width=266pt]{_s_o_s_8h_aa4a8a75bc8f33c7ff7c7072ec695b763_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:\nopagebreak
@@ -201,14 +179,23 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{SOS\_run()}{SOS\_run()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+{\bfseries{Description\+:}} S\+O\+S\+\_\+dispatcher is the main S\+OS procedure, dispatcher check for new time tick then loop through the S\+O\+S\+\_\+obj\+Buffer and execute tasks at their specified time. 
+\begin{DoxyParams}{Parameters}
+{\em } & void \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \mbox{[}OK,N\+OK\mbox{]} 
+\end{DoxyReturn}
 
 
-Definition at line 163 of file S\+O\+S.\+c.
+Definition at line 198 of file S\+O\+S.\+c.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=257pt]{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67_cgraph}
+\includegraphics[width=350pt]{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67_cgraph}
 \end{center}
 \end{figure}

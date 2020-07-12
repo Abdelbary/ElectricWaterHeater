@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_adc___cfg_8c_source">
+<title>adc_Cfg.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ADC/adc_Cfg.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;File:&#32;&#32;&#32;adc_Cfg.c</emphasis>
+00003 <emphasis role="comment">&#32;*&#32;Author:&#32;Mahmoud&#32;Abdelbary</emphasis>
+00004 <emphasis role="comment">&#32;*</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;Created&#32;on&#32;July&#32;8,&#32;2020,&#32;5:48&#32;PM</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>
+00007 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_adc_8h">adc.h</link>&quot;</emphasis>
+00008 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_adc___cfg_8h">adc_Cfg.h</link>&quot;</emphasis>
+00009 
+<anchor xml:id="_adc___cfg_8c_source_1l00010"/><link linkend="_adc___cfg_8h_1a3b16aa1f93a1529f802d2da8831729e7">00010</link> <emphasis role="keyword">const</emphasis>&#32;<link linkend="_structgstr___a_d_c___config_param__t">gstr_ADC_ConfigParam_t</link>&#32;<link linkend="_adc___cfg_8c_1a3b16aa1f93a1529f802d2da8831729e7">gstr_ADC_Config</link>&#32;=&#32;{
+00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x02
+00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,0x00
+00013 };
+</programlisting></section>

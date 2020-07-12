@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/Application/main.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/Application/main.c</primary></indexterm>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732">operationMode_t</link> { <link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>, 
+<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_main_8c_1aabcbdc9715896bcbf677585867fd734c">tempControlTask</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da">buttonTask</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101">sevenSegTask</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">tempTask</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">appInit</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">checkONBtnStatus</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1a6288eba0f8e8ad3ab1544ad731eb7667">main</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="_main_8c_1ac5cc1393a3907945816f4b7e09049732"/>    <section>
+    <title>operationMode_t</title>
+<indexterm><primary>operationMode_t</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>operationMode_t</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732">operationMode_t</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>TEMP_SET_MODE</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>TEMP_SET_MODE</secondary></indexterm>
+<anchor xml:id="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3"/>TEMP_SET_MODE</entry><entry></entry></row><row><entry><indexterm><primary>NORM_MODE</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>NORM_MODE</secondary></indexterm>
+<anchor xml:id="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a"/>NORM_MODE</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+<para>
+Definition at line <link linkend="_main_8c_source_1l00034">34</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_main_8c_1ab90881fea8078c203ba2c8538c00593a"/>    <section>
+    <title>appInit()</title>
+<indexterm><primary>appInit</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>appInit</secondary></indexterm>
+<para><computeroutput>void appInit ( )</computeroutput></para>
+<para>init temp control element to zero</para>
+
+<para>call MCAL functions from application as it is necessary to initialize the heater/cooler and led and there is no module implemented for them case their functionality are very simple and don&apos;t need to be structured necessary overhead_</para>
+
+<para>this block of code used to set the temp to 60 in the first run this can be simplified by checking for 0xff pattern but this is work for now</para>
+
+<para>set initial values for global variables</para>
+<para>
+Definition at line <link linkend="_main_8c_source_1l00306">306</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_ab90881fea8078c203ba2c8538c00593a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_ab90881fea8078c203ba2c8538c00593a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da"/>    <section>
+    <title>buttonTask()</title>
+<indexterm><primary>buttonTask</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>buttonTask</secondary></indexterm>
+<para><computeroutput>void buttonTask ( )</computeroutput></para>
+<para>if on/off button pressed rise disable system flag we check on this flag on the main loop and disable the system if the flag is up</para>
+
+<para>functionality of the button depend on the current system mode {NORM_MODE,TEMP_SET_MODE} in normal mode: if the up or down buttons pressed get temp from the external e2Prom change mode to TEMP_SET_MIDE in TEMP_SET_MODE: if up or down buttons pressed change temp by 5 with max 75 and min 35 degree</para>
+
+<para>if time out counter reached time out counts <emphasis>button task called every 50ms so we need 50000/50 = 100 enterance befor change the state to normal state</emphasis></para>
+
+<para>load setted value to e2prom set temp for temp control task fire temp control task flag reset timeout counter change state to normal state</para>
+<para>
+Definition at line <link linkend="_main_8c_source_1l00135">135</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_aa3704144322ffcbb82cc88ee36f1a9da_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_aa3704144322ffcbb82cc88ee36f1a9da_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2"/>    <section>
+    <title>checkONBtnStatus()</title>
+<indexterm><primary>checkONBtnStatus</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>checkONBtnStatus</secondary></indexterm>
+<para><computeroutput>void checkONBtnStatus ( )</computeroutput></para><para>
+Definition at line <link linkend="_main_8c_source_1l00353">353</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_abf7e98ccf36d8f640a03030aad64c7f2_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8c_1a6288eba0f8e8ad3ab1544ad731eb7667"/>    <section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>void main (void )</computeroutput></para>
+<para>task priority is set by thier order of call not thier priority number as the priority feature is off from the small os.</para>
+
+<para>if the on off btn is pressed and the system is on disable system disable system by call init function of the system</para>
+
+<para>halt system and only check for the on btn</para>
+<para>
+Definition at line <link linkend="_main_8c_source_1l00369">369</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101"/>    <section>
+    <title>sevenSegTask()</title>
+<indexterm><primary>sevenSegTask</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>sevenSegTask</secondary></indexterm>
+<para><computeroutput>void sevenSegTask ( )</computeroutput></para>
+<para>two modes for lcd {NORMAL MODE , TEMP SET MODE} if NORMAL_MODE: display current temp to the SSD else: blink SSD every 1 sec display the stored temp in EXT_EEPROM update temp based on user input up-down 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>control the ssd on/off time as 1 sec for each</para>
+<para>
+Definition at line <link linkend="_main_8c_source_1l00223">223</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_ac1e5ea28aae6331165f91deabb3a7101_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8c_1aabcbdc9715896bcbf677585867fd734c"/>    <section>
+    <title>tempControlTask()</title>
+<indexterm><primary>tempControlTask</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>tempControlTask</secondary></indexterm>
+<para><computeroutput>void tempControlTask ( )</computeroutput></para>
+<para>if the desired temp have been set get average temp from last 10 readings control the cooler/heater element based on themp</para>
+
+<para>display the average of the avaliable readins before getting ten readings the average = average of the last x reading where x is &lt;=10</para>
+
+<para>if both heater and cooler off if temp blow critical turn on heater else <emphasis>temp above critical</emphasis> turn on cooler else if heater on and temp above critical turn heater off and turn cooler on and turn led on else if cooler on and temp below critical turn cooler off and turn heater on</para>
+
+<para>turn on the heater</para>
+
+<para>turn on the cooler</para>
+
+<para>if the heater on toggle the led state every 1000 ms we enter the function every 100ms so the counter count to 10 times befor toggle</para>
+<para>
+Definition at line <link linkend="_main_8c_source_1l00046">46</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_aabcbdc9715896bcbf677585867fd734c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5"/>    <section>
+    <title>tempTask()</title>
+<indexterm><primary>tempTask</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>tempTask</secondary></indexterm>
+<para><computeroutput>void tempTask ( )</computeroutput></para>
+<para>trigger ADC on specific chanal get temp from adc value set adc value in it&apos;s pos in temp array</para>
+<para>
+Definition at line <link linkend="_main_8c_source_1l00283">283</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

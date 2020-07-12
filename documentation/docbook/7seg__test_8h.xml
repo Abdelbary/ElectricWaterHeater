@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_7seg__test_8h">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/unitTest/7seg_test.h File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/unitTest/7seg_test.h</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_7seg__test_8h_1a11d9a9a3edd76cc57bca64cf5169ff13">sevenSegSimulationTest</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_7seg__test_8h_1a27096aa63dbd33d6ecf5150287304acf">sevenSegSimulationSOSTest</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_7seg__test_8h_1a27096aa63dbd33d6ecf5150287304acf"/>    <section>
+    <title>sevenSegSimulationSOSTest()</title>
+<indexterm><primary>sevenSegSimulationSOSTest</primary><secondary>7seg_test.h</secondary></indexterm>
+<indexterm><primary>7seg_test.h</primary><secondary>sevenSegSimulationSOSTest</secondary></indexterm>
+<para><computeroutput>void sevenSegSimulationSOSTest (void )</computeroutput></para><para>
+Definition at line <link linkend="_7seg__test_8c_source_1l00037">37</link> of file <link linkend="_7seg__test_8c_source">7seg_test.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="7seg__test_8h_a27096aa63dbd33d6ecf5150287304acf_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_7seg__test_8h_1a11d9a9a3edd76cc57bca64cf5169ff13"/>    <section>
+    <title>sevenSegSimulationTest()</title>
+<indexterm><primary>sevenSegSimulationTest</primary><secondary>7seg_test.h</secondary></indexterm>
+<indexterm><primary>7seg_test.h</primary><secondary>sevenSegSimulationTest</secondary></indexterm>
+<para><computeroutput>void sevenSegSimulationTest (void )</computeroutput></para><para>
+Definition at line <link linkend="_7seg__test_8c_source_1l00010">10</link> of file <link linkend="_7seg__test_8c_source">7seg_test.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="7seg__test_8h_a11d9a9a3edd76cc57bca64cf5169ff13_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

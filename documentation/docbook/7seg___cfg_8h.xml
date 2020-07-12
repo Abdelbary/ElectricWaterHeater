@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_7seg___cfg_8h">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg_Cfg.h File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg_Cfg.h</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>const <link linkend="_structseven_seg_config_struct">sevenSegConfigStruct</link> <link linkend="_7seg___cfg_8h_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link> [SEVEN_SEG_NUM]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_7seg___cfg_8h_1a365ddb8f9ec6427b58e705704679c897"/>    <section>
+    <title>sevenSegConfigParam</title>
+<indexterm><primary>sevenSegConfigParam</primary><secondary>7seg_Cfg.h</secondary></indexterm>
+<indexterm><primary>7seg_Cfg.h</primary><secondary>sevenSegConfigParam</secondary></indexterm>
+<para><computeroutput>const <link linkend="_structseven_seg_config_struct">sevenSegConfigStruct</link> sevenSegConfigParam[SEVEN_SEG_NUM]</computeroutput></para><para>
+Definition at line <link linkend="_7seg___cfg_8c_source_1l00011">11</link> of file <link linkend="_7seg___cfg_8c_source">7seg_Cfg.c</link>.</para>
+</section>
+</section>
+</section>

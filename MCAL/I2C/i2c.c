@@ -23,11 +23,11 @@
    For e-mail suggestions :  lcgamboa@yahoo.com
    ######################################################################## */
 
-#ifndef _18F4550
 #include "i2c.h"
- 
+#include <xc.h>
+#include "../../ServiceLayer/Config.h"
 
-void delay(void)
+static void delay(void)
 {
   asm("NOP");
   asm("NOP");
@@ -38,6 +38,7 @@ void delay(void)
   asm("NOP");
   asm("NOP");
 }
+
 
 void i2c_init(void)
 {
@@ -109,7 +110,5 @@ unsigned char i2c_rb(unsigned char ack)
 
   return ret;
 }
-
-#endif
 
 

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_o_s__cfg_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS_cfg.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS_cfg.c</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__s_o_s_8h_1afcb1b7b451e3f428a5e38e271845b577">gstr_SOS_cfg_t</link> <link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link> = {SOS_TIMER_CH0,OS_TICK}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559"/>    <section>
+    <title>SOS_linkCfg</title>
+<indexterm><primary>SOS_linkCfg</primary><secondary>SOS_cfg.c</secondary></indexterm>
+<indexterm><primary>SOS_cfg.c</primary><secondary>SOS_linkCfg</secondary></indexterm>
+<para><computeroutput><link linkend="__s_o_s_8h_1afcb1b7b451e3f428a5e38e271845b577">gstr_SOS_cfg_t</link> SOS_linkCfg = {SOS_TIMER_CH0,OS_TICK}</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s__cfg_8c_source_1l00012">12</link> of file <link linkend="__s_o_s__cfg_8c_source">SOS_cfg.c</link>.</para>
+</section>
+</section>
+</section>

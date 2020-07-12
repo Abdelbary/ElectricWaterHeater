@@ -88,4 +88,16 @@ ERROR_STATE ADC_Init(void);
 * @see Dio_Init
 * @see ADC_Init
 **********************************************************************/
-ERROR_STATE ADC_UpdateValue(uint8_t u8_canal);
+ERROR_STATE ADC_trigger(uint8_t u8_canal);
+
+
+/**
+*\b Description:  getADC_value return last value of ADC
+*				
+* 
+* @param[out]   u16p_adcValue      pointer to hold data of last conversion
+
+* 
+* @return: ERROR_STATUS [OK,NOK]
+*/
+ERROR_STATE getADC_value(uint16_t* u16p_adcValue);

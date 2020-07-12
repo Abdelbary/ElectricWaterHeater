@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_7seg__test_8c_source">
+<title>7seg_test.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/unitTest/7seg_test.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;File:&#32;&#32;&#32;7seg_test.c</emphasis>
+00003 <emphasis role="comment">&#32;*&#32;Author:&#32;mahmo</emphasis>
+00004 <emphasis role="comment">&#32;*</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;Created&#32;on&#32;July&#32;1,&#32;2020,&#32;8:09&#32;PM</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>
+00007 <emphasis role="preprocessor">#include&#32;&quot;../7seg.h&quot;</emphasis>
+00008 
+00009 
+<anchor xml:id="_7seg__test_8c_source_1l00010"/><link linkend="_7seg__test_8h_1a11d9a9a3edd76cc57bca64cf5169ff13">00010</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_7seg__test_8c_1a158621bd38db40e64b33a375ad5af19b">sevenSegSimulationTest</link>(){
+00011 &#32;&#32;{
+00012 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</link>();
+00013 &#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a60579fecccc40e10b8ecca856466d540">sevenSegInit</link>();
+00014 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(1)
+00015 &#32;&#32;&#32;&#32;{
+00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0&#32;;
+00017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(&#32;;i&lt;&#32;99&#32;;&#32;i++)
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;count&#32;=&#32;50;
+00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(count--)
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(i/10,SEVEN_SEG_ONE);
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;__delay_ms(10);&#32;
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(i%10,SEVEN_SEG_TWO);
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;__delay_ms(10);&#32;
+00026 
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00031 
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//PORTB_REG&#32;=&#32;0x00;</emphasis>
+00033 &#32;&#32;&#32;&#32;}
+00034 }
+00035 
+00036 }
+<anchor xml:id="_7seg__test_8c_source_1l00037"/><link linkend="_7seg__test_8h_1a27096aa63dbd33d6ecf5150287304acf">00037</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_7seg__test_8c_1ac2c06c22609baed09b6e602d68134d15">sevenSegSimulationSOSTest</link>(){
+00038 &#32;&#32;
+00039 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</link>();
+00040 &#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a60579fecccc40e10b8ecca856466d540">sevenSegInit</link>();
+00041 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_counter&#32;=&#32;15;
+00042 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;ch&#32;=&#32;0;
+00043 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ch&amp;1)
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(u8_counter/10,SEVEN_SEG_TWO);
+00045 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(u8_counter%10,SEVEN_SEG_ONE);
+00047 &#32;&#32;&#32;&#32;ch++;
+00048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ch&#32;==&#32;2)
+00049 &#32;&#32;&#32;&#32;{
+00050 &#32;&#32;&#32;&#32;&#32;&#32;u8_counter;
+00051 &#32;&#32;&#32;&#32;&#32;&#32;ch&#32;=&#32;0;
+00052 &#32;&#32;&#32;&#32;}
+00053 }
+</programlisting></section>

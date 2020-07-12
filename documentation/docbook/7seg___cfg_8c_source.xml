@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_7seg___cfg_8c_source">
+<title>7seg_Cfg.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg_Cfg.c</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_7seg_8h">7seg.h</link>&quot;</emphasis>
+00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_7seg___cfg_8h">7seg_Cfg.h</link>&quot;</emphasis>
+00003 
+00004 
+00005 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_ONE_SELECTOR_PIN&#32;&#32;&#32;SEVEN_SEG_ONE_SELECTOR</emphasis>
+00006 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_TWO_SELECTOR_PIN&#32;&#32;&#32;SEVEN_SEG_TWO_SELECTOR</emphasis>
+00007 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_ONE_CONFGI_INDEX&#32;&#32;&#32;SEVEN_SEG_CONGIF</emphasis>
+00008 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_TWO_CONFGI_INDEX&#32;&#32;&#32;SEVEN_SEG_CONGIF</emphasis>
+00009 
+00010 
+<anchor xml:id="_7seg___cfg_8c_source_1l00011"/><link linkend="_7seg___cfg_8h_1a365ddb8f9ec6427b58e705704679c897">00011</link> <emphasis role="keyword">const</emphasis>&#32;<link linkend="_structseven_seg_config_struct">sevenSegConfigStruct</link>&#32;<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_NUM]&#32;=
+00012 {
+00013 &#32;&#32;&#32;&#32;{
+00014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SEVEN_SEG_ONE_SELECTOR,
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SEVEN_SEG_CONGIF
+00016 &#32;&#32;&#32;&#32;},
+00017 &#32;&#32;&#32;&#32;{
+00018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SEVEN_SEG_TWO_SELECTOR,
+00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SEVEN_SEG_CONGIF
+00020 &#32;&#32;&#32;&#32;}
+00021 };
+</programlisting></section>

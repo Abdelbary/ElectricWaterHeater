@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index">
+    <info>
+    <title>ElectricWaterHeater</title>
+    </info>
+<chapter>
+    <title>Docs</title>
+    <xi:include href="md_intro.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Data Structure Documentation</title>
+    <xi:include href="struct_btn_config_type.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_dio_config_param__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structgstr___a_d_c___config_param__t.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structseven_seg_config_struct.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_s_o_s__cfg__str.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_s_o_s__obj__str.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="main_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="intro_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg___cfg_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg___cfg_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg___cfg_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg___cfg_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg__test_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg__test_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg__test_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="7seg__test_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn___cfg_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn___cfg_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn___cfg_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn___cfg_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn__test_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn__test_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn__test_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="btn__test_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="eeprom__ext_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="eeprom__ext_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="eeprom__ext_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="eeprom__ext_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="board_examples_8txt.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc___cfg_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc___cfg_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc___cfg_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="adc___cfg_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o___cfg_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o___cfg_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o___cfg_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o___cfg_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o__test_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_d_i_o__test_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="i2c_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="i2c_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="i2c_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="i2c_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="isr_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="isr_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="isr_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="isr_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_registers_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_registers_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="timer_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="timer_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="timer_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="timer_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="common__macros_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="common__macros_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_config_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_config_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_error_handler_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_error_handler_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_system_errors_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_system_errors_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s__cfg_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s__cfg_8c_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s__cfg_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_s_o_s__cfg_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="std__types_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="std__types_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

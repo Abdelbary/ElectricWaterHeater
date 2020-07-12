@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_adc_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ADC/adc.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ADC/adc.c</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="_adc_8c_1ab63839ae7368b215a9e0e3381427d76a">ADC_Init</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="_adc_8c_1a081e50ee005f48bbab04c857524ed3b9">ADC_trigger</link> (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_canal)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="_adc_8c_1a07bb473f93a6ad88d006d3f38ea209e1">getADC_value</link> (<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> *u16p_adcValue)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> <link linkend="_adc_8c_1a5a326621cf2bed38aad87c1c9a06fa9b">gu8_ADC_ADCValue</link></para>
+</listitem>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_adc_8c_1a01787ad744451fdef348a05fc3fae533">gu8_ADC_State</link> =ADC_IDLE_STATE</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_adc_8c_1ab63839ae7368b215a9e0e3381427d76a"/>    <section>
+    <title>ADC_Init()</title>
+<indexterm><primary>ADC_Init</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>ADC_Init</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> ADC_Init (void )</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> </para>
+
+<para>This function is used to initialize the adc based on the configuration in adc_cfg module.</para>
+
+<para>PRE-CONDITION: Module must be idle <emphasis>not initalized befor</emphasis>, DIO must be intalized</para>
+
+<para>POST-CONDITION:</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>ERROR_STATE{OK,NOK}.</para>
+</formalpara>
+<emphasis role="bold">Example</emphasis> Example: <literallayout><computeroutput>ADC_Init();
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para>Dio_Init </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_adc_8c_source_1l00041">41</link> of file <link linkend="_adc_8c_source">adc.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="adc_8c_ab63839ae7368b215a9e0e3381427d76a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="adc_8c_ab63839ae7368b215a9e0e3381427d76a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_adc_8c_1a081e50ee005f48bbab04c857524ed3b9"/>    <section>
+    <title>ADC_trigger()</title>
+<indexterm><primary>ADC_trigger</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>ADC_trigger</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> ADC_trigger (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_canal)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> </para>
+
+<para>This function is used to trigger adc on specified chanal</para>
+
+<para>PRE-CONDITION: Module must be initalized, DIO must be intalized</para>
+
+<para>POST-CONDITION: when converstion done gu8_ADC_State upadate with the conversion value</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>ERROR_STATE{OK,NOK}.</para>
+</formalpara>
+<emphasis role="bold">Example</emphasis> Example: <literallayout><computeroutput>ADC_UpdateValue(2);
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para>Dio_Init </para>
+
+<para><link linkend="_adc_8h_1ab63839ae7368b215a9e0e3381427d76a">ADC_Init</link> </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_adc_8c_source_1l00067">67</link> of file <link linkend="_adc_8c_source">adc.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="adc_8c_a081e50ee005f48bbab04c857524ed3b9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="adc_8c_a081e50ee005f48bbab04c857524ed3b9_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_adc_8c_1a07bb473f93a6ad88d006d3f38ea209e1"/>    <section>
+    <title>getADC_value()</title>
+<indexterm><primary>getADC_value</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>getADC_value</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> getADC_value (<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> * u16p_adcValue)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> getADC_value return last value of ADC</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>out                                </entry>                                <entry>u16p_adcValue</entry>
+                                <entry>
+<para>pointer to hold data of last conversion</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS [OK,NOK] </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="_adc_8c_source_1l00106">106</link> of file <link linkend="_adc_8c_source">adc.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="adc_8c_a07bb473f93a6ad88d006d3f38ea209e1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="adc_8c_a07bb473f93a6ad88d006d3f38ea209e1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_adc_8c_1a5a326621cf2bed38aad87c1c9a06fa9b"/>    <section>
+    <title>gu8_ADC_ADCValue</title>
+<indexterm><primary>gu8_ADC_ADCValue</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>gu8_ADC_ADCValue</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> gu8_ADC_ADCValue</computeroutput></para><para>
+Definition at line <link linkend="_adc_8c_source_1l00036">36</link> of file <link linkend="_adc_8c_source">adc.c</link>.</para>
+    </section><anchor xml:id="_adc_8c_1a01787ad744451fdef348a05fc3fae533"/>    <section>
+    <title>gu8_ADC_State</title>
+<indexterm><primary>gu8_ADC_State</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>gu8_ADC_State</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> gu8_ADC_State =ADC_IDLE_STATE</computeroutput></para><para>
+Definition at line <link linkend="_adc_8c_source_1l00037">37</link> of file <link linkend="_adc_8c_source">adc.c</link>.</para>
+</section>
+</section>
+</section>

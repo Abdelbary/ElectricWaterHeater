@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_btn___cfg_8c_source">
+<title>btn_Cfg.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/btn_Cfg.c</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_btn_8h">btn.h</link>&quot;</emphasis>
+00002 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_btn___cfg_8h">btn_Cfg.h</link>&quot;</emphasis>
+00003 
+<anchor xml:id="_btn___cfg_8c_source_1l00004"/><link linkend="_btn___cfg_8h_1adf7de86c81a4639ccbf116449f0e3254">00004</link> <emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_btn_config_type">BtnConfigType</link>&#32;<link linkend="_btn___cfg_8c_1adf7de86c81a4639ccbf116449f0e3254">gcae_BUT_ConfigParam</link>[BTN_NUM_OF_BUTTONS]&#32;=
+00005 {
+00006 &#32;&#32;&#32;&#32;{
+00007 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x03,
+00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644aad92f9440c1f8bd2336f66cea2ce9da7">ActiveLow</link>
+00009 &#32;&#32;&#32;&#32;},
+00010 &#32;&#32;&#32;&#32;{
+00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x04,
+00012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644aad92f9440c1f8bd2336f66cea2ce9da7">ActiveLow</link>
+00013 &#32;&#32;&#32;&#32;},
+00014 &#32;&#32;&#32;&#32;{
+00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x05,
+00016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644aad92f9440c1f8bd2336f66cea2ce9da7">ActiveLow</link>
+00017 &#32;&#32;&#32;&#32;}
+00018 };
+</programlisting></section>

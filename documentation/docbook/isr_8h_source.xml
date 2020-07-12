@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_isr_8h_source">
+<title>isr.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ISR/isr.h</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*&#32;Microchip&#32;Technology&#32;Inc.&#32;and&#32;its&#32;subsidiaries.&#32;&#32;You&#32;may&#32;use&#32;this&#32;software&#32;</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;and&#32;any&#32;derivatives&#32;exclusively&#32;with&#32;Microchip&#32;products.&#32;</emphasis>
+00003 <emphasis role="comment">&#32;*&#32;</emphasis>
+00004 <emphasis role="comment">&#32;*&#32;THIS&#32;SOFTWARE&#32;IS&#32;SUPPLIED&#32;BY&#32;MICROCHIP&#32;&quot;AS&#32;IS&quot;.&#32;&#32;NO&#32;WARRANTIES,&#32;WHETHER&#32;</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;EXPRESS,&#32;IMPLIED&#32;OR&#32;STATUTORY,&#32;APPLY&#32;TO&#32;THIS&#32;SOFTWARE,&#32;INCLUDING&#32;ANY&#32;IMPLIED&#32;</emphasis>
+00006 <emphasis role="comment">&#32;*&#32;WARRANTIES&#32;OF&#32;NON-INFRINGEMENT,&#32;MERCHANTABILITY,&#32;AND&#32;FITNESS&#32;FOR&#32;A&#32;</emphasis>
+00007 <emphasis role="comment">&#32;*&#32;PARTICULAR&#32;PURPOSE,&#32;OR&#32;ITS&#32;INTERACTION&#32;WITH&#32;MICROCHIP&#32;PRODUCTS,&#32;COMBINATION&#32;</emphasis>
+00008 <emphasis role="comment">&#32;*&#32;WITH&#32;ANY&#32;OTHER&#32;PRODUCTS,&#32;OR&#32;USE&#32;IN&#32;ANY&#32;APPLICATION.&#32;</emphasis>
+00009 <emphasis role="comment">&#32;*</emphasis>
+00010 <emphasis role="comment">&#32;*&#32;IN&#32;NO&#32;EVENT&#32;WILL&#32;MICROCHIP&#32;BE&#32;LIABLE&#32;FOR&#32;ANY&#32;INDIRECT,&#32;SPECIAL,&#32;PUNITIVE,&#32;</emphasis>
+00011 <emphasis role="comment">&#32;*&#32;INCIDENTAL&#32;OR&#32;CONSEQUENTIAL&#32;LOSS,&#32;DAMAGE,&#32;COST&#32;OR&#32;EXPENSE&#32;OF&#32;ANY&#32;KIND&#32;</emphasis>
+00012 <emphasis role="comment">&#32;*&#32;WHATSOEVER&#32;RELATED&#32;TO&#32;THE&#32;SOFTWARE,&#32;HOWEVER&#32;CAUSED,&#32;EVEN&#32;IF&#32;MICROCHIP&#32;HAS&#32;</emphasis>
+00013 <emphasis role="comment">&#32;*&#32;BEEN&#32;ADVISED&#32;OF&#32;THE&#32;POSSIBILITY&#32;OR&#32;THE&#32;DAMAGES&#32;ARE&#32;FORESEEABLE.&#32;&#32;TO&#32;THE&#32;</emphasis>
+00014 <emphasis role="comment">&#32;*&#32;FULLEST&#32;EXTENT&#32;ALLOWED&#32;BY&#32;LAW,&#32;MICROCHIP&apos;S&#32;TOTAL&#32;LIABILITY&#32;ON&#32;ALL&#32;CLAIMS&#32;</emphasis>
+00015 <emphasis role="comment">&#32;*&#32;IN&#32;ANY&#32;WAY&#32;RELATED&#32;TO&#32;THIS&#32;SOFTWARE&#32;WILL&#32;NOT&#32;EXCEED&#32;THE&#32;AMOUNT&#32;OF&#32;FEES,&#32;IF&#32;</emphasis>
+00016 <emphasis role="comment">&#32;*&#32;ANY,&#32;THAT&#32;YOU&#32;HAVE&#32;PAID&#32;DIRECTLY&#32;TO&#32;MICROCHIP&#32;FOR&#32;THIS&#32;SOFTWARE.</emphasis>
+00017 <emphasis role="comment">&#32;*</emphasis>
+00018 <emphasis role="comment">&#32;*&#32;MICROCHIP&#32;PROVIDES&#32;THIS&#32;SOFTWARE&#32;CONDITIONALLY&#32;UPON&#32;YOUR&#32;ACCEPTANCE&#32;OF&#32;THESE&#32;</emphasis>
+00019 <emphasis role="comment">&#32;*&#32;TERMS.&#32;</emphasis>
+00020 <emphasis role="comment">&#32;*/</emphasis>
+00021 
+00022 <emphasis role="comment">/*&#32;</emphasis>
+00023 <emphasis role="comment">&#32;*&#32;File:&#32;&#32;&#32;</emphasis>
+00024 <emphasis role="comment">&#32;*&#32;Author:&#32;</emphasis>
+00025 <emphasis role="comment">&#32;*&#32;Comments:</emphasis>
+00026 <emphasis role="comment">&#32;*&#32;Revision&#32;history:&#32;</emphasis>
+00027 <emphasis role="comment">&#32;*/</emphasis>
+00028 
+00029 <emphasis role="comment">//&#32;This&#32;is&#32;a&#32;guard&#32;condition&#32;so&#32;that&#32;contents&#32;of&#32;this&#32;file&#32;are&#32;not&#32;included</emphasis>
+00030 <emphasis role="comment">//&#32;more&#32;than&#32;once.&#32;&#32;</emphasis>
+00031 <emphasis role="preprocessor">#ifndef&#32;ISR_H</emphasis>
+00032 <emphasis role="preprocessor">#define&#32;ISR_H</emphasis>
+00033 
+00034 
+00035 
+00036 <emphasis role="comment">/*********************************************</emphasis>
+00037 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;H&#32;files&#32;Included&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*</emphasis>
+00038 <emphasis role="comment">&#32;*********************************************/</emphasis>
+00039 
+00040 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/common_macros.h&quot;</emphasis>
+00041 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/std_types.h&quot;</emphasis>
+00042 <emphasis role="preprocessor">#include&#32;&quot;../DIO/DIO.h&quot;</emphasis>
+00043 <emphasis role="preprocessor">#include&#32;&quot;../TIMER/timer.h&quot;</emphasis>
+00044 <emphasis role="comment">/******************************************</emphasis>
+00045 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Decelerations&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*</emphasis>
+00046 <emphasis role="comment">&#32;******************************************/</emphasis>
+00047 
+00048 
+00049 
+00050 
+00051 <emphasis role="comment">/******************************************</emphasis>
+00052 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Functions&#32;Prototypes&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*</emphasis>
+00053 <emphasis role="comment">&#32;******************************************/</emphasis>
+00054 
+00055 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_isr_8h_1a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</link>(<emphasis role="keywordtype">void</emphasis>)&#32;;
+00056 
+00057 
+00058 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

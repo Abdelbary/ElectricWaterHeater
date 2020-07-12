@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated">
+<title>Data Structures</title>
+Here are the data structures with brief descriptions:<link linkend="_struct_btn_config_type">BtnConfigType</link><link linkend="_struct_dio_config_param__t">DioConfigParam_t</link><link linkend="_structgstr___a_d_c___config_param__t">gstr_ADC_ConfigParam_t</link><link linkend="_structseven_seg_config_struct">sevenSegConfigStruct</link><link linkend="_struct_s_o_s__cfg__str">SOS_cfg_str</link><link linkend="_struct_s_o_s__obj__str">SOS_obj_str</link></section>

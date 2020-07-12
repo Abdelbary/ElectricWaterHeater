@@ -2,7 +2,7 @@
 #define DIO_CFG_H
 
 
-#define DIO_NUM_OF_GROUPS                   10
+#define DIO_NUM_OF_GROUPS                   12
 
-extern const DioConfigParamType DIO_ConfigParam[DIO_NUM_OF_GROUPS];
+extern const DioConfigParam_t gstr_DIO_ConfigParam[DIO_NUM_OF_GROUPS];
 #endif

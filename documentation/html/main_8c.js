@@ -1,12 +1,5 @@
 var main_8c =
 [
-    [ "DOWN_BTN", "main_8c.html#abcd7e0ec0066ae19628c726fd47ecbe2", null ],
-    [ "LEDPIN", "main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481", null ],
-    [ "ON_OFF_BTN", "main_8c.html#a6b7df4043e1413150b5b151637df70fd", null ],
-    [ "SSD_FLASHING_CYCLE", "main_8c.html#a8e9b7c13dca2d5b64ae1ae4d65472f69", null ],
-    [ "TEMP_VLAUES", "main_8c.html#a56eb5efdeca4cd6cdecc9c518dd867d2", null ],
-    [ "UP_BTN", "main_8c.html#a2a8461454ac6747c1ebdd30f3ffc1851", null ],
-    [ "USED_PATTERN", "main_8c.html#a9435522a8da2a4c941013971ce83b553", null ],
     [ "operationMode_t", "main_8c.html#ac5cc1393a3907945816f4b7e09049732", [
       [ "TEMP_SET_MODE", "main_8c.html#ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3", null ],
       [ "NORM_MODE", "main_8c.html#ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a", null ]

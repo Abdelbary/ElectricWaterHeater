@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__d_i_o___cfg_8h">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO_Cfg.h File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO_Cfg.h</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>const <link linkend="_struct_dio_config_param__t">DioConfigParam_t</link> <link linkend="__d_i_o___cfg_8h_1aeeda07a611e9eac80ed621e98ee8e151">gstr_DIO_ConfigParam</link> [DIO_NUM_OF_GROUPS]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__d_i_o___cfg_8h_1aeeda07a611e9eac80ed621e98ee8e151"/>    <section>
+    <title>gstr_DIO_ConfigParam</title>
+<indexterm><primary>gstr_DIO_ConfigParam</primary><secondary>DIO_Cfg.h</secondary></indexterm>
+<indexterm><primary>DIO_Cfg.h</primary><secondary>gstr_DIO_ConfigParam</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_dio_config_param__t">DioConfigParam_t</link> gstr_DIO_ConfigParam[DIO_NUM_OF_GROUPS]</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o___cfg_8c_source_1l00004">4</link> of file <link linkend="__d_i_o___cfg_8c_source">DIO_Cfg.c</link>.</para>
+</section>
+</section>
+</section>

@@ -60,6 +60,6 @@ ERROR_STATE sevenSegInit(void);
     <p><b>Remarks:</b></p>
  */
 ERROR_STATE sevenSegSendChar(const uint8_t u8_value,const uint8_t u8_SSD_selector);
-ERROR_STATE disableSevenSeg();
+ERROR_STATE disableSevenSeg(void);
 
 #endif

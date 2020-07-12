@@ -84,71 +84,15 @@ $(document).ready(function(){initNavTree('main_8c.html',''); initResizable(); })
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_registers_8h_source.html">../MCAL/Registers.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="std__types_8h_source.html">../ServiceLayer/std_types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_config_8h_source.html">../ServiceLayer/Config.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="7seg_8h_source.html">../HAL/7SEG/7seg.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_d_i_o_8h_source.html">../MCAL/DIO/DIO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="7seg__test_8h_source.html">../HAL/7SEG/unitTest/7seg_test.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="btn__test_8h_source.html">../HAL/BTN/unit test/btn_test.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="btn_8h_source.html">../HAL/BTN/btn.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="eeprom__ext_8h_source.html">../HAL/eeprom_ext/eeprom_ext.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="adc_8h_source.html">../MCAL/ADC/adc.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="isr_8h_source.html">../MCAL/ISR/isr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="timer_8h_source.html">../MCAL/TIMER/timer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_s_o_s_8h_source.html">../ServiceLayer/SOS/SOS.h</a>&quot;</code><br />
-<code>#include &lt;xc.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for main.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8c__incl.png" border="0" usemap="#_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_application_2main_8c" alt=""/></div>
-<map name="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_application_2main_8c" id="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_application_2main_8c">
-<area shape="rect" title=" " alt="" coords="620,5,799,61"/>
-<area shape="rect" href="_registers_8h.html" title=" " alt="" coords="43,206,183,233"/>
-<area shape="rect" href="std__types_8h.html" title=" " alt="" coords="469,452,600,493"/>
-<area shape="rect" href="_config_8h.html" title=" " alt="" coords="346,295,505,322"/>
-<area shape="rect" title=" " alt="" coords="1163,377,1210,404"/>
-<area shape="rect" href="7seg_8h.html" title=" " alt="" coords="284,117,425,143"/>
-<area shape="rect" href="_d_i_o_8h.html" title=" " alt="" coords="361,206,506,233"/>
-<area shape="rect" href="7seg__test_8h.html" title=" " alt="" coords="1149,199,1297,240"/>
-<area shape="rect" href="btn__test_8h.html" title=" " alt="" coords="1257,288,1396,329"/>
-<area shape="rect" href="btn_8h.html" title=" " alt="" coords="509,117,630,143"/>
-<area shape="rect" href="eeprom__ext_8h.html" title=" " alt="" coords="1372,109,1551,151"/>
-<area shape="rect" href="adc_8h.html" title=" " alt="" coords="581,295,718,322"/>
-<area shape="rect" href="isr_8h.html" title=" " alt="" coords="846,117,970,143"/>
-<area shape="rect" href="timer_8h.html" title=" " alt="" coords="945,295,1063,322"/>
-<area shape="rect" href="_s_o_s_8h.html" title=" " alt="" coords="722,199,862,240"/>
-<area shape="rect" href="common__macros_8h.html" title=" " alt="" coords="731,541,864,568"/>
-<area shape="rect" href="_system_errors_8h.html" title=" " alt="" coords="573,377,769,404"/>
-</map>
-</div>
-</div>
+
 <p><a href="main_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a2b3671e090b0831bfba7d12cfcf2d481"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a2b3671e090b0831bfba7d12cfcf2d481">LEDPIN</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a2b3671e090b0831bfba7d12cfcf2d481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b7df4043e1413150b5b151637df70fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6b7df4043e1413150b5b151637df70fd">ON_OFF_BTN</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a6b7df4043e1413150b5b151637df70fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a8461454ac6747c1ebdd30f3ffc1851"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a2a8461454ac6747c1ebdd30f3ffc1851">UP_BTN</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a2a8461454ac6747c1ebdd30f3ffc1851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcd7e0ec0066ae19628c726fd47ecbe2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#abcd7e0ec0066ae19628c726fd47ecbe2">DOWN_BTN</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:abcd7e0ec0066ae19628c726fd47ecbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9435522a8da2a4c941013971ce83b553"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9435522a8da2a4c941013971ce83b553">USED_PATTERN</a>&#160;&#160;&#160;(0x3D)</td></tr>
-<tr class="separator:a9435522a8da2a4c941013971ce83b553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56eb5efdeca4cd6cdecc9c518dd867d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a56eb5efdeca4cd6cdecc9c518dd867d2">TEMP_VLAUES</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a56eb5efdeca4cd6cdecc9c518dd867d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e9b7c13dca2d5b64ae1ae4d65472f69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8e9b7c13dca2d5b64ae1ae4d65472f69">SSD_FLASHING_CYCLE</a>&#160;&#160;&#160;20</td></tr>
-<tr class="separator:a8e9b7c13dca2d5b64ae1ae4d65472f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ac5cc1393a3907945816f4b7e09049732"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ac5cc1393a3907945816f4b7e09049732">operationMode_t</a> { <a class="el" href="main_8c.html#ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</a>, 
@@ -173,119 +117,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">main</a> (void)</td></tr>
 <tr class="separator:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="abcd7e0ec0066ae19628c726fd47ecbe2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcd7e0ec0066ae19628c726fd47ecbe2">&#9670;&nbsp;</a></span>DOWN_BTN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DOWN_BTN&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00027">27</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
-<a id="a2b3671e090b0831bfba7d12cfcf2d481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b3671e090b0831bfba7d12cfcf2d481">&#9670;&nbsp;</a></span>LEDPIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LEDPIN&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00024">24</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
-<a id="a6b7df4043e1413150b5b151637df70fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b7df4043e1413150b5b151637df70fd">&#9670;&nbsp;</a></span>ON_OFF_BTN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ON_OFF_BTN&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00025">25</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
-<a id="a8e9b7c13dca2d5b64ae1ae4d65472f69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e9b7c13dca2d5b64ae1ae4d65472f69">&#9670;&nbsp;</a></span>SSD_FLASHING_CYCLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SSD_FLASHING_CYCLE&#160;&#160;&#160;20</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00030">30</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
-<a id="a56eb5efdeca4cd6cdecc9c518dd867d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56eb5efdeca4cd6cdecc9c518dd867d2">&#9670;&nbsp;</a></span>TEMP_VLAUES</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEMP_VLAUES&#160;&#160;&#160;10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00029">29</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
-<a id="a2a8461454ac6747c1ebdd30f3ffc1851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a8461454ac6747c1ebdd30f3ffc1851">&#9670;&nbsp;</a></span>UP_BTN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UP_BTN&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00026">26</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
-<a id="a9435522a8da2a4c941013971ce83b553"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9435522a8da2a4c941013971ce83b553">&#9670;&nbsp;</a></span>USED_PATTERN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define USED_PATTERN&#160;&#160;&#160;(0x3D)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00028">28</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ac5cc1393a3907945816f4b7e09049732"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5cc1393a3907945816f4b7e09049732">&#9670;&nbsp;</a></span>operationMode_t</h2>
@@ -303,7 +134,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a"></a>NORM_MODE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00031">31</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00034">34</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>
@@ -323,24 +154,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>init temp control element to zero</p>
+<p>call MCAL functions from application as it is necessary to initialize the heater/cooler and led and there is no module implemented for them case their functionality are very simple and don't need to be structured necessary overhead_</p>
+<p>this block of code used to set the temp to 60 in the first run this can be simplified by checking for 0xff pattern but this is work for now</p>
+<p>set initial values for global variables</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00236">236</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00306">306</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_ab90881fea8078c203ba2c8538c00593a_cgraph.png" border="0" usemap="#main_8c_ab90881fea8078c203ba2c8538c00593a_cgraph" alt=""/></div>
 <map name="main_8c_ab90881fea8078c203ba2c8538c00593a_cgraph" id="main_8c_ab90881fea8078c203ba2c8538c00593a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,183,65,209"/>
-<area shape="rect" href="adc_8c.html#ab63839ae7368b215a9e0e3381427d76a" title=" " alt="" coords="137,5,211,32"/>
-<area shape="rect" href="btn_8c.html#a4d8709c705e4850882d44e4b68681421" title=" " alt="" coords="139,56,209,83"/>
-<area shape="rect" href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1" title=" " alt="" coords="140,107,208,133"/>
-<area shape="rect" href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0" title=" " alt="" coords="290,208,373,235"/>
-<area shape="rect" href="7seg_8c.html#a15964358587a33b34d3b9b973be0243f" title=" " alt="" coords="113,208,235,235"/>
-<area shape="rect" href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2" title=" " alt="" coords="127,259,221,285"/>
-<area shape="rect" href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="127,309,221,336"/>
-<area shape="rect" href="_s_o_s_8c.html#aa4a8a75bc8f33c7ff7c7072ec695b763" title=" " alt="" coords="137,360,211,387"/>
-<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="283,5,380,32"/>
-<area shape="rect" href="timer_8c.html#a896a4c37c6ecf8868ef0dc758e5a598c" title=" " alt="" coords="294,360,369,387"/>
+<area shape="rect" title=" " alt="" coords="5,189,65,216"/>
+<area shape="rect" href="adc_8c.html#ab63839ae7368b215a9e0e3381427d76a" title=" " alt="" coords="137,341,211,368"/>
+<area shape="rect" href="btn_8c.html#a4d8709c705e4850882d44e4b68681421" title=" " alt="" coords="139,37,209,64"/>
+<area shape="rect" href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1" title=" " alt="" coords="140,88,208,115"/>
+<area shape="rect" href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0" title=" " alt="" coords="304,139,387,165"/>
+<area shape="rect" href="7seg_8c.html#a48b828fc607ed48b54488f8cb46696f8" title=" " alt="" coords="113,139,235,165"/>
+<area shape="rect" href="i2c_8c.html#a5730d9445429351b9f750084c5cb5aae" title=" " alt="" coords="143,240,205,267"/>
+<area shape="rect" href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2" title=" " alt="" coords="127,291,221,317"/>
+<area shape="rect" href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="127,189,221,216"/>
+<area shape="rect" href="_s_o_s_8c.html#aa4a8a75bc8f33c7ff7c7072ec695b763" title=" " alt="" coords="137,392,211,419"/>
+<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="297,341,394,368"/>
+<area shape="rect" href="timer_8c.html#a146cd1e352ec285162684cf776df632c" title=" " alt="" coords="283,392,408,419"/>
 </map>
 </div>
 <div class="dynheader">
@@ -369,8 +204,12 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>if on/off button pressed rise disable system flag we check on this flag on the main loop and disable the system if the flag is up</p>
+<p>functionality of the button depend on the current system mode {NORM_MODE,TEMP_SET_MODE} in normal mode: if the up or down buttons pressed get temp from the external e2Prom change mode to TEMP_SET_MIDE in TEMP_SET_MODE: if up or down buttons pressed change temp by 5 with max 75 and min 35 degree</p>
+<p>if time out counter reached time out counts <em>button task called every 50ms so we need 50000/50 = 100 enterance befor change the state to normal state</em></p>
+<p>load setted value to e2prom set temp for temp control task fire temp control task flag reset timeout counter change state to normal state</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00112">112</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00135">135</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -408,7 +247,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00271">271</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00353">353</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -437,34 +276,38 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>task priority is set by thier order of call not thier priority number as the priority feature is off from the small os.</p>
+<p>if the on off btn is pressed and the system is on disable system disable system by call init function of the system</p>
+<p>halt system and only check for the on btn</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00282">282</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00369">369</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph.png" border="0" usemap="#main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph" alt=""/></div>
 <map name="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph" id="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph">
-<area shape="rect" title=" " alt="" coords="5,473,56,500"/>
-<area shape="rect" href="main_8c.html#ab90881fea8078c203ba2c8538c00593a" title=" " alt="" coords="135,208,195,235"/>
-<area shape="rect" href="main_8c.html#aa3704144322ffcbb82cc88ee36f1a9da" title=" " alt="" coords="121,499,208,525"/>
-<area shape="rect" href="main_8c.html#ac1e5ea28aae6331165f91deabb3a7101" title=" " alt="" coords="111,448,218,475"/>
-<area shape="rect" href="_s_o_s_8c.html#a06bf665e6be18ac7fecc4c331fcf2734" title=" " alt="" coords="104,600,225,627"/>
-<area shape="rect" href="main_8c.html#aabcbdc9715896bcbf677585867fd734c" title=" " alt="" coords="105,549,225,576"/>
-<area shape="rect" href="main_8c.html#a4e7c6b5809aef7a48e6ff16156c907b5" title=" " alt="" coords="125,397,204,424"/>
-<area shape="rect" href="adc_8c.html#ab63839ae7368b215a9e0e3381427d76a" title=" " alt="" coords="302,360,375,387"/>
-<area shape="rect" href="btn_8c.html#a4d8709c705e4850882d44e4b68681421" title=" " alt="" coords="303,259,374,285"/>
-<area shape="rect" href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1" title=" " alt="" coords="305,309,373,336"/>
-<area shape="rect" href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0" title=" " alt="" coords="459,107,542,133"/>
-<area shape="rect" href="7seg_8c.html#a15964358587a33b34d3b9b973be0243f" title=" " alt="" coords="278,5,399,32"/>
-<area shape="rect" href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2" title=" " alt="" coords="292,56,385,83"/>
-<area shape="rect" href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="291,107,386,133"/>
-<area shape="rect" href="_s_o_s_8c.html#aa4a8a75bc8f33c7ff7c7072ec695b763" title=" " alt="" coords="301,208,376,235"/>
-<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="452,385,549,412"/>
-<area shape="rect" href="timer_8c.html#a896a4c37c6ecf8868ef0dc758e5a598c" title=" " alt="" coords="463,208,538,235"/>
-<area shape="rect" href="btn_8c.html#a5aeeef57fe3d8638de39db5ed01efaef" title=" " alt="" coords="285,487,392,513"/>
-<area shape="rect" href="btn_8c.html#af9d0881c43b0ff77296a25abd27b5929" title=" " alt="" coords="287,537,391,564"/>
-<area shape="rect" href="timer_8c.html#aaedac22c55880495505bf375e0e132c1" title=" " alt="" coords="297,600,381,627"/>
-<area shape="rect" href="adc_8c.html#a14db941c6084462d6d9c2ae29a1cce98" title=" " alt="" coords="273,411,404,437"/>
+<area shape="rect" title=" " alt="" coords="5,537,56,564"/>
+<area shape="rect" href="main_8c.html#ab90881fea8078c203ba2c8538c00593a" title=" " alt="" coords="135,233,195,260"/>
+<area shape="rect" href="main_8c.html#aa3704144322ffcbb82cc88ee36f1a9da" title=" " alt="" coords="121,461,208,488"/>
+<area shape="rect" href="main_8c.html#ac1e5ea28aae6331165f91deabb3a7101" title=" " alt="" coords="111,512,218,539"/>
+<area shape="rect" href="_s_o_s_8c.html#a085b92af3cd18aadc5f6c5c4979969fe" title=" " alt="" coords="104,664,225,691"/>
+<area shape="rect" href="main_8c.html#aabcbdc9715896bcbf677585867fd734c" title=" " alt="" coords="105,613,225,640"/>
+<area shape="rect" href="main_8c.html#a4e7c6b5809aef7a48e6ff16156c907b5" title=" " alt="" coords="125,563,204,589"/>
+<area shape="rect" href="adc_8c.html#ab63839ae7368b215a9e0e3381427d76a" title=" " alt="" coords="297,411,371,437"/>
+<area shape="rect" href="btn_8c.html#a4d8709c705e4850882d44e4b68681421" title=" " alt="" coords="299,309,369,336"/>
+<area shape="rect" href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1" title=" " alt="" coords="300,360,368,387"/>
+<area shape="rect" href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0" title=" " alt="" coords="464,157,547,184"/>
+<area shape="rect" href="7seg_8c.html#a48b828fc607ed48b54488f8cb46696f8" title=" " alt="" coords="273,208,395,235"/>
+<area shape="rect" href="i2c_8c.html#a5730d9445429351b9f750084c5cb5aae" title=" " alt="" coords="303,56,365,83"/>
+<area shape="rect" href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2" title=" " alt="" coords="287,107,381,133"/>
+<area shape="rect" href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="287,5,381,32"/>
+<area shape="rect" href="_s_o_s_8c.html#aa4a8a75bc8f33c7ff7c7072ec695b763" title=" " alt="" coords="297,259,371,285"/>
+<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="457,563,554,589"/>
+<area shape="rect" href="timer_8c.html#a146cd1e352ec285162684cf776df632c" title=" " alt="" coords="443,259,568,285"/>
+<area shape="rect" href="btn_8c.html#a5aeeef57fe3d8638de39db5ed01efaef" title=" " alt="" coords="281,461,387,488"/>
+<area shape="rect" href="btn_8c.html#af9d0881c43b0ff77296a25abd27b5929" title=" " alt="" coords="282,512,386,539"/>
+<area shape="rect" href="adc_8c.html#a081e50ee005f48bbab04c857524ed3b9" title=" " alt="" coords="288,563,380,589"/>
+<area shape="rect" href="adc_8c.html#a07bb473f93a6ad88d006d3f38ea209e1" title=" " alt="" coords="283,613,385,640"/>
 </map>
 </div>
 
@@ -484,8 +327,11 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>two modes for lcd {NORMAL MODE , TEMP SET MODE} if NORMAL_MODE: display current temp to the SSD else: blink SSD every 1 sec display the stored temp in EXT_EEPROM update temp based on user input up-down <br  />
+</p>
+<p>control the ssd on/off time as 1 sec for each</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00171">171</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00223">223</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -512,10 +358,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>if the desired temp have been set get average temp from last 10 readings control the cooler/heater element based on themp</p>
+<p>display the average of the avaliable readins before getting ten readings the average = average of the last x reading where x is &lt;=10</p>
+<p>if both heater and cooler off if temp blow critical turn on heater else <em>temp above critical</em> turn on cooler else if heater on and temp above critical turn heater off and turn cooler on and turn led on else if cooler on and temp below critical turn cooler off and turn heater on</p>
 <p>turn on the heater</p>
-<p>turn on the heater</p>
+<p>turn on the cooler</p>
+<p>if the heater on toggle the led state every 1000 ms we enter the function every 100ms so the counter count to 10 times befor toggle</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00044">44</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00046">46</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -542,16 +392,18 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>trigger ADC on specific chanal get temp from adc value set adc value in it's pos in temp array</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00221">221</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00283">283</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_cgraph.png" border="0" usemap="#main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_cgraph" alt=""/></div>
 <map name="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_cgraph" id="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,84,32"/>
-<area shape="rect" href="adc_8c.html#a14db941c6084462d6d9c2ae29a1cce98" title=" " alt="" coords="132,5,263,32"/>
-<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="311,5,408,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,84,57"/>
+<area shape="rect" href="adc_8c.html#a081e50ee005f48bbab04c857524ed3b9" title=" " alt="" coords="137,5,229,32"/>
+<area shape="rect" href="adc_8c.html#a07bb473f93a6ad88d006d3f38ea209e1" title=" " alt="" coords="132,56,235,83"/>
+<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="283,31,380,57"/>
 </map>
 </div>
 <div class="dynheader">

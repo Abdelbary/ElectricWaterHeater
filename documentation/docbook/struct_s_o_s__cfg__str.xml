@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_o_s__cfg__str">
+<title>SOS_cfg_str Struct Reference</title>
+<indexterm><primary>SOS_cfg_str</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SOS.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615">timer_ch</link></para>
+</listitem>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__s_o_s_8h_source_1l00027">27</link> of file <link linkend="__s_o_s_8h_source">SOS.h</link>.</para>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be"/>    <section>
+    <title>tick_reslution</title>
+<indexterm><primary>tick_reslution</primary><secondary>SOS_cfg_str</secondary></indexterm>
+<indexterm><primary>SOS_cfg_str</primary><secondary>tick_reslution</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> SOS_cfg_str::tick_reslution</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8h_source_1l00030">30</link> of file <link linkend="__s_o_s_8h_source">SOS.h</link>.</para>
+    </section><anchor xml:id="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615"/>    <section>
+    <title>timer_ch</title>
+<indexterm><primary>timer_ch</primary><secondary>SOS_cfg_str</secondary></indexterm>
+<indexterm><primary>SOS_cfg_str</primary><secondary>timer_ch</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> SOS_cfg_str::timer_ch</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8h_source_1l00029">29</link> of file <link linkend="__s_o_s_8h_source">SOS.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/<link linkend="__s_o_s_8h">SOS.h</link></section>
+</section>

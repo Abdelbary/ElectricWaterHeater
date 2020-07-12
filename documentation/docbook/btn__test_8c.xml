@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_btn__test_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/unit test/btn_test.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/unit test/btn_test.c</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_btn__test_8c_1acb4e2fd533a33ef73e0a50eede86d7be">btnSimulationTest</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> <link linkend="_btn__test_8c_1a5661c36027a97c8cf407a5e797342537">u8_on_off_btn_status</link></para>
+</listitem>
+            <listitem><para><link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> <link linkend="_btn__test_8c_1aae5551cb96ea275a46d7d4c5cad8dfa1">u8_up_btn_status</link></para>
+</listitem>
+            <listitem><para><link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> <link linkend="_btn__test_8c_1a33fc2a45c9b7f59e35b5b148ecf401ad">u8_down_btn2_status</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_btn__test_8c_1acb4e2fd533a33ef73e0a50eede86d7be"/>    <section>
+    <title>btnSimulationTest()</title>
+<indexterm><primary>btnSimulationTest</primary><secondary>btn_test.c</secondary></indexterm>
+<indexterm><primary>btn_test.c</primary><secondary>btnSimulationTest</secondary></indexterm>
+<para><computeroutput>void btnSimulationTest (void )</computeroutput></para><para>
+Definition at line <link linkend="_btn__test_8c_source_1l00017">17</link> of file <link linkend="_btn__test_8c_source">btn_test.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="btn__test_8c_acb4e2fd533a33ef73e0a50eede86d7be_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_btn__test_8c_1a33fc2a45c9b7f59e35b5b148ecf401ad"/>    <section>
+    <title>u8_down_btn2_status</title>
+<indexterm><primary>u8_down_btn2_status</primary><secondary>btn_test.c</secondary></indexterm>
+<indexterm><primary>btn_test.c</primary><secondary>u8_down_btn2_status</secondary></indexterm>
+<para><computeroutput><link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> u8_down_btn2_status</computeroutput></para><para>
+Definition at line <link linkend="_btn__test_8c_source_1l00014">14</link> of file <link linkend="_btn__test_8c_source">btn_test.c</link>.</para>
+    </section><anchor xml:id="_btn__test_8c_1a5661c36027a97c8cf407a5e797342537"/>    <section>
+    <title>u8_on_off_btn_status</title>
+<indexterm><primary>u8_on_off_btn_status</primary><secondary>btn_test.c</secondary></indexterm>
+<indexterm><primary>btn_test.c</primary><secondary>u8_on_off_btn_status</secondary></indexterm>
+<para><computeroutput><link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> u8_on_off_btn_status</computeroutput></para><para>
+Definition at line <link linkend="_btn__test_8c_source_1l00012">12</link> of file <link linkend="_btn__test_8c_source">btn_test.c</link>.</para>
+    </section><anchor xml:id="_btn__test_8c_1aae5551cb96ea275a46d7d4c5cad8dfa1"/>    <section>
+    <title>u8_up_btn_status</title>
+<indexterm><primary>u8_up_btn_status</primary><secondary>btn_test.c</secondary></indexterm>
+<indexterm><primary>btn_test.c</primary><secondary>u8_up_btn_status</secondary></indexterm>
+<para><computeroutput><link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> u8_up_btn_status</computeroutput></para><para>
+Definition at line <link linkend="_btn__test_8c_source_1l00013">13</link> of file <link linkend="_btn__test_8c_source">btn_test.c</link>.</para>
+</section>
+</section>
+</section>

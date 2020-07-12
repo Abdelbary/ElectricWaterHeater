@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dio_5fconfigparam_357',['DIO_ConfigParam',['../_d_i_o___cfg_8c.html#a1bbcfeadb26cbf090722fef8daa54535',1,'DIO_ConfigParam():&#160;DIO_Cfg.c'],['../_d_i_o___cfg_8h.html#a1bbcfeadb26cbf090722fef8daa54535',1,'DIO_ConfigParam():&#160;DIO_Cfg.c']]],
-  ['direction_358',['Direction',['../struct_dio_config_param_type.html#a2540b26b46177bf339ba98cb024b5fc1',1,'DioConfigParamType']]]
+  ['callb_5ffun_247',['callB_fun',['../struct_s_o_s__obj__str.html#a1c5689acbf42575369de91b15c5bec16',1,'SOS_obj_str']]],
+  ['current_5fticks_248',['current_ticks',['../struct_s_o_s__obj__str.html#adae97207d6a687128a37cfea0b4d7e04',1,'SOS_obj_str']]]
 ];

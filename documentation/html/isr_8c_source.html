@@ -93,11 +93,11 @@ $(document).ready(function(){initNavTree('isr_8c_source.html',''); initResizable
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="isr_8c.html#a824a8a19244111c9dc43fb448e235ce2">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="isr_8c.html#a824a8a19244111c9dc43fb448e235ce2">__interrupt</a>() MyISR(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (TMR1IF == <a class="code" href="std__types_8h.html#a7250f4dc486f33ea6ddfefe47b8f1ed2">HIGH_BIT</a>) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (TMR1IF == HIGH_BIT) {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <a class="code" href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a>++;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        TMR1L = 0x8E;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        TMR1H = 0xFD;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        TMR1IF = <a class="code" href="std__types_8h.html#a05c187885dfead3f5a1f6aa488d8e185">LOW_BIT</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        TMR1IF = LOW_BIT;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
@@ -111,10 +111,8 @@ $(document).ready(function(){initNavTree('isr_8c_source.html',''); initResizable
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aisr_8c_html_a097b132f44acb3a9bbe5f60f62d339d2"><div class="ttname"><a href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</a></div><div class="ttdeci">void interruptsInit(void)</div><div class="ttdef"><b>Definition:</b> <a href="isr_8c_source.html#l00016">isr.c:16</a></div></div>
-<div class="ttc" id="astd__types_8h_html_a7250f4dc486f33ea6ddfefe47b8f1ed2"><div class="ttname"><a href="std__types_8h.html#a7250f4dc486f33ea6ddfefe47b8f1ed2">HIGH_BIT</a></div><div class="ttdeci">#define HIGH_BIT</div><div class="ttdef"><b>Definition:</b> <a href="std__types_8h_source.html#l00051">std_types.h:51</a></div></div>
-<div class="ttc" id="astd__types_8h_html_a05c187885dfead3f5a1f6aa488d8e185"><div class="ttname"><a href="std__types_8h.html#a05c187885dfead3f5a1f6aa488d8e185">LOW_BIT</a></div><div class="ttdeci">#define LOW_BIT</div><div class="ttdef"><b>Definition:</b> <a href="std__types_8h_source.html#l00052">std_types.h:52</a></div></div>
 <div class="ttc" id="aisr_8c_html_a824a8a19244111c9dc43fb448e235ce2"><div class="ttname"><a href="isr_8c.html#a824a8a19244111c9dc43fb448e235ce2">__interrupt</a></div><div class="ttdeci">void __interrupt() MyISR(void)</div><div class="ttdef"><b>Definition:</b> <a href="isr_8c_source.html#l00004">isr.c:4</a></div></div>
-<div class="ttc" id="atimer_8c_html_a7dbe0e57fb9e7128432ea4e95440828d"><div class="ttname"><a href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a></div><div class="ttdeci">volatile uint8_t gu8_timer_ticks</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00013">timer.c:13</a></div></div>
+<div class="ttc" id="atimer_8c_html_a7dbe0e57fb9e7128432ea4e95440828d"><div class="ttname"><a href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a></div><div class="ttdeci">volatile uint8_t gu8_timer_ticks</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00016">timer.c:16</a></div></div>
 <div class="ttc" id="aisr_8h_html"><div class="ttname"><a href="isr_8h.html">isr.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

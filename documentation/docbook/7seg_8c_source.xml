@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_7seg_8c_source">
+<title>7seg.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;File:&#32;&#32;&#32;DIO.c</emphasis>
+00003 <emphasis role="comment">&#32;*&#32;Author:&#32;mahmo</emphasis>
+00004 <emphasis role="comment">&#32;*</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;Created&#32;on&#32;June&#32;29,&#32;2020,&#32;4:21&#32;PM</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>
+00007 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_7seg_8h">7seg.h</link>&quot;</emphasis>
+00008 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_7seg___cfg_8h">7seg_Cfg.h</link>&quot;</emphasis>
+00009 
+00010 
+00011 
+00012 <emphasis role="comment">//MOUDLE&#32;ERROR&#32;NUM&#32;-101</emphasis>
+00013 
+00014 <emphasis role="preprocessor">#define&#32;DIO_NUM_OF_GROUPS&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;3</emphasis>
+00015 <emphasis role="preprocessor">#define&#32;SEVENSEG_MODULE_UNINTALIZED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0</emphasis>
+00016 <emphasis role="preprocessor">#define&#32;SEVENSEG_MODULE_INIT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1</emphasis>
+00017 <emphasis role="preprocessor">#define&#32;NUM_OF_DISP_VALUES&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;10</emphasis>
+00018 <emphasis role="preprocessor">#define&#32;IS_VISIABLE_VALUE(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(x&#32;&lt;&#32;10)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+00019 <emphasis role="preprocessor">#define&#32;SINGLE_DIGIT_VALUE(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(x&lt;10)</emphasis>
+00020 <emphasis role="preprocessor">#define&#32;IS_VALID_DISPLAY(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(x&#32;==&#32;SEVEN_SEG_ONE&#32;||&#32;x&#32;==&#32;SEVEN_SEG_TWO)</emphasis>
+00021 <emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;gu8_7seg_moduleState&#32;=&#32;SEVENSEG_MODULE_UNINTALIZED;
+00022 
+00023 <emphasis role="comment">//this&#32;array&#32;provide&#32;values&#32;correspond&#32;to&#32;each&#32;digit&#32;shap&#32;on&#32;the&#32;SSD.</emphasis>
+<anchor xml:id="_7seg_8c_source_1l00024"/><link linkend="_7seg_8c_1ab1cc4325f1de25fd504ba72a19659cdd">00024</link> <emphasis role="keyword">const</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_7seg_8c_1ab1cc4325f1de25fd504ba72a19659cdd">gcau8_sevenSegment_valueTable</link>[NUM_OF_DISP_VALUES]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+00025 
+<anchor xml:id="_7seg_8c_source_1l00026"/><link linkend="_7seg_8h_1a60579fecccc40e10b8ecca856466d540">00026</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_7seg_8c_1a60579fecccc40e10b8ecca856466d540">sevenSegInit</link>(<emphasis role="keywordtype">void</emphasis>)
+00027 {
+00028 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;u8_funState&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00029 &#32;&#32;&#32;&#32;
+00031 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_ONE].u8_selectorPinGroupId,HIGHL);
+00033 &#32;&#32;&#32;&#32;gu8_7seg_moduleState&#32;=&#32;SEVENSEG_MODULE_INIT;
+00034 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;&#32;&#32;&#32;u8_funState;
+00035 }
+00036 
+00037 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;selectSevenSeg(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_selec)
+00038 {
+00039 
+00040 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_selec&#32;==&#32;SEVEN_SEG_ONE)
+00041 &#32;&#32;&#32;&#32;{
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_ONE].u8_selectorPinGroupId,HIGHL);
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_TWO].u8_selectorPinGroupId,LOWL);
+00044 &#32;&#32;&#32;&#32;}
+00045 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00046 &#32;&#32;&#32;&#32;{
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_ONE].u8_selectorPinGroupId,LOWL);
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_TWO].u8_selectorPinGroupId,HIGHL);
+00049 &#32;&#32;&#32;&#32;}
+00050 }
+00051 
+<anchor xml:id="_7seg_8c_source_1l00052"/><link linkend="_7seg_8h_1a48b828fc607ed48b54488f8cb46696f8">00052</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_7seg_8c_1a48b828fc607ed48b54488f8cb46696f8">disableSevenSeg</link>(<emphasis role="keywordtype">void</emphasis>)
+00053 {
+00054 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_ONE].u8_selectorPinGroupId,LOWL);
+00055 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_TWO].u8_selectorPinGroupId,LOWL);
+00056 }
+00057 
+<anchor xml:id="_7seg_8c_source_1l00058"/><link linkend="_7seg_8h_1ae89a46a801483d679b68d653efd31267">00058</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_value,<emphasis role="keyword">const</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_SSD_selector)
+00059 {
+00060 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;u8_funState&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00061 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_7seg_moduleState&#32;==&#32;SEVENSEG_MODULE_UNINTALIZED)
+00062 &#32;&#32;&#32;&#32;{
+00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//report&#32;error&#32;module&#32;uninit</emphasis>
+00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_funState&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00065 &#32;&#32;&#32;&#32;}
+00066 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(!IS_VISIABLE_VALUE(u8_value)&#32;||&#32;!IS_VALID_DISPLAY(u8_SSD_selector)&#32;)&#32;<emphasis role="comment">//check&#32;for&#32;invalid&#32;paramter</emphasis>
+00067 &#32;&#32;&#32;&#32;{
+00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//report&#32;invalid&#32;parameter</emphasis>
+00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_funState&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00070 &#32;&#32;&#32;&#32;}
+00071 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="comment">//no&#32;problem</emphasis>
+00072 &#32;&#32;&#32;&#32;{
+00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//select&#32;seven&#32;segment&#32;</emphasis>
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//write&#32;value&#32;</emphasis>
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;selectSevenSeg(u8_SSD_selector);
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(<link linkend="_7seg___cfg_8c_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[u8_SSD_selector].u8_sevenSegGroupId
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;,<link linkend="_7seg_8c_1ab1cc4325f1de25fd504ba72a19659cdd">gcau8_sevenSegment_valueTable</link>[(u8_value)]);
+00078 &#32;&#32;&#32;&#32;}
+00079 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;u8_funState;
+00080 }
+</programlisting></section>

@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_o_s_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.c</primary></indexterm>
+<simplesect>
+    <title>Data Structures    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_o_s__obj__str">SOS_obj_str</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_s_o_s__obj__str">SOS_obj_str</link> <link linkend="__s_o_s_8c_1a53fe77d22db34777c4d527d5fbae7ac0">gstr_SOS_obj_t</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8c_1aa4a8a75bc8f33c7ff7c7072ec695b763">SOS_Init</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link> (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> Id, void(*callB_fun_ptr)(void), <link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> lap_time, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> type, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> periority)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8c_1a33f0b757ea5b9df0fff7cdcef7178981">SOS_deletTask</link> (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> Id)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8c_1a8dd58b17a3ae907bda4c429f78883d67">SOS_run</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8c_1a5d328c9cc7f2900d9ee68f8aab3231f9">SOS_Deinit</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>STATIC <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link> = FALSE</para>
+</listitem>
+            <listitem><para>STATIC <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="__s_o_s_8c_1a5049fcb0c2cbf382f8e9a7138572a312">SOS_Timer_ch</link></para>
+</listitem>
+            <listitem><para>STATIC <link linkend="__s_o_s_8c_1a53fe77d22db34777c4d527d5fbae7ac0">gstr_SOS_obj_t</link> <link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link> [SOS_OBJ_BUFFER_SIZE]</para>
+</listitem>
+            <listitem><para>STATIC <link linkend="_std__types_8h_1a54cceacffb6d6dff03bf69f786d431a9">sint8_t</link> <link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link></para>
+</listitem>
+            <listitem><para>STATIC <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link> [SOS_OBJ_BUFFER_SIZE+_ONE]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_o_s_8c_1a53fe77d22db34777c4d527d5fbae7ac0"/>    <section>
+    <title>gstr_SOS_obj_t</title>
+<indexterm><primary>gstr_SOS_obj_t</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>gstr_SOS_obj_t</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_o_s__obj__str">SOS_obj_str</link> <link linkend="__s_o_s_8c_1a53fe77d22db34777c4d527d5fbae7ac0">gstr_SOS_obj_t</link></computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe"/>    <section>
+    <title>SOS_createTask()</title>
+<indexterm><primary>SOS_createTask</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_createTask</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> SOS_createTask (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> Id, void(*)(void) callB_fun_ptr, <link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> lap_time, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> type, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> periority)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> SOS_start add new SOS_object to be served on periodic time</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in                                </entry>                                <entry>id</entry>
+                                <entry>
+<para>from 0 to SOS_OBJ_BUFFER_SIZE. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in                                </entry>                                <entry>callB_fun_ptr</entry>
+                                <entry>
+<para>addresss of the rotuen to be called. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in                                </entry>                                <entry>lap_time</entry>
+                                <entry>
+<para>form 0 to SOS_MAX_LAP_TIME </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>in                                </entry>                                <entry>type</entry>
+                                <entry>
+<para>[PERIODIC,ONE_SHOT]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS [OK,NOK] </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00065">65</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a085b92af3cd18aadc5f6c5c4979969fe_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a085b92af3cd18aadc5f6c5c4979969fe_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="__s_o_s_8c_1a5d328c9cc7f2900d9ee68f8aab3231f9"/>    <section>
+    <title>SOS_Deinit()</title>
+<indexterm><primary>SOS_Deinit</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_Deinit</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> SOS_Deinit (void )</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> SOS_DeInit Danit SOS.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry></entry>
+                                <entry>
+<para>void</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS [OK,NOK] </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00276">276</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a5d328c9cc7f2900d9ee68f8aab3231f9_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="__s_o_s_8c_1a33f0b757ea5b9df0fff7cdcef7178981"/>    <section>
+    <title>SOS_deletTask()</title>
+<indexterm><primary>SOS_deletTask</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_deletTask</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> SOS_deletTask (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> Id)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> SOS_stop delete task with specified id number by removing it from SOS Buffer. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in                                </entry>                                <entry>Id</entry>
+                                <entry>
+<para>id of the task to be removed from SOS buffer
+<literallayout>&#160;&#xa;</literallayout>
+ 0&lt;=id&lt;SOS_BUFFER_MAX_SIZE </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS [OK,NOK] </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00156">156</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a33f0b757ea5b9df0fff7cdcef7178981_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a33f0b757ea5b9df0fff7cdcef7178981_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="__s_o_s_8c_1aa4a8a75bc8f33c7ff7c7072ec695b763"/>    <section>
+    <title>SOS_Init()</title>
+<indexterm><primary>SOS_Init</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_Init</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> SOS_Init (void )</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> SOS_init initialize SOS module with timer canal specified and and time tick reslution as multiple of timer tick. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry></entry>
+                                <entry>
+<para>void 
+<literallayout>&#160;&#xa;</literallayout>
+ <emphasis role="bold"> NOTE: use linking configuration of sruct SOS_cfg </emphasis> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS {OK,NOK}</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para>SOS_cfg in <link linkend="__s_o_s__cfg_8c">SOS_Cfg.c</link> </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00031">31</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_aa4a8a75bc8f33c7ff7c7072ec695b763_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_aa4a8a75bc8f33c7ff7c7072ec695b763_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="__s_o_s_8c_1a8dd58b17a3ae907bda4c429f78883d67"/>    <section>
+    <title>SOS_run()</title>
+<indexterm><primary>SOS_run</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_run</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> SOS_run (void )</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> SOS_dispatcher is the main SOS procedure, dispatcher check for new time tick then loop through the SOS_objBuffer and execute tasks at their specified time. 
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry></entry>
+                                <entry>
+<para>void </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS [OK,NOK] </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00198">198</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a8dd58b17a3ae907bda4c429f78883d67_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732"/>    <section>
+    <title>gastr_SOS_ObjBuffer</title>
+<indexterm><primary>gastr_SOS_ObjBuffer</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>gastr_SOS_ObjBuffer</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="__s_o_s_8c_1a53fe77d22db34777c4d527d5fbae7ac0">gstr_SOS_obj_t</link> gastr_SOS_ObjBuffer[SOS_OBJ_BUFFER_SIZE]</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00027">27</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+    </section><anchor xml:id="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4"/>    <section>
+    <title>SOS_Init_flag</title>
+<indexterm><primary>SOS_Init_flag</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_Init_flag</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> SOS_Init_flag = FALSE</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00025">25</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+    </section><anchor xml:id="__s_o_s_8c_1a5049fcb0c2cbf382f8e9a7138572a312"/>    <section>
+    <title>SOS_Timer_ch</title>
+<indexterm><primary>SOS_Timer_ch</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_Timer_ch</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> SOS_Timer_ch</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00026">26</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+    </section><anchor xml:id="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9"/>    <section>
+    <title>taken_Ids</title>
+<indexterm><primary>taken_Ids</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>taken_Ids</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> taken_Ids[SOS_OBJ_BUFFER_SIZE+_ONE]</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00029">29</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+    </section><anchor xml:id="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0"/>    <section>
+    <title>u8_SOS_objBufferHead</title>
+<indexterm><primary>u8_SOS_objBufferHead</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>u8_SOS_objBufferHead</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="_std__types_8h_1a54cceacffb6d6dff03bf69f786d431a9">sint8_t</link> u8_SOS_objBufferHead</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00028">28</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+</section>
+</section>
+</section>

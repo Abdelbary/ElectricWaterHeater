@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__d_i_o_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__d_i_o_8c_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link> (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_GroupId, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_Data)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__d_i_o_8c_1aeaaeb5ff489bac3f6da33bfa3e8e083f">DIO_Toggle</link> (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_GroupId)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__d_i_o_8c_1a1547f3be3586279bb415ce4e4c131df2">DIO_Read</link> (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_GroupId, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> *u8p_DataPtr)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__d_i_o_8c_1afcc83c805035d83c6834e8fcfd83e2b1"/>    <section>
+    <title>DIO_Init()</title>
+<indexterm><primary>DIO_Init</primary><secondary>DIO.c</secondary></indexterm>
+<indexterm><primary>DIO.c</primary><secondary>DIO_Init</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> DIO_Init (void )</computeroutput></para>
+<para><emphasis role="bold">Function prototype: void <link linkend="__d_i_o_8h_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init(void)</link></emphasis></para>
+
+<para><emphasis role="bold">Summary: initialized all project pins for init values</emphasis></para>
+
+<para><emphasis role="bold">Description: loop through the array of pin configuration and configure each pin as specified</emphasis></para>
+
+<para><emphasis role="bold">Precondition:</emphasis> No preconditions required</para>
+
+<para><emphasis role="bold">Parameters:</emphasis> void </para>
+
+<para><emphasis role="bold">Returns:</emphasis> void </para>
+
+<para><emphasis role="bold">Example:</emphasis> <link linkend="__d_i_o_8h_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init()</link></para>
+
+<para><computeroutput></computeroutput></para>
+
+<para><computeroutput></computeroutput></para>
+
+<para><emphasis role="bold">Remarks:</emphasis></para>
+<para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00023">23</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_d_i_o_8c_afcc83c805035d83c6834e8fcfd83e2b1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="__d_i_o_8c_1a1547f3be3586279bb415ce4e4c131df2"/>    <section>
+    <title>DIO_Read()</title>
+<indexterm><primary>DIO_Read</primary><secondary>DIO.c</secondary></indexterm>
+<indexterm><primary>DIO.c</primary><secondary>DIO_Read</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> DIO_Read (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> GroupId, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> * DataPtr)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> </para>
+
+<para>This function is used to read the value of specified group_id</para>
+
+<para>PRE-CONDITION: Module must be initialized 
+<literallayout>&#160;&#xa;</literallayout>
+</para>
+
+<para>POST-CONDITION:</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>ERROR_STATE{OK,NOK}.</para>
+</formalpara>
+<emphasis role="bold">Example</emphasis> Example: <literallayout><computeroutput>DIO_Read(3,&amp;retValue);
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para>Dio_Init </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00135">135</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+    </section><anchor xml:id="__d_i_o_8c_1aeaaeb5ff489bac3f6da33bfa3e8e083f"/>    <section>
+    <title>DIO_Toggle()</title>
+<indexterm><primary>DIO_Toggle</primary><secondary>DIO.c</secondary></indexterm>
+<indexterm><primary>DIO.c</primary><secondary>DIO_Toggle</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> DIO_Toggle (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_GroupId)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> </para>
+
+<para>This function is used to flip the value of specified group_id</para>
+
+<para>PRE-CONDITION: Module must be initialized</para>
+
+<para>POST-CONDITION:</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>ERROR_STATE{OK,NOK}.</para>
+</formalpara>
+<emphasis role="bold">Example</emphasis> Example: <literallayout><computeroutput>DIO_Toggle(3);
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para>Dio_Init </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00100">100</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+    </section><anchor xml:id="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0"/>    <section>
+    <title>DIO_Write()</title>
+<indexterm><primary>DIO_Write</primary><secondary>DIO.c</secondary></indexterm>
+<indexterm><primary>DIO.c</primary><secondary>DIO_Write</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> DIO_Write (<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> GroupId, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> Data)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> </para>
+
+<para>This function write certain value to specified group configuration in the <link linkend="_struct_dio_config_param__t">DioConfigParam_t</link> struct</para>
+
+<para>PRE-CONDITION: Module must be idle initialized,</para>
+
+<para>POST-CONDITION:</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>ERROR_STATE{OK,NOK}.</para>
+</formalpara>
+<emphasis role="bold">Example</emphasis> Example: <literallayout><computeroutput>DIO_Write(0,0x3D);
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para>Dio_Init </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__d_i_o_8c_source_1l00063">63</link> of file <link linkend="__d_i_o_8c_source">DIO.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

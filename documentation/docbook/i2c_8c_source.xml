@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_i2c_8c_source">
+<title>i2c.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/I2C/i2c.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*&#32;########################################################################</emphasis>
+00002 <emphasis role="comment"></emphasis>
+00003 <emphasis role="comment">&#32;&#32;&#32;PICsim&#32;-&#32;PIC&#32;simulator&#32;http://sourceforge.net/projects/picsim/</emphasis>
+00004 <emphasis role="comment"></emphasis>
+00005 <emphasis role="comment">&#32;&#32;&#32;########################################################################</emphasis>
+00006 <emphasis role="comment"></emphasis>
+00007 <emphasis role="comment">&#32;&#32;&#32;Copyright&#32;(c)&#32;:&#32;2015&#32;&#32;Luis&#32;Claudio&#32;Gambôa&#32;Lopes</emphasis>
+00008 <emphasis role="comment"></emphasis>
+00009 <emphasis role="comment">&#32;&#32;&#32;This&#32;program&#32;is&#32;free&#32;software;&#32;you&#32;can&#32;redistribute&#32;it&#32;and/or&#32;modify</emphasis>
+00010 <emphasis role="comment">&#32;&#32;&#32;it&#32;under&#32;the&#32;terms&#32;of&#32;the&#32;GNU&#32;General&#32;Public&#32;License&#32;as&#32;published&#32;by</emphasis>
+00011 <emphasis role="comment">&#32;&#32;&#32;the&#32;Free&#32;Software&#32;Foundation;&#32;either&#32;version&#32;2,&#32;or&#32;(at&#32;your&#32;option)</emphasis>
+00012 <emphasis role="comment">&#32;&#32;&#32;any&#32;later&#32;version.</emphasis>
+00013 <emphasis role="comment"></emphasis>
+00014 <emphasis role="comment">&#32;&#32;&#32;This&#32;program&#32;is&#32;distributed&#32;in&#32;the&#32;hope&#32;that&#32;it&#32;will&#32;be&#32;useful,</emphasis>
+00015 <emphasis role="comment">&#32;&#32;&#32;but&#32;WITHOUT&#32;ANY&#32;WARRANTY;&#32;without&#32;even&#32;the&#32;implied&#32;warranty&#32;of</emphasis>
+00016 <emphasis role="comment">&#32;&#32;&#32;MERCHANTABILITY&#32;or&#32;FITNESS&#32;FOR&#32;A&#32;PARTICULAR&#32;PURPOSE.&#32;&#32;See&#32;the</emphasis>
+00017 <emphasis role="comment">&#32;&#32;&#32;GNU&#32;General&#32;Public&#32;License&#32;for&#32;more&#32;details.</emphasis>
+00018 <emphasis role="comment"></emphasis>
+00019 <emphasis role="comment">&#32;&#32;&#32;You&#32;should&#32;have&#32;received&#32;a&#32;copy&#32;of&#32;the&#32;GNU&#32;General&#32;Public&#32;License</emphasis>
+00020 <emphasis role="comment">&#32;&#32;&#32;along&#32;with&#32;this&#32;program;&#32;if&#32;not,&#32;write&#32;to&#32;the&#32;Free&#32;Software</emphasis>
+00021 <emphasis role="comment">&#32;&#32;&#32;Foundation,&#32;Inc.,&#32;675&#32;Mass&#32;Ave,&#32;Cambridge,&#32;MA&#32;02139,&#32;USA.</emphasis>
+00022 <emphasis role="comment"></emphasis>
+00023 <emphasis role="comment">&#32;&#32;&#32;For&#32;e-mail&#32;suggestions&#32;:&#32;&#32;lcgamboa@yahoo.com</emphasis>
+00024 <emphasis role="comment">&#32;&#32;&#32;########################################################################&#32;*/</emphasis>
+00025 
+00026 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_i2c_8h">i2c.h</link>&quot;</emphasis>
+00027 <emphasis role="preprocessor">#include&#32;&lt;xc.h&gt;</emphasis>
+00028 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/Config.h&quot;</emphasis>
+00029 
+00030 <emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;delay(<emphasis role="keywordtype">void</emphasis>)
+00031 {
+00032 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00033 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00034 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00035 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00036 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00037 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00038 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00039 &#32;&#32;<emphasis role="keyword">asm</emphasis>(<emphasis role="stringliteral">&quot;NOP&quot;</emphasis>);
+00040 }
+00041 
+00042 
+<anchor xml:id="_i2c_8c_source_1l00043"/><link linkend="_i2c_8h_1a5730d9445429351b9f750084c5cb5aae">00043</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_i2c_8c_1a5730d9445429351b9f750084c5cb5aae">i2c_init</link>(<emphasis role="keywordtype">void</emphasis>)
+00044 {
+00045 &#32;&#32;TIDAT=0;
+00046 &#32;&#32;ICLK=1;
+00047 &#32;&#32;IDAT=1;
+00048 }
+00049 
+<anchor xml:id="_i2c_8c_source_1l00050"/><link linkend="_i2c_8h_1af104fa2713ad2cfe4f993bdd2ec22c46">00050</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_i2c_8c_1af104fa2713ad2cfe4f993bdd2ec22c46">i2c_start</link>(<emphasis role="keywordtype">void</emphasis>)
+00051 {
+00052 &#32;&#32;ICLK=1;
+00053 &#32;&#32;IDAT=1;
+00054 &#32;&#32;delay();
+00055 &#32;&#32;IDAT=0;
+00056 &#32;&#32;delay();
+00057 }
+00058 
+<anchor xml:id="_i2c_8c_source_1l00059"/><link linkend="_i2c_8h_1ad35d4e4f52ca74b503d5e5e1e0a3f5f3">00059</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_i2c_8c_1ad35d4e4f52ca74b503d5e5e1e0a3f5f3">i2c_stop</link>(<emphasis role="keywordtype">void</emphasis>)
+00060 {
+00061 &#32;&#32;ICLK=1;
+00062 &#32;&#32;IDAT=0;
+00063 &#32;&#32;delay();
+00064 &#32;&#32;IDAT=1;
+00065 &#32;&#32;delay();
+00066 }
+00067 
+<anchor xml:id="_i2c_8c_source_1l00068"/><link linkend="_i2c_8h_1abcbf5eed7d6c2a56341a06038bee75c0">00068</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;val)
+00069 {
+00070 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;i;
+00071 &#32;&#32;ICLK=0;
+00072 &#32;&#32;<emphasis role="keywordflow">for</emphasis>(i=0;i&lt;8;i++)
+00073 &#32;&#32;{
+00074 &#32;&#32;&#32;&#32;IDAT=((val&gt;&gt;(7-i))&amp;&#32;0x01);
+00075 &#32;&#32;&#32;&#32;ICLK=1;
+00076 &#32;&#32;&#32;&#32;delay();
+00077 &#32;&#32;&#32;&#32;ICLK=0;
+00078 &#32;&#32;}&#32;
+00079 &#32;&#32;IDAT=1;
+00080 &#32;&#32;delay();
+00081 &#32;&#32;ICLK=1;
+00082 &#32;&#32;delay();
+00083 &#32;&#32;ICLK=0;
+00084 }
+00085 
+<anchor xml:id="_i2c_8c_source_1l00086"/><link linkend="_i2c_8h_1a48e41f42b8f700d21ddd025e68632ced">00086</link> <emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_i2c_8c_1a48e41f42b8f700d21ddd025e68632ced">i2c_rb</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;ack)
+00087 {
+00088 &#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;i;
+00089 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;ret=0;
+00090 
+00091 &#32;&#32;ICLK=0;
+00092 &#32;&#32;TIDAT=1;
+00093 &#32;&#32;IDAT=1;
+00094 &#32;&#32;<emphasis role="keywordflow">for</emphasis>(i=0;i&lt;8;i++)
+00095 &#32;&#32;{
+00096 &#32;&#32;&#32;&#32;ICLK=1;
+00097 &#32;&#32;&#32;&#32;delay();
+00098 &#32;&#32;&#32;&#32;ret|=(IDAT&lt;&lt;(7-i));
+00099 &#32;&#32;&#32;&#32;ICLK=0;
+00100 &#32;&#32;}
+00101 &#32;&#32;TIDAT=0;
+00102 &#32;&#32;<emphasis role="keywordflow">if</emphasis>(ack)
+00103 &#32;&#32;&#32;&#32;IDAT=0;
+00104 &#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00105 &#32;&#32;&#32;&#32;IDAT=1;
+00106 &#32;&#32;delay();
+00107 &#32;&#32;ICLK=1;
+00108 &#32;&#32;delay();
+00109 &#32;&#32;ICLK=0;
+00110 
+00111 &#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;
+00112 }
+00113 
+00114 
+</programlisting></section>

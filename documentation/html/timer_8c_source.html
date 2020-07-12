@@ -97,35 +97,66 @@ $(document).ready(function(){initNavTree('timer_8c_source.html',''); initResizab
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timer_8h.html">timer.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="timer_8c.html#a8c8095721e32a4721a08b384c5570373">   11</a></span>&#160;<span class="preprocessor">#define TIMER1_MAX_TICKS  (0xF63Bu)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="timer_8h.html#a7dbe0e57fb9e7128432ea4e95440828d">   13</a></span>&#160;<span class="keyword">volatile</span> <a class="code" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="timer_8h.html#a7b8ab79df77b57475a5494f5f81c3bd9">   14</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="timer_8c.html#a896a4c37c6ecf8868ef0dc758e5a598c">timer_init</a>()</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{  </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    TMR1IE=1 ;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    PEIE=1 ;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    GIE=1 ;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    TMR1=0 ;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    TMR1CS=0 ;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    T1CKPS0 = 1 ;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    T1CKPS1= 1 ;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a> = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="timer_8h.html#aa9854f34aab8315190c2d5945e54b058">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="timer_8c.html#aaedac22c55880495505bf375e0e132c1">start_timer</a>()</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    TMR1L = 0x8E;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    TMR1H = 0xFD;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    TMR1ON = 1 ; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define TIMER1_MAX_TICKS  (0xF63Bu)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define SYSTEM_TIMER_IDLE_STATE     0</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define SYSTEM_TIMER_INITALIZED     1  </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">static</span> <a class="code" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> gu8_systemTimerModuleState = SYSTEM_TIMER_IDLE_STATE;    </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="timer_8h.html#a7dbe0e57fb9e7128432ea4e95440828d">   16</a></span>&#160;<span class="keyword">volatile</span> <a class="code" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code" href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="timer_8h.html#a146cd1e352ec285162684cf776df632c">   19</a></span>&#160;<a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> <a class="code" href="timer_8c.html#a146cd1e352ec285162684cf776df632c">system_timer_init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{    </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> e_funStatus = <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span>(gu8_systemTimerModuleState == SYSTEM_TIMER_INITALIZED)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        e_funStatus = <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</a>; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b">error_handler</a>(TIMER_MODULE_ERROR_NUM+MULTIPLE_INITALIZATION);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        TMR1IE=1 ;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        PEIE=1 ;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        GIE=1 ;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        TMR1=0 ;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        TMR1CS=0 ;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        T1CKPS0 = 1 ;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        T1CKPS1= 1 ;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a> = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        gu8_systemTimerModuleState = SYSTEM_TIMER_INITALIZED;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> e_funStatus;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="timer_8h.html#ae8412a88f34f526095d643d829ace90f">   43</a></span>&#160;<a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> <a class="code" href="timer_8c.html#ae8412a88f34f526095d643d829ace90f">start_system_timer</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> e_funStatus = <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(gu8_systemTimerModuleState == SYSTEM_TIMER_INITALIZED)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        e_funStatus = <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</a>; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b">error_handler</a>(TIMER_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        TMR1L = 0x8E;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        TMR1H = 0xFD;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        TMR1ON = 1 ;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> e_funStatus;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="a_system_errors_8h_html_a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59"><div class="ttname"><a href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition:</b> <a href="_system_errors_8h_source.html#l00031">SystemErrors.h:31</a></div></div>
 <div class="ttc" id="atimer_8h_html"><div class="ttname"><a href="timer_8h.html">timer.h</a></div></div>
-<div class="ttc" id="atimer_8c_html_aaedac22c55880495505bf375e0e132c1"><div class="ttname"><a href="timer_8c.html#aaedac22c55880495505bf375e0e132c1">start_timer</a></div><div class="ttdeci">void start_timer()</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00026">timer.c:26</a></div></div>
 <div class="ttc" id="astd__types_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="std__types_8h_source.html#l00064">std_types.h:64</a></div></div>
-<div class="ttc" id="atimer_8c_html_a896a4c37c6ecf8868ef0dc758e5a598c"><div class="ttname"><a href="timer_8c.html#a896a4c37c6ecf8868ef0dc758e5a598c">timer_init</a></div><div class="ttdeci">void timer_init()</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00014">timer.c:14</a></div></div>
-<div class="ttc" id="atimer_8c_html_a7dbe0e57fb9e7128432ea4e95440828d"><div class="ttname"><a href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a></div><div class="ttdeci">volatile uint8_t gu8_timer_ticks</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00013">timer.c:13</a></div></div>
+<div class="ttc" id="a_system_errors_8h_html_a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6"><div class="ttname"><a href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</a></div><div class="ttdeci">@ NOK</div><div class="ttdef"><b>Definition:</b> <a href="_system_errors_8h_source.html#l00031">SystemErrors.h:31</a></div></div>
+<div class="ttc" id="a_error_handler_8c_html_ac5764457ee31a7415fc6936d103cb80b"><div class="ttname"><a href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b">error_handler</a></div><div class="ttdeci">void error_handler(sint16_t error_ID)</div><div class="ttdef"><b>Definition:</b> <a href="_error_handler_8c_source.html#l00014">ErrorHandler.c:14</a></div></div>
+<div class="ttc" id="a_system_errors_8h_html_a37f868640e72b2740019c30ecca6e8dc"><div class="ttname"><a href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a></div><div class="ttdeci">ERROR_STATE</div><div class="ttdef"><b>Definition:</b> <a href="_system_errors_8h_source.html#l00031">SystemErrors.h:31</a></div></div>
+<div class="ttc" id="atimer_8c_html_a7dbe0e57fb9e7128432ea4e95440828d"><div class="ttname"><a href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a></div><div class="ttdeci">volatile uint8_t gu8_timer_ticks</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00016">timer.c:16</a></div></div>
+<div class="ttc" id="atimer_8c_html_a146cd1e352ec285162684cf776df632c"><div class="ttname"><a href="timer_8c.html#a146cd1e352ec285162684cf776df632c">system_timer_init</a></div><div class="ttdeci">ERROR_STATE system_timer_init(void)</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00019">timer.c:19</a></div></div>
+<div class="ttc" id="atimer_8c_html_ae8412a88f34f526095d643d829ace90f"><div class="ttname"><a href="timer_8c.html#ae8412a88f34f526095d643d829ace90f">start_system_timer</a></div><div class="ttdeci">ERROR_STATE start_system_timer(void)</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00043">timer.c:43</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

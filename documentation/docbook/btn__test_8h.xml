@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_btn__test_8h">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/unit test/btn_test.h File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/unit test/btn_test.h</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_btn__test_8h_1acb4e2fd533a33ef73e0a50eede86d7be">btnSimulationTest</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_btn__test_8h_1acb4e2fd533a33ef73e0a50eede86d7be"/>    <section>
+    <title>btnSimulationTest()</title>
+<indexterm><primary>btnSimulationTest</primary><secondary>btn_test.h</secondary></indexterm>
+<indexterm><primary>btn_test.h</primary><secondary>btnSimulationTest</secondary></indexterm>
+<para><computeroutput>void btnSimulationTest (void )</computeroutput></para><para>
+Definition at line <link linkend="_btn__test_8c_source_1l00017">17</link> of file <link linkend="_btn__test_8c_source">btn_test.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="btn__test_8h_acb4e2fd533a33ef73e0a50eede86d7be_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_btn_8h_source">
+<title>btn.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/btn.h</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#ifndef&#32;BTN_H</emphasis>
+00002 <emphasis role="preprocessor">#define&#32;BTN_H</emphasis>
+00003 <emphasis role="preprocessor">#include&#32;&quot;../../MCAL/DIO/DIO.h&quot;</emphasis>
+00004 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/std_types.h&quot;</emphasis>
+00005 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/Config.h&quot;</emphasis>
+<anchor xml:id="_btn_8h_source_1l00006"/><link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a1aa3164fdda5f7ed57bdd53853bc8d27">00006</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;{<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a485383445338ef8e3b933a06b1663334">BUT_OFF</link>,&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>,<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a871a735fd22b4353913c894e00ce6b93">BUT_PRE_PRESSED</link>,<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a81cc15e58775d10fa43c447031488dc8">BUT_PRE_RELEASED</link>,&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3ac0daf622963a46b0b67beb4a55d97d64">BUT_PRSSED</link>,&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a1aa3164fdda5f7ed57bdd53853bc8d27">BUT_RELEASED</link>}&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>;
+<anchor xml:id="_btn_8h_source_1l00007"/><link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644">00007</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;{<link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644aad92f9440c1f8bd2336f66cea2ce9da7">ActiveLow</link>,&#32;<link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644abb1989a0c0a96d4ac80e89f4f2c100ab">ActiveHigh</link>}&#32;<link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644">ActiveStateType</link>;
+<anchor xml:id="_btn_8h_source_1l00008"/><link linkend="_struct_btn_config_type">00008</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>
+00009 {
+<anchor xml:id="_btn_8h_source_1l00010"/><link linkend="_struct_btn_config_type_1a9a943feb1e850e666cfc1df49acef30f">00010</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_btn_config_type_1a9a943feb1e850e666cfc1df49acef30f">u8_DioGroupId</link>;
+<anchor xml:id="_btn_8h_source_1l00011"/><link linkend="_struct_btn_config_type_1acb26291fb45f2de218ca9966b1c2fd85">00011</link> &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a00ca3f900109bae7bcfd1f8774d83644">ActiveStateType</link>&#32;<link linkend="_struct_btn_config_type_1acb26291fb45f2de218ca9966b1c2fd85">e_BtnActiveState</link>;
+00012 }<link linkend="_struct_btn_config_type">BtnConfigType</link>;
+00013 
+00014 <emphasis role="comment">//&#32;Comment&#32;a&#32;function&#32;and&#32;leverage&#32;automatic&#32;documentation&#32;with&#32;slash&#32;star&#32;star</emphasis>
+00035 <emphasis role="comment"></emphasis><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_btn_8h_1a4d8709c705e4850882d44e4b68681421">BTN_Init</link>(<emphasis role="keywordtype">void</emphasis>);
+00036 
+00037 
+00057 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_btn_8h_1abe04b6a91662822c158e165bcea18f0b">BTN_GetState</link>(<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;*ep_BtnStatePtr,&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_BtnId);
+00058 
+00077 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_btn_8h_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager</link>(<emphasis role="keywordtype">void</emphasis>);
+00078 
+00079 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

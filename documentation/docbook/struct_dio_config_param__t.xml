@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_dio_config_param__t">
+<title>DioConfigParam_t Struct Reference</title>
+<indexterm><primary>DioConfigParam_t</primary></indexterm>
+<para>
+<computeroutput>#include &lt;DIO.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_struct_dio_config_param__t_1aed3312c9112c015b6add5d3b873327be">Mask</link></para>
+</listitem>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_struct_dio_config_param__t_1a9e1bb624e0fcb988d3f016b24874947d">Port</link></para>
+</listitem>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_struct_dio_config_param__t_1a87efacb0fe009c24ac98e53fd4be49b6">Direction</link></para>
+</listitem>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_struct_dio_config_param__t_1a9ad3615d26487f0f4698dbeb54a9ae78">UsePullUp</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__d_i_o_8h_source_1l00029">29</link> of file <link linkend="__d_i_o_8h_source">DIO.h</link>.</para>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_struct_dio_config_param__t_1a87efacb0fe009c24ac98e53fd4be49b6"/>    <section>
+    <title>Direction</title>
+<indexterm><primary>Direction</primary><secondary>DioConfigParam_t</secondary></indexterm>
+<indexterm><primary>DioConfigParam_t</primary><secondary>Direction</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> DioConfigParam_t::Direction</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8h_source_1l00033">33</link> of file <link linkend="__d_i_o_8h_source">DIO.h</link>.</para>
+    </section><anchor xml:id="_struct_dio_config_param__t_1aed3312c9112c015b6add5d3b873327be"/>    <section>
+    <title>Mask</title>
+<indexterm><primary>Mask</primary><secondary>DioConfigParam_t</secondary></indexterm>
+<indexterm><primary>DioConfigParam_t</primary><secondary>Mask</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> DioConfigParam_t::Mask</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8h_source_1l00031">31</link> of file <link linkend="__d_i_o_8h_source">DIO.h</link>.</para>
+    </section><anchor xml:id="_struct_dio_config_param__t_1a9e1bb624e0fcb988d3f016b24874947d"/>    <section>
+    <title>Port</title>
+<indexterm><primary>Port</primary><secondary>DioConfigParam_t</secondary></indexterm>
+<indexterm><primary>DioConfigParam_t</primary><secondary>Port</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> DioConfigParam_t::Port</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8h_source_1l00032">32</link> of file <link linkend="__d_i_o_8h_source">DIO.h</link>.</para>
+    </section><anchor xml:id="_struct_dio_config_param__t_1a9ad3615d26487f0f4698dbeb54a9ae78"/>    <section>
+    <title>UsePullUp</title>
+<indexterm><primary>UsePullUp</primary><secondary>DioConfigParam_t</secondary></indexterm>
+<indexterm><primary>DioConfigParam_t</primary><secondary>UsePullUp</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> DioConfigParam_t::UsePullUp</computeroutput></para><para>
+Definition at line <link linkend="__d_i_o_8h_source_1l00034">34</link> of file <link linkend="__d_i_o_8h_source">DIO.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/<link linkend="__d_i_o_8h">DIO.h</link></section>
+</section>

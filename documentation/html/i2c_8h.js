@@ -1,8 +1,5 @@
 var i2c_8h =
 [
-    [ "ICLK", "i2c_8h.html#aa1d3fd2b76a6645792f8fba833877285", null ],
-    [ "IDAT", "i2c_8h.html#a7c8a533470a033b7ef0386adaef50217", null ],
-    [ "TIDAT", "i2c_8h.html#a9ad43bdc446633043a0099b87c265902", null ],
     [ "i2c_acktst", "i2c_8h.html#a2e2f32425bf460cc87f2cde1f9660efd", null ],
     [ "i2c_init", "i2c_8h.html#a5730d9445429351b9f750084c5cb5aae", null ],
     [ "i2c_rb", "i2c_8h.html#a48e41f42b8f700d21ddd025e68632ced", null ],

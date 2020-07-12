@@ -84,44 +84,14 @@ $(document).ready(function(){initNavTree('i2c_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">i2c.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;xc.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for i2c.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="i2c_8h__incl.png" border="0" usemap="#_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_i2_c_2i2c_8h" alt=""/></div>
-<map name="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_i2_c_2i2c_8h" id="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_i2_c_2i2c_8h">
-<area shape="rect" title=" " alt="" coords="5,5,184,61"/>
-<area shape="rect" title=" " alt="" coords="71,109,118,136"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="i2c_8h__dep__incl.png" border="0" usemap="#_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_i2_c_2i2c_8hdep" alt=""/></div>
-<map name="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_i2_c_2i2c_8hdep" id="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_i2_c_2i2c_8hdep">
-<area shape="rect" title=" " alt="" coords="127,5,306,61"/>
-<area shape="rect" href="eeprom__ext_8c.html" title=" " alt="" coords="5,109,212,165"/>
-<area shape="rect" href="i2c_8c.html" title=" " alt="" coords="237,109,415,165"/>
-</map>
-</div>
-</div>
+
 <p><a href="i2c_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aa1d3fd2b76a6645792f8fba833877285"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#aa1d3fd2b76a6645792f8fba833877285">ICLK</a>&#160;&#160;&#160;PORTCbits.RC3</td></tr>
-<tr class="separator:aa1d3fd2b76a6645792f8fba833877285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c8a533470a033b7ef0386adaef50217"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a7c8a533470a033b7ef0386adaef50217">IDAT</a>&#160;&#160;&#160;PORTCbits.RC4</td></tr>
-<tr class="separator:a7c8a533470a033b7ef0386adaef50217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ad43bdc446633043a0099b87c265902"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a9ad43bdc446633043a0099b87c265902">TIDAT</a>&#160;&#160;&#160;TRISCbits.TRISC4</td></tr>
-<tr class="separator:a9ad43bdc446633043a0099b87c265902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5730d9445429351b9f750084c5cb5aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a5730d9445429351b9f750084c5cb5aae">i2c_init</a> (void)</td></tr>
@@ -137,55 +107,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a2e2f32425bf460cc87f2cde1f9660efd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#a2e2f32425bf460cc87f2cde1f9660efd">i2c_acktst</a> (unsigned char val)</td></tr>
 <tr class="separator:a2e2f32425bf460cc87f2cde1f9660efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="aa1d3fd2b76a6645792f8fba833877285"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1d3fd2b76a6645792f8fba833877285">&#9670;&nbsp;</a></span>ICLK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ICLK&#160;&#160;&#160;PORTCbits.RC3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="i2c_8h_source.html#l00028">28</a> of file <a class="el" href="i2c_8h_source.html">i2c.h</a>.</p>
-
-</div>
-</div>
-<a id="a7c8a533470a033b7ef0386adaef50217"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c8a533470a033b7ef0386adaef50217">&#9670;&nbsp;</a></span>IDAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IDAT&#160;&#160;&#160;PORTCbits.RC4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="i2c_8h_source.html#l00029">29</a> of file <a class="el" href="i2c_8h_source.html">i2c.h</a>.</p>
-
-</div>
-</div>
-<a id="a9ad43bdc446633043a0099b87c265902"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ad43bdc446633043a0099b87c265902">&#9670;&nbsp;</a></span>TIDAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TIDAT&#160;&#160;&#160;TRISCbits.TRISC4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="i2c_8h_source.html#l00030">30</a> of file <a class="el" href="i2c_8h_source.html">i2c.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a2e2f32425bf460cc87f2cde1f9660efd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e2f32425bf460cc87f2cde1f9660efd">&#9670;&nbsp;</a></span>i2c_acktst()</h2>
@@ -221,7 +142,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00042">42</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00043">43</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="i2c_8h_a5730d9445429351b9f750084c5cb5aae_icgraph.png" border="0" usemap="#i2c_8h_a5730d9445429351b9f750084c5cb5aae_icgraph" alt=""/></div>
+<map name="i2c_8h_a5730d9445429351b9f750084c5cb5aae_icgraph" id="i2c_8h_a5730d9445429351b9f750084c5cb5aae_icgraph">
+<area shape="rect" title=" " alt="" coords="212,5,275,32"/>
+<area shape="rect" href="main_8c.html#ab90881fea8078c203ba2c8538c00593a" title=" " alt="" coords="104,5,164,32"/>
+<area shape="rect" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -241,16 +172,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00085">85</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="i2c_8h_a48e41f42b8f700d21ddd025e68632ced_cgraph.png" border="0" usemap="#i2c_8h_a48e41f42b8f700d21ddd025e68632ced_cgraph" alt=""/></div>
-<map name="i2c_8h_a48e41f42b8f700d21ddd025e68632ced_cgraph" id="i2c_8h_a48e41f42b8f700d21ddd025e68632ced_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,63,32"/>
-<area shape="rect" href="i2c_8c.html#a341d33c536d663703208ab568f7d1e0e" title=" " alt="" coords="111,5,164,32"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00086">86</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -280,16 +202,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00049">49</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46_cgraph.png" border="0" usemap="#i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46_cgraph" alt=""/></div>
-<map name="i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46_cgraph" id="i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,77,32"/>
-<area shape="rect" href="i2c_8c.html#a341d33c536d663703208ab568f7d1e0e" title=" " alt="" coords="125,5,179,32"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00050">50</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -319,16 +232,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00058">58</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3_cgraph.png" border="0" usemap="#i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3_cgraph" alt=""/></div>
-<map name="i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3_cgraph" id="i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,76,32"/>
-<area shape="rect" href="i2c_8c.html#a341d33c536d663703208ab568f7d1e0e" title=" " alt="" coords="124,5,177,32"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00059">59</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -358,16 +262,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00067">67</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0_cgraph.png" border="0" usemap="#i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0_cgraph" alt=""/></div>
-<map name="i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0_cgraph" id="i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,68,32"/>
-<area shape="rect" href="i2c_8c.html#a341d33c536d663703208ab568f7d1e0e" title=" " alt="" coords="116,5,169,32"/>
-</map>
-</div>
+<p class="definition">Definition at line <a class="el" href="i2c_8c_source.html#l00068">68</a> of file <a class="el" href="i2c_8c_source.html">i2c.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

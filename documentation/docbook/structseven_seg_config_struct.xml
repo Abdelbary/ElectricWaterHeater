@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structseven_seg_config_struct">
+<title>sevenSegConfigStruct Struct Reference</title>
+<indexterm><primary>sevenSegConfigStruct</primary></indexterm>
+<para>
+<computeroutput>#include &lt;7seg.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_structseven_seg_config_struct_1a8d9dab3753d227caeab9e12c80554e45">u8_selectorPinGroupId</link></para>
+</listitem>
+            <listitem><para><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="_structseven_seg_config_struct_1af4cb17826bcd9cde6889877f47281407">u8_sevenSegGroupId</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_7seg_8h_source_1l00011">11</link> of file <link linkend="_7seg_8h_source">7seg.h</link>.</para>
+</section>
+<section>
+<title>Field Documentation</title>
+<anchor xml:id="_structseven_seg_config_struct_1a8d9dab3753d227caeab9e12c80554e45"/>    <section>
+    <title>u8_selectorPinGroupId</title>
+<indexterm><primary>u8_selectorPinGroupId</primary><secondary>sevenSegConfigStruct</secondary></indexterm>
+<indexterm><primary>sevenSegConfigStruct</primary><secondary>u8_selectorPinGroupId</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> sevenSegConfigStruct::u8_selectorPinGroupId</computeroutput></para><para>
+Definition at line <link linkend="_7seg_8h_source_1l00013">13</link> of file <link linkend="_7seg_8h_source">7seg.h</link>.</para>
+    </section><anchor xml:id="_structseven_seg_config_struct_1af4cb17826bcd9cde6889877f47281407"/>    <section>
+    <title>u8_sevenSegGroupId</title>
+<indexterm><primary>u8_sevenSegGroupId</primary><secondary>sevenSegConfigStruct</secondary></indexterm>
+<indexterm><primary>sevenSegConfigStruct</primary><secondary>u8_sevenSegGroupId</secondary></indexterm>
+<para><computeroutput><link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> sevenSegConfigStruct::u8_sevenSegGroupId</computeroutput></para><para>
+Definition at line <link linkend="_7seg_8h_source_1l00014">14</link> of file <link linkend="_7seg_8h_source">7seg.h</link>.</para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/<link linkend="_7seg_8h">7seg.h</link></section>
+</section>

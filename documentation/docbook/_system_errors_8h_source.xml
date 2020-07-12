@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__system_errors_8h_source">
+<title>SystemErrors.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/Error_Handler/SystemErrors.h</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;SystemErrors.h</emphasis>
+00003 <emphasis role="comment">&#32;*</emphasis>
+00004 <emphasis role="comment">&#32;*&#32;Created:&#32;2/25/2020&#32;10:35:32&#32;AM</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;&#32;Author:&#32;mahmo</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>&#32;
+00007 
+00008 
+00009 <emphasis role="preprocessor">#ifndef&#32;SYSTEMERRORS_H_</emphasis>
+00010 <emphasis role="preprocessor">#define&#32;SYSTEMERRORS_H_</emphasis>
+00011 <emphasis role="preprocessor">#include&#32;&quot;..\common_macros.h&quot;</emphasis>
+00012 <emphasis role="preprocessor">#include&#32;&quot;../std_types.h&quot;</emphasis>
+00013 
+00014 <emphasis role="preprocessor">#define&#32;DIO_MODULE_ERROR_NUM&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-100</emphasis>
+00015 <emphasis role="preprocessor">#define&#32;SEVENSEG_MOUDLE_ERROR_NUM&#32;&#32;&#32;&#32;&#32;&#32;&#32;-200</emphasis>
+00016 <emphasis role="preprocessor">#define&#32;ADC_MODULE_ERROR_NUM&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-300</emphasis>
+00017 <emphasis role="preprocessor">#define&#32;TIMER_MODULE_ERROR_NUM&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-400</emphasis>
+00018 <emphasis role="preprocessor">#define&#32;MODULE_NOT_INITALIZED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-2</emphasis>
+00019 <emphasis role="preprocessor">#define&#32;MULTIPLE_INITALIZATION&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-3</emphasis>
+00020 <emphasis role="preprocessor">#define&#32;STOP_WITHOUT_START&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-4</emphasis>
+00021 <emphasis role="preprocessor">#define&#32;INVALAD_PARAMETER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-5</emphasis>
+00022 <emphasis role="preprocessor">#define&#32;MULTIPLE_START&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-6</emphasis>
+00023 <emphasis role="preprocessor">#define&#32;FULL_BUFFER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-7</emphasis>
+00024 <emphasis role="preprocessor">#define&#32;MODULE_BUSY&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-8</emphasis>
+00025 <emphasis role="preprocessor">#define&#32;INVALID_STATE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-9</emphasis>
+00026 <emphasis role="preprocessor">#define&#32;MODULE_NOT_EN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-10</emphasis>
+00027 <emphasis role="preprocessor">#define&#32;MULTIPLE_EN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-11</emphasis>
+00028 <emphasis role="preprocessor">#define&#32;NULL_PTR_ERROR&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-12</emphasis>
+00029 <emphasis role="preprocessor">#define&#32;ERROR_BUFFER_SIZE&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;10</emphasis>
+00030 
+<anchor xml:id="__system_errors_8h_source_1l00031"/><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">00031</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;{<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>=0,<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>=-1}<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>;
+00032 
+00042 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__system_errors_8h_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(<link linkend="_std__types_8h_1ae4c9b951dbb7355563c313abca5e2e75">sint16_t</link>&#32;error_ID);
+00043 
+00044 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SYSTEMERRORS_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_2b9e2881f7c4f7b3523cd5578ce49027">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG Directory Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_35665ee4fb6238ad858de366c4b63d0e">unitTest</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="_7seg_8c">7seg.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_7seg_8h">7seg.h</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_7seg___cfg_8c">7seg_Cfg.c</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_7seg___cfg_8h">7seg_Cfg.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

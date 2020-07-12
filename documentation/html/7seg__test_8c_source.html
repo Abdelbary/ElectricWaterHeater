@@ -108,9 +108,9 @@ $(document).ready(function(){initNavTree('7seg__test_8c_source.html',''); initRe
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordtype">int</span> count = 50;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">while</span>(count--)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;               <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(i/10,<a class="code" href="7seg_8h.html#ac210c019f9605690297623eeb5faa1e6">SEVEN_SEG_ONE</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;               <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(i/10,SEVEN_SEG_ONE);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;               __delay_ms(10); </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;               <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(i%10,<a class="code" href="7seg_8h.html#a9a990f67a958c09e3aa10cf6d190c52a">SEVEN_SEG_TWO</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;               <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(i%10,SEVEN_SEG_TWO);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                __delay_ms(10); </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
@@ -130,9 +130,9 @@ $(document).ready(function(){initNavTree('7seg__test_8c_source.html',''); initRe
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">static</span> <a class="code" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> u8_counter = 15;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <a class="code" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> ch = 0;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(ch&amp;1)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(u8_counter/10,<a class="code" href="7seg_8h.html#a9a990f67a958c09e3aa10cf6d190c52a">SEVEN_SEG_TWO</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(u8_counter/10,SEVEN_SEG_TWO);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(u8_counter%10,<a class="code" href="7seg_8h.html#ac210c019f9605690297623eeb5faa1e6">SEVEN_SEG_ONE</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a>(u8_counter%10,SEVEN_SEG_ONE);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    ch++;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span>(ch == 2)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
@@ -142,14 +142,12 @@ $(document).ready(function(){initNavTree('7seg__test_8c_source.html',''); initRe
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a7seg_8h_html_a9a990f67a958c09e3aa10cf6d190c52a"><div class="ttname"><a href="7seg_8h.html#a9a990f67a958c09e3aa10cf6d190c52a">SEVEN_SEG_TWO</a></div><div class="ttdeci">#define SEVEN_SEG_TWO</div><div class="ttdef"><b>Definition:</b> <a href="7seg_8h_source.html#l00010">7seg.h:10</a></div></div>
 <div class="ttc" id="a7seg_8c_html_a60579fecccc40e10b8ecca856466d540"><div class="ttname"><a href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540">sevenSegInit</a></div><div class="ttdeci">ERROR_STATE sevenSegInit(void)</div><div class="ttdef"><b>Definition:</b> <a href="7seg_8c_source.html#l00026">7seg.c:26</a></div></div>
 <div class="ttc" id="a7seg__test_8c_html_a158621bd38db40e64b33a375ad5af19b"><div class="ttname"><a href="7seg__test_8c.html#a158621bd38db40e64b33a375ad5af19b">sevenSegSimulationTest</a></div><div class="ttdeci">void sevenSegSimulationTest()</div><div class="ttdef"><b>Definition:</b> <a href="7seg__test_8c_source.html#l00010">7seg_test.c:10</a></div></div>
 <div class="ttc" id="astd__types_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="std__types_8h_source.html#l00064">std_types.h:64</a></div></div>
-<div class="ttc" id="a_d_i_o_8c_html_afcc83c805035d83c6834e8fcfd83e2b1"><div class="ttname"><a href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</a></div><div class="ttdeci">ERROR_STATE DIO_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="_d_i_o_8c_source.html#l00020">DIO.c:20</a></div></div>
+<div class="ttc" id="a_d_i_o_8c_html_afcc83c805035d83c6834e8fcfd83e2b1"><div class="ttname"><a href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</a></div><div class="ttdeci">ERROR_STATE DIO_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="_d_i_o_8c_source.html#l00023">DIO.c:23</a></div></div>
 <div class="ttc" id="a7seg__test_8c_html_ac2c06c22609baed09b6e602d68134d15"><div class="ttname"><a href="7seg__test_8c.html#ac2c06c22609baed09b6e602d68134d15">sevenSegSimulationSOSTest</a></div><div class="ttdeci">void sevenSegSimulationSOSTest()</div><div class="ttdef"><b>Definition:</b> <a href="7seg__test_8c_source.html#l00037">7seg_test.c:37</a></div></div>
 <div class="ttc" id="a7seg_8c_html_ae89a46a801483d679b68d653efd31267"><div class="ttname"><a href="7seg_8c.html#ae89a46a801483d679b68d653efd31267">sevenSegSendChar</a></div><div class="ttdeci">ERROR_STATE sevenSegSendChar(const uint8_t u8_value, const uint8_t u8_SSD_selector)</div><div class="ttdef"><b>Definition:</b> <a href="7seg_8c_source.html#l00058">7seg.c:58</a></div></div>
-<div class="ttc" id="a7seg_8h_html_ac210c019f9605690297623eeb5faa1e6"><div class="ttname"><a href="7seg_8h.html#ac210c019f9605690297623eeb5faa1e6">SEVEN_SEG_ONE</a></div><div class="ttdeci">#define SEVEN_SEG_ONE</div><div class="ttdef"><b>Definition:</b> <a href="7seg_8h_source.html#l00009">7seg.h:9</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

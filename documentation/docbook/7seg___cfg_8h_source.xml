@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_7seg___cfg_8h_source">
+<title>7seg_Cfg.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg_Cfg.h</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#ifndef&#32;SEVEN_SEG_CFG_H</emphasis>
+00002 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_CFG_H</emphasis>
+00003 
+00004 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_NUM&#32;2</emphasis>
+00005 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structseven_seg_config_struct">sevenSegConfigStruct</link>&#32;<link linkend="_7seg___cfg_8h_1a365ddb8f9ec6427b58e705704679c897">sevenSegConfigParam</link>[SEVEN_SEG_NUM];
+00006 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

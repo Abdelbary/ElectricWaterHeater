@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_eeprom__ext_8c_source">
+<title>eeprom_ext.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/eeprom_ext/eeprom_ext.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*&#32;########################################################################</emphasis>
+00002 <emphasis role="comment"></emphasis>
+00003 <emphasis role="comment">&#32;&#32;&#32;PICsim&#32;-&#32;PIC&#32;simulator&#32;http://sourceforge.net/projects/picsim/</emphasis>
+00004 <emphasis role="comment"></emphasis>
+00005 <emphasis role="comment">&#32;&#32;&#32;########################################################################</emphasis>
+00006 <emphasis role="comment"></emphasis>
+00007 <emphasis role="comment">&#32;&#32;&#32;Copyright&#32;(c)&#32;:&#32;2015&#32;&#32;Luis&#32;Claudio&#32;Gambôa&#32;Lopes</emphasis>
+00008 <emphasis role="comment"></emphasis>
+00009 <emphasis role="comment">&#32;&#32;&#32;This&#32;program&#32;is&#32;free&#32;software;&#32;you&#32;can&#32;redistribute&#32;it&#32;and/or&#32;modify</emphasis>
+00010 <emphasis role="comment">&#32;&#32;&#32;it&#32;under&#32;the&#32;terms&#32;of&#32;the&#32;GNU&#32;General&#32;Public&#32;License&#32;as&#32;published&#32;by</emphasis>
+00011 <emphasis role="comment">&#32;&#32;&#32;the&#32;Free&#32;Software&#32;Foundation;&#32;either&#32;version&#32;2,&#32;or&#32;(at&#32;your&#32;option)</emphasis>
+00012 <emphasis role="comment">&#32;&#32;&#32;any&#32;later&#32;version.</emphasis>
+00013 <emphasis role="comment"></emphasis>
+00014 <emphasis role="comment">&#32;&#32;&#32;This&#32;program&#32;is&#32;distributed&#32;in&#32;the&#32;hope&#32;that&#32;it&#32;will&#32;be&#32;useful,</emphasis>
+00015 <emphasis role="comment">&#32;&#32;&#32;but&#32;WITHOUT&#32;ANY&#32;WARRANTY;&#32;without&#32;even&#32;the&#32;implied&#32;warranty&#32;of</emphasis>
+00016 <emphasis role="comment">&#32;&#32;&#32;MERCHANTABILITY&#32;or&#32;FITNESS&#32;FOR&#32;A&#32;PARTICULAR&#32;PURPOSE.&#32;&#32;See&#32;the</emphasis>
+00017 <emphasis role="comment">&#32;&#32;&#32;GNU&#32;General&#32;Public&#32;License&#32;for&#32;more&#32;details.</emphasis>
+00018 <emphasis role="comment"></emphasis>
+00019 <emphasis role="comment">&#32;&#32;&#32;You&#32;should&#32;have&#32;received&#32;a&#32;copy&#32;of&#32;the&#32;GNU&#32;General&#32;Public&#32;License</emphasis>
+00020 <emphasis role="comment">&#32;&#32;&#32;along&#32;with&#32;this&#32;program;&#32;if&#32;not,&#32;write&#32;to&#32;the&#32;Free&#32;Software</emphasis>
+00021 <emphasis role="comment">&#32;&#32;&#32;Foundation,&#32;Inc.,&#32;675&#32;Mass&#32;Ave,&#32;Cambridge,&#32;MA&#32;02139,&#32;USA.</emphasis>
+00022 <emphasis role="comment"></emphasis>
+00023 <emphasis role="comment">&#32;&#32;&#32;For&#32;e-mail&#32;suggestions&#32;:&#32;&#32;lcgamboa@yahoo.com</emphasis>
+00024 <emphasis role="comment">&#32;&#32;&#32;########################################################################&#32;*/</emphasis>
+00025 
+00026 <emphasis role="preprocessor">#include&#32;&quot;../../MCAL/I2C/i2c.h&quot;</emphasis>
+00027 <emphasis role="preprocessor">#include&quot;<link linkend="_eeprom__ext_8h">eeprom_ext.h</link>&quot;</emphasis>
+00028 
+<anchor xml:id="_eeprom__ext_8c_source_1l00029"/><link linkend="_eeprom__ext_8h_1a68ff2caae3c67d6e12b84a0f1164dd6a">00029</link> <emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="_eeprom__ext_8c_1a68ff2caae3c67d6e12b84a0f1164dd6a">e2pext_r</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;addr)
+00030 {
+00031 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;ret;
+00032 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;ah;
+00033 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;al;
+00034 
+00035 &#32;&#32;ah=(addr&amp;0x0100)&gt;&gt;8;
+00036 &#32;&#32;al=addr&amp;0x00FF;
+00037 
+00038 &#32;&#32;<link linkend="_i2c_8c_1af104fa2713ad2cfe4f993bdd2ec22c46">i2c_start</link>();&#32;&#32;
+00039 &#32;&#32;<emphasis role="keywordflow">if</emphasis>(ah)
+00040 &#32;&#32;{
+00041 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(0xA2);
+00042 &#32;&#32;}
+00043 &#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00044 &#32;&#32;{
+00045 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(0xA0);
+00046 &#32;&#32;}
+00047 &#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(al);
+00048 
+00049 &#32;&#32;<link linkend="_i2c_8c_1af104fa2713ad2cfe4f993bdd2ec22c46">i2c_start</link>();
+00050 &#32;&#32;<emphasis role="keywordflow">if</emphasis>(ah)
+00051 &#32;&#32;{
+00052 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(0xA3);
+00053 &#32;&#32;}
+00054 &#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00055 &#32;&#32;{
+00056 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(0xA1);
+00057 &#32;&#32;}
+00058 &#32;&#32;ret=<link linkend="_i2c_8c_1a48e41f42b8f700d21ddd025e68632ced">i2c_rb</link>(1);
+00059 &#32;&#32;<link linkend="_i2c_8c_1ad35d4e4f52ca74b503d5e5e1e0a3f5f3">i2c_stop</link>();
+00060 
+00061 &#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;ret;&#32;&#32;&#32;
+00062 }
+00063 
+00064 
+<anchor xml:id="_eeprom__ext_8c_source_1l00065"/><link linkend="_eeprom__ext_8h_1a3b6e76a761d4f025a99416f03ef098ed">00065</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_eeprom__ext_8c_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;addr,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;val)
+00066 {
+00067 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;tmp;
+00068 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;ah;
+00069 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;al;
+00070 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;nt;
+00071 
+00072 &#32;&#32;tmp=val;
+00073 &#32;&#32;ah=(addr&amp;0x0100)&gt;&gt;8;
+00074 &#32;&#32;al=addr&amp;0x00FF;
+00075 &#32;&#32;nt=0;
+00076 
+00077 &#32;&#32;<emphasis role="keywordflow">do</emphasis>
+00078 &#32;&#32;{
+00079 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1af104fa2713ad2cfe4f993bdd2ec22c46">i2c_start</link>();
+00080 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(ah)
+00081 &#32;&#32;&#32;&#32;{&#32;
+00082 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(0xA2);
+00083 &#32;&#32;&#32;&#32;}
+00084 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00085 &#32;&#32;&#32;&#32;{
+00086 &#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(0xA0);
+00087 &#32;&#32;&#32;&#32;}
+00088 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(al);
+00089 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link>(tmp);
+00090 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1ad35d4e4f52ca74b503d5e5e1e0a3f5f3">i2c_stop</link>();
+00091 
+00092 &#32;&#32;&#32;&#32;nt++;
+00093 &#32;&#32;}
+00094 &#32;&#32;<emphasis role="keywordflow">while</emphasis>((tmp&#32;!=&#32;<link linkend="_eeprom__ext_8c_1a68ff2caae3c67d6e12b84a0f1164dd6a">e2pext_r</link>(addr))&amp;&amp;(nt&#32;&lt;&#32;10));
+00095 }
+</programlisting></section>

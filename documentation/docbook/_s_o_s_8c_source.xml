@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_o_s_8c_source">
+<title>SOS.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;SOS.c</emphasis>
+00003 <emphasis role="comment">&#32;*</emphasis>
+00004 <emphasis role="comment">&#32;*&#32;Created:&#32;2/24/2020&#32;11:50:29&#32;AM</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;&#32;Author:&#32;mahmo</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>&#32;
+00007 
+00008 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_o_s_8h">SOS.h</link>&quot;</emphasis>
+00009 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_o_s__cfg_8h">SOS_cfg.h</link>&quot;</emphasis>
+00010 
+00011 <emphasis role="preprocessor">#define&#32;TAKEN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1</emphasis>
+00012 <emphasis role="preprocessor">#define&#32;NO_TASKS&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-1</emphasis>
+<anchor xml:id="__s_o_s_8c_source_1l00013"/><link linkend="_struct_s_o_s__obj__str">00013</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_o_s__obj__str">SOS_obj_str</link>
+00014 {
+00015 &#32;&#32;&#32;&#32;<emphasis role="comment">/*object&#32;to&#32;hold&#32;data&#32;to&#32;the&#32;call&#32;back&#32;functions&#32;to&#32;call&#32;periodically*/</emphasis>
+<anchor xml:id="__s_o_s_8c_source_1l00016"/><link linkend="_struct_s_o_s__obj__str_1a8b9608f864d279decec9171a0a64daf4">00016</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_s_o_s__obj__str_1a8b9608f864d279decec9171a0a64daf4">Id</link>;
+<anchor xml:id="__s_o_s_8c_source_1l00017"/><link linkend="_struct_s_o_s__obj__str_1a1c5689acbf42575369de91b15c5bec16">00017</link> &#32;&#32;&#32;&#32;void&#32;(*<link linkend="_struct_s_o_s__obj__str_1a1c5689acbf42575369de91b15c5bec16">callB_fun</link>)(void);
+<anchor xml:id="__s_o_s_8c_source_1l00018"/><link linkend="_struct_s_o_s__obj__str_1a149595a801ffbe44332335cf758cdd9e">00018</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;<link linkend="_struct_s_o_s__obj__str_1a149595a801ffbe44332335cf758cdd9e">fire_tick</link>;
+<anchor xml:id="__s_o_s_8c_source_1l00019"/><link linkend="_struct_s_o_s__obj__str_1adae97207d6a687128a37cfea0b4d7e04">00019</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;<link linkend="_struct_s_o_s__obj__str_1adae97207d6a687128a37cfea0b4d7e04">current_ticks</link>;
+<anchor xml:id="__s_o_s_8c_source_1l00020"/><link linkend="_struct_s_o_s__obj__str_1adc0c490f1ab312ffcd603391eca938dc">00020</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_s_o_s__obj__str_1adc0c490f1ab312ffcd603391eca938dc">priority</link>;
+<anchor xml:id="__s_o_s_8c_source_1l00021"/><link linkend="_struct_s_o_s__obj__str_1af159fd3f0ad313391e4c36ccd15a69e3">00021</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_s_o_s__obj__str_1af159fd3f0ad313391e4c36ccd15a69e3">type</link>;&#32;&#32;<emphasis role="comment">/*periodic&#32;or&#32;one&#32;shot*/</emphasis>
+00022 &#32;&#32;&#32;&#32;
+00023 }<link linkend="__s_o_s_8c_1a53fe77d22db34777c4d527d5fbae7ac0">gstr_SOS_obj_t</link>;
+00024 
+<anchor xml:id="__s_o_s_8c_source_1l00025"/><link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">00025</link> STATIC&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;=&#32;FALSE;
+<anchor xml:id="__s_o_s_8c_source_1l00026"/><link linkend="__s_o_s_8c_1a5049fcb0c2cbf382f8e9a7138572a312">00026</link> STATIC&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="__s_o_s_8c_1a5049fcb0c2cbf382f8e9a7138572a312">SOS_Timer_ch</link>;
+<anchor xml:id="__s_o_s_8c_source_1l00027"/><link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">00027</link> STATIC&#32;<link linkend="_struct_s_o_s__obj__str">gstr_SOS_obj_t</link>&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[SOS_OBJ_BUFFER_SIZE];
+<anchor xml:id="__s_o_s_8c_source_1l00028"/><link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">00028</link> STATIC&#32;<link linkend="_std__types_8h_1a54cceacffb6d6dff03bf69f786d431a9">sint8_t</link>&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>;
+<anchor xml:id="__s_o_s_8c_source_1l00029"/><link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">00029</link> STATIC&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link>[SOS_OBJ_BUFFER_SIZE+_ONE];&#32;<emphasis role="comment">/*mark&#32;taken&#32;ids*/</emphasis>
+00030 
+<anchor xml:id="__s_o_s_8c_source_1l00031"/><link linkend="__s_o_s_8h_1aa4a8a75bc8f33c7ff7c7072ec695b763">00031</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8c_1aa4a8a75bc8f33c7ff7c7072ec695b763">SOS_Init</link>(<emphasis role="keywordtype">void</emphasis>)
+00032 {
+00033 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00034 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;||&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>&#32;&gt;&#32;SOS_MAX_TIMER_RESLUTION&#32;||&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615">timer_ch</link>&#32;&gt;&#32;SOS_TIMER_CH2&#32;)&#32;<emphasis role="comment">/*check&#32;for&#32;all&#32;errors*/</emphasis>
+00035 &#32;&#32;&#32;&#32;{
+00036 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;/************************************************************************&#32;</emphasis>
+00037 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;-module&#32;initialized&#32;before&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+00038 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;-input&#32;validation.&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+00039 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;************************************************************************/</emphasis>
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>)
+00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+MULTIPLE_INITALIZATION);
+00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>&#32;&gt;&#32;SOS_MAX_TIMER_RESLUTION&#32;
+00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615">timer_ch</link>&#32;&gt;&#32;SOS_TIMER_CH2)
+00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00051 &#32;&#32;&#32;&#32;}
+00052 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00053 &#32;&#32;&#32;&#32;{
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a5049fcb0c2cbf382f8e9a7138572a312">SOS_Timer_ch</link>&#32;=&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615">timer_ch</link>;
+00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;=&#32;_ZERO-_ONE;
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//enable&#32;timer&#32;1</emphasis>
+00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_timer_8c_1a146cd1e352ec285162684cf776df632c">system_timer_init</link>();
+00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;=&#32;TRUE;
+00060 
+00061 &#32;&#32;&#32;&#32;}
+00062 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;e_funStatus;
+00063 }
+00064 
+<anchor xml:id="__s_o_s_8c_source_1l00065"/><link linkend="__s_o_s_8h_1a085b92af3cd18aadc5f6c5c4979969fe">00065</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;Id,<emphasis role="keywordtype">void</emphasis>&#32;(*callB_fun_ptr)(<emphasis role="keywordtype">void</emphasis>),<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;lap_time,<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;type,<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;periority)
+00066 {
+00067 &#32;&#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00068 &#32;&#32;&#32;&#32;<emphasis role="comment">/*lot&#32;of&#32;condition&#32;but&#32;it&#32;centralize&#32;error&#32;checking*/</emphasis>
+00069 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Id&#32;&gt;&#32;SOS_OBJ_BUFFER_SIZE&#32;||&#32;callB_fun_ptr&#32;==&#32;NULL&#32;||&#32;lap_time&#32;&gt;&#32;SOS_MAX_LAP_TIME
+00070 &#32;&#32;&#32;&#32;||&#32;type&#32;&gt;&#32;ON_SHOT&#32;||&#32;<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;==&#32;FALSE&#32;||&#32;<link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link>[Id]&#32;==&#32;TAKEN
+00071 &#32;&#32;&#32;&#32;||&#32;(lap_time%(<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>))&#32;!=&#32;_ZERO&#32;<emphasis role="comment">/*lap_time&#32;not&#32;multiple&#32;of&#32;reslution*/</emphasis>
+00072 &#32;&#32;&#32;&#32;||&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;==(SOS_OBJ_BUFFER_SIZE-_ONE)&#32;)
+00073 &#32;&#32;&#32;&#32;{
+00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(&#32;<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;==&#32;FALSE)<emphasis role="comment">/*module&#32;unintalized*/</emphasis>
+00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(callB_fun_ptr&#32;==&#32;NULL)
+00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+NULL_PTR_ERROR);
+00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(Id&#32;&gt;&#32;SOS_OBJ_BUFFER_SIZE&#32;&#32;||<link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link>[Id]&#32;&#32;==&#32;TAKEN
+00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||&#32;type&#32;&gt;&#32;ON_SHOT&#32;&#32;||&#32;lap_time&#32;&gt;&#32;SOS_MAX_LAP_TIME
+00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||&#32;(lap_time%(<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>))
+00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;==(SOS_OBJ_BUFFER_SIZE-_ONE))<emphasis role="comment">/*invalid&#32;parameter*/</emphasis>
+00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
+00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00093 &#32;&#32;&#32;&#32;}
+00094 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00095 &#32;&#32;&#32;&#32;{
+00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_tempCounter&#32;=&#32;ZERO;
+00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00100 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;1-get&#32;lap&#32;time&#32;eq</emphasis>
+00101 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;2-setup&#32;new&#32;task&#32;struct</emphasis>
+00102 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;3-load&#32;it&#32;in&#32;place&#32;correspond&#32;to&#32;its&#32;priority</emphasis>
+00103 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*</emphasis>
+00104 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*set&#32;how&#32;many&#32;resolution&#32;time&#32;it&#32;takes&#32;to&#32;fire&#32;event*/</emphasis>
+00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lap_time&#32;=&#32;(lap_time/(<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>));
+00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*SOS_obj_str&#32;{id,callBack&#32;fun&#32;,&#32;ticks&#32;,current_ticks,type[periodic,onshot]}&#32;*/</emphasis>
+00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_o_s__obj__str">gstr_SOS_obj_t</link>&#32;tobj&#32;&#32;=&#32;{Id,callB_fun_ptr,lap_time,ZERO,periority,type};
+00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00111 <emphasis role="preprocessor">#ifdef&#32;PERIORITY</emphasis>
+00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*if&#32;there&#32;is&#32;no&#32;tasks&#32;put&#32;task&#32;in&#32;first&#32;pos*/</emphasis>
+00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;==&#32;NO_TASKS)
+00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>++;&#32;<emphasis role="comment">/*increase&#32;buffer&#32;head&#32;to&#32;next&#32;empty&#32;position*/</emphasis>
+00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>]&#32;=&#32;tobj;
+00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(;u8_tempCounter&#32;&lt;=&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;;&#32;u8_tempCounter++)
+00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[u8_tempCounter].priority&#32;&gt;=&#32;periority)
+00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_shiftCounter&#32;=&#32;(<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;+&#32;_ONE);
+00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(u8_shiftCounter&#32;&gt;&#32;u8_tempCounter)
+00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//on&#32;two&#32;steps&#32;due&#32;to&#32;compiler&#32;limitations</emphasis>
+00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_o_s__obj__str">gstr_SOS_obj_t</link>&#32;temp&#32;&#32;&#32;=&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[(u8_shiftCounter-_ONE)];
+00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[u8_shiftCounter]&#32;=&#32;temp;
+00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_shiftCounter--;
+00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[u8_shiftCounter]&#32;=&#32;tobj;
+00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>++;
+00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*check&#32;if&#32;the&#32;task&#32;is&#32;the&#32;lowest&#32;priority*/</emphasis>
+00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_tempCounter&#32;&gt;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>)
+00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>++;&#32;<emphasis role="comment">/*increase&#32;buffer&#32;head&#32;to&#32;next&#32;empty&#32;position*/</emphasis>
+00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>]&#32;=&#32;tobj;
+00142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00144 <emphasis role="preprocessor">#else&#32;&#32;&#32;&#32;</emphasis>
+00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>++;&#32;<emphasis role="comment">/*increase&#32;buffer&#32;head&#32;to&#32;next&#32;empty&#32;position*/</emphasis>
+00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>]&#32;=&#32;tobj;
+00147 <emphasis role="preprocessor">#endif</emphasis>
+00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link>[Id]&#32;=&#32;TAKEN&#32;;<emphasis role="comment">/*mark&#32;this&#32;id&#32;as&#32;taken*/</emphasis>
+00150 &#32;&#32;&#32;&#32;}
+00151 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;e_funStatus;
+00152 }
+00153 
+00154 
+00155 
+<anchor xml:id="__s_o_s_8c_source_1l00156"/><link linkend="__s_o_s_8h_1a33f0b757ea5b9df0fff7cdcef7178981">00156</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8c_1a33f0b757ea5b9df0fff7cdcef7178981">SOS_deletTask</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;Id)
+00157 {
+00158 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00159 &#32;&#32;&#32;&#32;
+00160 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;==&#32;FALSE)
+00161 &#32;&#32;&#32;&#32;{
+00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+00164 &#32;&#32;&#32;&#32;}
+00165 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(Id&gt;SOS_OBJ_BUFFER_SIZE&#32;&#32;||&#32;<link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link>[Id]&#32;!=&#32;TAKEN)
+00166 &#32;&#32;&#32;&#32;{
+00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
+00169 &#32;&#32;&#32;&#32;}
+00170 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00171 &#32;&#32;&#32;&#32;{
+00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00173 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;-loop&#32;for&#32;element&#32;in&#32;the&#32;buffer&#32;until&#32;reach&#32;head</emphasis>
+00174 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&#32;copy&#32;header&#32;obj&#32;to&#32;it&#32;</emphasis>
+00175 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-&#32;decrement&#32;header</emphasis>
+00176 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_bufferCnt&#32;=&#32;0&#32;;&#32;u8_bufferCnt&#32;&lt;=<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;;&#32;u8_bufferCnt++)
+00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(Id&#32;==&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[u8_bufferCnt].Id)
+00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//on&#32;two&#32;steps&#32;due&#32;to&#32;compiler&#32;limitations</emphasis>
+00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_o_s__obj__str">gstr_SOS_obj_t</link>&#32;temp&#32;&#32;&#32;=&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>];
+00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[u8_bufferCnt]&#32;&#32;=&#32;temp;
+00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>--;
+00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link>[Id]&#32;=&#32;ZERO;&#32;<emphasis role="comment">/*mark&#32;id&#32;as&#32;not&#32;taken*/</emphasis>
+00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;
+00188 &#32;&#32;&#32;&#32;}
+00189 &#32;&#32;&#32;&#32;
+00190 &#32;&#32;&#32;&#32;
+00191 
+00192 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;e_funStatus;
+00193 &#32;&#32;&#32;&#32;
+00194 }
+00195 
+00196 
+00197 
+<anchor xml:id="__s_o_s_8c_source_1l00198"/><link linkend="__s_o_s_8h_1a8dd58b17a3ae907bda4c429f78883d67">00198</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8c_1a8dd58b17a3ae907bda4c429f78883d67">SOS_run</link>(<emphasis role="keywordtype">void</emphasis>)
+00199 {
+00200 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00201 
+00202 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;==&#32;FALSE)
+00203 &#32;&#32;&#32;&#32;{
+00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+00206 &#32;&#32;&#32;&#32;}
+00207 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00208 &#32;&#32;&#32;&#32;{
+00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;STATIC&#32;<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;current_ticks&#32;=&#32;_ZERO;
+00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;STATIC&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;new_tick_flag&#32;=&#32;FALSE;
+00211 &#32;&#32;&#32;&#32;
+00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;STATIC&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;fun_frstTime_flag&#32;=&#32;FALSE;
+00213 
+00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*check&#32;for&#32;first&#32;time&#32;entrance&#32;to&#32;start&#32;timer*/</emphasis>
+00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!fun_frstTime_flag)
+00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*start&#32;timer*/</emphasis>
+00218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_timer_8c_1ae8412a88f34f526095d643d829ace90f">start_system_timer</link>();
+00220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fun_frstTime_flag&#32;=&#32;TRUE;
+00222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00224 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;-check&#32;for&#32;new&#32;time&#32;tick</emphasis>
+00225 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;-if&#32;true&#32;loop&#32;throw&#32;the&#32;SOS&#32;OBJ&#32;Buffer</emphasis>
+00226 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;-increment&#32;current&#32;ticks&#32;</emphasis>
+00227 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;-check&#32;if&#32;the&#32;current&#32;ticks&#32;==&#32;tick&#32;time&#32;if&#32;so&#32;call&#32;the&#32;CBF</emphasis>
+00228 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;-keep&#32;going&#32;until&#32;finish&#32;with&#32;all&#32;obj&#32;in&#32;SOS&#32;buffer</emphasis>
+00229 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00230 &#32;&#32;&#32;&#32;
+00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;&#32;check&#32;for&#32;new&#32;time&#32;tick</emphasis>
+00232 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;for&#32;each&#32;timer&#32;tick&#32;increase&#32;current&#32;tick&#32;and&#32;make&#32;timer0_MS_flag&#32;false</emphasis>
+00233 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;if&#32;current&#32;tick&#32;==&#32;lap_time</emphasis>
+00234 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;-zero&#32;current&#32;tick</emphasis>
+00235 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;&#32;&#32;&#32;&#32;&#32;-fire&#32;new_tick_flag</emphasis>
+00236 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_timer_8c_1a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</link>)
+00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_ticks++;
+00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_timer_8c_1a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</link>&#32;=&#32;FALSE;
+00242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(current_ticks&#32;==&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>)
+00243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current_ticks&#32;=&#32;_ZERO;
+00245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_tick_flag&#32;=&#32;TRUE;
+00246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(new_tick_flag)
+00249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;new_tick_flag&#32;=&#32;FALSE;
+00251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;bufferCnt&#32;=&#32;0&#32;;&#32;bufferCnt&#32;&lt;=<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;;&#32;bufferCnt++)
+00252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[bufferCnt].<link linkend="_struct_s_o_s__obj__str_1adae97207d6a687128a37cfea0b4d7e04">current_ticks</link>)++;
+00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*check&#32;for&#32;CBF&#32;call&#32;time*/</emphasis>
+00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>((<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[bufferCnt].current_ticks)==(<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[bufferCnt].<link linkend="_struct_s_o_s__obj__str_1a149595a801ffbe44332335cf758cdd9e">fire_tick</link>))
+00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[bufferCnt].<link linkend="_struct_s_o_s__obj__str_1adae97207d6a687128a37cfea0b4d7e04">current_ticks</link>&#32;=&#32;_ZERO;
+00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[bufferCnt].<link linkend="_struct_s_o_s__obj__str_1a1c5689acbf42575369de91b15c5bec16">callB_fun</link>();
+00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*handle&#32;one_shot&#32;functions*/</emphasis>
+00261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[bufferCnt].type&#32;==&#32;ON_SHOT)
+00262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a33f0b757ea5b9df0fff7cdcef7178981">SOS_deletTask</link>(<link linkend="__s_o_s_8c_1ac0765357569c1508d99b1cef66e82732">gastr_SOS_ObjBuffer</link>[bufferCnt].Id);
+00264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00265 
+00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00269 
+00270 &#32;&#32;&#32;&#32;}
+00271 &#32;&#32;&#32;&#32;
+00272 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;e_funStatus;
+00273 }
+00274 
+00275 
+<anchor xml:id="__s_o_s_8c_source_1l00276"/><link linkend="__s_o_s_8h_1a5d328c9cc7f2900d9ee68f8aab3231f9">00276</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8c_1a5d328c9cc7f2900d9ee68f8aab3231f9">SOS_Deinit</link>(<emphasis role="keywordtype">void</emphasis>)
+00277 {
+00278 &#32;&#32;&#32;&#32;
+00279 &#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00280 <emphasis role="comment">&#32;&#32;&#32;&#32;*&#32;&#32;&#32;1-deinit&#32;timer</emphasis>
+00281 <emphasis role="comment">&#32;&#32;&#32;&#32;*&#32;&#32;&#32;2-set&#32;SOS_init_flag&#32;to&#32;zero</emphasis>
+00282 <emphasis role="comment">&#32;&#32;&#32;&#32;*/</emphasis>
+00283 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00284 &#32;&#32;&#32;&#32;
+00285 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;==&#32;FALSE)
+00286 &#32;&#32;&#32;&#32;{
+00287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;
+00288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*report&#32;error*/</emphasis>
+00289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+00290 &#32;&#32;&#32;&#32;}
+00291 
+00292 &#32;&#32;&#32;&#32;<emphasis role="comment">/*do&#32;deinit&#32;procedure&#32;anyway*/</emphasis>
+00293 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_counter&#32;=&#32;0;
+00294 &#32;&#32;&#32;&#32;
+00295 &#32;&#32;&#32;&#32;<emphasis role="comment">//deinit&#32;timer&#32;module</emphasis>
+00296 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4">SOS_Init_flag</link>&#32;=&#32;FALSE;
+00297 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link>&#32;=&#32;_ZERO-_ONE;
+00298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00299 &#32;&#32;&#32;&#32;<emphasis role="comment">/*free&#32;taken&#32;ids*/</emphasis>
+00300 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(;u8_counter&#32;&lt;=&#32;SOS_OBJ_BUFFER_SIZE&#32;;&#32;u8_counter++)
+00301 &#32;&#32;&#32;&#32;{
+00302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link>[u8_counter]&#32;=&#32;_ZERO;
+00303 &#32;&#32;&#32;&#32;}
+00304 &#32;&#32;&#32;&#32;<emphasis role="comment">/*set&#32;default&#32;paramter*/</emphasis>
+00305 &#32;&#32;&#32;&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>&#32;=&#32;_ONE;
+00306 &#32;&#32;&#32;&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>.<link linkend="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615">timer_ch</link>&#32;=&#32;SOS_TIMER_CH0;
+00307 &#32;&#32;&#32;&#32;
+00308 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;e_funStatus;
+00309 }
+00310 
+00311 
+</programlisting></section>

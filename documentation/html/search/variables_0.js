@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['callb_5ffun_355',['callB_fun',['../struct_s_o_s__obj__str.html#a1c5689acbf42575369de91b15c5bec16',1,'SOS_obj_str']]],
-  ['current_5fticks_356',['current_ticks',['../struct_s_o_s__obj__str.html#adae97207d6a687128a37cfea0b4d7e04',1,'SOS_obj_str']]]
+  ['adc_5fcntrl_5f0_245',['ADC_CNTRL_0',['../structgstr___a_d_c___config_param__t.html#a7b1a34cb1b77810d4ed7977f1727c82a',1,'gstr_ADC_ConfigParam_t']]],
+  ['adc_5fcntrl_5f1_246',['ADC_CNTRL_1',['../structgstr___a_d_c___config_param__t.html#a0183cd170a10efdeb638400233d8f83a',1,'gstr_ADC_ConfigParam_t']]]
 ];

@@ -1,7 +1,7 @@
 #include "isr.h"
 #include <xc.h>
 
-void __interrupt() MyISR(void) {
+void __interrupt() __ISR(void) {
 
 
     if (TMR1IF == HIGH_BIT) {

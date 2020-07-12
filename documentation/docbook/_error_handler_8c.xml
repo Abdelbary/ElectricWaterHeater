@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__error_handler_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/Error_Handler/ErrorHandler.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/Error_Handler/ErrorHandler.c</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link> (<link linkend="_std__types_8h_1ae4c9b951dbb7355563c313abca5e2e75">sint16_t</link> error_ID)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>STATIC <link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> <link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">error_buffer_head</link> = -1</para>
+</listitem>
+            <listitem><para>STATIC <link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> <link linkend="__error_handler_8c_1a3e9dc3b429ffe52ae5e630bfcffa6150">error_Buffer</link> [ERROR_BUFFER_SIZE]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b"/>    <section>
+    <title>error_handler()</title>
+<indexterm><primary>error_handler</primary><secondary>ErrorHandler.c</secondary></indexterm>
+<indexterm><primary>ErrorHandler.c</primary><secondary>error_handler</secondary></indexterm>
+<para><computeroutput>void error_handler (<link linkend="_std__types_8h_1ae4c9b951dbb7355563c313abca5e2e75">sint16_t</link> error_ID)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> error_handler save error id to error buffer</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in                                </entry>                                <entry>error_ID</entry>
+                                <entry>
+<para>[MODULE ERROR + ERROR_TYPE]</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: void </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__error_handler_8c_source_1l00014">14</link> of file <link linkend="__error_handler_8c_source">ErrorHandler.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_error_handler_8c_ac5764457ee31a7415fc6936d103cb80b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__error_handler_8c_1a3e9dc3b429ffe52ae5e630bfcffa6150"/>    <section>
+    <title>error_Buffer</title>
+<indexterm><primary>error_Buffer</primary><secondary>ErrorHandler.c</secondary></indexterm>
+<indexterm><primary>ErrorHandler.c</primary><secondary>error_Buffer</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> error_Buffer[ERROR_BUFFER_SIZE]</computeroutput></para><para>
+Definition at line <link linkend="__error_handler_8c_source_1l00012">12</link> of file <link linkend="__error_handler_8c_source">ErrorHandler.c</link>.</para>
+    </section><anchor xml:id="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f"/>    <section>
+    <title>error_buffer_head</title>
+<indexterm><primary>error_buffer_head</primary><secondary>ErrorHandler.c</secondary></indexterm>
+<indexterm><primary>ErrorHandler.c</primary><secondary>error_buffer_head</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link> error_buffer_head = -1</computeroutput></para><para>
+Definition at line <link linkend="__error_handler_8c_source_1l00011">11</link> of file <link linkend="__error_handler_8c_source">ErrorHandler.c</link>.</para>
+</section>
+</section>
+</section>

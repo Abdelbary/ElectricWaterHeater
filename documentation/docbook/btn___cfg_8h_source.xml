@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_btn___cfg_8h_source">
+<title>btn_Cfg.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/btn_Cfg.h</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#ifndef&#32;BTN_CFG_H</emphasis>
+00002 <emphasis role="preprocessor">#define&#32;BTN_CFG_H</emphasis>
+00003 
+00004 <emphasis role="preprocessor">#define&#32;BTN_NUM_OF_BUTTONS&#32;3</emphasis>
+00005 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_btn_config_type">BtnConfigType</link>&#32;<link linkend="_btn___cfg_8h_1adf7de86c81a4639ccbf116449f0e3254">gcae_BUT_ConfigParam</link>[BTN_NUM_OF_BUTTONS];
+00006 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

@@ -1,7 +1,7 @@
 #include "DIO.h"
 #include "DIO_Cfg.h"
 
-const DioConfigParamType DIO_ConfigParam[DIO_NUM_OF_GROUPS] =
+const DioConfigParam_t gstr_DIO_ConfigParam[DIO_NUM_OF_GROUPS] =
 {
     {///SSD1 SELECTOR GRPOPID 0
                 PIN4,
@@ -28,14 +28,14 @@ const DioConfigParamType DIO_ConfigParam[DIO_NUM_OF_GROUPS] =
                 PULL_DOWN
     },
     {///UP PUSH BTN GRPOPID 4
-                PIN1,
+                PIN2,
                 PORT_B,
                 INPUT,
                 PULL_DOWN
         
     },
     {///DOWN PUSH BTN GRPOPID 5
-                PIN2,
+                PIN1,
                 PORT_B,
                 INPUT,
                 PULL_DOWN
@@ -59,10 +59,22 @@ const DioConfigParamType DIO_ConfigParam[DIO_NUM_OF_GROUPS] =
                 INPUT,
                 PULL_DOWN
     },
-    {///AN2 GROPID 9
+    {///LED GROPID 9
                 PIN3,
                 PORT_B,
                 OUTPUT,
                 PULL_UP
-    }
+    },
+    {///SDL GROPID 10
+                PIN3,
+                PORT_C,
+                OUTPUT,
+                PULL_UP
+    },
+    {///SDA GROPID 11
+                PIN4,
+                PORT_C,
+                OUTPUT,
+                PULL_UP
+    }, 
 };

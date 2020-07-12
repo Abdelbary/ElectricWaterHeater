@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_o_s__cfg_8h_source">
+<title>SOS_cfg.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS_cfg.h</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;SOS_cfg.h</emphasis>
+00003 <emphasis role="comment">&#32;*</emphasis>
+00004 <emphasis role="comment">&#32;*&#32;Created:&#32;2/24/2020&#32;11:52:01&#32;AM</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;&#32;Author:&#32;mahmo</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>&#32;
+00007 
+00008 
+00009 <emphasis role="preprocessor">#ifndef&#32;SOS_CFG_H_</emphasis>
+00010 <emphasis role="preprocessor">#define&#32;SOS_CFG_H_</emphasis>
+00011 
+00012 <emphasis role="preprocessor">#define&#32;SOS_OBJ_BUFFER_SIZE&#32;&#32;&#32;&#32;&#32;&#32;10</emphasis>
+00013 <emphasis role="preprocessor">#define&#32;SOS_MAX_TIMER_RESLUTION&#32;&#32;10</emphasis>
+00014 <emphasis role="preprocessor">#define&#32;SOS_MAX_LAP_TIME&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;200</emphasis>
+00015 <emphasis role="preprocessor">#define&#32;SOS_MODULE_ERROR_NUM&#32;&#32;&#32;-100</emphasis>
+00016 
+00017 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_struct_s_o_s__cfg__str">gstr_SOS_cfg_t</link>&#32;<link linkend="__s_o_s__cfg_8h_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>;
+00018 
+00019 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SOS_CFG_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

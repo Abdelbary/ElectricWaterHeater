@@ -49,7 +49,7 @@ static void selectSevenSeg(const uint8_t u8_selec)
     }
 }
 
-ERROR_STATE disableSevenSeg()
+ERROR_STATE disableSevenSeg(void)
 {
     DIO_Write(sevenSegConfigParam[SEVEN_SEG_ONE].u8_selectorPinGroupId,LOWL);
     DIO_Write(sevenSegConfigParam[SEVEN_SEG_TWO].u8_selectorPinGroupId,LOWL);

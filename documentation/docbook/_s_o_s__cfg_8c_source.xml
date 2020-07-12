@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_o_s__cfg_8c_source">
+<title>SOS_cfg.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/SOS/SOS_cfg.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;SOS_cfg.h</emphasis>
+00003 <emphasis role="comment">&#32;*</emphasis>
+00004 <emphasis role="comment">&#32;*&#32;Created:&#32;2/24/2020&#32;12:59:38&#32;PM</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;&#32;Author:&#32;mahmo</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>&#32;
+00007 
+00008 
+00009 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_o_s_8h">SOS.h</link>&quot;</emphasis>
+00010 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_o_s__cfg_8h">SOS_cfg.h</link>&quot;</emphasis>
+00011 <emphasis role="preprocessor">#define&#32;OS_TICK&#32;&#32;&#32;1</emphasis>
+<anchor xml:id="__s_o_s__cfg_8c_source_1l00012"/><link linkend="__s_o_s__cfg_8h_1ab5673493c16be2e01a5d0c035c004559">00012</link> <link linkend="_struct_s_o_s__cfg__str">gstr_SOS_cfg_t</link>&#32;<link linkend="__s_o_s__cfg_8c_1ab5673493c16be2e01a5d0c035c004559">SOS_linkCfg</link>&#32;=&#32;{SOS_TIMER_CH0,OS_TICK};
+00013 
+00014 
+</programlisting></section>

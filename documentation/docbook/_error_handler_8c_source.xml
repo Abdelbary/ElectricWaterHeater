@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__error_handler_8c_source">
+<title>ErrorHandler.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/Error_Handler/ErrorHandler.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;ErrorHandler.c</emphasis>
+00003 <emphasis role="comment">&#32;*</emphasis>
+00004 <emphasis role="comment">&#32;*&#32;Created:&#32;2/25/2020&#32;10:35:59&#32;AM</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;&#32;Author:&#32;mahmo</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>&#32;
+00007 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__system_errors_8h">SystemErrors.h</link>&quot;</emphasis>
+00008 
+00009 <emphasis role="preprocessor">#define&#32;MODULE_ERROR_HANDLER_ERROR&#32;&#32;-100</emphasis>
+00010 
+<anchor xml:id="__error_handler_8c_source_1l00011"/><link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">00011</link> STATIC&#32;<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;<link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">error_buffer_head</link>&#32;=&#32;-1&#32;;&#32;<emphasis role="comment">/*algorithem&#32;increase&#32;position&#32;first*/</emphasis>
+<anchor xml:id="__error_handler_8c_source_1l00012"/><link linkend="__error_handler_8c_1a3e9dc3b429ffe52ae5e630bfcffa6150">00012</link> STATIC&#32;<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;<link linkend="__error_handler_8c_1a3e9dc3b429ffe52ae5e630bfcffa6150">error_Buffer</link>[ERROR_BUFFER_SIZE];&#32;<emphasis role="comment">/*buffer&#32;to&#32;hold&#32;system&#32;errors*/</emphasis>
+00013 
+<anchor xml:id="__error_handler_8c_source_1l00014"/><link linkend="__system_errors_8h_1ac5764457ee31a7415fc6936d103cb80b">00014</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(<link linkend="_std__types_8h_1ae4c9b951dbb7355563c313abca5e2e75">sint16_t</link>&#32;error_ID)
+00015 {
+00016 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1ae4c9b951dbb7355563c313abca5e2e75">sint16_t</link>&#32;u8_fun_error_status&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00017 &#32;&#32;&#32;&#32;
+00018 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(error_ID&#32;!=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>)
+00019 &#32;&#32;&#32;&#32;{
+00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(error_ID&#32;&gt;&#32;0)&#32;&#32;&#32;<emphasis role="comment">/*error&#32;id&#32;must&#32;be&#32;negative*/</emphasis>
+00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_fun_error_status&#32;=&#32;(MODULE_ERROR_HANDLER_ERROR+INVALAD_PARAMETER);
+00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">error_buffer_head</link>&#32;==&#32;(ERROR_BUFFER_SIZE-_ONE))&#32;<emphasis role="comment">/*check&#32;for&#32;buffer&#32;capacity*/</emphasis>
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_fun_error_status&#32;=&#32;(MODULE_ERROR_HANDLER_ERROR+FULL_BUFFER);
+00027 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*must&#32;report&#32;system&#32;somehow&#32;that&#32;the&#32;buffer&#32;is&#32;full*/</emphasis>
+00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00029 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">error_buffer_head</link>++;&#32;<emphasis role="comment">/*increase&#32;buffer&#32;head&#32;to&#32;next&#32;position*/</emphasis>
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1a3e9dc3b429ffe52ae5e630bfcffa6150">error_Buffer</link>[<link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">error_buffer_head</link>]&#32;=&#32;error_ID;
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*report&#32;error&#32;in&#32;error_handler&#32;module*/</emphasis>
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(u8_fun_error_status&#32;!=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>)
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">error_buffer_head</link>++;&#32;<emphasis role="comment">/*increase&#32;buffer&#32;head&#32;to&#32;next&#32;position*/</emphasis>
+00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1a3e9dc3b429ffe52ae5e630bfcffa6150">error_Buffer</link>[<link linkend="__error_handler_8c_1af2281535493ea9f166ac0950cf69d57f">error_buffer_head</link>]&#32;=&#32;error_ID;
+00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00041 &#32;&#32;&#32;&#32;}
+00042 }
+</programlisting></section>

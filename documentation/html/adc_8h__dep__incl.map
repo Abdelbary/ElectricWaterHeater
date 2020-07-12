@@ -1,5 +1,6 @@
 <map id="F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ADC/adc.h" name="F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ADC/adc.h">
-<area shape="rect" id="node1" title=" " alt="" coords="107,5,285,61"/>
+<area shape="rect" id="node1" title=" " alt="" coords="208,5,387,61"/>
 <area shape="rect" id="node2" href="$main_8c.html" title=" " alt="" coords="5,109,184,165"/>
 <area shape="rect" id="node3" href="$adc_8c.html" title=" " alt="" coords="208,109,387,165"/>
+<area shape="rect" id="node4" href="$adc___cfg_8c.html" title=" " alt="" coords="411,109,589,165"/>
 </map>

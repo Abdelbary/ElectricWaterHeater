@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_c5b59151d6c1325e022e4ba605eb40f8">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL Directory Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_2b9e2881f7c4f7b3523cd5578ce49027">7SEG</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_25f8398be926216533d442a4abf1e36a">BTN</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_d8a9f57d6629ff7a9cdb380f881012a6">eeprom_ext</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

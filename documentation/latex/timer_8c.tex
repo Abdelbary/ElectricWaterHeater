@@ -1,25 +1,11 @@
 \hypertarget{timer_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+M\+C\+A\+L/\+T\+I\+M\+E\+R/timer.c File Reference}
 \label{timer_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/TIMER/timer.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/TIMER/timer.c}}
-{\ttfamily \#include $<$xc.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
-Include dependency graph for timer.\+c\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=252pt]{timer_8c__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{timer_8c_a8c8095721e32a4721a08b384c5570373}{T\+I\+M\+E\+R1\+\_\+\+M\+A\+X\+\_\+\+T\+I\+C\+KS}}~(0x\+F63\+Bu)
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{timer_8c_a896a4c37c6ecf8868ef0dc758e5a598c}{timer\+\_\+init}} ()
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{timer_8c_a146cd1e352ec285162684cf776df632c}{system\+\_\+timer\+\_\+init}} (void)
 \item 
-void \mbox{\hyperlink{timer_8c_aaedac22c55880495505bf375e0e132c1}{start\+\_\+timer}} ()
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{timer_8c_ae8412a88f34f526095d643d829ace90f}{start\+\_\+system\+\_\+timer}} (void)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -28,52 +14,61 @@ volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{timer_8c_a8c8095721e32a4721a08b384c5570373}\label{timer_8c_a8c8095721e32a4721a08b384c5570373}} 
-\index{timer.c@{timer.c}!TIMER1\_MAX\_TICKS@{TIMER1\_MAX\_TICKS}}
-\index{TIMER1\_MAX\_TICKS@{TIMER1\_MAX\_TICKS}!timer.c@{timer.c}}
-\doxysubsubsection{\texorpdfstring{TIMER1\_MAX\_TICKS}{TIMER1\_MAX\_TICKS}}
-{\footnotesize\ttfamily \#define T\+I\+M\+E\+R1\+\_\+\+M\+A\+X\+\_\+\+T\+I\+C\+KS~(0x\+F63\+Bu)}
-
-
-
-Definition at line 11 of file timer.\+c.
-
-
-
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{timer_8c_aaedac22c55880495505bf375e0e132c1}\label{timer_8c_aaedac22c55880495505bf375e0e132c1}} 
-\index{timer.c@{timer.c}!start\_timer@{start\_timer}}
-\index{start\_timer@{start\_timer}!timer.c@{timer.c}}
-\doxysubsubsection{\texorpdfstring{start\_timer()}{start\_timer()}}
-{\footnotesize\ttfamily void start\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{timer_8c_ae8412a88f34f526095d643d829ace90f}\label{timer_8c_ae8412a88f34f526095d643d829ace90f}} 
+\index{timer.c@{timer.c}!start\_system\_timer@{start\_system\_timer}}
+\index{start\_system\_timer@{start\_system\_timer}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{start\_system\_timer()}{start\_system\_timer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} start\+\_\+system\+\_\+timer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} start\+\_\+system\+\_\+timer start system timer
 
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \mbox{[}OK,N\+OK\mbox{]} 
+\end{DoxyReturn}
 
-Definition at line 26 of file timer.\+c.
 
-Here is the caller graph for this function\+:\nopagebreak
+Definition at line 43 of file timer.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=344pt]{timer_8c_aaedac22c55880495505bf375e0e132c1_icgraph}
+\includegraphics[width=273pt]{timer_8c_ae8412a88f34f526095d643d829ace90f_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{timer_8c_a896a4c37c6ecf8868ef0dc758e5a598c}\label{timer_8c_a896a4c37c6ecf8868ef0dc758e5a598c}} 
-\index{timer.c@{timer.c}!timer\_init@{timer\_init}}
-\index{timer\_init@{timer\_init}!timer.c@{timer.c}}
-\doxysubsubsection{\texorpdfstring{timer\_init()}{timer\_init()}}
-{\footnotesize\ttfamily void timer\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{timer_8c_a146cd1e352ec285162684cf776df632c}\label{timer_8c_a146cd1e352ec285162684cf776df632c}} 
+\index{timer.c@{timer.c}!system\_timer\_init@{system\_timer\_init}}
+\index{system\_timer\_init@{system\_timer\_init}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{system\_timer\_init()}{system\_timer\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} system\+\_\+timer\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} system\+\_\+timer\+\_\+init system timer
 
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \mbox{[}OK,N\+OK\mbox{]} 
+\end{DoxyReturn}
 
-Definition at line 14 of file timer.\+c.
 
-Here is the caller graph for this function\+:\nopagebreak
+Definition at line 19 of file timer.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{timer_8c_a896a4c37c6ecf8868ef0dc758e5a598c_icgraph}
+\includegraphics[width=350pt]{timer_8c_a146cd1e352ec285162684cf776df632c_icgraph}
 \end{center}
 \end{figure}
 
@@ -87,5 +82,5 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-Definition at line 13 of file timer.\+c.
+Definition at line 16 of file timer.\+c.
 

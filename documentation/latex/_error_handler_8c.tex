@@ -1,18 +1,5 @@
 \hypertarget{_error_handler_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+Service\+Layer/\+Error\+\_\+\+Handler/\+Error\+Handler.c File Reference}
 \label{_error_handler_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/Error\_Handler/ErrorHandler.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/ServiceLayer/Error\_Handler/ErrorHandler.c}}
-{\ttfamily \#include \char`\"{}System\+Errors.\+h\char`\"{}}\newline
-Include dependency graph for Error\+Handler.\+c\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=221pt]{_error_handler_8c__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{_error_handler_8c_ae907db17e1ab2a0992bfb0535e1cd727}{M\+O\+D\+U\+L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+E\+R\+R\+OR}}~-\/100
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,23 +8,10 @@ void \mbox{\hyperlink{_error_handler_8c_ac5764457ee31a7415fc6936d103cb80b}{error
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} \mbox{\hyperlink{_error_handler_8c_af2281535493ea9f166ac0950cf69d57f}{error\+\_\+buffer\+\_\+head}} = -\/1
+S\+T\+A\+T\+IC \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} \mbox{\hyperlink{_error_handler_8c_af2281535493ea9f166ac0950cf69d57f}{error\+\_\+buffer\+\_\+head}} = -\/1
 \item 
-\mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} \mbox{\hyperlink{_error_handler_8c_a3e9dc3b429ffe52ae5e630bfcffa6150}{error\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{_system_errors_8h_a5e157a94a82f4b152bca1a06993c38e0}{E\+R\+R\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}\mbox{]}
+S\+T\+A\+T\+IC \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} \mbox{\hyperlink{_error_handler_8c_a3e9dc3b429ffe52ae5e630bfcffa6150}{error\+\_\+\+Buffer}} \mbox{[}E\+R\+R\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE\mbox{]}
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{_error_handler_8c_ae907db17e1ab2a0992bfb0535e1cd727}\label{_error_handler_8c_ae907db17e1ab2a0992bfb0535e1cd727}} 
-\index{ErrorHandler.c@{ErrorHandler.c}!MODULE\_ERROR\_HANDLER\_ERROR@{MODULE\_ERROR\_HANDLER\_ERROR}}
-\index{MODULE\_ERROR\_HANDLER\_ERROR@{MODULE\_ERROR\_HANDLER\_ERROR}!ErrorHandler.c@{ErrorHandler.c}}
-\doxysubsubsection{\texorpdfstring{MODULE\_ERROR\_HANDLER\_ERROR}{MODULE\_ERROR\_HANDLER\_ERROR}}
-{\footnotesize\ttfamily \#define M\+O\+D\+U\+L\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+E\+R\+R\+OR~-\/100}
-
-
-
-Definition at line 9 of file Error\+Handler.\+c.
-
 
 
 \doxysubsection{Function Documentation}
@@ -47,6 +21,16 @@ Definition at line 9 of file Error\+Handler.\+c.
 \doxysubsubsection{\texorpdfstring{error\_handler()}{error\_handler()}}
 {\footnotesize\ttfamily void error\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_ae4c9b951dbb7355563c313abca5e2e75}{sint16\+\_\+t}}}]{error\+\_\+\+ID }\end{DoxyParamCaption})}
 
+{\bfseries{Description\+:}} error\+\_\+handler save error id to error buffer
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em error\+\_\+\+ID} & \mbox{[}M\+O\+D\+U\+LE E\+R\+R\+OR + E\+R\+R\+O\+R\+\_\+\+T\+Y\+PE\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: void 
+\end{DoxyReturn}
 
 
 Definition at line 14 of file Error\+Handler.\+c.
@@ -66,7 +50,7 @@ Here is the caller graph for this function\+:
 \index{ErrorHandler.c@{ErrorHandler.c}!error\_Buffer@{error\_Buffer}}
 \index{error\_Buffer@{error\_Buffer}!ErrorHandler.c@{ErrorHandler.c}}
 \doxysubsubsection{\texorpdfstring{error\_Buffer}{error\_Buffer}}
-{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} error\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{_system_errors_8h_a5e157a94a82f4b152bca1a06993c38e0}{E\+R\+R\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}\mbox{]}}
+{\footnotesize\ttfamily S\+T\+A\+T\+IC \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} error\+\_\+\+Buffer\mbox{[}E\+R\+R\+O\+R\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE\mbox{]}}
 
 
 
@@ -76,7 +60,7 @@ Definition at line 12 of file Error\+Handler.\+c.
 \index{ErrorHandler.c@{ErrorHandler.c}!error\_buffer\_head@{error\_buffer\_head}}
 \index{error\_buffer\_head@{error\_buffer\_head}!ErrorHandler.c@{ErrorHandler.c}}
 \doxysubsubsection{\texorpdfstring{error\_buffer\_head}{error\_buffer\_head}}
-{\footnotesize\ttfamily \mbox{\hyperlink{std__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC}} \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} error\+\_\+buffer\+\_\+head = -\/1}
+{\footnotesize\ttfamily S\+T\+A\+T\+IC \mbox{\hyperlink{std__types_8h_a1f1825b69244eb3ad2c7165ddc99c956}{uint16\+\_\+t}} error\+\_\+buffer\+\_\+head = -\/1}
 
 
 

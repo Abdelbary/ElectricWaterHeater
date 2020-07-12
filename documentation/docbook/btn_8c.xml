@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_btn_8c">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/btn.c File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/BTN/btn.c</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="_btn_8c_1a4d8709c705e4850882d44e4b68681421">BTN_Init</link> (void)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link> (<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> *ep_BtnStatePtr, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> BtnId)</para>
+</listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="_btn_8c_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef"/>    <section>
+    <title>BTN_GetState()</title>
+<indexterm><primary>BTN_GetState</primary><secondary>btn.c</secondary></indexterm>
+<indexterm><primary>btn.c</primary><secondary>BTN_GetState</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> BTN_GetState (<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link> * ep_BtnStatePtr, <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> u8_BtnId)</computeroutput></para>
+<para><emphasis role="bold">Function prototype: ERROR_STATE <link linkend="_btn_8h_1abe04b6a91662822c158e165bcea18f0b">BTN_GetState(BtnStateType *ep_BtnStatePtr, uint8_t u8_BtnId)</link> </emphasis></para>
+
+<para><emphasis role="bold">Summary: get specified btn state </emphasis></para>
+
+<para><emphasis role="bold">Description: return the specified btn as an output paramter pointer</emphasis></para>
+
+<para><emphasis role="bold">Precondition:</emphasis> Module must be initalized through <link linkend="_btn_8h_1a4d8709c705e4850882d44e4b68681421">BTN_Init()</link> function</para>
+
+<para><emphasis role="bold">Parameters:</emphasis> BtnStateType *: pointer to an enum of type BtnStatetype uint8_t : btn group id in the DIO configeration struct</para>
+
+<para><emphasis role="bold">Returns:</emphasis> ERROR_STATE{OK,NOK} </para>
+
+<para><emphasis role="bold">Example:</emphasis> BTN_GetState(&amp;u8_on_off_btn_status,BTN0) </para>
+
+<para><computeroutput></computeroutput></para>
+
+<para><computeroutput></computeroutput> </para>
+
+<para>report error</para>
+
+<para>report error</para>
+<para>
+Definition at line <link linkend="_btn_8c_source_1l00029">29</link> of file <link linkend="_btn_8c_source">btn.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="btn_8c_a5aeeef57fe3d8638de39db5ed01efaef_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_btn_8c_1a4d8709c705e4850882d44e4b68681421"/>    <section>
+    <title>BTN_Init()</title>
+<indexterm><primary>BTN_Init</primary><secondary>btn.c</secondary></indexterm>
+<indexterm><primary>btn.c</primary><secondary>BTN_Init</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> BTN_Init (void )</computeroutput></para>
+<para><emphasis role="bold">Function prototype: void <link linkend="_btn_8h_1a4d8709c705e4850882d44e4b68681421">BTN_Init(void)</link> </emphasis></para>
+
+<para><emphasis role="bold">Summary: initalize btns </emphasis></para>
+
+<para><emphasis role="bold">Description: init configured btns to it&apos;s initial state as OFF</emphasis></para>
+
+<para><emphasis role="bold">Precondition:</emphasis> No preconditions required</para>
+
+<para><emphasis role="bold">Parameters:</emphasis> void </para>
+
+<para><emphasis role="bold">Returns:</emphasis> ERROR_STATE{OK,NOK} </para>
+
+<para><emphasis role="bold">Example:</emphasis> <link linkend="_btn_8h_1a4d8709c705e4850882d44e4b68681421">BTN_Init()</link></para>
+
+<para><computeroutput></computeroutput></para>
+
+<para><computeroutput></computeroutput></para>
+
+<para><emphasis role="bold">Remarks:</emphasis></para>
+<para>
+Definition at line <link linkend="_btn_8c_source_1l00007">7</link> of file <link linkend="_btn_8c_source">btn.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="btn_8c_a4d8709c705e4850882d44e4b68681421_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_btn_8c_1af9d0881c43b0ff77296a25abd27b5929"/>    <section>
+    <title>BTN_Manager()</title>
+<indexterm><primary>BTN_Manager</primary><secondary>btn.c</secondary></indexterm>
+<indexterm><primary>btn.c</primary><secondary>BTN_Manager</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> BTN_Manager (void )</computeroutput></para>
+<para><emphasis role="bold">Function prototype: ERROR_STATE <link linkend="_btn_8h_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager(void)</link> </emphasis></para>
+
+<para><emphasis role="bold">Summary: serves as the btn dispatcher </emphasis></para>
+
+<para><emphasis role="bold">Description: periodic function that update the state of each btn, recommended call time 50ms </emphasis></para>
+
+<para><emphasis role="bold">Precondition:</emphasis> Module must be initalized through <link linkend="_btn_8h_1a4d8709c705e4850882d44e4b68681421">BTN_Init()</link> function</para>
+
+<para><emphasis role="bold">Parameters:</emphasis> void </para>
+
+<para><emphasis role="bold">Returns:</emphasis> ERROR_STATE{OK,NOK} </para>
+
+<para><emphasis role="bold">Example:</emphasis> <link linkend="_btn_8h_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager()</link>;</para>
+
+<para><computeroutput></computeroutput></para>
+
+<para><computeroutput></computeroutput> </para>
+
+<para>report error</para>
+<para>
+Definition at line <link linkend="_btn_8c_source_1l00049">49</link> of file <link linkend="_btn_8c_source">btn.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="btn_8c_af9d0881c43b0ff77296a25abd27b5929_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

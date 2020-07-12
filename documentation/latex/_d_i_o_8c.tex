@@ -1,29 +1,5 @@
 \hypertarget{_d_i_o_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+M\+C\+A\+L/\+D\+I\+O/\+D\+IO.c File Reference}
 \label{_d_i_o_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.c}}
-{\ttfamily \#include \char`\"{}D\+I\+O.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}D\+I\+O\+\_\+\+Cfg.\+h\char`\"{}}\newline
-Include dependency graph for D\+I\+O.\+c\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=306pt]{_d_i_o_8c__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}{D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET}}~0x80
-\item 
-\#define \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}~0x05
-\item 
-\#define \mbox{\hyperlink{_d_i_o_8c_a93d43db8a4edb54eec662981d4096fac}{P\+O\+R\+T\+\_\+\+N\+UM}}~5
-\item 
-\#define \mbox{\hyperlink{_d_i_o_8c_a2a963fc98ee917de5e5a3a4126990ce4}{P\+I\+N\+\_\+\+R\+EG}}(P\+O\+R\+T\+\_\+\+ID)~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))
-\item 
-\#define \mbox{\hyperlink{_d_i_o_8c_a385e2325c189fd893c02fb4b2c75c97b}{P\+O\+R\+T\+\_\+\+R\+EG}}(P\+O\+R\+T\+\_\+\+ID)~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))
-\item 
-\#define \mbox{\hyperlink{_d_i_o_8c_a8819467696caf94ae442a7215fb68af6}{D\+D\+R\+\_\+\+R\+EG}}(P\+O\+R\+T\+\_\+\+ID)~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} + \mbox{\hyperlink{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}{D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET}}))
-\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,69 +13,6 @@ Include dependency graph for D\+I\+O.\+c\+:\nopagebreak
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{_d_i_o_8c_a8819467696caf94ae442a7215fb68af6}\label{_d_i_o_8c_a8819467696caf94ae442a7215fb68af6}} 
-\index{DIO.c@{DIO.c}!DDR\_REG@{DDR\_REG}}
-\index{DDR\_REG@{DDR\_REG}!DIO.c@{DIO.c}}
-\doxysubsubsection{\texorpdfstring{DDR\_REG}{DDR\_REG}}
-{\footnotesize\ttfamily \#define D\+D\+R\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{P\+O\+R\+T\+\_\+\+ID }\end{DoxyParamCaption})~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}} + \mbox{\hyperlink{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}{D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET}}))}
-
-
-
-Definition at line 16 of file D\+I\+O.\+c.
-
-\mbox{\Hypertarget{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}\label{_d_i_o_8c_a021354584c1164b442c0b82d7adf9cab}} 
-\index{DIO.c@{DIO.c}!DDR\_REG\_OFFSET@{DDR\_REG\_OFFSET}}
-\index{DDR\_REG\_OFFSET@{DDR\_REG\_OFFSET}!DIO.c@{DIO.c}}
-\doxysubsubsection{\texorpdfstring{DDR\_REG\_OFFSET}{DDR\_REG\_OFFSET}}
-{\footnotesize\ttfamily \#define D\+D\+R\+\_\+\+R\+E\+G\+\_\+\+O\+F\+F\+S\+ET~0x80}
-
-
-
-Definition at line 11 of file D\+I\+O.\+c.
-
-\mbox{\Hypertarget{_d_i_o_8c_a2a963fc98ee917de5e5a3a4126990ce4}\label{_d_i_o_8c_a2a963fc98ee917de5e5a3a4126990ce4}} 
-\index{DIO.c@{DIO.c}!PIN\_REG@{PIN\_REG}}
-\index{PIN\_REG@{PIN\_REG}!DIO.c@{DIO.c}}
-\doxysubsubsection{\texorpdfstring{PIN\_REG}{PIN\_REG}}
-{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{P\+O\+R\+T\+\_\+\+ID }\end{DoxyParamCaption})~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))}
-
-
-
-Definition at line 14 of file D\+I\+O.\+c.
-
-\mbox{\Hypertarget{_d_i_o_8c_a93d43db8a4edb54eec662981d4096fac}\label{_d_i_o_8c_a93d43db8a4edb54eec662981d4096fac}} 
-\index{DIO.c@{DIO.c}!PORT\_NUM@{PORT\_NUM}}
-\index{PORT\_NUM@{PORT\_NUM}!DIO.c@{DIO.c}}
-\doxysubsubsection{\texorpdfstring{PORT\_NUM}{PORT\_NUM}}
-{\footnotesize\ttfamily \#define P\+O\+R\+T\+\_\+\+N\+UM~5}
-
-
-
-Definition at line 13 of file D\+I\+O.\+c.
-
-\mbox{\Hypertarget{_d_i_o_8c_a385e2325c189fd893c02fb4b2c75c97b}\label{_d_i_o_8c_a385e2325c189fd893c02fb4b2c75c97b}} 
-\index{DIO.c@{DIO.c}!PORT\_REG@{PORT\_REG}}
-\index{PORT\_REG@{PORT\_REG}!DIO.c@{DIO.c}}
-\doxysubsubsection{\texorpdfstring{PORT\_REG}{PORT\_REG}}
-{\footnotesize\ttfamily \#define P\+O\+R\+T\+\_\+\+R\+EG(\begin{DoxyParamCaption}\item[{}]{P\+O\+R\+T\+\_\+\+ID }\end{DoxyParamCaption})~($\ast$(volatile \mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}$\ast$)(gscu8\+\_\+\+D\+I\+O\+\_\+\+Port\+Shift\mbox{[}P\+O\+R\+T\+\_\+\+ID\mbox{]} + \mbox{\hyperlink{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}{P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS}}))}
-
-
-
-Definition at line 15 of file D\+I\+O.\+c.
-
-\mbox{\Hypertarget{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}\label{_d_i_o_8c_a4571e970ec7b195fe93d4f168b75b4ad}} 
-\index{DIO.c@{DIO.c}!PORT\_SUBSYSTEM\_BASE\_ADDRESS@{PORT\_SUBSYSTEM\_BASE\_ADDRESS}}
-\index{PORT\_SUBSYSTEM\_BASE\_ADDRESS@{PORT\_SUBSYSTEM\_BASE\_ADDRESS}!DIO.c@{DIO.c}}
-\doxysubsubsection{\texorpdfstring{PORT\_SUBSYSTEM\_BASE\_ADDRESS}{PORT\_SUBSYSTEM\_BASE\_ADDRESS}}
-{\footnotesize\ttfamily \#define P\+O\+R\+T\+\_\+\+S\+U\+B\+S\+Y\+S\+T\+E\+M\+\_\+\+B\+A\+S\+E\+\_\+\+A\+D\+D\+R\+E\+SS~0x05}
-
-
-
-Definition at line 12 of file D\+I\+O.\+c.
-
-
-
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{_d_i_o_8c_afcc83c805035d83c6834e8fcfd83e2b1}\label{_d_i_o_8c_afcc83c805035d83c6834e8fcfd83e2b1}} 
 \index{DIO.c@{DIO.c}!DIO\_Init@{DIO\_Init}}
@@ -109,9 +22,9 @@ Definition at line 12 of file D\+I\+O.\+c.
 
 {\bfseries{Function prototype\+: void \mbox{\hyperlink{_d_i_o_8h_afcc83c805035d83c6834e8fcfd83e2b1}{D\+I\+O\+\_\+\+Init(void)}}}}
 
-{\bfseries{Summary\+: initalize all project pins for init values}}
+{\bfseries{Summary\+: initialized all project pins for init values}}
 
-{\bfseries{Description\+: loop through the array of pin confegration and configure each pin as specified}}
+{\bfseries{Description\+: loop through the array of pin configuration and configure each pin as specified}}
 
 {\bfseries{Precondition\+:}} No preconditions required
 
@@ -127,7 +40,7 @@ Definition at line 12 of file D\+I\+O.\+c.
 
 {\bfseries{Remarks\+:}}
 
-Definition at line 20 of file D\+I\+O.\+c.
+Definition at line 23 of file D\+I\+O.\+c.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -140,11 +53,32 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{DIO.c@{DIO.c}!DIO\_Read@{DIO\_Read}}
 \index{DIO\_Read@{DIO\_Read}!DIO.c@{DIO.c}}
 \doxysubsubsection{\texorpdfstring{DIO\_Read()}{DIO\_Read()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$}]{u8p\+\_\+\+Data\+Ptr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} $\ast$}]{Data\+Ptr }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} 
+
+This function is used to read the value of specified group\+\_\+id
+
+P\+R\+E-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+: Module must be initialized ~\newline
 
 
+P\+O\+S\+T-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+:
 
-Definition at line 50 of file D\+I\+O.\+c.
+\begin{DoxyReturn}{Returns}
+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\}.
+\end{DoxyReturn}
+{\bfseries{Example}} Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_d_i_o_8c_a1547f3be3586279bb415ce4e4c131df2}{DIO\_Read}}(3,\&retValue);}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+Dio\+\_\+\+Init 
+\end{DoxySeeAlso}
+
+
+Definition at line 135 of file D\+I\+O.\+c.
 
 \mbox{\Hypertarget{_d_i_o_8c_aeaaeb5ff489bac3f6da33bfa3e8e083f}\label{_d_i_o_8c_aeaaeb5ff489bac3f6da33bfa3e8e083f}} 
 \index{DIO.c@{DIO.c}!DIO\_Toggle@{DIO\_Toggle}}
@@ -152,21 +86,62 @@ Definition at line 50 of file D\+I\+O.\+c.
 \doxysubsubsection{\texorpdfstring{DIO\_Toggle()}{DIO\_Toggle()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id }\end{DoxyParamCaption})}
 
+{\bfseries{Description\+:}} 
+
+This function is used to flip the value of specified group\+\_\+id
+
+P\+R\+E-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+: Module must be initialized
+
+P\+O\+S\+T-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+:
+
+\begin{DoxyReturn}{Returns}
+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\}.
+\end{DoxyReturn}
+{\bfseries{Example}} Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_d_i_o_8c_aeaaeb5ff489bac3f6da33bfa3e8e083f}{DIO\_Toggle}}(3);}
+\end{DoxyCode}
 
 
-Definition at line 42 of file D\+I\+O.\+c.
+\begin{DoxySeeAlso}{See also}
+Dio\+\_\+\+Init 
+\end{DoxySeeAlso}
+
+
+Definition at line 100 of file D\+I\+O.\+c.
 
 \mbox{\Hypertarget{_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0}\label{_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0}} 
 \index{DIO.c@{DIO.c}!DIO\_Write@{DIO\_Write}}
 \index{DIO\_Write@{DIO\_Write}!DIO.c@{DIO.c}}
 \doxysubsubsection{\texorpdfstring{DIO\_Write()}{DIO\_Write()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{u8\+\_\+\+Data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} D\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Group\+Id,  }\item[{\mbox{\hyperlink{std__types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{Data }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} 
+
+This function write certain value to specified group configuration in the \mbox{\hyperlink{struct_dio_config_param__t}{Dio\+Config\+Param\+\_\+t}} struct
+
+P\+R\+E-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+: Module must be idle initialized,
+
+P\+O\+S\+T-\/\+C\+O\+N\+D\+I\+T\+I\+ON\+:
+
+\begin{DoxyReturn}{Returns}
+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE\{OK,N\+OK\}.
+\end{DoxyReturn}
+{\bfseries{Example}} Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0}{DIO\_Write}}(0,0x3D);}
+\end{DoxyCode}
 
 
+\begin{DoxySeeAlso}{See also}
+Dio\+\_\+\+Init 
+\end{DoxySeeAlso}
 
-Definition at line 33 of file D\+I\+O.\+c.
 
-Here is the caller graph for this function\+:\nopagebreak
+Definition at line 63 of file D\+I\+O.\+c.
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

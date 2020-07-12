@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_isr_8c_source">
+<title>isr.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ISR/isr.c</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_isr_8h">isr.h</link>&quot;</emphasis>
+00002 <emphasis role="preprocessor">#include&#32;&lt;xc.h&gt;</emphasis>
+00003 
+<anchor xml:id="_isr_8c_source_1l00004"/><link linkend="_isr_8c_1a824a8a19244111c9dc43fb448e235ce2">00004</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_isr_8c_1a824a8a19244111c9dc43fb448e235ce2">__interrupt</link>()&#32;MyISR(<emphasis role="keywordtype">void</emphasis>)&#32;{
+00005 
+00006 
+00007 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(TMR1IF&#32;==&#32;HIGH_BIT)&#32;{
+00008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_timer_8c_1a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</link>++;
+00009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1L&#32;=&#32;0x8E;
+00010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1H&#32;=&#32;0xFD;
+00011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1IF&#32;=&#32;LOW_BIT;
+00012 &#32;&#32;&#32;&#32;}
+00013 &#32;
+00014 }
+00015 
+<anchor xml:id="_isr_8c_source_1l00016"/><link linkend="_isr_8h_1a097b132f44acb3a9bbe5f60f62d339d2">00016</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_isr_8c_1a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</link>(<emphasis role="keywordtype">void</emphasis>)&#32;{
+00017 &#32;&#32;&#32;&#32;GIE&#32;=&#32;1;&#32;<emphasis role="comment">//Enable&#32;Global&#32;Interrupt</emphasis>
+00018 &#32;&#32;&#32;&#32;PEIE&#32;=&#32;1;&#32;<emphasis role="comment">//Enable&#32;the&#32;Peripheral&#32;Interrupt</emphasis>
+00019 &#32;&#32;&#32;&#32;ei();
+00020 
+00021 }
+</programlisting></section>

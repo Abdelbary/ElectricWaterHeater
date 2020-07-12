@@ -1,4 +1,6 @@
 <map id="SOS_run" name="SOS_run">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node2" href="$_s_o_s_8c.html#a33f0b757ea5b9df0fff7cdcef7178981" title=" " alt="" coords="128,5,241,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,80,57"/>
+<area shape="rect" id="node2" href="$_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="311,5,408,32"/>
+<area shape="rect" id="node3" href="$_s_o_s_8c.html#a33f0b757ea5b9df0fff7cdcef7178981" title=" " alt="" coords="139,31,252,57"/>
+<area shape="rect" id="node4" href="$timer_8c.html#ae8412a88f34f526095d643d829ace90f" title=" " alt="" coords="128,81,263,108"/>
 </map>

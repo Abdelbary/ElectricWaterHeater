@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_timer_8c_source">
+<title>timer.c</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/TIMER/timer.c</primary></indexterm>
+<programlisting>00001 <emphasis role="comment">/*</emphasis>
+00002 <emphasis role="comment">&#32;*&#32;File:&#32;&#32;&#32;timer.c</emphasis>
+00003 <emphasis role="comment">&#32;*&#32;Author:&#32;mahmo</emphasis>
+00004 <emphasis role="comment">&#32;*</emphasis>
+00005 <emphasis role="comment">&#32;*&#32;Created&#32;on&#32;July&#32;5,&#32;2020,&#32;11:57&#32;AM</emphasis>
+00006 <emphasis role="comment">&#32;*/</emphasis>
+00007 
+00008 
+00009 <emphasis role="preprocessor">#include&#32;&lt;xc.h&gt;</emphasis>
+00010 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_timer_8h">timer.h</link>&quot;</emphasis>
+00011 <emphasis role="preprocessor">#define&#32;TIMER1_MAX_TICKS&#32;&#32;(0xF63Bu)</emphasis>
+00012 <emphasis role="preprocessor">#define&#32;SYSTEM_TIMER_IDLE_STATE&#32;&#32;&#32;&#32;&#32;0</emphasis>
+00013 <emphasis role="preprocessor">#define&#32;SYSTEM_TIMER_INITALIZED&#32;&#32;&#32;&#32;&#32;1&#32;&#32;</emphasis>
+00014 
+00015 <emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;gu8_systemTimerModuleState&#32;=&#32;SYSTEM_TIMER_IDLE_STATE;&#32;&#32;&#32;&#32;
+<anchor xml:id="_timer_8c_source_1l00016"/><link linkend="_timer_8h_1a7dbe0e57fb9e7128432ea4e95440828d">00016</link> <emphasis role="keyword">volatile</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_timer_8c_1a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</link>;
+00017 
+00018 
+<anchor xml:id="_timer_8c_source_1l00019"/><link linkend="_timer_8h_1a146cd1e352ec285162684cf776df632c">00019</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_timer_8c_1a146cd1e352ec285162684cf776df632c">system_timer_init</link>(<emphasis role="keywordtype">void</emphasis>)
+00020 {&#32;&#32;&#32;&#32;
+00021 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00022 &#32;&#32;&#32;&#32;
+00023 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_systemTimerModuleState&#32;==&#32;SYSTEM_TIMER_INITALIZED)
+00024 &#32;&#32;&#32;&#32;{
+00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;&#32;
+00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(TIMER_MODULE_ERROR_NUM+MULTIPLE_INITALIZATION);
+00027 &#32;&#32;&#32;&#32;}
+00028 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00029 &#32;&#32;&#32;&#32;{
+00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1IE=1&#32;;
+00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;PEIE=1&#32;;
+00032 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;GIE=1&#32;;
+00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1=0&#32;;
+00034 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1CS=0&#32;;
+00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T1CKPS0&#32;=&#32;1&#32;;
+00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T1CKPS1=&#32;1&#32;;
+00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_timer_8c_1a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</link>&#32;=&#32;0;
+00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_systemTimerModuleState&#32;=&#32;SYSTEM_TIMER_INITALIZED;
+00039 &#32;&#32;&#32;&#32;}
+00040 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;e_funStatus;
+00041 }
+00042 
+<anchor xml:id="_timer_8c_source_1l00043"/><link linkend="_timer_8h_1ae8412a88f34f526095d643d829ace90f">00043</link> <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_timer_8c_1ae8412a88f34f526095d643d829ace90f">start_system_timer</link>(<emphasis role="keywordtype">void</emphasis>)
+00044 {
+00045 &#32;&#32;&#32;&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</link>;
+00046 &#32;&#32;&#32;&#32;
+00047 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_systemTimerModuleState&#32;==&#32;SYSTEM_TIMER_INITALIZED)
+00048 &#32;&#32;&#32;&#32;{
+00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e_funStatus&#32;=&#32;<link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</link>;&#32;
+00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__error_handler_8c_1ac5764457ee31a7415fc6936d103cb80b">error_handler</link>(TIMER_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+00051 &#32;&#32;&#32;&#32;}
+00052 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00053 &#32;&#32;&#32;&#32;{
+00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1L&#32;=&#32;0x8E;
+00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1H&#32;=&#32;0xFD;
+00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TMR1ON&#32;=&#32;1&#32;;&#32;&#32;&#32;&#32;
+00057 &#32;&#32;&#32;&#32;}
+00058 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;e_funStatus;
+00059 }
+</programlisting></section>

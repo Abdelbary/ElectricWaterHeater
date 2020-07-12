@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_7seg_8h_source">
+<title>7seg.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/7SEG/7seg.h</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#ifndef&#32;SEVEN_SEG_H</emphasis>
+00002 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_H</emphasis>
+00003 
+00004 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/std_types.h&quot;</emphasis>
+00005 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/Config.h&quot;</emphasis>
+00006 <emphasis role="preprocessor">#include&#32;&quot;../../MCAL/DIO/DIO.h&quot;</emphasis>
+00007 
+00008 
+00009 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_ONE&#32;&#32;&#32;0</emphasis>
+00010 <emphasis role="preprocessor">#define&#32;SEVEN_SEG_TWO&#32;&#32;&#32;1</emphasis>
+<anchor xml:id="_7seg_8h_source_1l00011"/><link linkend="_structseven_seg_config_struct">00011</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>
+00012 {
+<anchor xml:id="_7seg_8h_source_1l00013"/><link linkend="_structseven_seg_config_struct_1a8d9dab3753d227caeab9e12c80554e45">00013</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_structseven_seg_config_struct_1a8d9dab3753d227caeab9e12c80554e45">u8_selectorPinGroupId</link>;
+<anchor xml:id="_7seg_8h_source_1l00014"/><link linkend="_structseven_seg_config_struct_1af4cb17826bcd9cde6889877f47281407">00014</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_structseven_seg_config_struct_1af4cb17826bcd9cde6889877f47281407">u8_sevenSegGroupId</link>;
+00015 }<link linkend="_structseven_seg_config_struct">sevenSegConfigStruct</link>;
+00016 
+00017 
+00018 <emphasis role="comment">//&#32;Comment&#32;a&#32;function&#32;and&#32;leverage&#32;automatic&#32;documentation&#32;with&#32;slash&#32;star&#32;star</emphasis>
+00039 <emphasis role="comment"></emphasis><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_7seg_8h_1a60579fecccc40e10b8ecca856466d540">sevenSegInit</link>(<emphasis role="keywordtype">void</emphasis>);
+00040 
+00041 <emphasis role="comment">//&#32;Comment&#32;a&#32;function&#32;and&#32;leverage&#32;automatic&#32;documentation&#32;with&#32;slash&#32;star&#32;star</emphasis>
+00062 <emphasis role="comment"></emphasis><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_7seg_8h_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_value,<emphasis role="keyword">const</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_SSD_selector);
+00063 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="_7seg_8h_1a48b828fc607ed48b54488f8cb46696f8">disableSevenSeg</link>(<emphasis role="keywordtype">void</emphasis>);
+00064 
+00065 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

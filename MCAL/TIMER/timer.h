@@ -33,10 +33,26 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include "../../ServiceLayer/std_types.h"
-
+#include "../../ServiceLayer/Error_Handler/SystemErrors.h"
 extern volatile uint8_t gu8_timer_ticks;
+/**
+*\b Description: system_timer_init  system timer
+*				
+* 
+* @param[in]   void
+* 
+* @return: ERROR_STATUS [OK,NOK]
+*/
+ERROR_STATE system_timer_init(void);
 
-void timer_init(void);
-void start_timer(void);
+/**
+*\b Description: start_system_timer start system timer
+*				
+* 
+* @param[in]   void
+* 
+* @return: ERROR_STATUS [OK,NOK]
+*/
+ERROR_STATE start_system_timer(void);
 #endif	/* XC_HEADER_TEMPLATE_H */
 

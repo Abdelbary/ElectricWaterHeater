@@ -14,6 +14,7 @@
 #define DIO_MODULE_ERROR_NUM            -100
 #define SEVENSEG_MOUDLE_ERROR_NUM       -200
 #define ADC_MODULE_ERROR_NUM            -300
+#define TIMER_MODULE_ERROR_NUM          -400
 #define	MODULE_NOT_INITALIZED			-2
 #define	MULTIPLE_INITALIZATION			-3
 #define	STOP_WITHOUT_START				-4
@@ -29,7 +30,15 @@
 
 typedef enum {OK=0,NOK=-1}ERROR_STATE;
 
-
+/**
+*\b Description: error_handler save error id to error buffer
+*				
+* 
+* @param[in]   error_ID  [MODULE ERROR + ERROR_TYPE]
+* 
+* @return: void
+* 
+*/
 void error_handler(sint16_t error_ID);
 
 #endif /* SYSTEMERRORS_H_ */

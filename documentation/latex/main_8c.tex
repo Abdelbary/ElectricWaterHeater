@@ -1,43 +1,5 @@
 \hypertarget{main_8c}{}\doxysection{F\+:/\+Carier/\+Embedded/\+P\+I\+C/\+Electrical\+Water\+Heater/\+Application/main.c File Reference}
 \label{main_8c}\index{F:/Carier/Embedded/PIC/ElectricalWaterHeater/Application/main.c@{F:/Carier/Embedded/PIC/ElectricalWaterHeater/Application/main.c}}
-{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+Registers.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+Service\+Layer/std\+\_\+types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+Service\+Layer/\+Config.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+H\+A\+L/7\+S\+E\+G/7seg.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+D\+I\+O/\+D\+I\+O.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+H\+A\+L/7\+S\+E\+G/unit\+Test/7seg\+\_\+test.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+H\+A\+L/\+B\+T\+N/unit test/btn\+\_\+test.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+H\+A\+L/\+B\+T\+N/btn.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+H\+A\+L/eeprom\+\_\+ext/eeprom\+\_\+ext.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+A\+D\+C/adc.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+I\+S\+R/isr.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+M\+C\+A\+L/\+T\+I\+M\+E\+R/timer.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../\+Service\+Layer/\+S\+O\+S/\+S\+O\+S.\+h\char`\"{}}\newline
-{\ttfamily \#include $<$xc.\+h$>$}\newline
-Include dependency graph for main.\+c\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{main_8c__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{main_8c_a2b3671e090b0831bfba7d12cfcf2d481}{L\+E\+D\+P\+IN}}~0
-\item 
-\#define \mbox{\hyperlink{main_8c_a6b7df4043e1413150b5b151637df70fd}{O\+N\+\_\+\+O\+F\+F\+\_\+\+B\+TN}}~0
-\item 
-\#define \mbox{\hyperlink{main_8c_a2a8461454ac6747c1ebdd30f3ffc1851}{U\+P\+\_\+\+B\+TN}}~1
-\item 
-\#define \mbox{\hyperlink{main_8c_abcd7e0ec0066ae19628c726fd47ecbe2}{D\+O\+W\+N\+\_\+\+B\+TN}}~2
-\item 
-\#define \mbox{\hyperlink{main_8c_a9435522a8da2a4c941013971ce83b553}{U\+S\+E\+D\+\_\+\+P\+A\+T\+T\+E\+RN}}~(0x3D)
-\item 
-\#define \mbox{\hyperlink{main_8c_a56eb5efdeca4cd6cdecc9c518dd867d2}{T\+E\+M\+P\+\_\+\+V\+L\+A\+U\+ES}}~10
-\item 
-\#define \mbox{\hyperlink{main_8c_a8e9b7c13dca2d5b64ae1ae4d65472f69}{S\+S\+D\+\_\+\+F\+L\+A\+S\+H\+I\+N\+G\+\_\+\+C\+Y\+C\+LE}}~20
-\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -64,79 +26,6 @@ void \mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{main_8c_abcd7e0ec0066ae19628c726fd47ecbe2}\label{main_8c_abcd7e0ec0066ae19628c726fd47ecbe2}} 
-\index{main.c@{main.c}!DOWN\_BTN@{DOWN\_BTN}}
-\index{DOWN\_BTN@{DOWN\_BTN}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{DOWN\_BTN}{DOWN\_BTN}}
-{\footnotesize\ttfamily \#define D\+O\+W\+N\+\_\+\+B\+TN~2}
-
-
-
-Definition at line 27 of file main.\+c.
-
-\mbox{\Hypertarget{main_8c_a2b3671e090b0831bfba7d12cfcf2d481}\label{main_8c_a2b3671e090b0831bfba7d12cfcf2d481}} 
-\index{main.c@{main.c}!LEDPIN@{LEDPIN}}
-\index{LEDPIN@{LEDPIN}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{LEDPIN}{LEDPIN}}
-{\footnotesize\ttfamily \#define L\+E\+D\+P\+IN~0}
-
-
-
-Definition at line 24 of file main.\+c.
-
-\mbox{\Hypertarget{main_8c_a6b7df4043e1413150b5b151637df70fd}\label{main_8c_a6b7df4043e1413150b5b151637df70fd}} 
-\index{main.c@{main.c}!ON\_OFF\_BTN@{ON\_OFF\_BTN}}
-\index{ON\_OFF\_BTN@{ON\_OFF\_BTN}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{ON\_OFF\_BTN}{ON\_OFF\_BTN}}
-{\footnotesize\ttfamily \#define O\+N\+\_\+\+O\+F\+F\+\_\+\+B\+TN~0}
-
-
-
-Definition at line 25 of file main.\+c.
-
-\mbox{\Hypertarget{main_8c_a8e9b7c13dca2d5b64ae1ae4d65472f69}\label{main_8c_a8e9b7c13dca2d5b64ae1ae4d65472f69}} 
-\index{main.c@{main.c}!SSD\_FLASHING\_CYCLE@{SSD\_FLASHING\_CYCLE}}
-\index{SSD\_FLASHING\_CYCLE@{SSD\_FLASHING\_CYCLE}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{SSD\_FLASHING\_CYCLE}{SSD\_FLASHING\_CYCLE}}
-{\footnotesize\ttfamily \#define S\+S\+D\+\_\+\+F\+L\+A\+S\+H\+I\+N\+G\+\_\+\+C\+Y\+C\+LE~20}
-
-
-
-Definition at line 30 of file main.\+c.
-
-\mbox{\Hypertarget{main_8c_a56eb5efdeca4cd6cdecc9c518dd867d2}\label{main_8c_a56eb5efdeca4cd6cdecc9c518dd867d2}} 
-\index{main.c@{main.c}!TEMP\_VLAUES@{TEMP\_VLAUES}}
-\index{TEMP\_VLAUES@{TEMP\_VLAUES}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{TEMP\_VLAUES}{TEMP\_VLAUES}}
-{\footnotesize\ttfamily \#define T\+E\+M\+P\+\_\+\+V\+L\+A\+U\+ES~10}
-
-
-
-Definition at line 29 of file main.\+c.
-
-\mbox{\Hypertarget{main_8c_a2a8461454ac6747c1ebdd30f3ffc1851}\label{main_8c_a2a8461454ac6747c1ebdd30f3ffc1851}} 
-\index{main.c@{main.c}!UP\_BTN@{UP\_BTN}}
-\index{UP\_BTN@{UP\_BTN}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{UP\_BTN}{UP\_BTN}}
-{\footnotesize\ttfamily \#define U\+P\+\_\+\+B\+TN~1}
-
-
-
-Definition at line 26 of file main.\+c.
-
-\mbox{\Hypertarget{main_8c_a9435522a8da2a4c941013971ce83b553}\label{main_8c_a9435522a8da2a4c941013971ce83b553}} 
-\index{main.c@{main.c}!USED\_PATTERN@{USED\_PATTERN}}
-\index{USED\_PATTERN@{USED\_PATTERN}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{USED\_PATTERN}{USED\_PATTERN}}
-{\footnotesize\ttfamily \#define U\+S\+E\+D\+\_\+\+P\+A\+T\+T\+E\+RN~(0x3D)}
-
-
-
-Definition at line 28 of file main.\+c.
-
-
-
 \doxysubsection{Enumeration Type Documentation}
 \mbox{\Hypertarget{main_8c_ac5cc1393a3907945816f4b7e09049732}\label{main_8c_ac5cc1393a3907945816f4b7e09049732}} 
 \index{main.c@{main.c}!operationMode\_t@{operationMode\_t}}
@@ -156,7 +45,7 @@ N\+O\+R\+M\+\_\+\+M\+O\+DE&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 31 of file main.\+c.
+Definition at line 34 of file main.\+c.
 
 
 
@@ -169,7 +58,13 @@ Definition at line 31 of file main.\+c.
 
 init temp control element to zero
 
-Definition at line 236 of file main.\+c.
+call M\+C\+AL functions from application as it is necessary to initialize the heater/cooler and led and there is no module implemented for them case their functionality are very simple and don\textquotesingle{}t need to be structured necessary overhead\+\_\+
+
+this block of code used to set the temp to 60 in the first run this can be simplified by checking for 0xff pattern but this is work for now
+
+set initial values for global variables
+
+Definition at line 306 of file main.\+c.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -192,9 +87,15 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{buttonTask()}{buttonTask()}}
 {\footnotesize\ttfamily void button\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+if on/off button pressed rise disable system flag we check on this flag on the main loop and disable the system if the flag is up
 
+functionality of the button depend on the current system mode \{N\+O\+R\+M\+\_\+\+M\+O\+DE,T\+E\+M\+P\+\_\+\+S\+E\+T\+\_\+\+M\+O\+DE\} in normal mode\+: if the up or down buttons pressed get temp from the external e2\+Prom change mode to T\+E\+M\+P\+\_\+\+S\+E\+T\+\_\+\+M\+I\+DE in T\+E\+M\+P\+\_\+\+S\+E\+T\+\_\+\+M\+O\+DE\+: if up or down buttons pressed change temp by 5 with max 75 and min 35 degree
 
-Definition at line 112 of file main.\+c.
+if time out counter reached time out counts {\itshape button task called every 50ms so we need 50000/50 = 100 enterance befor change the state to normal state}
+
+load setted value to e2prom set temp for temp control task fire temp control task flag reset timeout counter change state to normal state
+
+Definition at line 135 of file main.\+c.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -218,7 +119,7 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-Definition at line 271 of file main.\+c.
+Definition at line 353 of file main.\+c.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -233,9 +134,13 @@ Here is the call graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily void main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+task priority is set by thier order of call not thier priority number as the priority feature is off from the small os.
 
+if the on off btn is pressed and the system is on disable system disable system by call init function of the system
 
-Definition at line 282 of file main.\+c.
+halt system and only check for the on btn
+
+Definition at line 369 of file main.\+c.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -251,9 +156,12 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{sevenSegTask()}{sevenSegTask()}}
 {\footnotesize\ttfamily void seven\+Seg\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+two modes for lcd \{N\+O\+R\+M\+AL M\+O\+DE , T\+E\+MP S\+ET M\+O\+DE\} if N\+O\+R\+M\+A\+L\+\_\+\+M\+O\+DE\+: display current temp to the S\+SD else\+: blink S\+SD every 1 sec display the stored temp in E\+X\+T\+\_\+\+E\+E\+P\+R\+OM update temp based on user input up-\/down ~\newline
 
 
-Definition at line 171 of file main.\+c.
+control the ssd on/off time as 1 sec for each
+
+Definition at line 223 of file main.\+c.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -268,11 +176,19 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tempControlTask()}{tempControlTask()}}
 {\footnotesize\ttfamily void temp\+Control\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-turn on the heater
+if the desired temp have been set get average temp from last 10 readings control the cooler/heater element based on themp
+
+display the average of the avaliable readins before getting ten readings the average = average of the last x reading where x is $<$=10
+
+if both heater and cooler off if temp blow critical turn on heater else {\itshape temp above critical} turn on cooler else if heater on and temp above critical turn heater off and turn cooler on and turn led on else if cooler on and temp below critical turn cooler off and turn heater on
 
 turn on the heater
 
-Definition at line 44 of file main.\+c.
+turn on the cooler
+
+if the heater on toggle the led state every 1000 ms we enter the function every 100ms so the counter count to 10 times befor toggle
+
+Definition at line 46 of file main.\+c.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -287,9 +203,9 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{tempTask()}{tempTask()}}
 {\footnotesize\ttfamily void temp\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+trigger A\+DC on specific chanal get temp from adc value set adc value in it\textquotesingle{}s pos in temp array
 
-
-Definition at line 221 of file main.\+c.
+Definition at line 283 of file main.\+c.
 
 Here is the call graph for this function\+:
 \nopagebreak

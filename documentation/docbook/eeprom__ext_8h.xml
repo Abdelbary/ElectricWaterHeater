@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_eeprom__ext_8h">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/eeprom_ext/eeprom_ext.h File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/HAL/eeprom_ext/eeprom_ext.h</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>unsigned char <link linkend="_eeprom__ext_8h_1a68ff2caae3c67d6e12b84a0f1164dd6a">e2pext_r</link> (unsigned int addr)</para>
+</listitem>
+            <listitem><para>void <link linkend="_eeprom__ext_8h_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link> (unsigned int addr, unsigned char val)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_eeprom__ext_8h_1a68ff2caae3c67d6e12b84a0f1164dd6a"/>    <section>
+    <title>e2pext_r()</title>
+<indexterm><primary>e2pext_r</primary><secondary>eeprom_ext.h</secondary></indexterm>
+<indexterm><primary>eeprom_ext.h</primary><secondary>e2pext_r</secondary></indexterm>
+<para><computeroutput>unsigned char e2pext_r (unsigned int addr)</computeroutput></para><para>
+Definition at line <link linkend="_eeprom__ext_8c_source_1l00029">29</link> of file <link linkend="_eeprom__ext_8c_source">eeprom_ext.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="eeprom__ext_8h_a68ff2caae3c67d6e12b84a0f1164dd6a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="eeprom__ext_8h_a68ff2caae3c67d6e12b84a0f1164dd6a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_eeprom__ext_8h_1a3b6e76a761d4f025a99416f03ef098ed"/>    <section>
+    <title>e2pext_w()</title>
+<indexterm><primary>e2pext_w</primary><secondary>eeprom_ext.h</secondary></indexterm>
+<indexterm><primary>eeprom_ext.h</primary><secondary>e2pext_w</secondary></indexterm>
+<para><computeroutput>void e2pext_w (unsigned int addr, unsigned char val)</computeroutput></para><para>
+Definition at line <link linkend="_eeprom__ext_8c_source_1l00065">65</link> of file <link linkend="_eeprom__ext_8c_source">eeprom_ext.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="eeprom__ext_8h_a3b6e76a761d4f025a99416f03ef098ed_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

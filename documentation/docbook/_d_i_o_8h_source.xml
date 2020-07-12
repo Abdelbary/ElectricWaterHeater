@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__d_i_o_8h_source">
+<title>DIO.h</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/DIO/DIO.h</primary></indexterm>
+<programlisting>00001 <emphasis role="preprocessor">#ifndef&#32;DIO_H</emphasis>
+00002 <emphasis role="preprocessor">#define&#32;DIO_H</emphasis>
+00003 
+00004 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/std_types.h&quot;</emphasis>
+00005 <emphasis role="preprocessor">#include&#32;&quot;../../ServiceLayer/Config.h&quot;</emphasis>
+00006 
+00007 <emphasis role="comment">//define&#32;ports</emphasis>
+00008 <emphasis role="preprocessor">#define&#32;PORT_A&#32;0x00</emphasis>
+00009 <emphasis role="preprocessor">#define&#32;PORT_B&#32;0x01</emphasis>
+00010 <emphasis role="preprocessor">#define&#32;PORT_C&#32;0x02</emphasis>
+00011 <emphasis role="preprocessor">#define&#32;PORT_D&#32;0x03</emphasis>
+00012 <emphasis role="preprocessor">#define&#32;PORT_E&#32;0x04</emphasis>
+00013 
+00014 
+00015 <emphasis role="comment">//define&#32;PINS&#32;for&#32;mask&#32;value</emphasis>
+00016 <emphasis role="preprocessor">#define&#32;PIN0&#32;0x01</emphasis>
+00017 <emphasis role="preprocessor">#define&#32;PIN1&#32;0x02</emphasis>
+00018 <emphasis role="preprocessor">#define&#32;PIN2&#32;0x04</emphasis>
+00019 <emphasis role="preprocessor">#define&#32;PIN3&#32;0x08</emphasis>
+00020 <emphasis role="preprocessor">#define&#32;PIN4&#32;0x10</emphasis>
+00021 <emphasis role="preprocessor">#define&#32;PIN5&#32;0x20</emphasis>
+00022 <emphasis role="preprocessor">#define&#32;PIN6&#32;0x40</emphasis>
+00023 <emphasis role="preprocessor">#define&#32;PIN7&#32;0x80</emphasis>
+00024 
+00025 
+00026 
+00027 
+00028 
+<anchor xml:id="__d_i_o_8h_source_1l00029"/><link linkend="_struct_dio_config_param__t">00029</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>
+00030 {
+<anchor xml:id="__d_i_o_8h_source_1l00031"/><link linkend="_struct_dio_config_param__t_1aed3312c9112c015b6add5d3b873327be">00031</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_dio_config_param__t_1aed3312c9112c015b6add5d3b873327be">Mask</link>;&#32;<emphasis role="comment">//enable&#32;us&#32;to&#32;configure&#32;each&#32;pin&#32;saperatly&#32;</emphasis>
+<anchor xml:id="__d_i_o_8h_source_1l00032"/><link linkend="_struct_dio_config_param__t_1a9e1bb624e0fcb988d3f016b24874947d">00032</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_dio_config_param__t_1a9e1bb624e0fcb988d3f016b24874947d">Port</link>;
+<anchor xml:id="__d_i_o_8h_source_1l00033"/><link linkend="_struct_dio_config_param__t_1a87efacb0fe009c24ac98e53fd4be49b6">00033</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_dio_config_param__t_1a87efacb0fe009c24ac98e53fd4be49b6">Direction</link>;
+<anchor xml:id="__d_i_o_8h_source_1l00034"/><link linkend="_struct_dio_config_param__t_1a9ad3615d26487f0f4698dbeb54a9ae78">00034</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_dio_config_param__t_1a9ad3615d26487f0f4698dbeb54a9ae78">UsePullUp</link>;
+00035 }<link linkend="_struct_dio_config_param__t">DioConfigParam_t</link>;
+00036 
+00037 
+00038 <emphasis role="comment">//&#32;Comment&#32;a&#32;function&#32;and&#32;leverage&#32;automatic&#32;documentation&#32;with&#32;slash&#32;star&#32;star</emphasis>
+00060 <emphasis role="comment"></emphasis><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__d_i_o_8h_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</link>(<emphasis role="keywordtype">void</emphasis>);
+00061 
+00062 
+00063 <emphasis role="comment">/**********************************************************************</emphasis>
+00064 <emphasis role="comment">*&#32;Function&#32;:&#32;DIO_Write()</emphasis>
+00065 <emphasis role="comment">*/</emphasis>
+00087 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__d_i_o_8h_1a3cbe9e47e1f77b43f455b35221392ade">DIO_Write</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;GroupId,&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;Data);
+00088 
+00089 
+00090 <emphasis role="comment">/**********************************************************************</emphasis>
+00091 <emphasis role="comment">*&#32;Function&#32;:&#32;DIO_Toggle()</emphasis>
+00092 <emphasis role="comment">*/</emphasis>
+00113 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__d_i_o_8h_1aeaaeb5ff489bac3f6da33bfa3e8e083f">DIO_Toggle</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_GroupId);
+00114 
+00115 <emphasis role="comment">/**********************************************************************</emphasis>
+00116 <emphasis role="comment">*&#32;Function&#32;:&#32;DIO_Read()</emphasis>
+00117 <emphasis role="comment">*/</emphasis>
+00138 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__d_i_o_8h_1ab97b3d3cdad467aa77fc700d44055442">DIO_Read</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;GroupId,&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;*&#32;DataPtr);
+00139 
+00140 
+00141 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

@@ -1,4 +1,4 @@
 var _d_i_o___cfg_8c =
 [
-    [ "DIO_ConfigParam", "_d_i_o___cfg_8c.html#a1bbcfeadb26cbf090722fef8daa54535", null ]
+    [ "gstr_DIO_ConfigParam", "_d_i_o___cfg_8c.html#aeeda07a611e9eac80ed621e98ee8e151", null ]
 ];

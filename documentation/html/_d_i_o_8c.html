@@ -84,47 +84,14 @@ $(document).ready(function(){initNavTree('_d_i_o_8c.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">DIO.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_d_i_o_8h_source.html">DIO.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_d_i_o___cfg_8h_source.html">DIO_Cfg.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for DIO.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="_d_i_o_8c__incl.png" border="0" usemap="#_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_d_i_o_2_d_i_o_8c" alt=""/></div>
-<map name="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_d_i_o_2_d_i_o_8c" id="_f_1_2_carier_2_embedded_2_p_i_c_2_electrical_water_heater_2_m_c_a_l_2_d_i_o_2_d_i_o_8c">
-<area shape="rect" title=" " alt="" coords="5,5,184,61"/>
-<area shape="rect" href="_d_i_o_8h.html" title=" " alt="" coords="22,109,77,136"/>
-<area shape="rect" href="_d_i_o___cfg_8h.html" title=" " alt="" coords="101,109,182,136"/>
-<area shape="rect" href="std__types_8h.html" title=" " alt="" coords="51,348,171,389"/>
-<area shape="rect" href="_config_8h.html" title=" " alt="" coords="39,184,159,225"/>
-<area shape="rect" href="common__macros_8h.html" title=" " alt="" coords="92,437,225,464"/>
-<area shape="rect" title=" " alt="" coords="39,273,86,300"/>
-<area shape="rect" href="_system_errors_8h.html" title=" " alt="" coords="110,273,306,300"/>
-</map>
-</div>
-</div>
+
 <p><a href="_d_i_o_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a021354584c1164b442c0b82d7adf9cab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#a021354584c1164b442c0b82d7adf9cab">DDR_REG_OFFSET</a>&#160;&#160;&#160;0x80</td></tr>
-<tr class="separator:a021354584c1164b442c0b82d7adf9cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4571e970ec7b195fe93d4f168b75b4ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#a4571e970ec7b195fe93d4f168b75b4ad">PORT_SUBSYSTEM_BASE_ADDRESS</a>&#160;&#160;&#160;0x05</td></tr>
-<tr class="separator:a4571e970ec7b195fe93d4f168b75b4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93d43db8a4edb54eec662981d4096fac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#a93d43db8a4edb54eec662981d4096fac">PORT_NUM</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:a93d43db8a4edb54eec662981d4096fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a963fc98ee917de5e5a3a4126990ce4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#a2a963fc98ee917de5e5a3a4126990ce4">PIN_REG</a>(PORT_ID)&#160;&#160;&#160;(*(volatile <a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(gscu8_DIO_PortShift[PORT_ID] + <a class="el" href="_d_i_o_8c.html#a4571e970ec7b195fe93d4f168b75b4ad">PORT_SUBSYSTEM_BASE_ADDRESS</a>))</td></tr>
-<tr class="separator:a2a963fc98ee917de5e5a3a4126990ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385e2325c189fd893c02fb4b2c75c97b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#a385e2325c189fd893c02fb4b2c75c97b">PORT_REG</a>(PORT_ID)&#160;&#160;&#160;(*(volatile <a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(gscu8_DIO_PortShift[PORT_ID] + <a class="el" href="_d_i_o_8c.html#a4571e970ec7b195fe93d4f168b75b4ad">PORT_SUBSYSTEM_BASE_ADDRESS</a>))</td></tr>
-<tr class="separator:a385e2325c189fd893c02fb4b2c75c97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8819467696caf94ae442a7215fb68af6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#a8819467696caf94ae442a7215fb68af6">DDR_REG</a>(PORT_ID)&#160;&#160;&#160;(*(volatile <a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(gscu8_DIO_PortShift[PORT_ID] + <a class="el" href="_d_i_o_8c.html#a4571e970ec7b195fe93d4f168b75b4ad">PORT_SUBSYSTEM_BASE_ADDRESS</a> + <a class="el" href="_d_i_o_8c.html#a021354584c1164b442c0b82d7adf9cab">DDR_REG_OFFSET</a>))</td></tr>
-<tr class="separator:a8819467696caf94ae442a7215fb68af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afcc83c805035d83c6834e8fcfd83e2b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</a> (void)</td></tr>
@@ -136,115 +103,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a1547f3be3586279bb415ce4e4c131df2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_i_o_8c.html#a1547f3be3586279bb415ce4e4c131df2">DIO_Read</a> (<a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> u8_GroupId, <a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *u8p_DataPtr)</td></tr>
 <tr class="separator:a1547f3be3586279bb415ce4e4c131df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a8819467696caf94ae442a7215fb68af6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8819467696caf94ae442a7215fb68af6">&#9670;&nbsp;</a></span>DDR_REG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DDR_REG</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">PORT_ID</td><td>)</td>
-          <td>&#160;&#160;&#160;(*(volatile <a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(gscu8_DIO_PortShift[PORT_ID] + <a class="el" href="_d_i_o_8c.html#a4571e970ec7b195fe93d4f168b75b4ad">PORT_SUBSYSTEM_BASE_ADDRESS</a> + <a class="el" href="_d_i_o_8c.html#a021354584c1164b442c0b82d7adf9cab">DDR_REG_OFFSET</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00016">16</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
-
-</div>
-</div>
-<a id="a021354584c1164b442c0b82d7adf9cab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a021354584c1164b442c0b82d7adf9cab">&#9670;&nbsp;</a></span>DDR_REG_OFFSET</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DDR_REG_OFFSET&#160;&#160;&#160;0x80</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00011">11</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
-
-</div>
-</div>
-<a id="a2a963fc98ee917de5e5a3a4126990ce4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a963fc98ee917de5e5a3a4126990ce4">&#9670;&nbsp;</a></span>PIN_REG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PIN_REG</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">PORT_ID</td><td>)</td>
-          <td>&#160;&#160;&#160;(*(volatile <a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(gscu8_DIO_PortShift[PORT_ID] + <a class="el" href="_d_i_o_8c.html#a4571e970ec7b195fe93d4f168b75b4ad">PORT_SUBSYSTEM_BASE_ADDRESS</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00014">14</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
-
-</div>
-</div>
-<a id="a93d43db8a4edb54eec662981d4096fac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93d43db8a4edb54eec662981d4096fac">&#9670;&nbsp;</a></span>PORT_NUM</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PORT_NUM&#160;&#160;&#160;5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00013">13</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
-
-</div>
-</div>
-<a id="a385e2325c189fd893c02fb4b2c75c97b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a385e2325c189fd893c02fb4b2c75c97b">&#9670;&nbsp;</a></span>PORT_REG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PORT_REG</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">PORT_ID</td><td>)</td>
-          <td>&#160;&#160;&#160;(*(volatile <a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>*)(gscu8_DIO_PortShift[PORT_ID] + <a class="el" href="_d_i_o_8c.html#a4571e970ec7b195fe93d4f168b75b4ad">PORT_SUBSYSTEM_BASE_ADDRESS</a>))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00015">15</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
-
-</div>
-</div>
-<a id="a4571e970ec7b195fe93d4f168b75b4ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4571e970ec7b195fe93d4f168b75b4ad">&#9670;&nbsp;</a></span>PORT_SUBSYSTEM_BASE_ADDRESS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PORT_SUBSYSTEM_BASE_ADDRESS&#160;&#160;&#160;0x05</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00012">12</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="afcc83c805035d83c6834e8fcfd83e2b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcc83c805035d83c6834e8fcfd83e2b1">&#9670;&nbsp;</a></span>DIO_Init()</h2>
@@ -262,8 +120,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p><b>Function prototype: void <a class="el" href="_d_i_o_8h.html#afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init(void)</a></b></p>
-<p><b>Summary: initalize all project pins for init values</b></p>
-<p><b>Description: loop through the array of pin confegration and configure each pin as specified</b></p>
+<p><b>Summary: initialized all project pins for init values</b></p>
+<p><b>Description: loop through the array of pin configuration and configure each pin as specified</b></p>
 <p><b>Precondition:</b> No preconditions required</p>
 <p><b>Parameters:</b> void </p>
 <p><b>Returns:</b> void </p>
@@ -272,7 +130,7 @@ Functions</h2></td></tr>
 <p><code></code></p>
 <p><b>Remarks:</b></p>
 
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00020">20</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00023">23</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -299,13 +157,13 @@ Here is the caller graph for this function:</div>
           <td class="memname"><a class="el" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> DIO_Read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>u8_GroupId</em>, </td>
+          <td class="paramname"><em>GroupId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *&#160;</td>
-          <td class="paramname"><em>u8p_DataPtr</em>&#160;</td>
+          <td class="paramname"><em>DataPtr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -314,8 +172,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><b>Description:</b> </p>
+<p>This function is used to read the value of specified group_id</p>
+<p>PRE-CONDITION: Module must be initialized <br  />
+</p>
+<p>POST-CONDITION:</p>
+<dl class="section return"><dt>Returns</dt><dd>ERROR_STATE{OK,NOK}.</dd></dl>
+<p><b>Example</b> Example: </p><div class="fragment"><div class="line"><a class="code" href="_d_i_o_8c.html#a1547f3be3586279bb415ce4e4c131df2">DIO_Read</a>(3,&amp;retValue);</div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd>Dio_Init </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00050">50</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00135">135</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
 
 </div>
 </div>
@@ -334,8 +200,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><b>Description:</b> </p>
+<p>This function is used to flip the value of specified group_id</p>
+<p>PRE-CONDITION: Module must be initialized</p>
+<p>POST-CONDITION:</p>
+<dl class="section return"><dt>Returns</dt><dd>ERROR_STATE{OK,NOK}.</dd></dl>
+<p><b>Example</b> Example: </p><div class="fragment"><div class="line"><a class="code" href="_d_i_o_8c.html#aeaaeb5ff489bac3f6da33bfa3e8e083f">DIO_Toggle</a>(3);</div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd>Dio_Init </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00042">42</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00100">100</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
 
 </div>
 </div>
@@ -349,13 +222,13 @@ Here is the caller graph for this function:</div>
           <td class="memname"><a class="el" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> DIO_Write </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>u8_GroupId</em>, </td>
+          <td class="paramname"><em>GroupId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="std__types_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>u8_Data</em>&#160;</td>
+          <td class="paramname"><em>Data</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -364,8 +237,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><b>Description:</b> </p>
+<p>This function write certain value to specified group configuration in the <a class="el" href="struct_dio_config_param__t.html">DioConfigParam_t</a> struct</p>
+<p>PRE-CONDITION: Module must be idle initialized,</p>
+<p>POST-CONDITION:</p>
+<dl class="section return"><dt>Returns</dt><dd>ERROR_STATE{OK,NOK}.</dd></dl>
+<p><b>Example</b> Example: </p><div class="fragment"><div class="line"><a class="code" href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</a>(0,0x3D);</div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd>Dio_Init </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00033">33</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_d_i_o_8c_source.html#l00063">63</a> of file <a class="el" href="_d_i_o_8c_source.html">DIO.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -373,7 +253,7 @@ Here is the caller graph for this function:</div>
 <map name="_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0_icgraph" id="_d_i_o_8c_ab261c4b7670e6bacd1c7ad1839ab95b0_icgraph">
 <area shape="rect" title=" " alt="" coords="513,31,596,57"/>
 <area shape="rect" href="main_8c.html#ab90881fea8078c203ba2c8538c00593a" title=" " alt="" coords="170,5,230,32"/>
-<area shape="rect" href="7seg_8h.html#a15964358587a33b34d3b9b973be0243f" title=" " alt="" coords="344,31,465,57"/>
+<area shape="rect" href="7seg_8h.html#a48b828fc607ed48b54488f8cb46696f8" title=" " alt="" coords="344,31,465,57"/>
 <area shape="rect" href="7seg_8h.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="357,81,452,108"/>
 <area shape="rect" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,56,32"/>
 <area shape="rect" href="btn__test_8h.html#acb4e2fd533a33ef73e0a50eede86d7be" title=" " alt="" coords="137,56,263,83"/>
@@ -386,6 +266,9 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="a_d_i_o_8c_html_a1547f3be3586279bb415ce4e4c131df2"><div class="ttname"><a href="_d_i_o_8c.html#a1547f3be3586279bb415ce4e4c131df2">DIO_Read</a></div><div class="ttdeci">ERROR_STATE DIO_Read(uint8_t u8_GroupId, uint8_t *u8p_DataPtr)</div><div class="ttdef"><b>Definition:</b> <a href="_d_i_o_8c_source.html#l00135">DIO.c:135</a></div></div>
+<div class="ttc" id="a_d_i_o_8c_html_ab261c4b7670e6bacd1c7ad1839ab95b0"><div class="ttname"><a href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</a></div><div class="ttdeci">ERROR_STATE DIO_Write(uint8_t u8_GroupId, uint8_t u8_Data)</div><div class="ttdef"><b>Definition:</b> <a href="_d_i_o_8c_source.html#l00063">DIO.c:63</a></div></div>
+<div class="ttc" id="a_d_i_o_8c_html_aeaaeb5ff489bac3f6da33bfa3e8e083f"><div class="ttname"><a href="_d_i_o_8c.html#aeaaeb5ff489bac3f6da33bfa3e8e083f">DIO_Toggle</a></div><div class="ttdeci">ERROR_STATE DIO_Toggle(uint8_t u8_GroupId)</div><div class="ttdef"><b>Definition:</b> <a href="_d_i_o_8c_source.html#l00100">DIO.c:100</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

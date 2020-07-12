@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_i2c_8h">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/I2C/i2c.h File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/I2C/i2c.h</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_i2c_8h_1a5730d9445429351b9f750084c5cb5aae">i2c_init</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_i2c_8h_1af104fa2713ad2cfe4f993bdd2ec22c46">i2c_start</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_i2c_8h_1ad35d4e4f52ca74b503d5e5e1e0a3f5f3">i2c_stop</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_i2c_8h_1abcbf5eed7d6c2a56341a06038bee75c0">i2c_wb</link> (unsigned char val)</para>
+</listitem>
+            <listitem><para>unsigned char <link linkend="_i2c_8h_1a48e41f42b8f700d21ddd025e68632ced">i2c_rb</link> (unsigned char ack)</para>
+</listitem>
+            <listitem><para>void <link linkend="_i2c_8h_1a2e2f32425bf460cc87f2cde1f9660efd">i2c_acktst</link> (unsigned char val)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_i2c_8h_1a2e2f32425bf460cc87f2cde1f9660efd"/>    <section>
+    <title>i2c_acktst()</title>
+<indexterm><primary>i2c_acktst</primary><secondary>i2c.h</secondary></indexterm>
+<indexterm><primary>i2c.h</primary><secondary>i2c_acktst</secondary></indexterm>
+<para><computeroutput>void i2c_acktst (unsigned char val)</computeroutput></para>    </section><anchor xml:id="_i2c_8h_1a5730d9445429351b9f750084c5cb5aae"/>    <section>
+    <title>i2c_init()</title>
+<indexterm><primary>i2c_init</primary><secondary>i2c.h</secondary></indexterm>
+<indexterm><primary>i2c.h</primary><secondary>i2c_init</secondary></indexterm>
+<para><computeroutput>void i2c_init (void )</computeroutput></para><para>
+Definition at line <link linkend="_i2c_8c_source_1l00043">43</link> of file <link linkend="_i2c_8c_source">i2c.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="i2c_8h_a5730d9445429351b9f750084c5cb5aae_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_i2c_8h_1a48e41f42b8f700d21ddd025e68632ced"/>    <section>
+    <title>i2c_rb()</title>
+<indexterm><primary>i2c_rb</primary><secondary>i2c.h</secondary></indexterm>
+<indexterm><primary>i2c.h</primary><secondary>i2c_rb</secondary></indexterm>
+<para><computeroutput>unsigned char i2c_rb (unsigned char ack)</computeroutput></para><para>
+Definition at line <link linkend="_i2c_8c_source_1l00086">86</link> of file <link linkend="_i2c_8c_source">i2c.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="i2c_8h_a48e41f42b8f700d21ddd025e68632ced_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_i2c_8h_1af104fa2713ad2cfe4f993bdd2ec22c46"/>    <section>
+    <title>i2c_start()</title>
+<indexterm><primary>i2c_start</primary><secondary>i2c.h</secondary></indexterm>
+<indexterm><primary>i2c.h</primary><secondary>i2c_start</secondary></indexterm>
+<para><computeroutput>void i2c_start (void )</computeroutput></para><para>
+Definition at line <link linkend="_i2c_8c_source_1l00050">50</link> of file <link linkend="_i2c_8c_source">i2c.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="i2c_8h_af104fa2713ad2cfe4f993bdd2ec22c46_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_i2c_8h_1ad35d4e4f52ca74b503d5e5e1e0a3f5f3"/>    <section>
+    <title>i2c_stop()</title>
+<indexterm><primary>i2c_stop</primary><secondary>i2c.h</secondary></indexterm>
+<indexterm><primary>i2c.h</primary><secondary>i2c_stop</secondary></indexterm>
+<para><computeroutput>void i2c_stop (void )</computeroutput></para><para>
+Definition at line <link linkend="_i2c_8c_source_1l00059">59</link> of file <link linkend="_i2c_8c_source">i2c.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="i2c_8h_ad35d4e4f52ca74b503d5e5e1e0a3f5f3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_i2c_8h_1abcbf5eed7d6c2a56341a06038bee75c0"/>    <section>
+    <title>i2c_wb()</title>
+<indexterm><primary>i2c_wb</primary><secondary>i2c.h</secondary></indexterm>
+<indexterm><primary>i2c.h</primary><secondary>i2c_wb</secondary></indexterm>
+<para><computeroutput>void i2c_wb (unsigned char val)</computeroutput></para><para>
+Definition at line <link linkend="_i2c_8c_source_1l00068">68</link> of file <link linkend="_i2c_8c_source">i2c.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="i2c_8h_abcbf5eed7d6c2a56341a06038bee75c0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_isr_8h">
+<title>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ISR/isr.h File Reference</title>
+<indexterm><primary>F:/Carier/Embedded/PIC/ElectricalWaterHeater/MCAL/ISR/isr.h</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_isr_8h_1a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</link> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_isr_8h_1a097b132f44acb3a9bbe5f60f62d339d2"/>    <section>
+    <title>interruptsInit()</title>
+<indexterm><primary>interruptsInit</primary><secondary>isr.h</secondary></indexterm>
+<indexterm><primary>isr.h</primary><secondary>interruptsInit</secondary></indexterm>
+<para><computeroutput>void interruptsInit (void )</computeroutput></para><para>
+Definition at line <link linkend="_isr_8c_source_1l00016">16</link> of file <link linkend="_isr_8c_source">isr.c</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="isr_8h_a097b132f44acb3a9bbe5f60f62d339d2_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

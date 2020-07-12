@@ -7,8 +7,9 @@
 
 #include "SOS.h"
 #include "SOS_cfg.h"
+
 #define TAKEN				1
-#define NO_TASKS -1
+#define NO_TASKS           -1
 typedef struct SOS_obj_str
 {
 	/*object to hold data to the call back functions to call periodically*/
@@ -16,19 +17,20 @@ typedef struct SOS_obj_str
 	void (*callB_fun)(void);
 	uint16_t fire_tick;
 	uint16_t current_ticks;
+	uint8_t priority;
 	uint8_t type;  /*periodic or one shot*/
 	
-}gstr_SOS_obj;
+}gstr_SOS_obj_t;
 
 STATIC uint8_t SOS_Init_flag = FALSE;
 STATIC uint8_t SOS_Timer_ch;
-STATIC gstr_SOS_obj gastr_SOS_ObjBuffer[SOS_OBJ_BUFFER_SIZE];
-STATIC sint8_t u8_SOS_objBufferHead = _ZERO-_ONE;
+STATIC gstr_SOS_obj_t gastr_SOS_ObjBuffer[SOS_OBJ_BUFFER_SIZE];
+STATIC sint8_t u8_SOS_objBufferHead;
 STATIC uint8_t taken_Ids[SOS_OBJ_BUFFER_SIZE+_ONE]; /*mark taken ids*/
 
 ERROR_STATE SOS_Init(void)
 {
-	sint16_t fun_error_status = OK;
+    ERROR_STATE e_funStatus = OK;
 	if(SOS_Init_flag || SOS_linkCfg.tick_reslution > SOS_MAX_TIMER_RESLUTION || SOS_linkCfg.timer_ch > SOS_TIMER_CH2 ) /*check for all errors*/
 	{
 		/************************************************************************ 
@@ -37,28 +39,32 @@ ERROR_STATE SOS_Init(void)
 		 ************************************************************************/
 		if (SOS_Init_flag)
 		{
-			fun_error_status = (SOS_MODULE_ERROR_NUM+MULTIPLE_INITALIZATION);
+			e_funStatus = NOK;
+            error_handler(SOS_MODULE_ERROR_NUM+MULTIPLE_INITALIZATION);
 		}
 		else if (SOS_linkCfg.tick_reslution > SOS_MAX_TIMER_RESLUTION 
 				|| SOS_linkCfg.timer_ch > SOS_TIMER_CH2)
 		{
-			fun_error_status = (SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
+            e_funStatus = NOK;
+			error_handler(SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
 		}
 	}
 	else
 	{
-		SOS_Init_flag = TRUE;
 		SOS_Timer_ch = SOS_linkCfg.timer_ch;
+        u8_SOS_objBufferHead = _ZERO-_ONE;
 		
         //enable timer 1
-        timer_init();
+        system_timer_init();
+        SOS_Init_flag = TRUE;
+
 	}
-	return fun_error_status;
+	return e_funStatus;
 }
 
-ERROR_STATE SOS_createTask(uint8_t Id,void (*callB_fun_ptr)(void),uint16_t lap_time,uint8_t type)
+ERROR_STATE SOS_createTask(uint8_t Id,void (*callB_fun_ptr)(void),uint16_t lap_time,uint8_t type,uint8_t periority)
 {
-	sint16_t s16_fun_error_status = OK;
+	 ERROR_STATE e_funStatus = OK;
 	/*lot of condition but it centralize error checking*/
 	if(Id > SOS_OBJ_BUFFER_SIZE || callB_fun_ptr == NULL || lap_time > SOS_MAX_LAP_TIME
 	|| type > ON_SHOT || SOS_Init_flag == FALSE || taken_Ids[Id] == TAKEN
@@ -67,34 +73,28 @@ ERROR_STATE SOS_createTask(uint8_t Id,void (*callB_fun_ptr)(void),uint16_t lap_t
 	{
 		if ( SOS_Init_flag == FALSE)/*module unintalized*/
 		{
-			s16_fun_error_status = (SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+            e_funStatus = NOK;
+			error_handler(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
 		}
 		else if (callB_fun_ptr == NULL)
 		{
-			s16_fun_error_status = (SOS_MODULE_ERROR_NUM+NULL_PTR_ERROR);
+            e_funStatus = NOK;
+			error_handler(SOS_MODULE_ERROR_NUM+NULL_PTR_ERROR);
 		}
 		else if(Id > SOS_OBJ_BUFFER_SIZE  ||taken_Ids[Id]  == TAKEN
 		|| type > ON_SHOT  || lap_time > SOS_MAX_LAP_TIME
 		|| (lap_time%(SOS_linkCfg.tick_reslution))
 		|| u8_SOS_objBufferHead ==(SOS_OBJ_BUFFER_SIZE-_ONE))/*invalid parameter*/
 		{
-			s16_fun_error_status = (SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
+            e_funStatus = NOK;
+			error_handler(SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
 		}
 		
 	}
 	else
 	{
-		STATIC uint8_t fun_frstTime_flag = FALSE;
 		uint8_t u8_tempCounter = ZERO;
-		/*check for first time entrance to start timer*/
-		if(!fun_frstTime_flag)
-		{
-			/*start timer*/
-			
-			start_timer();
-			
-			fun_frstTime_flag = TRUE;
-		}
+        
 		
 		/*
 		*	1-get lap time eq
@@ -106,31 +106,66 @@ ERROR_STATE SOS_createTask(uint8_t Id,void (*callB_fun_ptr)(void),uint16_t lap_t
 		lap_time = (lap_time/(SOS_linkCfg.tick_reslution));
 		
 		/*SOS_obj_str {id,callBack fun , ticks ,current_ticks,type[periodic,onshot]} */
-		gstr_SOS_obj tobj  = {Id,callB_fun_ptr,lap_time,_ZERO,type};
-        u8_SOS_objBufferHead++; /*increase buffer head to next empty position*/
-        if(u8_SOS_objBufferHead < SOS_OBJ_BUFFER_SIZE )
-        {
-            gastr_SOS_ObjBuffer[u8_SOS_objBufferHead] = tobj;
-            taken_Ids[Id] = TAKEN ;/*mark this id as taken*/
-        }
+		gstr_SOS_obj_t tobj  = {Id,callB_fun_ptr,lap_time,ZERO,periority,type};
         
+#ifdef PERIORITY
+		/*if there is no tasks put task in first pos*/
+		if(u8_SOS_objBufferHead == NO_TASKS)
+		{
+			u8_SOS_objBufferHead++; /*increase buffer head to next empty position*/
+			gastr_SOS_ObjBuffer[u8_SOS_objBufferHead] = tobj;
+		}
+		else
+		{
+			for (;u8_tempCounter <= u8_SOS_objBufferHead ; u8_tempCounter++)
+			{
+				if (gastr_SOS_ObjBuffer[u8_tempCounter].priority >= periority)
+				{
+					uint8_t u8_shiftCounter = (u8_SOS_objBufferHead + _ONE);
+					while(u8_shiftCounter > u8_tempCounter)
+					{
+                         //on two steps due to compiler limitations
+						 gstr_SOS_obj_t temp   =  gastr_SOS_ObjBuffer[(u8_shiftCounter-_ONE)];
+                         gastr_SOS_ObjBuffer[u8_shiftCounter] = temp;
+						u8_shiftCounter--;
+					}
+					gastr_SOS_ObjBuffer[u8_shiftCounter] = tobj;
+					u8_SOS_objBufferHead++;
+					break;
+				}
+			}
+			/*check if the task is the lowest priority*/
+			if(u8_tempCounter > u8_SOS_objBufferHead)
+			{
+				u8_SOS_objBufferHead++; /*increase buffer head to next empty position*/
+				gastr_SOS_ObjBuffer[u8_SOS_objBufferHead] = tobj;
+			}
+		}
+#else    
+		u8_SOS_objBufferHead++; /*increase buffer head to next empty position*/
+	    gastr_SOS_ObjBuffer[u8_SOS_objBufferHead] = tobj;
+#endif
+        
+        taken_Ids[Id] = TAKEN ;/*mark this id as taken*/
 	}
-	return s16_fun_error_status;
+	return e_funStatus;
 }
 
 
 
 ERROR_STATE SOS_deletTask(uint8_t Id)
 {
-	sint16_t s16_fun_error_status = OK;
+	ERROR_STATE e_funStatus = OK;
 	
 	if (SOS_Init_flag == FALSE)
 	{
-		s16_fun_error_status = (SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+        e_funStatus = NOK;
+		error_handler(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
 	}
 	else if (Id>SOS_OBJ_BUFFER_SIZE  || taken_Ids[Id] != TAKEN)
 	{
-		s16_fun_error_status = (SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
+        e_funStatus = NOK;
+		error_handler(SOS_MODULE_ERROR_NUM+INVALAD_PARAMETER);
 	}
 	else
 	{
@@ -144,7 +179,7 @@ ERROR_STATE SOS_deletTask(uint8_t Id)
 			if(Id == gastr_SOS_ObjBuffer[u8_bufferCnt].Id)
 			{
                 //on two steps due to compiler limitations
-                gstr_SOS_obj temp   = gastr_SOS_ObjBuffer[u8_SOS_objBufferHead];
+                gstr_SOS_obj_t temp   = gastr_SOS_ObjBuffer[u8_SOS_objBufferHead];
                 gastr_SOS_ObjBuffer[u8_bufferCnt]  = temp;
 				u8_SOS_objBufferHead--;
 				taken_Ids[Id] = ZERO; /*mark id as not taken*/
@@ -154,7 +189,7 @@ ERROR_STATE SOS_deletTask(uint8_t Id)
 	
 	
 
-	return s16_fun_error_status;
+	return e_funStatus;
 	
 }
 
@@ -162,17 +197,29 @@ ERROR_STATE SOS_deletTask(uint8_t Id)
 
 ERROR_STATE	SOS_run(void)
 {
-	sint16_t s16_fun_error_status = OK;
+	ERROR_STATE e_funStatus = OK;
 
 	if (SOS_Init_flag == FALSE)
 	{
-		s16_fun_error_status = (SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+        e_funStatus = NOK;
+		error_handler(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
 	}
 	else
 	{
 		STATIC uint16_t current_ticks = _ZERO;
 		STATIC uint8_t new_tick_flag = FALSE;
 	
+        STATIC uint8_t fun_frstTime_flag = FALSE;
+
+        /*check for first time entrance to start timer*/
+		if(!fun_frstTime_flag)
+		{
+			/*start timer*/
+			
+			start_system_timer();
+			
+			fun_frstTime_flag = TRUE;
+		}
 		/*
 		*	-check for new time tick
 		*	-if true loop throw the SOS OBJ Buffer
@@ -222,7 +269,7 @@ ERROR_STATE	SOS_run(void)
 
 	}
 	
-	return s16_fun_error_status;
+	return e_funStatus;
 }
 
 
@@ -233,12 +280,13 @@ ERROR_STATE SOS_Deinit(void)
 	*	1-deinit timer
 	*	2-set SOS_init_flag to zero
 	*/
-	sint16_t s16_fun_error_status = OK;
+	ERROR_STATE e_funStatus = OK;
 	
 	if(SOS_Init_flag == FALSE)
 	{
+        e_funStatus = NOK;
 		/*report error*/
-		s16_fun_error_status = (SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
+		error_handler(SOS_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);
 	}
 
 	/*do deinit procedure anyway*/
@@ -257,7 +305,7 @@ ERROR_STATE SOS_Deinit(void)
 	SOS_linkCfg.tick_reslution = _ONE;
 	SOS_linkCfg.timer_ch = SOS_TIMER_CH0;
 	
-	return s16_fun_error_status;
+	return e_funStatus;
 }
 
 
