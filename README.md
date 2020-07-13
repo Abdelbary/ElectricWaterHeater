@@ -23,7 +23,7 @@ HAL driver for thoes peripheral_i saw that those peripheral logic is too simple 
 
 ### Project Detailed Design:
 check detailed Design in [pdf](Detailed Design.pdf)
-<div style="text-align:center">!<image src="picture/DetailedDesign.png"/></div>
+<div style="text-align:center"><image src="picture/DetailedDesign.png"/></div>
 
 ### Task-TimeLine:
 * Project uses a non-primitive operating system with 50ms tick time.
