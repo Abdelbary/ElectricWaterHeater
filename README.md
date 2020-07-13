@@ -3,7 +3,7 @@ this project is implementaion of the Swift Act requirment of Electrical Water He
 to view full documentation as pdf  [full_doc](https://github.com/Abdelbary/ElectricWaterHeater/blob/master/documentation/doc.pdf).
 ## Demo
 ### click image to check demo video 
-<div style="text-align:center">[![Demo](picture\demo.png)](https://www.youtube.com/watch?v=F_yb4pN2a-Q)</div>
+[![Demo](picture/demo.PNG)](https://www.youtube.com/watch?v=F_yb4pN2a-Q")
 ## Dependencies:
 1. PICSimlab simulation program [link](https://github.com/lcgamboa/picsimlab).
 2. project developed using MPLAB X IDE from microship.
@@ -13,17 +13,17 @@ to view full documentation as pdf  [full_doc](https://github.com/Abdelbary/Elect
 ## Main Components:
 ### Hardware:
 The project emulate Electrical Water Heater on PICSimlab simulation program using PicGenios kit with PIC16F877A.
-<div style="text-align:center">![project schmatic](picture\ProjectSchematic.png)</div>
+<div style="text-align:center"><image src="picture/ProjectSchematic.png"/></div>
 
 # Software Components:
 ### Project Static Architecutre:
 _Note_: Application calls MCAL directly to inialize the state of LED, Heater and Cooler to off state as there is no 
 HAL driver for thoes peripheral_i saw that those peripheral logic is too simple to make a sperated driver for them_.
-<div style="text-align:center">![Static Architecture](picture\projectStaticArchitecture.png)![init fun](F:\Carier\Embedded\PIC\ElectricalWaterHeater\picture\initFun.png)</div>
+<div style="text-align:center"><image src="picture/projectStaticArchitecture.png"/><image src="picture/initFun.png"/></div>
 
 ### Project Detailed Design:
-check detailed Design in [pdf](Detailed Design.pdf)
-<div style="text-align:center">![DetailedDesign](picture\DetailedDesign.png)</div>
+check detailed Design in [pdf](doucmentation/Detailed Design.pdf)
+<div style="text-align:center"><image src="picture/DetailedDesign.png"/></div>
 
 ### Task-TimeLine:
 * Project uses non-premative operating system with 50ms tick time.
@@ -34,7 +34,7 @@ check detailed Design in [pdf](Detailed Design.pdf)
 * os prehook runs tempTask once to be prepare current temp for seven segment display befor it's calling.
 * operation time of each task is neglicatable _no blocking for considerable amount of time_.
 
-<div style="text-align:center">![timeLine.png](picture\timeLine.png)</div>
+<div style="text-align:center">!<image src="picture\timeLine.png"/></div>
 
 ### Operating System:
 This project uses a non premative OS with a periodic task, the os prority feature is turned off as a result task take it's
