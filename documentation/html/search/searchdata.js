@@ -3,12 +3,12 @@ var indexSectionsWithContent =
   0: "7_abcdefgimnoprstu",
   1: "bdgs",
   2: "7abcdeimrst",
-  3: "_abcdegimst",
+  3: "_abcdegimost",
   4: "acdefgimpstu",
-  5: "bfgsu",
+  5: "bcfgsu",
   6: "abeo",
   7: "abnot",
-  8: "d"
+  8: "e"
 };
 
 var indexSectionNames =

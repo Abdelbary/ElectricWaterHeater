@@ -23,7 +23,16 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "ElectricWaterHeater", "index.html", [
-    [ "Docs", "md_intro.html", null ],
+    [ "Electrical Water Heater", "md_documentation.html", [
+      [ "Demo", "md_documentation.html#autotoc_md1", [
+        [ "click image to check demo video", "md_documentation.html#autotoc_md2", null ]
+      ] ],
+      [ "Dependencies:", "md_documentation.html#autotoc_md3", null ],
+      [ "Main Components:", "md_documentation.html#autotoc_md5", [
+        [ "Hardware:", "md_documentation.html#autotoc_md6", null ]
+      ] ],
+      [ "Software Components:", "md_documentation.html#autotoc_md7", null ]
+    ] ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -49,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "7seg_8c.html",
-"structgstr___a_d_c___config_param__t.html#a7b1a34cb1b77810d4ed7977f1727c82a"
+"std__types_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

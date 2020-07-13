@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['float32_5ft_283',['float32_t',['../std__types_8h.html#a4611b605e45ab401f02cab15c5e38715',1,'std_types.h']]],
-  ['float64_5ft_284',['float64_t',['../std__types_8h.html#ac55f3ae81b5bc9053760baacf57e47f4',1,'std_types.h']]]
+  ['cbf_290',['CBF',['../_s_o_s_8h.html#a4655ee3cf01d0f6f8b64f23f368acf37',1,'SOS.h']]]
 ];

@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('isr_8c_source.html',''); initResizable
 <a href="isr_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="isr_8h.html">isr.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;xc.h&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="isr_8c.html#a824a8a19244111c9dc43fb448e235ce2">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="isr_8c.html#a824a8a19244111c9dc43fb448e235ce2">__interrupt</a>() MyISR(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="isr_8c.html#afc9358d39f3af7e9d51a02070782efbb">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="isr_8c.html#afc9358d39f3af7e9d51a02070782efbb">__interrupt</a>() __ISR(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (TMR1IF == HIGH_BIT) {</div>
@@ -111,8 +111,8 @@ $(document).ready(function(){initNavTree('isr_8c_source.html',''); initResizable
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aisr_8c_html_a097b132f44acb3a9bbe5f60f62d339d2"><div class="ttname"><a href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</a></div><div class="ttdeci">void interruptsInit(void)</div><div class="ttdef"><b>Definition:</b> <a href="isr_8c_source.html#l00016">isr.c:16</a></div></div>
-<div class="ttc" id="aisr_8c_html_a824a8a19244111c9dc43fb448e235ce2"><div class="ttname"><a href="isr_8c.html#a824a8a19244111c9dc43fb448e235ce2">__interrupt</a></div><div class="ttdeci">void __interrupt() MyISR(void)</div><div class="ttdef"><b>Definition:</b> <a href="isr_8c_source.html#l00004">isr.c:4</a></div></div>
 <div class="ttc" id="atimer_8c_html_a7dbe0e57fb9e7128432ea4e95440828d"><div class="ttname"><a href="timer_8c.html#a7dbe0e57fb9e7128432ea4e95440828d">gu8_timer_ticks</a></div><div class="ttdeci">volatile uint8_t gu8_timer_ticks</div><div class="ttdef"><b>Definition:</b> <a href="timer_8c_source.html#l00016">timer.c:16</a></div></div>
+<div class="ttc" id="aisr_8c_html_afc9358d39f3af7e9d51a02070782efbb"><div class="ttname"><a href="isr_8c.html#afc9358d39f3af7e9d51a02070782efbb">__interrupt</a></div><div class="ttdeci">void __interrupt() __ISR(void)</div><div class="ttdef"><b>Definition:</b> <a href="isr_8c_source.html#l00004">isr.c:4</a></div></div>
 <div class="ttc" id="aisr_8h_html"><div class="ttname"><a href="isr_8h.html">isr.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

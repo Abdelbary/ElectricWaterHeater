@@ -27,25 +27,28 @@
 00023 <emphasis role="preprocessor">#define&#32;PERIODIC&#32;&#32;&#32;&#32;0</emphasis>
 00024 <emphasis role="preprocessor">#define&#32;ON_SHOT&#32;&#32;&#32;&#32;&#32;1</emphasis>
 00025 
-00026 
-<anchor xml:id="__s_o_s_8h_source_1l00027"/><link linkend="_struct_s_o_s__cfg__str">00027</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_o_s__cfg__str">SOS_cfg_str</link>
-00028 {
-<anchor xml:id="__s_o_s_8h_source_1l00029"/><link linkend="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615">00029</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_s_o_s__cfg__str_1a7ec4b0955770e1b67d20fb847381a615">timer_ch</link>;
-<anchor xml:id="__s_o_s_8h_source_1l00030"/><link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">00030</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_s_o_s__cfg__str_1a9e4d7bebb4db3b5fcda1b9a91c0ed9be">tick_reslution</link>;&#32;<emphasis role="comment">/*&#32;in&#32;milesec&#32;*/</emphasis>
-00031 }<link linkend="__s_o_s_8h_1afcb1b7b451e3f428a5e38e271845b577">gstr_SOS_cfg_t</link>;
-00032 
+<anchor xml:id="__s_o_s_8h_source_1l00026"/><link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">00026</link> <emphasis role="keyword">typedef</emphasis>&#32;void&#32;(*<link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link>)(void);
+00027 
+<anchor xml:id="__s_o_s_8h_source_1l00028"/><link linkend="_struct_s_o_s__cfg__str">00028</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_o_s__cfg__str">SOS_cfg_str</link>
+00029 {
+<anchor xml:id="__s_o_s_8h_source_1l00030"/><link linkend="_struct_s_o_s__cfg__str_1ac17af650172637360de83f3403dbf9da">00030</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_s_o_s__cfg__str_1ac17af650172637360de83f3403dbf9da">u8_timer_ch</link>;
+<anchor xml:id="__s_o_s_8h_source_1l00031"/><link linkend="_struct_s_o_s__cfg__str_1a9f239a66857ec9f79c626d4bc14bb952">00031</link> &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;<link linkend="_struct_s_o_s__cfg__str_1a9f239a66857ec9f79c626d4bc14bb952">u8_tick_reslution</link>;&#32;<emphasis role="comment">/*&#32;in&#32;milesec&#32;*/</emphasis>&#32;&#32;&#32;&#32;
+00032 }<link linkend="__s_o_s_8h_1afcb1b7b451e3f428a5e38e271845b577">gstr_SOS_cfg_t</link>;
 00033 
 00034 
-00046 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8h_1aa4a8a75bc8f33c7ff7c7072ec695b763">SOS_Init</link>(<emphasis role="keywordtype">void</emphasis>);
-00047 
-00059 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;Id,<emphasis role="keywordtype">void</emphasis>&#32;(*callB_fun_ptr)(<emphasis role="keywordtype">void</emphasis>),<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;lap_time,<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;type,<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;periority);
-00060 
-00068 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a33f0b757ea5b9df0fff7cdcef7178981">SOS_deletTask</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;Id);
-00069 
-00077 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a8dd58b17a3ae907bda4c429f78883d67">SOS_run</link>(<emphasis role="keywordtype">void</emphasis>);
-00078 
-00086 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a5d328c9cc7f2900d9ee68f8aab3231f9">SOS_Deinit</link>(<emphasis role="keywordtype">void</emphasis>);
-00087 
+00035 
+00047 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8h_1aa4a8a75bc8f33c7ff7c7072ec695b763">SOS_Init</link>(<emphasis role="keywordtype">void</emphasis>);
+00048 
+00060 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;Id,<emphasis role="keywordtype">void</emphasis>&#32;(*callB_fun_ptr)(<emphasis role="keywordtype">void</emphasis>),<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;lap_time,<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;type,<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;periority);
+00061 
+00069 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a33f0b757ea5b9df0fff7cdcef7178981">SOS_deletTask</link>(<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;Id);
+00070 
+00078 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a8dd58b17a3ae907bda4c429f78883d67">SOS_run</link>(<emphasis role="keywordtype">void</emphasis>);
+00079 
+00087 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a5d328c9cc7f2900d9ee68f8aab3231f9">SOS_Deinit</link>(<emphasis role="keywordtype">void</emphasis>);
 00088 
-00089 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SOS_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+00089 
+00099 <link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link>&#32;<link linkend="__s_o_s_8h_1a8a2e1378e0ce6444e0b0bc5edd5d91cc">SOS_StartProc</link>(<link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link>&#32;callBackFun);
+00100 
+00101 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SOS_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
 </programlisting></section>

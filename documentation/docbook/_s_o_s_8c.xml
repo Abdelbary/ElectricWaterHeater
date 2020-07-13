@@ -29,6 +29,8 @@
 </listitem>
             <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8c_1a5d328c9cc7f2900d9ee68f8aab3231f9">SOS_Deinit</link> (void)</para>
 </listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8c_1a8a2e1378e0ce6444e0b0bc5edd5d91cc">SOS_StartProc</link> (<link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link> callBackFun)</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
@@ -43,6 +45,8 @@
             <listitem><para>STATIC <link linkend="_std__types_8h_1a54cceacffb6d6dff03bf69f786d431a9">sint8_t</link> <link linkend="__s_o_s_8c_1a611fb8b259ce92d756fef05c558724b0">u8_SOS_objBufferHead</link></para>
 </listitem>
             <listitem><para>STATIC <link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link> <link linkend="__s_o_s_8c_1a44ad5439f0740b8189ea7577961d93b9">taken_Ids</link> [SOS_OBJ_BUFFER_SIZE+_ONE]</para>
+</listitem>
+            <listitem><para>STATIC <link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link> <link linkend="__s_o_s_8c_1a0cd61748e2d8fd75080bff961d3d3e28">gp_OS_StartProc</link></para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -325,6 +329,60 @@ Here is the call graph for this function:<para>
         </mediaobject>
     </informalfigure>
 </para>
+    </section><anchor xml:id="__s_o_s_8c_1a8a2e1378e0ce6444e0b0bc5edd5d91cc"/>    <section>
+    <title>SOS_StartProc()</title>
+<indexterm><primary>SOS_StartProc</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>SOS_StartProc</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> SOS_StartProc (<link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link> callBackFun)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> SOS_StartProc run the start of os procedure by calling the call back function pointer passed as a paramter from the application</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in                                </entry>                                <entry>CBF</entry>
+                                <entry>
+<para>function to call at the start of the os</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS [OK,NOK] </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00312">312</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a8a2e1378e0ce6444e0b0bc5edd5d91cc_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8c_a8a2e1378e0ce6444e0b0bc5edd5d91cc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
 </section>
 <section>
@@ -335,6 +393,12 @@ Here is the call graph for this function:<para>
 <indexterm><primary>SOS.c</primary><secondary>gastr_SOS_ObjBuffer</secondary></indexterm>
 <para><computeroutput>STATIC <link linkend="__s_o_s_8c_1a53fe77d22db34777c4d527d5fbae7ac0">gstr_SOS_obj_t</link> gastr_SOS_ObjBuffer[SOS_OBJ_BUFFER_SIZE]</computeroutput></para><para>
 Definition at line <link linkend="__s_o_s_8c_source_1l00027">27</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+    </section><anchor xml:id="__s_o_s_8c_1a0cd61748e2d8fd75080bff961d3d3e28"/>    <section>
+    <title>gp_OS_StartProc</title>
+<indexterm><primary>gp_OS_StartProc</primary><secondary>SOS.c</secondary></indexterm>
+<indexterm><primary>SOS.c</primary><secondary>gp_OS_StartProc</secondary></indexterm>
+<para><computeroutput>STATIC <link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link> gp_OS_StartProc</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00030">30</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
     </section><anchor xml:id="__s_o_s_8c_1ad096ca8a6bda79b2b7b1fb3d8ae70fb4"/>    <section>
     <title>SOS_Init_flag</title>
 <indexterm><primary>SOS_Init_flag</primary><secondary>SOS.c</secondary></indexterm>

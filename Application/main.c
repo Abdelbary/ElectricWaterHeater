@@ -306,7 +306,6 @@ void tempTask()
 
 void appInit()
 {
-    
     ///init temp control element to zero
     /**
      * call MCAL functions from application as it is necessary to 
@@ -391,11 +390,9 @@ void main(void){
          * if the on off btn is pressed and the system is on disable system
          * disable system by call init function of the system 
          */
-       
         if(gu8_deviceDisableFlag == TRUE)
         {
             appInit();
-            
             /**
              * halt system and only check for the
              * on btn 

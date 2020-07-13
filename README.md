@@ -59,7 +59,7 @@ project is emulated using
 * os prehook runs tempTask once to be prepare current temp for seven segment display befor it's calling.
 * operation time of each task is neglicatable _no blocking for considerable amount of time_.
 
-<div style="text-align:center"><img src="picture/timeLine.png" /></div>
+<div style="text-align:center">![timeline](picture/timeLine.png)</div>
 
 ### Project Static Architecutre:
 _Note_: Application calls MCAL directly to inialize the state of LED, Heater and Cooler to off state as there is no 

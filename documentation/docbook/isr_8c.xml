@@ -5,7 +5,7 @@
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para>void <link linkend="_isr_8c_1a824a8a19244111c9dc43fb448e235ce2">__interrupt</link> () MyISR(void)</para>
+            <listitem><para>void <link linkend="_isr_8c_1afc9358d39f3af7e9d51a02070782efbb">__interrupt</link> () __ISR(void)</para>
 </listitem>
             <listitem><para>void <link linkend="_isr_8c_1a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</link> (void)</para>
 </listitem>
@@ -13,7 +13,7 @@
 </simplesect>
 <section>
 <title>Function Documentation</title>
-<anchor xml:id="_isr_8c_1a824a8a19244111c9dc43fb448e235ce2"/>    <section>
+<anchor xml:id="_isr_8c_1afc9358d39f3af7e9d51a02070782efbb"/>    <section>
     <title>__interrupt()</title>
 <indexterm><primary>__interrupt</primary><secondary>isr.c</secondary></indexterm>
 <indexterm><primary>isr.c</primary><secondary>__interrupt</secondary></indexterm>

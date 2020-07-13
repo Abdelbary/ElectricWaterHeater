@@ -22,6 +22,8 @@ void \mbox{\hyperlink{main_8c_ab90881fea8078c203ba2c8538c00593a}{app\+Init}} ()
 \item 
 void \mbox{\hyperlink{main_8c_abf7e98ccf36d8f640a03030aad64c7f2}{check\+O\+N\+Btn\+Status}} ()
 \item 
+void \mbox{\hyperlink{main_8c_a637eb1182370683eb9b6e6502e52a262}{O\+S\+\_\+start\+Function}} ()
+\item 
 void \mbox{\hyperlink{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667}{main}} (void)
 \end{DoxyCompactItemize}
 
@@ -64,10 +66,9 @@ this block of code used to set the temp to 60 in the first run this can be simpl
 
 set initial values for global variables
 
-Definition at line 306 of file main.\+c.
+Definition at line 307 of file main.\+c.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -95,7 +96,7 @@ if time out counter reached time out counts {\itshape button task called every 5
 
 load setted value to e2prom set temp for temp control task fire temp control task flag reset timeout counter change state to normal state
 
-Definition at line 135 of file main.\+c.
+Definition at line 136 of file main.\+c.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -119,7 +120,7 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
-Definition at line 353 of file main.\+c.
+Definition at line 354 of file main.\+c.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -140,14 +141,37 @@ if the on off btn is pressed and the system is on disable system disable system 
 
 halt system and only check for the on btn
 
-Definition at line 369 of file main.\+c.
+Definition at line 373 of file main.\+c.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a637eb1182370683eb9b6e6502e52a262}\label{main_8c_a637eb1182370683eb9b6e6502e52a262}} 
+\index{main.c@{main.c}!OS\_startFunction@{OS\_startFunction}}
+\index{OS\_startFunction@{OS\_startFunction}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{OS\_startFunction()}{OS\_startFunction()}}
+{\footnotesize\ttfamily void O\+S\+\_\+start\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 368 of file main.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a637eb1182370683eb9b6e6502e52a262_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{main_8c_a637eb1182370683eb9b6e6502e52a262_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{main_8c_ac1e5ea28aae6331165f91deabb3a7101}\label{main_8c_ac1e5ea28aae6331165f91deabb3a7101}} 
@@ -161,7 +185,7 @@ two modes for lcd \{N\+O\+R\+M\+AL M\+O\+DE , T\+E\+MP S\+ET M\+O\+DE\} if N\+O\
 
 control the ssd on/off time as 1 sec for each
 
-Definition at line 223 of file main.\+c.
+Definition at line 224 of file main.\+c.
 
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -205,10 +229,9 @@ Here is the caller graph for this function\+:\nopagebreak
 
 trigger A\+DC on specific chanal get temp from adc value set adc value in it\textquotesingle{}s pos in temp array
 
-Definition at line 283 of file main.\+c.
+Definition at line 284 of file main.\+c.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -219,6 +242,6 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=213pt]{main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph}
+\includegraphics[width=342pt]{main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph}
 \end{center}
 \end{figure}

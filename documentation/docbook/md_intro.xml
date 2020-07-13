@@ -1,5 +1,126 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md_intro">
 
-<para>In this project we build an industerial project using latex </para>
+<para>this project is implementaion of the Swift Act requirment of Electrical Water Heater <link xlink:href="Kit_info\Electric Water Heater.pdf">link</link>.</para>
+<section xml:id="_md_intro_1autotoc_md1">
+<title>Dependencies:</title>
+
+<para><orderedlist>
+<listitem>
+<para>PICSimlab simulation program <link xlink:href="https://github.com/lcgamboa/picsimlab">link</link>.</para>
+</listitem><listitem>
+<para>project developed using MPLAB X IDE from microship.</para>
+</listitem><listitem>
+<para>xc8 compiler from microchip.</para>
+</listitem></orderedlist>
+</para>
+<section xml:id="_md_intro_1autotoc_md2">
+<title>project documented useing doxygen documentaion in docmentation/html/index.html</title>
+</section>
+</section>
+<section xml:id="_md_intro_1autotoc_md3">
+<title>Main Components:</title>
+<section xml:id="_md_intro_1autotoc_md4">
+<title>Hardware:</title>
+
+<para>The project emulate Electrical Water Heater on PICSimlab simulation program using PicGenios kit with PIC16F877A. </para>
+</section>
+</section>
+<section xml:id="_md_intro_1autotoc_md5">
+<title>Software Components:</title>
+
+<para>list of main application components. </para>
+<section xml:id="_md_intro_1autotoc_md6">
+<title>Operating System:</title>
+
+<para>This project uses a non premative OS with a periodic task, the os prority feature is turned off as a result task take it&apos;s prority from the order of it&apos;s creation realative to other tasks. The project has five diffferent tasks {tempTask,ButtonTask,tempControlTask,sevenSegTask} thier pirority as thier listing order with highest pirority task [tempTask] and lowest proirty is [sevenSegTask].</para>
+</section>
+<section xml:id="_md_intro_1autotoc_md7">
+<title>tempTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>check if user setted a tempreature</para>
+</listitem><listitem>
+<para>if a temp is setted then--&gt; ..1. get average temp of the last ten readings. ..2. take an action based on the state of the heater and cooler state and the setted temp value.</para>
+</listitem><listitem>
+<para>if the cooler element is on turn on the led, if the heater element is on blink led every 1 sec.</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_intro_1autotoc_md8">
+<title>ButtonTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>call button manager.</para>
+</listitem><listitem>
+<para>update the state of each button{up-down-on/off}.</para>
+</listitem><listitem>
+<para>if the on off button is pressed switch the system {on/off} respectivly and exit task.</para>
+</listitem><listitem>
+<para>if in normal mode and up or down button pressed get the last setted value from EXT_EEPROM and change mode to TEMP_SET_MOD.</para>
+</listitem><listitem>
+<para>if in temp set mode and up or down button pressed increase or decrease the temp to set by 5 depending on which button pressed respectivily.</para>
+</listitem><listitem>
+<para>if neither the up or down button pressed save the setted temp to EXT_EEPROM and change mode to normal mode.</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_intro_1autotoc_md9">
+<title>tempControlTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>get the latest adc converted value form the ADC chanal connected to temp sensor.</para>
+</listitem><listitem>
+<para>calculate the current temp in clsius.</para>
+</listitem><listitem>
+<para>save current temp in <emphasis>last 10 temp reading</emphasis> array.</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_intro_1autotoc_md10">
+<title>sevenSegTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>if in normal mode display the current temp value.</para>
+</listitem><listitem>
+<para>if in temp setted mode flash led every 1sec and display last setted temp ...interact with user if up or down button pressed change the temp to set by 5 degrees above or blow the current temp based on the button pressed. ...Max temp 75 and Min temp to set is 35.</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_intro_1autotoc_md11">
+<title>Project-Schematic:</title>
+
+<para>project is emulated using </para>
+</section>
+<section xml:id="_md_intro_1autotoc_md12">
+<title>Task-TimeLine:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Project uses non-premative operating system with 50ms.</para>
+</listitem><listitem>
+<para>task peroidic time specified in the below graph.</para>
+</listitem><listitem>
+<para>project has five diffferent tasks {tempTask,ButtonTask,tempControlTask,sevenSegTask} thier pirority as thier listing order with highest pirority task [tempTask] and lowest proirty is [sevenSegTask].</para>
+</listitem><listitem>
+<para>the system repeat it&apos;s operation every 100ms <emphasis>Major Cycle</emphasis>.</para>
+</listitem><listitem>
+<para>os prehook runs tempTask once to be prepare current temp for seven segment display befor it&apos;s calling.</para>
+</listitem><listitem>
+<para>operation time of each task is neglicatable <emphasis>no blocking for considerable amount of time</emphasis>.</para>
+</listitem></itemizedlist>
+</para>
+
+<para></para>
+</section>
+<section xml:id="_md_intro_1autotoc_md13">
+<title>Project Static Architecutre:</title>
+
+<para><emphasis>Note</emphasis>: Application calls MCAL directly to inialize the state of LED, Heater and Cooler to off state as there is no HAL driver for thoes peripheral_i saw that those peripheral logic is too simple to make a sperated driver for them_.  </para>
+</section>
+</section>
 </section>

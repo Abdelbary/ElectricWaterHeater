@@ -8,6 +8,8 @@ struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+str}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
+typedef void($\ast$ \mbox{\hyperlink{_s_o_s_8h_a4655ee3cf01d0f6f8b64f23f368acf37}{C\+BF}}) (void)
+\item 
 typedef struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+str}} \mbox{\hyperlink{_s_o_s_8h_afcb1b7b451e3f428a5e38e271845b577}{gstr\+\_\+\+S\+O\+S\+\_\+cfg\+\_\+t}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -22,10 +24,22 @@ typedef struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+st
 \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67}{S\+O\+S\+\_\+run}} (void)
 \item 
 \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a5d328c9cc7f2900d9ee68f8aab3231f9}{S\+O\+S\+\_\+\+Deinit}} (void)
+\item 
+\mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} \mbox{\hyperlink{_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc}{S\+O\+S\+\_\+\+Start\+Proc}} (\mbox{\hyperlink{_s_o_s_8h_a4655ee3cf01d0f6f8b64f23f368acf37}{C\+BF}} call\+Back\+Fun)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_s_o_s_8h_a4655ee3cf01d0f6f8b64f23f368acf37}\label{_s_o_s_8h_a4655ee3cf01d0f6f8b64f23f368acf37}} 
+\index{SOS.h@{SOS.h}!CBF@{CBF}}
+\index{CBF@{CBF}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{CBF}{CBF}}
+{\footnotesize\ttfamily typedef void($\ast$ C\+BF) (void)}
+
+
+
+Definition at line 26 of file S\+O\+S.\+h.
+
 \mbox{\Hypertarget{_s_o_s_8h_afcb1b7b451e3f428a5e38e271845b577}\label{_s_o_s_8h_afcb1b7b451e3f428a5e38e271845b577}} 
 \index{SOS.h@{SOS.h}!gstr\_SOS\_cfg\_t@{gstr\_SOS\_cfg\_t}}
 \index{gstr\_SOS\_cfg\_t@{gstr\_SOS\_cfg\_t}!SOS.h@{SOS.h}}
@@ -61,8 +75,7 @@ typedef struct \mbox{\hyperlink{struct_s_o_s__cfg__str}{S\+O\+S\+\_\+cfg\+\_\+st
 
 Definition at line 65 of file S\+O\+S.\+c.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -158,8 +171,7 @@ S\+O\+S\+\_\+cfg in \mbox{\hyperlink{_s_o_s__cfg_8c}{S\+O\+S\+\_\+\+Cfg.\+c}}
 
 Definition at line 31 of file S\+O\+S.\+c.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -191,11 +203,44 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Definition at line 198 of file S\+O\+S.\+c.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc}\label{_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc}} 
+\index{SOS.h@{SOS.h}!SOS\_StartProc@{SOS\_StartProc}}
+\index{SOS\_StartProc@{SOS\_StartProc}!SOS.h@{SOS.h}}
+\doxysubsubsection{\texorpdfstring{SOS\_StartProc()}{SOS\_StartProc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_system_errors_8h_a37f868640e72b2740019c30ecca6e8dc}{E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} S\+O\+S\+\_\+\+Start\+Proc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_o_s_8h_a4655ee3cf01d0f6f8b64f23f368acf37}{C\+BF}}}]{call\+Back\+Fun }\end{DoxyParamCaption})}
+
+{\bfseries{Description\+:}} S\+O\+S\+\_\+\+Start\+Proc run the start of os procedure by calling the call back function pointer passed as a paramter from the application
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em C\+BF} & function to call at the start of the os\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+T\+US \mbox{[}OK,N\+OK\mbox{]} 
+\end{DoxyReturn}
+
+
+Definition at line 312 of file S\+O\+S.\+c.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_icgraph}
 \end{center}
 \end{figure}

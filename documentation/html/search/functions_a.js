@@ -1,5 +1,16 @@
 var searchData=
 [
-  ['tempcontroltask_243',['tempControlTask',['../main_8c.html#aabcbdc9715896bcbf677585867fd734c',1,'main.c']]],
-  ['temptask_244',['tempTask',['../main_8c.html#a4e7c6b5809aef7a48e6ff16156c907b5',1,'main.c']]]
+  ['sevenseginit_236',['sevenSegInit',['../7seg_8c.html#a60579fecccc40e10b8ecca856466d540',1,'sevenSegInit(void):&#160;7seg.c'],['../7seg_8h.html#a60579fecccc40e10b8ecca856466d540',1,'sevenSegInit(void):&#160;7seg.c']]],
+  ['sevensegsendchar_237',['sevenSegSendChar',['../7seg_8c.html#ae89a46a801483d679b68d653efd31267',1,'sevenSegSendChar(const uint8_t u8_value, const uint8_t u8_SSD_selector):&#160;7seg.c'],['../7seg_8h.html#ae89a46a801483d679b68d653efd31267',1,'sevenSegSendChar(const uint8_t u8_value, const uint8_t u8_SSD_selector):&#160;7seg.c']]],
+  ['sevensegsimulationsostest_238',['sevenSegSimulationSOSTest',['../7seg__test_8c.html#ac2c06c22609baed09b6e602d68134d15',1,'sevenSegSimulationSOSTest():&#160;7seg_test.c'],['../7seg__test_8h.html#a27096aa63dbd33d6ecf5150287304acf',1,'sevenSegSimulationSOSTest(void):&#160;7seg_test.c']]],
+  ['sevensegsimulationtest_239',['sevenSegSimulationTest',['../7seg__test_8c.html#a158621bd38db40e64b33a375ad5af19b',1,'sevenSegSimulationTest():&#160;7seg_test.c'],['../7seg__test_8h.html#a11d9a9a3edd76cc57bca64cf5169ff13',1,'sevenSegSimulationTest(void):&#160;7seg_test.c']]],
+  ['sevensegtask_240',['sevenSegTask',['../main_8c.html#ac1e5ea28aae6331165f91deabb3a7101',1,'main.c']]],
+  ['sos_5fcreatetask_241',['SOS_createTask',['../_s_o_s_8c.html#a085b92af3cd18aadc5f6c5c4979969fe',1,'SOS_createTask(uint8_t Id, void(*callB_fun_ptr)(void), uint16_t lap_time, uint8_t type, uint8_t periority):&#160;SOS.c'],['../_s_o_s_8h.html#a085b92af3cd18aadc5f6c5c4979969fe',1,'SOS_createTask(uint8_t Id, void(*callB_fun_ptr)(void), uint16_t lap_time, uint8_t type, uint8_t periority):&#160;SOS.c']]],
+  ['sos_5fdeinit_242',['SOS_Deinit',['../_s_o_s_8c.html#a5d328c9cc7f2900d9ee68f8aab3231f9',1,'SOS_Deinit(void):&#160;SOS.c'],['../_s_o_s_8h.html#a5d328c9cc7f2900d9ee68f8aab3231f9',1,'SOS_Deinit(void):&#160;SOS.c']]],
+  ['sos_5fdelettask_243',['SOS_deletTask',['../_s_o_s_8c.html#a33f0b757ea5b9df0fff7cdcef7178981',1,'SOS_deletTask(uint8_t Id):&#160;SOS.c'],['../_s_o_s_8h.html#a33f0b757ea5b9df0fff7cdcef7178981',1,'SOS_deletTask(uint8_t Id):&#160;SOS.c']]],
+  ['sos_5finit_244',['SOS_Init',['../_s_o_s_8c.html#aa4a8a75bc8f33c7ff7c7072ec695b763',1,'SOS_Init(void):&#160;SOS.c'],['../_s_o_s_8h.html#aa4a8a75bc8f33c7ff7c7072ec695b763',1,'SOS_Init(void):&#160;SOS.c']]],
+  ['sos_5frun_245',['SOS_run',['../_s_o_s_8c.html#a8dd58b17a3ae907bda4c429f78883d67',1,'SOS_run(void):&#160;SOS.c'],['../_s_o_s_8h.html#a8dd58b17a3ae907bda4c429f78883d67',1,'SOS_run(void):&#160;SOS.c']]],
+  ['sos_5fstartproc_246',['SOS_StartProc',['../_s_o_s_8c.html#a8a2e1378e0ce6444e0b0bc5edd5d91cc',1,'SOS_StartProc(CBF callBackFun):&#160;SOS.c'],['../_s_o_s_8h.html#a8a2e1378e0ce6444e0b0bc5edd5d91cc',1,'SOS_StartProc(CBF callBackFun):&#160;SOS.c']]],
+  ['start_5fsystem_5ftimer_247',['start_system_timer',['../timer_8c.html#ae8412a88f34f526095d643d829ace90f',1,'start_system_timer(void):&#160;timer.c'],['../timer_8h.html#ae8412a88f34f526095d643d829ace90f',1,'start_system_timer(void):&#160;timer.c']]],
+  ['system_5ftimer_5finit_248',['system_timer_init',['../timer_8c.html#a146cd1e352ec285162684cf776df632c',1,'system_timer_init(void):&#160;timer.c'],['../timer_8h.html#a146cd1e352ec285162684cf776df632c',1,'system_timer_init(void):&#160;timer.c']]]
 ];

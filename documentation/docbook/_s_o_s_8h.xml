@@ -12,6 +12,8 @@
 <simplesect>
     <title>Typedefs    </title>
         <itemizedlist>
+            <listitem><para>typedef void(* <link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link>) (void)</para>
+</listitem>
             <listitem><para>typedef struct <link linkend="_struct_s_o_s__cfg__str">SOS_cfg_str</link> <link linkend="__s_o_s_8h_1afcb1b7b451e3f428a5e38e271845b577">gstr_SOS_cfg_t</link></para>
 </listitem>
         </itemizedlist>
@@ -29,11 +31,19 @@
 </listitem>
             <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8h_1a5d328c9cc7f2900d9ee68f8aab3231f9">SOS_Deinit</link> (void)</para>
 </listitem>
+            <listitem><para><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> <link linkend="__s_o_s_8h_1a8a2e1378e0ce6444e0b0bc5edd5d91cc">SOS_StartProc</link> (<link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link> callBackFun)</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>Typedef Documentation</title>
-<anchor xml:id="__s_o_s_8h_1afcb1b7b451e3f428a5e38e271845b577"/>    <section>
+<anchor xml:id="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37"/>    <section>
+    <title>CBF</title>
+<indexterm><primary>CBF</primary><secondary>SOS.h</secondary></indexterm>
+<indexterm><primary>SOS.h</primary><secondary>CBF</secondary></indexterm>
+<para><computeroutput>typedef void(* CBF) (void)</computeroutput></para><para>
+Definition at line <link linkend="__s_o_s_8h_source_1l00026">26</link> of file <link linkend="__s_o_s_8h_source">SOS.h</link>.</para>
+    </section><anchor xml:id="__s_o_s_8h_1afcb1b7b451e3f428a5e38e271845b577"/>    <section>
     <title>gstr_SOS_cfg_t</title>
 <indexterm><primary>gstr_SOS_cfg_t</primary><secondary>SOS.h</secondary></indexterm>
 <indexterm><primary>SOS.h</primary><secondary>gstr_SOS_cfg_t</secondary></indexterm>
@@ -306,6 +316,60 @@ Here is the call graph for this function:<para>
         <mediaobject>
             <imageobject>
                 <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8h_a8dd58b17a3ae907bda4c429f78883d67_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="__s_o_s_8h_1a8a2e1378e0ce6444e0b0bc5edd5d91cc"/>    <section>
+    <title>SOS_StartProc()</title>
+<indexterm><primary>SOS_StartProc</primary><secondary>SOS.h</secondary></indexterm>
+<indexterm><primary>SOS.h</primary><secondary>SOS_StartProc</secondary></indexterm>
+<para><computeroutput><link linkend="__system_errors_8h_1a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</link> SOS_StartProc (<link linkend="__s_o_s_8h_1a4655ee3cf01d0f6f8b64f23f368acf37">CBF</link> callBackFun)</computeroutput></para>
+<para><emphasis role="bold">Description:</emphasis> SOS_StartProc run the start of os procedure by calling the call back function pointer passed as a paramter from the application</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="3" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>in                                </entry>                                <entry>CBF</entry>
+                                <entry>
+<para>function to call at the start of the os</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>: ERROR_STATUS [OK,NOK] </para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__s_o_s_8c_source_1l00312">312</link> of file <link linkend="__s_o_s_8c_source">SOS.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_icgraph.png"></imagedata>
             </imageobject>
         </mediaobject>
     </informalfigure>

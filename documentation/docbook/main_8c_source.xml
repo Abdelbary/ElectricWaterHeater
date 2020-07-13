@@ -34,7 +34,7 @@
 00030 <emphasis role="preprocessor">#define&#32;SSD_FLASHING_CYCLE&#32;&#32;20</emphasis>
 00031 <emphasis role="preprocessor">#define&#32;TEMP_STEP&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;5</emphasis>
 00032 <emphasis role="preprocessor">#define&#32;MAX_TEMP&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(75)</emphasis>
-00033 <emphasis role="preprocessor">#define&#32;MIN_TEMP&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(25)</emphasis>
+00033 <emphasis role="preprocessor">#define&#32;MIN_TEMP&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(35)</emphasis>
 <anchor xml:id="_main_8c_source_1l00034"/><link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">00034</link> <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>{<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>,<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>}<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732">operationMode_t</link>;
 00035 
 00036 
@@ -111,210 +111,214 @@
 00132 &#32;&#32;&#32;&#32;}
 00133 }
 00134 
-<anchor xml:id="_main_8c_source_1l00135"/><link linkend="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da">00135</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da">buttonTask</link>()
-00136 {
-00137 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_onOffBtnStatus;
-00138 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_upBtnStatus;
-00139 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_downBtnStatus;
-00140 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager</link>();
-00141 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_onOffBtnStatus,ON_OFF_BTN);
-00142 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_upBtnStatus,UP_BTN);
-00143 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_downBtnStatus,DOWN_BTN);
-00144 &#32;&#32;&#32;&#32;
-00150 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_onOffBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
-00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_deviceDisableFlag&#32;=&#32;!gu8_deviceDisableFlag;
-00152 &#32;&#32;&#32;&#32;
+00135 
+<anchor xml:id="_main_8c_source_1l00136"/><link linkend="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da">00136</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da">buttonTask</link>()
+00137 {
+00138 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_onOffBtnStatus;
+00139 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_upBtnStatus;
+00140 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_downBtnStatus;
+00141 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager</link>();
+00142 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_onOffBtnStatus,ON_OFF_BTN);
+00143 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_upBtnStatus,UP_BTN);
+00144 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_downBtnStatus,DOWN_BTN);
+00145 &#32;&#32;&#32;&#32;
+00151 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_onOffBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
+00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_deviceDisableFlag&#32;=&#32;!gu8_deviceDisableFlag;
 00153 &#32;&#32;&#32;&#32;
-00163 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>)
-00164 &#32;&#32;&#32;&#32;{
-00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>&#32;||&#32;u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
-00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_mode&#32;=&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>;
-00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_settedTemp&#32;&#32;=&#32;&#32;<link linkend="_eeprom__ext_8c_1a68ff2caae3c67d6e12b84a0f1164dd6a">e2pext_r</link>(0x00);
-00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00171 &#32;&#32;&#32;&#32;}
-00172 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>)
-00173 &#32;&#32;&#32;&#32;{
-00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_btnPressCntr&#32;=&#32;0;
-00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
-00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_settedTemp+=(gu8_settedTemp&#32;==&#32;MAX_TEMP)?&#32;0&#32;:TEMP_STEP;
-00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
-00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_settedTemp-=(gu8_settedTemp&#32;==&#32;MIN_TEMP)?&#32;0&#32;:TEMP_STEP;
-00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(u8_downBtnStatus&#32;&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a485383445338ef8e3b933a06b1663334">BUT_OFF</link>&#32;||&#32;u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a485383445338ef8e3b933a06b1663334">BUT_OFF</link>)
-00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
-00186 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;count&#32;the&#32;time&#32;no&#32;button&#32;has&#32;been&#32;pressed&#32;to&#32;implement&#32;a&#32;time&#32;out</emphasis>
-00187 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;to&#32;exit&#32;TEMP_SET_MODE</emphasis>
-00188 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
-00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_btnPressCntr++;
-00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
-00192 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;if&#32;either&#32;up&#32;or&#32;down&#32;buttons&#32;pressed&#32;reset&#32;timeout&#32;counter</emphasis>
-00193 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
-00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>&#32;||&#32;u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>
-00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||&#32;u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3ac0daf622963a46b0b67beb4a55d97d64">BUT_PRSSED</link>&#32;||&#32;u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3ac0daf622963a46b0b67beb4a55d97d64">BUT_PRSSED</link>)
-00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_btnPressCntr&#32;=&#32;0;
-00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_btnPressCntr&#32;&gt;=&#32;100)
-00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_eeprom__ext_8c_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link>(0x00,gu8_settedTemp);
-00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_tempToAchive&#32;=&#32;gu8_settedTemp;
-00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_TempControlFlag&#32;=&#32;TRUE;
-00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_btnPressCntr&#32;=&#32;0;
-00213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_mode&#32;=&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>;
-00214 
-00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;
-00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00217 &#32;&#32;&#32;&#32;}
-00218 &#32;&#32;&#32;
-00219 &#32;&#32;&#32;&#32;
-00220 }
-00221 
+00154 &#32;&#32;&#32;&#32;
+00164 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>)
+00165 &#32;&#32;&#32;&#32;{
+00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>&#32;||&#32;u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
+00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_mode&#32;=&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>;
+00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_settedTemp&#32;&#32;=&#32;&#32;<link linkend="_eeprom__ext_8c_1a68ff2caae3c67d6e12b84a0f1164dd6a">e2pext_r</link>(0x00);
+00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00172 &#32;&#32;&#32;&#32;}
+00173 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>)
+00174 &#32;&#32;&#32;&#32;{
+00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_btnPressCntr&#32;=&#32;0;
+00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
+00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_settedTemp+=(gu8_settedTemp&#32;==&#32;MAX_TEMP)?&#32;0&#32;:TEMP_STEP;
+00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
+00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_settedTemp-=(gu8_settedTemp&#32;==&#32;MIN_TEMP)?&#32;0&#32;:TEMP_STEP;
+00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(u8_downBtnStatus&#32;&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a485383445338ef8e3b933a06b1663334">BUT_OFF</link>&#32;||&#32;u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a485383445338ef8e3b933a06b1663334">BUT_OFF</link>)
+00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00187 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;count&#32;the&#32;time&#32;no&#32;button&#32;has&#32;been&#32;pressed&#32;to&#32;implement&#32;a&#32;time&#32;out</emphasis>
+00188 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;to&#32;exit&#32;TEMP_SET_MODE</emphasis>
+00189 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_btnPressCntr++;
+00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00193 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;if&#32;either&#32;up&#32;or&#32;down&#32;buttons&#32;pressed&#32;reset&#32;timeout&#32;counter</emphasis>
+00194 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>&#32;||&#32;u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>
+00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;||&#32;u8_upBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3ac0daf622963a46b0b67beb4a55d97d64">BUT_PRSSED</link>&#32;||&#32;u8_downBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3ac0daf622963a46b0b67beb4a55d97d64">BUT_PRSSED</link>)
+00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_btnPressCntr&#32;=&#32;0;
+00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_btnPressCntr&#32;&gt;=&#32;100)
+00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_eeprom__ext_8c_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link>(0x00,gu8_settedTemp);
+00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_tempToAchive&#32;=&#32;gu8_settedTemp;
+00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_TempControlFlag&#32;=&#32;TRUE;
+00213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_btnPressCntr&#32;=&#32;0;
+00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_mode&#32;=&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>;
+00215 
+00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;
+00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00218 &#32;&#32;&#32;&#32;}
+00219 &#32;&#32;&#32;
+00220 &#32;&#32;&#32;&#32;
+00221 }
 00222 
-<anchor xml:id="_main_8c_source_1l00223"/><link linkend="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101">00223</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101">sevenSegTask</link>()
-00224 {&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00235 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>)
-00236 &#32;&#32;&#32;&#32;{
-00237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_selectedSevenSeg&#32;=&#32;SEVEN_SEG_TWO;
-00238 
-00239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_TWO&#32;)
-00240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(currentTemp%10,SEVEN_SEG_TWO);
-00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
-00242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(currentTemp/10,SEVEN_SEG_ONE);
-00243 &#32;&#32;&#32;
-00244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
-00245 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;update&#32;u8_selectedSevenSeg&#32;variable&#32;to&#32;alternate&#32;between&#32;the&#32;two&#32;seven&#32;seg.</emphasis>
-00246 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
-00247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_selectedSevenSeg&#32;=&#32;(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_ONE)?&#32;SEVEN_SEG_TWO&#32;:&#32;SEVEN_SEG_ONE;
-00248 &#32;&#32;
-00249 &#32;&#32;&#32;&#32;}
-00250 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(&#32;gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>)
-00251 &#32;&#32;&#32;&#32;{
-00252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_ssdDisableFalg&#32;=&#32;FALSE;
-00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_flashCounter&#32;=&#32;0;
-00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_selectedSevenSeg&#32;=&#32;SEVEN_SEG_TWO;
-00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_TWO)
-00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(gu8_settedTemp%10,SEVEN_SEG_TWO);
-00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
-00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(gu8_settedTemp/10,SEVEN_SEG_ONE);
-00259 &#32;&#32;&#32;
-00260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
-00261 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;update&#32;u8_selectedSevenSeg&#32;variable&#32;to&#32;alternate&#32;between&#32;the&#32;two&#32;seven&#32;seg.</emphasis>
-00262 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
-00263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_selectedSevenSeg&#32;=&#32;(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_ONE)?&#32;SEVEN_SEG_TWO&#32;:&#32;SEVEN_SEG_ONE;
-00264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_flashCounter&#32;==&#32;SSD_FLASHING_CYCLE)
-00269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_ssdDisableFalg&#32;=&#32;!u8_ssdDisableFalg;
-00271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_flashCounter&#32;&#32;&#32;=&#32;&#32;0&#32;;
-00272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-00273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_ssdDisableFalg)
-00275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a48b828fc607ed48b54488f8cb46696f8">disableSevenSeg</link>();
-00276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00223 
+<anchor xml:id="_main_8c_source_1l00224"/><link linkend="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101">00224</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101">sevenSegTask</link>()
+00225 {&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00236 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>)
+00237 &#32;&#32;&#32;&#32;{
+00238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_selectedSevenSeg&#32;=&#32;SEVEN_SEG_TWO;
+00239 
+00240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_TWO&#32;)
+00241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(currentTemp%10,SEVEN_SEG_TWO);
+00242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(currentTemp/10,SEVEN_SEG_ONE);
+00244 &#32;&#32;&#32;
+00245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00246 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;update&#32;u8_selectedSevenSeg&#32;variable&#32;to&#32;alternate&#32;between&#32;the&#32;two&#32;seven&#32;seg.</emphasis>
+00247 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_selectedSevenSeg&#32;=&#32;(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_ONE)?&#32;SEVEN_SEG_TWO&#32;:&#32;SEVEN_SEG_ONE;
+00249 &#32;&#32;
+00250 &#32;&#32;&#32;&#32;}
+00251 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(&#32;gu8_mode&#32;==&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a5801689c2e6a787e012bf452ee0fabe3">TEMP_SET_MODE</link>)
+00252 &#32;&#32;&#32;&#32;{
+00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_ssdDisableFalg&#32;=&#32;FALSE;
+00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_flashCounter&#32;=&#32;0;
+00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_selectedSevenSeg&#32;=&#32;SEVEN_SEG_TWO;
+00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_TWO)
+00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(gu8_settedTemp%10,SEVEN_SEG_TWO);
+00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1ae89a46a801483d679b68d653efd31267">sevenSegSendChar</link>(gu8_settedTemp/10,SEVEN_SEG_ONE);
+00260 &#32;&#32;&#32;
+00261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00262 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*&#32;&#32;update&#32;u8_selectedSevenSeg&#32;variable&#32;to&#32;alternate&#32;between&#32;the&#32;two&#32;seven&#32;seg.</emphasis>
+00263 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_selectedSevenSeg&#32;=&#32;(u8_selectedSevenSeg&#32;==&#32;SEVEN_SEG_ONE)?&#32;SEVEN_SEG_TWO&#32;:&#32;SEVEN_SEG_ONE;
+00265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_flashCounter&#32;==&#32;SSD_FLASHING_CYCLE)
+00270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_ssdDisableFalg&#32;=&#32;!u8_ssdDisableFalg;
+00272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_flashCounter&#32;&#32;&#32;=&#32;&#32;0&#32;;
+00273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_ssdDisableFalg)
+00276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a48b828fc607ed48b54488f8cb46696f8">disableSevenSeg</link>();
 00277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_flashCounter++;
-00279 &#32;&#32;&#32;&#32;}&#32;&#32;&#32;
-00280 }
-00281 
+00278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_flashCounter++;
+00280 &#32;&#32;&#32;&#32;}&#32;&#32;&#32;
+00281 }
 00282 
-<anchor xml:id="_main_8c_source_1l00283"/><link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">00283</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">tempTask</link>()
-00284 {
-00285 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_TempPos&#32;=&#32;0;
-00286 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1ac55f3ae81b5bc9053760baacf57e47f4">float64_t</link>&#32;clsius;
-00287 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;u16_ADC_value&#32;=&#32;0;
-00288 &#32;&#32;&#32;&#32;
-00294 &#32;&#32;&#32;&#32;<link linkend="_adc_8c_1a081e50ee005f48bbab04c857524ed3b9">ADC_trigger</link>(TEMP_ADC_CHNL);
-00295 &#32;&#32;&#32;&#32;
-00296 &#32;&#32;&#32;&#32;<emphasis role="comment">//this&#32;eq&#32;from&#32;the&#32;data&#32;sheet&#32;of&#32;the&#32;LM25&#32;module</emphasis>
-00297 &#32;&#32;&#32;&#32;clsius&#32;=&#32;(((<link linkend="_adc_8c_1a07bb473f93a6ad88d006d3f38ea209e1">getADC_value</link>(&amp;u16_ADC_value))*4.88)/(10.00));
-00298 &#32;&#32;&#32;&#32;currentTemp&#32;=&#32;(<link linkend="_std__types_8h_1a06896e8c53f721507066c079052171f8">uint32_t</link>)clsius;&#32;<emphasis role="comment">//this&#32;is&#32;for&#32;SSD&#32;</emphasis>
-00299 &#32;&#32;&#32;&#32;tempValues[u8_TempPos]&#32;=&#32;(<link linkend="_std__types_8h_1a06896e8c53f721507066c079052171f8">uint32_t</link>)clsius;&#32;<emphasis role="comment">//this&#32;is&#32;for&#32;temp&#32;control&#32;task</emphasis>
-00300 &#32;&#32;&#32;&#32;u8_TempPos++;
-00301 &#32;&#32;&#32;&#32;
-00302 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_TempPos&#32;==&#32;TEMP_VLAUES)&#32;<emphasis role="comment">//reach&#32;array&#32;boundry</emphasis>
-00303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_TempPos&#32;=&#32;0;
-00304 }
-00305 
-<anchor xml:id="_main_8c_source_1l00306"/><link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">00306</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">appInit</link>()
-00307 {
-00308 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</link>();
+00283 
+<anchor xml:id="_main_8c_source_1l00284"/><link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">00284</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">tempTask</link>()
+00285 {
+00286 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_TempPos&#32;=&#32;0;
+00287 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1ac55f3ae81b5bc9053760baacf57e47f4">float64_t</link>&#32;clsius;
+00288 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1a1f1825b69244eb3ad2c7165ddc99c956">uint16_t</link>&#32;u16_ADC_value&#32;=&#32;0;
+00289 &#32;&#32;&#32;&#32;
+00295 &#32;&#32;&#32;&#32;<link linkend="_adc_8c_1a081e50ee005f48bbab04c857524ed3b9">ADC_trigger</link>(TEMP_ADC_CHNL);
+00296 &#32;&#32;&#32;&#32;<link linkend="_adc_8c_1a07bb473f93a6ad88d006d3f38ea209e1">getADC_value</link>(&amp;u16_ADC_value);
+00297 &#32;&#32;&#32;&#32;<emphasis role="comment">//this&#32;eq&#32;from&#32;the&#32;data&#32;sheet&#32;of&#32;the&#32;LM25&#32;module</emphasis>
+00298 &#32;&#32;&#32;&#32;clsius&#32;=&#32;(((<link linkend="_std__types_8h_1ac55f3ae81b5bc9053760baacf57e47f4">float64_t</link>)u16_ADC_value*4.88)/(10.00));
+00299 &#32;&#32;&#32;&#32;currentTemp&#32;=&#32;(<link linkend="_std__types_8h_1a06896e8c53f721507066c079052171f8">uint32_t</link>)clsius;&#32;<emphasis role="comment">//this&#32;is&#32;for&#32;SSD&#32;</emphasis>
+00300 &#32;&#32;&#32;&#32;tempValues[u8_TempPos]&#32;=&#32;(<link linkend="_std__types_8h_1a06896e8c53f721507066c079052171f8">uint32_t</link>)clsius;&#32;<emphasis role="comment">//this&#32;is&#32;for&#32;temp&#32;control&#32;task</emphasis>
+00301 &#32;&#32;&#32;&#32;u8_TempPos++;
+00302 &#32;&#32;&#32;&#32;
+00303 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_TempPos&#32;==&#32;TEMP_VLAUES)&#32;<emphasis role="comment">//reach&#32;array&#32;boundry</emphasis>
+00304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;u8_TempPos&#32;=&#32;0;
+00305 }
+00306 
+<anchor xml:id="_main_8c_source_1l00307"/><link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">00307</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">appInit</link>()
+00308 {
 00310 
-00316 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(HEATER_ELEMENT,LOWL);
-00317 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(COOLER_ELEMENT,LOWL);
-00318 &#32;&#32;&#32;&#32;<emphasis role="comment">//init&#32;temp&#32;control&#32;LED&#32;AS&#32;0</emphasis>
-00319 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(TEMP_CONTROL_LED,LOWL);&#32;&#32;
-00320 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a4d8709c705e4850882d44e4b68681421">BTN_Init</link>();
-00321 &#32;&#32;&#32;&#32;<link linkend="_isr_8c_1a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</link>();
-00322 &#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a60579fecccc40e10b8ecca856466d540">sevenSegInit</link>();
-00323 &#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a48b828fc607ed48b54488f8cb46696f8">disableSevenSeg</link>();
-00324 &#32;&#32;&#32;&#32;<link linkend="_adc_8c_1ab63839ae7368b215a9e0e3381427d76a">ADC_Init</link>();
-00325 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1a5730d9445429351b9f750084c5cb5aae">i2c_init</link>();
-00326 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1aa4a8a75bc8f33c7ff7c7072ec695b763">SOS_Init</link>();
-00327 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_i&#32;=&#32;0;
-00328 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(;&#32;u8_i&lt;&#32;TEMP_VLAUES&#32;;u8_i++)
-00329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempValues[u8_i]&#32;=&#32;0;
-00330 &#32;&#32;&#32;&#32;
-00337 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_usedPattern&#32;=&#32;<link linkend="_eeprom__ext_8c_1a68ff2caae3c67d6e12b84a0f1164dd6a">e2pext_r</link>(0x02);
-00338 &#32;&#32;&#32;&#32;
-00339 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_usedPattern&#32;!=&#32;USED_PATTERN)
-00340 &#32;&#32;&#32;&#32;{
-00341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_eeprom__ext_8c_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link>(0x00,60);
-00342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_eeprom__ext_8c_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link>(0x02,USED_PATTERN);
-00343 &#32;&#32;&#32;&#32;}
-00345 &#32;&#32;&#32;&#32;gu8_mode&#32;=&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>;
-00346 &#32;&#32;&#32;&#32;currentTemp&#32;&#32;&#32;=&#32;0;
-00347 &#32;&#32;&#32;&#32;gu8_settedTemp&#32;=&#32;60;
-00348 &#32;&#32;&#32;&#32;gu8_TempControlFlag&#32;=&#32;0&#32;;
-00349 &#32;&#32;&#32;&#32;gu8_deviceDisableFlag&#32;=&#32;TRUE;&#32;&#32;&#32;
-00350 }
-00351 
+00316 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1afcc83c805035d83c6834e8fcfd83e2b1">DIO_Init</link>();
+00317 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(HEATER_ELEMENT,LOWL);
+00318 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(COOLER_ELEMENT,LOWL);
+00319 &#32;&#32;&#32;&#32;<emphasis role="comment">//init&#32;temp&#32;control&#32;LED&#32;AS&#32;0</emphasis>
+00320 &#32;&#32;&#32;&#32;<link linkend="__d_i_o_8c_1ab261c4b7670e6bacd1c7ad1839ab95b0">DIO_Write</link>(TEMP_CONTROL_LED,LOWL);&#32;&#32;
+00321 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a4d8709c705e4850882d44e4b68681421">BTN_Init</link>();
+00322 &#32;&#32;&#32;&#32;<link linkend="_isr_8c_1a097b132f44acb3a9bbe5f60f62d339d2">interruptsInit</link>();
+00323 &#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a60579fecccc40e10b8ecca856466d540">sevenSegInit</link>();
+00324 &#32;&#32;&#32;&#32;<link linkend="_7seg_8c_1a48b828fc607ed48b54488f8cb46696f8">disableSevenSeg</link>();
+00325 &#32;&#32;&#32;&#32;<link linkend="_adc_8c_1ab63839ae7368b215a9e0e3381427d76a">ADC_Init</link>();
+00326 &#32;&#32;&#32;&#32;<link linkend="_i2c_8c_1a5730d9445429351b9f750084c5cb5aae">i2c_init</link>();
+00327 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1aa4a8a75bc8f33c7ff7c7072ec695b763">SOS_Init</link>();
+00328 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_i&#32;=&#32;0;
+00329 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(;&#32;u8_i&lt;&#32;TEMP_VLAUES&#32;;u8_i++)
+00330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempValues[u8_i]&#32;=&#32;0;
+00331 &#32;&#32;&#32;&#32;
+00338 &#32;&#32;&#32;&#32;<link linkend="_std__types_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;u8_usedPattern&#32;=&#32;<link linkend="_eeprom__ext_8c_1a68ff2caae3c67d6e12b84a0f1164dd6a">e2pext_r</link>(0x02);
+00339 &#32;&#32;&#32;&#32;
+00340 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_usedPattern&#32;!=&#32;USED_PATTERN)
+00341 &#32;&#32;&#32;&#32;{
+00342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_eeprom__ext_8c_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link>(0x00,60);
+00343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_eeprom__ext_8c_1a3b6e76a761d4f025a99416f03ef098ed">e2pext_w</link>(0x02,USED_PATTERN);
+00344 &#32;&#32;&#32;&#32;}
+00346 &#32;&#32;&#32;&#32;gu8_mode&#32;=&#32;<link linkend="_main_8c_1ac5cc1393a3907945816f4b7e09049732a1f6ccf55deffd73d67d5390d50ad637a">NORM_MODE</link>;
+00347 &#32;&#32;&#32;&#32;currentTemp&#32;&#32;&#32;=&#32;0;
+00348 &#32;&#32;&#32;&#32;gu8_settedTemp&#32;=&#32;60;
+00349 &#32;&#32;&#32;&#32;gu8_TempControlFlag&#32;=&#32;0&#32;;
+00350 &#32;&#32;&#32;&#32;gu8_deviceDisableFlag&#32;=&#32;TRUE;&#32;&#32;&#32;
+00351 }
 00352 
-<anchor xml:id="_main_8c_source_1l00353"/><link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">00353</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">checkONBtnStatus</link>()
-00354 {
-00355 &#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
-00356 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;&#32;this&#32;function&#32;used&#32;to&#32;check&#32;on&#32;the&#32;on/off&#32;btn&#32;</emphasis>
-00357 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;if&#32;the&#32;system&#32;on&#32;the&#32;off&#32;state</emphasis>
-00358 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*/</emphasis>
-00359 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_onOffBtnStatus;
-00360 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager</link>();
-00361 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_onOffBtnStatus,ON_OFF_BTN);
-00362 &#32;&#32;&#32;&#32;
-00363 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_onOffBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
-00364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_deviceDisableFlag&#32;=&#32;!gu8_deviceDisableFlag;
-00365 }
-00366 
+00353 
+<anchor xml:id="_main_8c_source_1l00354"/><link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">00354</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">checkONBtnStatus</link>()
+00355 {
+00356 &#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+00357 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;&#32;this&#32;function&#32;used&#32;to&#32;check&#32;on&#32;the&#32;on/off&#32;btn&#32;</emphasis>
+00358 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;if&#32;the&#32;system&#32;on&#32;the&#32;off&#32;state</emphasis>
+00359 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+00360 &#32;&#32;&#32;&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3">BtnStateType</link>&#32;u8_onOffBtnStatus;
+00361 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1af9d0881c43b0ff77296a25abd27b5929">BTN_Manager</link>();
+00362 &#32;&#32;&#32;&#32;<link linkend="_btn_8c_1a5aeeef57fe3d8638de39db5ed01efaef">BTN_GetState</link>(&amp;u8_onOffBtnStatus,ON_OFF_BTN);
+00363 &#32;&#32;&#32;&#32;
+00364 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(u8_onOffBtnStatus&#32;==&#32;<link linkend="_btn_8h_1a5c54de8c0efd647f4fb3d55269f661b3a9da5e7a94f96f0bb7961458b4a4197ee">BUT_ON</link>)
+00365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;gu8_deviceDisableFlag&#32;=&#32;!gu8_deviceDisableFlag;
+00366 }
 00367 
-00368 
-<anchor xml:id="_main_8c_source_1l00369"/><link linkend="_main_8c_1a6288eba0f8e8ad3ab1544ad731eb7667">00369</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1a6288eba0f8e8ad3ab1544ad731eb7667">main</link>(<emphasis role="keywordtype">void</emphasis>){
-00370 &#32;&#32;&#32;&#32;<link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">appInit</link>();
-00376 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(1,<link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">tempTask</link>,100,PERIODIC,1);
-00377 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(3,<link linkend="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da">buttonTask</link>,50,PERIODIC,2);
-00378 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(4,<link linkend="_main_8c_1aabcbdc9715896bcbf677585867fd734c">tempControlTask</link>,100,PERIODIC,3);
-00379 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(2,<link linkend="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101">sevenSegTask</link>,50,PERIODIC,4);
-00380 
-00381 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(1)
-00382 &#32;&#32;&#32;&#32;{
-00388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_deviceDisableFlag&#32;==&#32;TRUE)
-00389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">appInit</link>();
-00391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(gu8_deviceDisableFlag&#32;==&#32;TRUE)
-00397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-00398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">checkONBtnStatus</link>();
-00400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-00401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-00402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a8dd58b17a3ae907bda4c429f78883d67">SOS_run</link>();
-00404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;
-00405 
-00406 &#32;&#32;&#32;&#32;}
-00407 &#32;&#32;&#32;&#32;
-00408 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
-00409 }
+<anchor xml:id="_main_8c_source_1l00368"/><link linkend="_main_8c_1a637eb1182370683eb9b6e6502e52a262">00368</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1a637eb1182370683eb9b6e6502e52a262">OS_startFunction</link>()
+00369 {
+00370 &#32;&#32;&#32;&#32;<link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">tempTask</link>();
+00371 }
+00372 
+<anchor xml:id="_main_8c_source_1l00373"/><link linkend="_main_8c_1a6288eba0f8e8ad3ab1544ad731eb7667">00373</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8c_1a6288eba0f8e8ad3ab1544ad731eb7667">main</link>(<emphasis role="keywordtype">void</emphasis>){
+00374 &#32;&#32;&#32;&#32;<link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">appInit</link>();
+00380 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(1,<link linkend="_main_8c_1a4e7c6b5809aef7a48e6ff16156c907b5">tempTask</link>,100,PERIODIC,1);
+00381 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(3,<link linkend="_main_8c_1aa3704144322ffcbb82cc88ee36f1a9da">buttonTask</link>,50,PERIODIC,2);
+00382 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(4,<link linkend="_main_8c_1aabcbdc9715896bcbf677585867fd734c">tempControlTask</link>,100,PERIODIC,3);
+00383 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a085b92af3cd18aadc5f6c5c4979969fe">SOS_createTask</link>(2,<link linkend="_main_8c_1ac1e5ea28aae6331165f91deabb3a7101">sevenSegTask</link>,50,PERIODIC,4);
+00384 &#32;&#32;&#32;&#32;
+00385 &#32;&#32;&#32;&#32;<emphasis role="comment">//set&#32;the&#32;CBF&#32;to&#32;call&#32;at&#32;the&#32;start&#32;of&#32;the&#32;os</emphasis>
+00386 &#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a8a2e1378e0ce6444e0b0bc5edd5d91cc">SOS_StartProc</link>(<link linkend="_main_8c_1a637eb1182370683eb9b6e6502e52a262">OS_startFunction</link>);
+00387 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(1)
+00388 &#32;&#32;&#32;&#32;{
+00393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(gu8_deviceDisableFlag&#32;==&#32;TRUE)
+00394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_main_8c_1ab90881fea8078c203ba2c8538c00593a">appInit</link>();
+00400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(gu8_deviceDisableFlag&#32;==&#32;TRUE)
+00401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+00402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">checkONBtnStatus</link>();
+00403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+00405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_o_s_8c_1a8dd58b17a3ae907bda4c429f78883d67">SOS_run</link>();
+00407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;
+00408 
+00409 &#32;&#32;&#32;&#32;}
+00410 &#32;&#32;&#32;&#32;
+00411 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+00412 }
 </programlisting></section>

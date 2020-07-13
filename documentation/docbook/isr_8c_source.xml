@@ -5,7 +5,7 @@
 <programlisting>00001 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_isr_8h">isr.h</link>&quot;</emphasis>
 00002 <emphasis role="preprocessor">#include&#32;&lt;xc.h&gt;</emphasis>
 00003 
-<anchor xml:id="_isr_8c_source_1l00004"/><link linkend="_isr_8c_1a824a8a19244111c9dc43fb448e235ce2">00004</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_isr_8c_1a824a8a19244111c9dc43fb448e235ce2">__interrupt</link>()&#32;MyISR(<emphasis role="keywordtype">void</emphasis>)&#32;{
+<anchor xml:id="_isr_8c_source_1l00004"/><link linkend="_isr_8c_1afc9358d39f3af7e9d51a02070782efbb">00004</link> <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_isr_8c_1afc9358d39f3af7e9d51a02070782efbb">__interrupt</link>()&#32;__ISR(<emphasis role="keywordtype">void</emphasis>)&#32;{
 00005 
 00006 
 00007 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(TMR1IF&#32;==&#32;HIGH_BIT)&#32;{

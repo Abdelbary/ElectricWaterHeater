@@ -101,6 +101,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a4655ee3cf01d0f6f8b64f23f368acf37"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_o_s_8h.html#a4655ee3cf01d0f6f8b64f23f368acf37">CBF</a>) (void)</td></tr>
+<tr class="separator:a4655ee3cf01d0f6f8b64f23f368acf37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb1b7b451e3f428a5e38e271845b577"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_s_o_s__cfg__str.html">SOS_cfg_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_o_s_8h.html#afcb1b7b451e3f428a5e38e271845b577">gstr_SOS_cfg_t</a></td></tr>
 <tr class="separator:afcb1b7b451e3f428a5e38e271845b577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -116,8 +118,26 @@ Functions</h2></td></tr>
 <tr class="separator:a8dd58b17a3ae907bda4c429f78883d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d328c9cc7f2900d9ee68f8aab3231f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_o_s_8h.html#a5d328c9cc7f2900d9ee68f8aab3231f9">SOS_Deinit</a> (void)</td></tr>
 <tr class="separator:a5d328c9cc7f2900d9ee68f8aab3231f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a2e1378e0ce6444e0b0bc5edd5d91cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_o_s_8h.html#a8a2e1378e0ce6444e0b0bc5edd5d91cc">SOS_StartProc</a> (<a class="el" href="_s_o_s_8h.html#a4655ee3cf01d0f6f8b64f23f368acf37">CBF</a> callBackFun)</td></tr>
+<tr class="separator:a8a2e1378e0ce6444e0b0bc5edd5d91cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a4655ee3cf01d0f6f8b64f23f368acf37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4655ee3cf01d0f6f8b64f23f368acf37">&#9670;&nbsp;</a></span>CBF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* CBF) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_s_o_s_8h_source.html#l00026">26</a> of file <a class="el" href="_s_o_s_8h_source.html">SOS.h</a>.</p>
+
+</div>
+</div>
 <a id="afcb1b7b451e3f428a5e38e271845b577"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcb1b7b451e3f428a5e38e271845b577">&#9670;&nbsp;</a></span>gstr_SOS_cfg_t</h2>
 
@@ -375,6 +395,52 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="311,5,408,32"/>
 <area shape="rect" href="_s_o_s_8c.html#a33f0b757ea5b9df0fff7cdcef7178981" title=" " alt="" coords="139,31,252,57"/>
 <area shape="rect" href="timer_8c.html#ae8412a88f34f526095d643d829ace90f" title=" " alt="" coords="128,81,263,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8a2e1378e0ce6444e0b0bc5edd5d91cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a2e1378e0ce6444e0b0bc5edd5d91cc">&#9670;&nbsp;</a></span>SOS_StartProc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> SOS_StartProc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_s_o_s_8h.html#a4655ee3cf01d0f6f8b64f23f368acf37">CBF</a>&#160;</td>
+          <td class="paramname"><em>callBackFun</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><b>Description:</b> SOS_StartProc run the start of os procedure by calling the call back function pointer passed as a paramter from the application</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">CBF</td><td>function to call at the start of the os</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: ERROR_STATUS [OK,NOK] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_s_o_s_8c_source.html#l00312">312</a> of file <a class="el" href="_s_o_s_8c_source.html">SOS.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_cgraph.png" border="0" usemap="#_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_cgraph" alt=""/></div>
+<map name="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_cgraph" id="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="165,5,263,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_icgraph.png" border="0" usemap="#_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_icgraph" alt=""/></div>
+<map name="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_icgraph" id="_s_o_s_8h_a8a2e1378e0ce6444e0b0bc5edd5d91cc_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,216,32"/>
+<area shape="rect" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,56,32"/>
 </map>
 </div>
 

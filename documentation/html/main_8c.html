@@ -114,6 +114,8 @@ Functions</h2></td></tr>
 <tr class="separator:ab90881fea8078c203ba2c8538c00593a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf7e98ccf36d8f640a03030aad64c7f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#abf7e98ccf36d8f640a03030aad64c7f2">checkONBtnStatus</a> ()</td></tr>
 <tr class="separator:abf7e98ccf36d8f640a03030aad64c7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637eb1182370683eb9b6e6502e52a262"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a637eb1182370683eb9b6e6502e52a262">OS_startFunction</a> ()</td></tr>
+<tr class="separator:a637eb1182370683eb9b6e6502e52a262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667">main</a> (void)</td></tr>
 <tr class="separator:a6288eba0f8e8ad3ab1544ad731eb7667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -158,7 +160,7 @@ Functions</h2></td></tr>
 <p>this block of code used to set the temp to 60 in the first run this can be simplified by checking for 0xff pattern but this is work for now</p>
 <p>set initial values for global variables</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00306">306</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00307">307</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -209,7 +211,7 @@ Here is the caller graph for this function:</div>
 <p>if time out counter reached time out counts <em>button task called every 50ms so we need 50000/50 = 100 enterance befor change the state to normal state</em></p>
 <p>load setted value to e2prom set temp for temp control task fire temp control task flag reset timeout counter change state to normal state</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00135">135</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00136">136</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -247,7 +249,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00353">353</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00354">354</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -280,34 +282,76 @@ Here is the call graph for this function:</div>
 <p>if the on off btn is pressed and the system is on disable system disable system by call init function of the system</p>
 <p>halt system and only check for the on btn</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00369">369</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00373">373</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph.png" border="0" usemap="#main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph" alt=""/></div>
 <map name="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph" id="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph">
-<area shape="rect" title=" " alt="" coords="5,537,56,564"/>
-<area shape="rect" href="main_8c.html#ab90881fea8078c203ba2c8538c00593a" title=" " alt="" coords="135,233,195,260"/>
-<area shape="rect" href="main_8c.html#aa3704144322ffcbb82cc88ee36f1a9da" title=" " alt="" coords="121,461,208,488"/>
-<area shape="rect" href="main_8c.html#ac1e5ea28aae6331165f91deabb3a7101" title=" " alt="" coords="111,512,218,539"/>
-<area shape="rect" href="_s_o_s_8c.html#a085b92af3cd18aadc5f6c5c4979969fe" title=" " alt="" coords="104,664,225,691"/>
-<area shape="rect" href="main_8c.html#aabcbdc9715896bcbf677585867fd734c" title=" " alt="" coords="105,613,225,640"/>
-<area shape="rect" href="main_8c.html#a4e7c6b5809aef7a48e6ff16156c907b5" title=" " alt="" coords="125,563,204,589"/>
-<area shape="rect" href="adc_8c.html#ab63839ae7368b215a9e0e3381427d76a" title=" " alt="" coords="297,411,371,437"/>
-<area shape="rect" href="btn_8c.html#a4d8709c705e4850882d44e4b68681421" title=" " alt="" coords="299,309,369,336"/>
-<area shape="rect" href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1" title=" " alt="" coords="300,360,368,387"/>
-<area shape="rect" href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0" title=" " alt="" coords="464,157,547,184"/>
-<area shape="rect" href="7seg_8c.html#a48b828fc607ed48b54488f8cb46696f8" title=" " alt="" coords="273,208,395,235"/>
-<area shape="rect" href="i2c_8c.html#a5730d9445429351b9f750084c5cb5aae" title=" " alt="" coords="303,56,365,83"/>
-<area shape="rect" href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2" title=" " alt="" coords="287,107,381,133"/>
-<area shape="rect" href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="287,5,381,32"/>
-<area shape="rect" href="_s_o_s_8c.html#aa4a8a75bc8f33c7ff7c7072ec695b763" title=" " alt="" coords="297,259,371,285"/>
-<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="457,563,554,589"/>
-<area shape="rect" href="timer_8c.html#a146cd1e352ec285162684cf776df632c" title=" " alt="" coords="443,259,568,285"/>
-<area shape="rect" href="btn_8c.html#a5aeeef57fe3d8638de39db5ed01efaef" title=" " alt="" coords="281,461,387,488"/>
-<area shape="rect" href="btn_8c.html#af9d0881c43b0ff77296a25abd27b5929" title=" " alt="" coords="282,512,386,539"/>
-<area shape="rect" href="adc_8c.html#a081e50ee005f48bbab04c857524ed3b9" title=" " alt="" coords="288,563,380,589"/>
-<area shape="rect" href="adc_8c.html#a07bb473f93a6ad88d006d3f38ea209e1" title=" " alt="" coords="283,613,385,640"/>
+<area shape="rect" title=" " alt="" coords="5,487,56,513"/>
+<area shape="rect" href="main_8c.html#ab90881fea8078c203ba2c8538c00593a" title=" " alt="" coords="307,233,367,260"/>
+<area shape="rect" href="main_8c.html#aa3704144322ffcbb82cc88ee36f1a9da" title=" " alt="" coords="123,360,209,387"/>
+<area shape="rect" href="main_8c.html#a637eb1182370683eb9b6e6502e52a262" title=" " alt="" coords="104,411,228,437"/>
+<area shape="rect" href="main_8c.html#a4e7c6b5809aef7a48e6ff16156c907b5" title=" " alt="" coords="297,461,376,488"/>
+<area shape="rect" href="main_8c.html#ac1e5ea28aae6331165f91deabb3a7101" title=" " alt="" coords="113,512,219,539"/>
+<area shape="rect" href="_s_o_s_8c.html#a085b92af3cd18aadc5f6c5c4979969fe" title=" " alt="" coords="276,563,397,589"/>
+<area shape="rect" href="_s_o_s_8c.html#a8a2e1378e0ce6444e0b0bc5edd5d91cc" title=" " alt="" coords="110,613,222,640"/>
+<area shape="rect" href="main_8c.html#aabcbdc9715896bcbf677585867fd734c" title=" " alt="" coords="106,664,226,691"/>
+<area shape="rect" href="adc_8c.html#ab63839ae7368b215a9e0e3381427d76a" title=" " alt="" coords="469,411,543,437"/>
+<area shape="rect" href="btn_8c.html#a4d8709c705e4850882d44e4b68681421" title=" " alt="" coords="471,259,541,285"/>
+<area shape="rect" href="_d_i_o_8c.html#afcc83c805035d83c6834e8fcfd83e2b1" title=" " alt="" coords="472,309,540,336"/>
+<area shape="rect" href="_d_i_o_8c.html#ab261c4b7670e6bacd1c7ad1839ab95b0" title=" " alt="" coords="636,157,719,184"/>
+<area shape="rect" href="7seg_8c.html#a48b828fc607ed48b54488f8cb46696f8" title=" " alt="" coords="445,107,567,133"/>
+<area shape="rect" href="i2c_8c.html#a5730d9445429351b9f750084c5cb5aae" title=" " alt="" coords="475,5,537,32"/>
+<area shape="rect" href="isr_8c.html#a097b132f44acb3a9bbe5f60f62d339d2" title=" " alt="" coords="459,56,553,83"/>
+<area shape="rect" href="7seg_8c.html#a60579fecccc40e10b8ecca856466d540" title=" " alt="" coords="459,157,553,184"/>
+<area shape="rect" href="_s_o_s_8c.html#aa4a8a75bc8f33c7ff7c7072ec695b763" title=" " alt="" coords="469,360,543,387"/>
+<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="629,487,726,513"/>
+<area shape="rect" href="timer_8c.html#a146cd1e352ec285162684cf776df632c" title=" " alt="" coords="615,360,740,387"/>
+<area shape="rect" href="btn_8c.html#a5aeeef57fe3d8638de39db5ed01efaef" title=" " alt="" coords="283,335,390,361"/>
+<area shape="rect" href="btn_8c.html#af9d0881c43b0ff77296a25abd27b5929" title=" " alt="" coords="285,385,389,412"/>
+<area shape="rect" href="adc_8c.html#a081e50ee005f48bbab04c857524ed3b9" title=" " alt="" coords="460,461,552,488"/>
+<area shape="rect" href="adc_8c.html#a07bb473f93a6ad88d006d3f38ea209e1" title=" " alt="" coords="455,512,557,539"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a637eb1182370683eb9b6e6502e52a262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637eb1182370683eb9b6e6502e52a262">&#9670;&nbsp;</a></span>OS_startFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OS_startFunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00368">368</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a637eb1182370683eb9b6e6502e52a262_cgraph.png" border="0" usemap="#main_8c_a637eb1182370683eb9b6e6502e52a262_cgraph" alt=""/></div>
+<map name="main_8c_a637eb1182370683eb9b6e6502e52a262_cgraph" id="main_8c_a637eb1182370683eb9b6e6502e52a262_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,129,57"/>
+<area shape="rect" href="main_8c.html#a4e7c6b5809aef7a48e6ff16156c907b5" title=" " alt="" coords="177,31,256,57"/>
+<area shape="rect" href="adc_8c.html#a081e50ee005f48bbab04c857524ed3b9" title=" " alt="" coords="309,5,401,32"/>
+<area shape="rect" href="adc_8c.html#a07bb473f93a6ad88d006d3f38ea209e1" title=" " alt="" coords="304,56,407,83"/>
+<area shape="rect" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b" title=" " alt="" coords="455,31,552,57"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a637eb1182370683eb9b6e6502e52a262_icgraph.png" border="0" usemap="#main_8c_a637eb1182370683eb9b6e6502e52a262_icgraph" alt=""/></div>
+<map name="main_8c_a637eb1182370683eb9b6e6502e52a262_icgraph" id="main_8c_a637eb1182370683eb9b6e6502e52a262_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,228,32"/>
+<area shape="rect" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,56,32"/>
 </map>
 </div>
 
@@ -331,7 +375,7 @@ Here is the call graph for this function:</div>
 </p>
 <p>control the ssd on/off time as 1 sec for each</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00223">223</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00224">224</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -394,7 +438,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>trigger ADC on specific chanal get temp from adc value set adc value in it's pos in temp array</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00283">283</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00284">284</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -411,8 +455,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph.png" border="0" usemap="#main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph" alt=""/></div>
 <map name="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph" id="main_8c_a4e7c6b5809aef7a48e6ff16156c907b5_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,183,32"/>
+<area shape="rect" title=" " alt="" coords="276,5,355,32"/>
 <area shape="rect" href="main_8c.html#a6288eba0f8e8ad3ab1544ad731eb7667" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" href="main_8c.html#a637eb1182370683eb9b6e6502e52a262" title=" " alt="" coords="104,31,228,57"/>
 </map>
 </div>
 

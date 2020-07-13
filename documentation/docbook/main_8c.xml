@@ -26,6 +26,8 @@
 </listitem>
             <listitem><para>void <link linkend="_main_8c_1abf7e98ccf36d8f640a03030aad64c7f2">checkONBtnStatus</link> ()</para>
 </listitem>
+            <listitem><para>void <link linkend="_main_8c_1a637eb1182370683eb9b6e6502e52a262">OS_startFunction</link> ()</para>
+</listitem>
             <listitem><para>void <link linkend="_main_8c_1a6288eba0f8e8ad3ab1544ad731eb7667">main</link> (void)</para>
 </listitem>
         </itemizedlist>
@@ -68,7 +70,7 @@ Definition at line <link linkend="_main_8c_source_1l00034">34</link> of file <li
 
 <para>set initial values for global variables</para>
 <para>
-Definition at line <link linkend="_main_8c_source_1l00306">306</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Definition at line <link linkend="_main_8c_source_1l00307">307</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
 Here is the call graph for this function:<para>
     <informalfigure>
         <mediaobject>
@@ -100,7 +102,7 @@ Here is the caller graph for this function:<para>
 
 <para>load setted value to e2prom set temp for temp control task fire temp control task flag reset timeout counter change state to normal state</para>
 <para>
-Definition at line <link linkend="_main_8c_source_1l00135">135</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Definition at line <link linkend="_main_8c_source_1l00136">136</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
 Here is the call graph for this function:<para>
     <informalfigure>
         <mediaobject>
@@ -124,7 +126,7 @@ Here is the caller graph for this function:<para>
 <indexterm><primary>checkONBtnStatus</primary><secondary>main.c</secondary></indexterm>
 <indexterm><primary>main.c</primary><secondary>checkONBtnStatus</secondary></indexterm>
 <para><computeroutput>void checkONBtnStatus ( )</computeroutput></para><para>
-Definition at line <link linkend="_main_8c_source_1l00353">353</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Definition at line <link linkend="_main_8c_source_1l00354">354</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
 Here is the call graph for this function:<para>
     <informalfigure>
         <mediaobject>
@@ -145,12 +147,36 @@ Here is the call graph for this function:<para>
 
 <para>halt system and only check for the on btn</para>
 <para>
-Definition at line <link linkend="_main_8c_source_1l00369">369</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Definition at line <link linkend="_main_8c_source_1l00373">373</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
 Here is the call graph for this function:<para>
     <informalfigure>
         <mediaobject>
             <imageobject>
                 <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a6288eba0f8e8ad3ab1544ad731eb7667_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+    </section><anchor xml:id="_main_8c_1a637eb1182370683eb9b6e6502e52a262"/>    <section>
+    <title>OS_startFunction()</title>
+<indexterm><primary>OS_startFunction</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>OS_startFunction</secondary></indexterm>
+<para><computeroutput>void OS_startFunction ( )</computeroutput></para><para>
+Definition at line <link linkend="_main_8c_source_1l00368">368</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a637eb1182370683eb9b6e6502e52a262_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8c_a637eb1182370683eb9b6e6502e52a262_icgraph.png"></imagedata>
             </imageobject>
         </mediaobject>
     </informalfigure>
@@ -166,7 +192,7 @@ Here is the call graph for this function:<para>
 
 <para>control the ssd on/off time as 1 sec for each</para>
 <para>
-Definition at line <link linkend="_main_8c_source_1l00223">223</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Definition at line <link linkend="_main_8c_source_1l00224">224</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
 Here is the caller graph for this function:<para>
     <informalfigure>
         <mediaobject>
@@ -210,7 +236,7 @@ Here is the caller graph for this function:<para>
 <para><computeroutput>void tempTask ( )</computeroutput></para>
 <para>trigger ADC on specific chanal get temp from adc value set adc value in it&apos;s pos in temp array</para>
 <para>
-Definition at line <link linkend="_main_8c_source_1l00283">283</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
+Definition at line <link linkend="_main_8c_source_1l00284">284</link> of file <link linkend="_main_8c_source">main.c</link>.</para>
 Here is the call graph for this function:<para>
     <informalfigure>
         <mediaobject>

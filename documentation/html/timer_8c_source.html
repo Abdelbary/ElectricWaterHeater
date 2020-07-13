@@ -133,19 +133,20 @@ $(document).ready(function(){initNavTree('timer_8c_source.html',''); initResizab
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dc">ERROR_STATE</a> e_funStatus = <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(gu8_systemTimerModuleState == SYSTEM_TIMER_INITALIZED)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(gu8_systemTimerModuleState == SYSTEM_TIMER_IDLE_STATE)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        e_funStatus = <a class="code" href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dcab057804c04435b55514a8babf5434ef6">NOK</a>; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="_error_handler_8c.html#ac5764457ee31a7415fc6936d103cb80b">error_handler</a>(TIMER_MODULE_ERROR_NUM+MODULE_NOT_INITALIZED);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        TMR1L = 0x8E;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        TMR1H = 0xFD;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        TMR1ON = 1 ;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> e_funStatus;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">//time to calculate 50ms</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        TMR1L = 0x83;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        TMR1H = 0xC7;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        TMR1ON = 1 ;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> e_funStatus;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_system_errors_8h_html_a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59"><div class="ttname"><a href="_system_errors_8h.html#a37f868640e72b2740019c30ecca6e8dca2bc49ec37d6a5715dd23e85f1ff5bb59">OK</a></div><div class="ttdeci">@ OK</div><div class="ttdef"><b>Definition:</b> <a href="_system_errors_8h_source.html#l00031">SystemErrors.h:31</a></div></div>
