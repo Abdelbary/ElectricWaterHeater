@@ -1,6 +1,6 @@
 # Electrical Water Heater
-this project is implementaion of the Swift Act requirment of Electrical Water Heater [link](Kit_info\Electric Water Heater.pdf).
-to view full documentation as pdf  [full_doc](https://github.com/Abdelbary/ElectricWaterHeater/blob/master/documentation/doc.pdf).
+* this project is implementaion of the Swift Act requirment of Electrical Water Heater [link](https://github.com/Abdelbary/ElectricWaterHeater/blob/master/Kit_info/Electric%20Water%20Heater.pdf).
+* to view full documentation as pdf  [full_doc](https://github.com/Abdelbary/ElectricWaterHeater/blob/master/documentation/doc.pdf).
 ## Demo
 ### click image to check demo video 
 [![Demo](picture/demo.PNG)](https://www.youtube.com/watch?v=F_yb4pN2a-Q")
