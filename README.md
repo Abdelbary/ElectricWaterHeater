@@ -34,7 +34,7 @@ check detailed Design in [pdf](doucmentation/Detailed Design.pdf)
 * os prehook runs tempTask once to be prepare current temp for seven segment display befor it's calling.
 * operation time of each task is neglicatable _no blocking for considerable amount of time_.
 
-<div style="text-align:center">!<image src="picture\timeLine.png"/></div>
+<div style="text-align:center"><image src="picture\timeLine.png"/></div>
 
 ### Operating System:
 This project uses a non premative OS with a periodic task, the os prority feature is turned off as a result task take it's
