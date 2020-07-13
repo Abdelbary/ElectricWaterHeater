@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md_latex_latexdocumentation">
+
+<para>this project is implementation of the Swift Act requirement of Electrical Water Heater <link xlink:href="Kit_info\Electric Water Heater.pdf">link</link>. </para>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md1">
+<title>Demo</title>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md2">
+<title>click image to check demo video</title>
+
+<para><link xlink:href="https://www.youtube.com/watch?v=F_yb4pN2a-Q"></link> </para>
+</section>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md3">
+<title>Dependencies:</title>
+
+<para><orderedlist>
+<listitem>
+<para>PICSimlab simulation program <link xlink:href="https://github.com/lcgamboa/picsimlab">link</link>.</para>
+</listitem><listitem>
+<para>project developed using MPLAB X IDE from microchip.</para>
+</listitem><listitem>
+<para>xc8 compiler from microchip.</para>
+</listitem></orderedlist>
+</para>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md4">
+<title>project documented useing doxygen documentaion in docmentation/html/index.html</title>
+</section>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md5">
+<title>Main Components:</title>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md6">
+<title>Hardware:</title>
+
+<para>The project emulate Electrical Water Heater on PICSimlab simulation program using PicGenios kit with PIC16F877A. </para>
+</section>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md7">
+<title>Software Components:</title>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md8">
+<title>Project Static Architecutre:</title>
+
+<para><emphasis>Note</emphasis>: Application calls MCAL directly to inialize the state of LED, Heater and Cooler to off state as there is no HAL driver for thoes peripheral_i saw that those peripheral logic is too simple to make a sperated driver for them_. </para>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md9">
+<title>Project Detailed Design:</title>
+
+<para>check detailed Design in <link xlink:href="Detailed Design.pdf">pdf</link> </para>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md10">
+<title>Task-TimeLine:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Project uses a non-premature operating system with 50ms tick time.</para>
+</listitem><listitem>
+<para>task periodic time specified in the below graph.</para>
+</listitem><listitem>
+<para>project has five different tasks {tempTask,ButtonTask,tempControlTask,sevenSegTask} their priority as their listing order with highest priority task [tempTask] and lowest priority is [sevenSegTask].</para>
+</listitem><listitem>
+<para>the system repeats it&apos;s operation every 100ms <emphasis>Major Cycle</emphasis>.</para>
+</listitem><listitem>
+<para>os prehook runs tempTask once to prepare current temp for seven segment display before it&apos;s calling.</para>
+</listitem><listitem>
+<para>operation time of each task is neglectable <emphasis>no blocking for a considerable amount of time</emphasis>.</para>
+</listitem></itemizedlist>
+</para>
+
+<para></para>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md11">
+<title>Operating System:</title>
+
+<para>This project uses a non premative OS with a periodic task, the os prority feature is turned off as a result task take it&apos;s priority from the order of its creation relative to other tasks. The project has five different tasks {tempTask,ButtonTask,tempControlTask,sevenSegTask} their priority as thier listing order with highest priority task [tempTask] and lowest priority is [sevenSegTask].</para>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md12">
+<title>System Tasks:</title>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md13">
+<title>tempTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>check if user set a temperature</para>
+</listitem><listitem>
+<para>if a temp is set then<orderedlist>
+<listitem>
+<para>get the average temp of the last ten readings.</para>
+</listitem><listitem>
+<para>take an action based on the state of the heater and cooler state and the set temp value.</para>
+</listitem></orderedlist>
+</para>
+</listitem><listitem>
+<para>if the cooler element is on turn on the led if the heater element is on blink led every 1 sec.</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md14">
+<title>ButtonTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>call button manager.</para>
+</listitem><listitem>
+<para>update the state of each button{up-down-on/off}.</para>
+</listitem><listitem>
+<para>if the on-off button is pressed switch the system {on/off} respectively and exit task.</para>
+</listitem><listitem>
+<para>if in normal mode and up or down button pressed to get the last set value from EXT_EEPROM and change mode to TEMP_SET_MOD.</para>
+</listitem><listitem>
+<para>if in temp set mode and up or down button pressed to increase or decrease the temp to set by 5 depending on which button pressed respectively.</para>
+</listitem><listitem>
+<para>if neither the up nor down button pressed to save the set temp to EXT_EEPROM and change mode to normal mode.</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md15">
+<title>tempControlTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Get the latest adc converted value form the ADC chanal connected to temp sensor.</para>
+</listitem><listitem>
+<para>calculate the current temp in celsius.</para>
+</listitem><listitem>
+<para>save current temp in <emphasis>last 10 temp reading</emphasis> array.</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_latex_latexdocumentation_1autotoc_md16">
+<title>sevenSegTask:</title>
+
+<para><itemizedlist>
+<listitem>
+<para>if in normal mode display the current temp value.</para>
+</listitem><listitem>
+<para>if in temp set mode flash led every 1sec and display last set temp<itemizedlist>
+<listitem>
+<para>Interact with the user if up or down button pressed to change the temp to set by 5 degrees above or below the current temp based on the button pressed.</para>
+</listitem><listitem>
+<para>Max temp 75 and Min temp to set is 35. </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+</section>
+</section>
+</section>

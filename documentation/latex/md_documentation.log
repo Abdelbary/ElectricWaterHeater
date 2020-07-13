@@ -1,0 +1,17 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6) (preloaded format=pdflatex 2020.7.13)  13 JUL 2020 17:19
+entering extended mode
+**./md_documentation.tex
+(md_documentation.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-06-18>
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 t
+     his project is implementation of the Swift Act requirement of Electrica...
+
+? 

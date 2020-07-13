@@ -1,0 +1,62 @@
+this project is implementation of the Swift Act requirement of Electrical Water Heater \href{Kit_info\\Electric Water Heater.pdf}{\texttt{ link}}. \hypertarget{md_latexdocumentation_autotoc_md1}{}\doxysection{Demo}\label{md_latexdocumentation_autotoc_md1}
+\hypertarget{md_latexdocumentation_autotoc_md2}{}\doxysubsection{click image to check demo video}\label{md_latexdocumentation_autotoc_md2}
+\href{https://www.youtube.com/watch?v=F_yb4pN2a-Q}{\texttt{ }} \hypertarget{md_latexdocumentation_autotoc_md3}{}\doxysection{Dependencies\+:}\label{md_latexdocumentation_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item P\+I\+C\+Simlab simulation program \href{https://github.com/lcgamboa/picsimlab}{\texttt{ link}}.
+\item project developed using M\+P\+L\+AB X I\+DE from microchip.
+\item xc8 compiler from microchip.
+\end{DoxyEnumerate}\hypertarget{md_latexdocumentation_autotoc_md4}{}\doxyparagraph{project documented useing doxygen documentaion in docmentation/html/index.\+html}\label{md_latexdocumentation_autotoc_md4}
+\hypertarget{md_latexdocumentation_autotoc_md5}{}\doxysection{Main Components\+:}\label{md_latexdocumentation_autotoc_md5}
+\hypertarget{md_latexdocumentation_autotoc_md6}{}\doxysubsection{Hardware\+:}\label{md_latexdocumentation_autotoc_md6}
+The project emulate Electrical Water Heater on P\+I\+C\+Simlab simulation program using Pic\+Genios kit with P\+I\+C16\+F877A. \hypertarget{md_latexdocumentation_autotoc_md7}{}\doxysection{Software Components\+:}\label{md_latexdocumentation_autotoc_md7}
+\hypertarget{md_latexdocumentation_autotoc_md8}{}\doxysubsubsection{Project Static Architecutre\+:}\label{md_latexdocumentation_autotoc_md8}
+{\itshape Note}\+: Application calls M\+C\+AL directly to inialize the state of L\+ED, Heater and Cooler to off state as there is no H\+AL driver for thoes peripheral\+\_\+i saw that those peripheral logic is too simple to make a sperated driver for them\+\_\+. \hypertarget{md_latexdocumentation_autotoc_md9}{}\doxysubsubsection{Project Detailed Design\+:}\label{md_latexdocumentation_autotoc_md9}
+check detailed Design in \href{Detailed Design.pdf}{\texttt{ pdf}} \hypertarget{md_latexdocumentation_autotoc_md10}{}\doxysubsubsection{Task-\/\+Time\+Line\+:}\label{md_latexdocumentation_autotoc_md10}
+
+\begin{DoxyItemize}
+\item Project uses a non-\/premature operating system with 50ms tick time.
+\item task periodic time specified in the below graph.
+\item project has five different tasks \{temp\+Task,Button\+Task,temp\+Control\+Task,seven\+Seg\+Task\} their priority as their listing order with highest priority task \mbox{[}temp\+Task\mbox{]} and lowest priority is \mbox{[}seven\+Seg\+Task\mbox{]}.
+\item the system repeats it\textquotesingle{}s operation every 100ms {\itshape Major Cycle}.
+\item os prehook runs temp\+Task once to prepare current temp for seven segment display before it\textquotesingle{}s calling.
+\item operation time of each task is neglectable {\itshape no blocking for a considerable amount of time}.
+\end{DoxyItemize}
+
+\hypertarget{md_latexdocumentation_autotoc_md11}{}\doxysubsubsection{Operating System\+:}\label{md_latexdocumentation_autotoc_md11}
+This project uses a non premative OS with a periodic task, the os prority feature is turned off as a result task take it\textquotesingle{}s priority from the order of its creation relative to other tasks. The project has five different tasks \{temp\+Task,Button\+Task,temp\+Control\+Task,seven\+Seg\+Task\} their priority as thier listing order with highest priority task \mbox{[}temp\+Task\mbox{]} and lowest priority is \mbox{[}seven\+Seg\+Task\mbox{]}.\hypertarget{md_latexdocumentation_autotoc_md12}{}\doxysubsubsection{System Tasks\+:}\label{md_latexdocumentation_autotoc_md12}
+\hypertarget{md_latexdocumentation_autotoc_md13}{}\doxyparagraph{temp\+Task\+:}\label{md_latexdocumentation_autotoc_md13}
+
+\begin{DoxyItemize}
+\item check if user set a temperature
+\item if a temp is set then
+\begin{DoxyEnumerate}
+\item get the average temp of the last ten readings.
+\item take an action based on the state of the heater and cooler state and the set temp value.
+\end{DoxyEnumerate}
+\item if the cooler element is on turn on the led if the heater element is on blink led every 1 sec.
+\end{DoxyItemize}\hypertarget{md_latexdocumentation_autotoc_md14}{}\doxyparagraph{Button\+Task\+:}\label{md_latexdocumentation_autotoc_md14}
+
+\begin{DoxyItemize}
+\item call button manager.
+\item update the state of each button\{up-\/down-\/on/off\}.
+\item if the on-\/off button is pressed switch the system \{on/off\} respectively and exit task.
+\item if in normal mode and up or down button pressed to get the last set value from E\+X\+T\+\_\+\+E\+E\+P\+R\+OM and change mode to T\+E\+M\+P\+\_\+\+S\+E\+T\+\_\+\+M\+OD.
+\item if in temp set mode and up or down button pressed to increase or decrease the temp to set by 5 depending on which button pressed respectively.
+\item if neither the up nor down button pressed to save the set temp to E\+X\+T\+\_\+\+E\+E\+P\+R\+OM and change mode to normal mode.
+\end{DoxyItemize}\hypertarget{md_latexdocumentation_autotoc_md15}{}\doxyparagraph{temp\+Control\+Task\+:}\label{md_latexdocumentation_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Get the latest adc converted value form the A\+DC chanal connected to temp sensor.
+\item calculate the current temp in celsius.
+\item save current temp in {\itshape last 10 temp reading} array.
+\end{DoxyItemize}\hypertarget{md_latexdocumentation_autotoc_md16}{}\doxyparagraph{seven\+Seg\+Task\+:}\label{md_latexdocumentation_autotoc_md16}
+
+\begin{DoxyItemize}
+\item if in normal mode display the current temp value.
+\item if in temp set mode flash led every 1sec and display last set temp
+\begin{DoxyItemize}
+\item Interact with the user if up or down button pressed to change the temp to set by 5 degrees above or below the current temp based on the button pressed.
+\item Max temp 75 and Min temp to set is 35. 
+\end{DoxyItemize}
+\end{DoxyItemize}
