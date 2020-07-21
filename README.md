@@ -25,7 +25,7 @@ HAL driver for thoes peripheral_i saw that those peripheral logic is too simple 
 check detailed Design in [pdf](doucmentation/Detailed Design.pdf)
 <div style="text-align:center"><image src="picture/DetailedDesign.png"/></div>
 
-### Task-TimeLine:
+### Tasks TimeLine:
 * Project uses a non-primitive operating system with 50ms tick time.
 * task periodic time specified in the below graph.
 * project has five different tasks {tempTask,ButtonTask,tempControlTask,sevenSegTask} their priority as their listing 
