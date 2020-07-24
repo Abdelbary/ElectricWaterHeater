@@ -44,7 +44,7 @@ order with highest priority task [tempTask] and lowest priority is [sevenSegTask
 
 ### System Tasks:
 
-#### tempTask:
+#### tempControlTask:
 * check if user set a temperature
 * if a temp is set then
 	1. get the average temp of the last ten readings.
@@ -60,7 +60,7 @@ order with highest priority task [tempTask] and lowest priority is [sevenSegTask
 * if in temp set mode and up or down button pressed to increase or decrease the temp to set by 5 depending on which button pressed respectively.
 * if neither the up nor down button pressed to save the set temp to EXT_EEPROM and change mode to normal mode.
 
-#### tempControlTask:
+#### tempTask:
 * Get the latest adc converted value form the ADC chanal connected to temp sensor.
 * calculate the current temp in celsius.
 * save current temp in _last 10 temp reading_ array.
